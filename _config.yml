@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Link Everything"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Jonghun Par"
+name                     : "Jonghun Park"
 description              : "An amazing website."
 url                      : "https://linkeverything.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -97,7 +97,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "S/W develop."
   location         : "Seoul, Korea"
-  email            :
+  email            : "jonghun.criss.android@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -117,6 +117,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/parkjonghun/"
 
 # Site Footer
 footer:
