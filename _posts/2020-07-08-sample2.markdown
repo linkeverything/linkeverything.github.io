@@ -9,6 +9,7 @@ tag:
   - "tag1"
   - "tag2"
 last_modified_at: 2020-07-08
+author_profile: false
 sidebar: 
   nav: springnav
 ---
