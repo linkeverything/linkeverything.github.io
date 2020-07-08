@@ -283,7 +283,7 @@ defaults:
       share: true
       related: true
       header:
-        overlay_image: /assets/images/wallpaper1.jpg
+        overlay_image: /assets/images/wallpaper2.jpg
 #      toc: true
       classes: wide
 
