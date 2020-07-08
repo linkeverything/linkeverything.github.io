@@ -66,7 +66,7 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 
 ```
 
-
+이렇게 하면, 해당 deployment 가 생성되는 시점에 image를 가져오는 것을 해당 registry 에서 가져오게 됩니다.
 
 
 # 참고
