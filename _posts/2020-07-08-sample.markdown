@@ -1,5 +1,6 @@
 ---
 title: "SampleTitle"
+subtitle: "subtitle?"
 strapline: "SampleStrapline"
 description: "SampleDescription"
 categories:
