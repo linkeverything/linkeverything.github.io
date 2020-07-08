@@ -8,9 +8,7 @@ categories:
 tag:
   - "tag1"
   - "tag2"
-toc: true
 last_modified_at: 2020-07-08
-comments: true
 ---
 
 
