@@ -49,6 +49,7 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 ```yaml
 
 ...(중략)
+
   template:
     metadata:
       labels:
@@ -70,6 +71,8 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 
 
 # 참고
+
+아래는 참고할 만 한 내용들입니다. 
 
 
 ### namespace 삭제 방법
