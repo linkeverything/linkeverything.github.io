@@ -20,8 +20,8 @@ title                    : "Link Everything"
 title_separator          : "-"
 subtitle                 : "about Software engineering" # site tagline that appears below site title in masthead
 name                     : "Jonghun Park"
-description              : "An amazing website."
-url                      : "https://linkeverything.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : ""
+url                      : "https://linkeverything.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -95,12 +95,12 @@ analytics:
 author:
   name             : "Jonghun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "S/W develop."
+  bio              : "Software engineer."
   location         : "Seoul, Korea"
   # email            : "jonghun.criss.android@gmail.com"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-fw fa-envelope"
       url: "mailto:jonghun.criss.android@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -118,7 +118,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/park.jonghun/"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
+      icon: "fab fa-fw fa-linkedin-in"
       url: "https://www.linkedin.com/in/parkjonghun/"
 
 # Site Footer
