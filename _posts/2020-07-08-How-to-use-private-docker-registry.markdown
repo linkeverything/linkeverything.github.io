@@ -15,3 +15,9 @@ Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 
 
 
 # test page
+
+
+```
+# kubectl delete secret docker-registry-login -n awesome-shopping # 삭제
+kubectl create secret docker-registry docker-registry-login --namespace=awesome-shopping --docker-server=gitlab.azr-multiverse.skcc.com:4567 --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
+```
