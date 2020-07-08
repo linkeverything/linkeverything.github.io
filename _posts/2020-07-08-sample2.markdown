@@ -1,7 +1,6 @@
 ---
 title: "SampleTitle"
-strapline: "SampleStrapline"
-description: "SampleDescription"
+excerpt: "CSS classes for aligning text/image, styling buttons and notices, and more."
 header:
  overlay_image: /assets/images/wallpaper2.jpg
 categories:

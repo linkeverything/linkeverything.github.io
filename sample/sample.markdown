@@ -1,8 +1,6 @@
 ---
 title: "SampleTitle"
-subtitle: "subtitle?"
-strapline: "SampleStrapline"
-description: "SampleDescription"
+excerpt: "excerpt"
 categories:
   - "category"
 tag:
