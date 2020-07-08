@@ -27,8 +27,8 @@ kubernetes 에 대한 글을 적으면서 반복적으로 설명하겠지만, ku
 
 
 ```bash
-# kubectl delete secret docker-registry-login -n awesome-shopping # 삭제
-kubectl create secret docker-registry docker-registry-login --namespace=awesome-shopping --docker-server=gitlab.azr-multiverse.skcc.com:4567 --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
+# kubectl delete secret docker-registry-login -n mynamespace # 삭제
+kubectl create secret docker-registry docker-registry-login --namespace=mynamespace --docker-server=<server-address>:<port> --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
 ```  
 
 
