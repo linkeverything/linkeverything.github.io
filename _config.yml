@@ -282,3 +282,9 @@ defaults:
       comments: true
       share: true
       related: true
+      header:
+        overlay_image: /assets/images/wallpaper1.jpg
+      toc: true
+
+
+
