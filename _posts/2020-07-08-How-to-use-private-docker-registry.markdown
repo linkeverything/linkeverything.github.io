@@ -18,12 +18,23 @@ Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 
 
 kubernetes 에 대한 글을 적으면서 반복적으로 설명하겠지만, kubernetes 에서 동일한 역할을 하는 pod, node 등의 집합은 동일한 namespace 로 관리해야 편합니다. deployment, service 등을 생성할 때에 namespace 를 별도로 설정하지 않으면 kubernetes 에 있는 default namespace를 사용하게 됩니다. 만약 하나의 집단만을 관리할 것이라면 이렇게 설정한 채로 default namespace를 그대로 사용해도 동작에는 지장이 없겠지만, 유지보수 측면이나 다른 사람이 관리하는 것을 감안한다면 별도의 namespace를 생성해서 관리해 주는 것이 좋습니다. 
 
+
 ### namespace 생성
 
 다음 명령어로 namespace를 생성합니다. 이 이름이 모든 서비스들에 적용될 것이므로, 적절한 형태로 지어주는 것이 좋습니다.  
 
+```bash
+kubectl create namespace mynamespace
+```
+이렇게 해서 `mynamespace`라는 이름으로 namespace를 생성해 주고, 앞으로 생성되는 모든 요소에 metadata 부분에 `namespace : mynamespace`를 추가해 줍니다.
+
 
 # secret 생성
+
+특정 docker registry 에 접근하게 하려면 우선 kubernetes 의 요소 중에서 secret을 생성해 주어야 합니다. 이것이 secret 이라고 불려지는 이유는, id / password 등을 이용해서 특정 docker registry 에 로그인하는 정보를 담고 있기 때문입니다. 
+
+여기서는 단순히 id / password를 이용해서 로그인 하는 것으로 예시를 들었습니다. 실제 환경에서는 password 대신에 github / gitlab 등에서 발생하는 token 등으로 대체하여야 보안 문제를 해소할 수 있습니다. 
+{: .notice--warning}
 
 
 ```bash
@@ -33,4 +44,24 @@ kubectl create secret docker-registry docker-registry-login --namespace=mynamesp
 
 
 # yaml 파일에 적용
+
+
+
+
+
+# 참고
+
+### namespace 삭제 방법
+
+```bash
+kubectl delete namespace mynamespace
+```
+
+### secret 삭제 방법
+
+```bash
+kubectl delete secret docker-registry-login -n mynamespace
+```
+
+
 
