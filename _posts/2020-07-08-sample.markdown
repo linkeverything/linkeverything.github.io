@@ -1,0 +1,18 @@
+---
+title: "SampleTitle"
+strapline: "SampleStrapline"
+description: "SampleDescription"
+header:
+ overlay_image: /assets/images/triangular.jpeg
+categories:
+  - "category"
+tag:
+  - "tag1"
+  - "tag2"
+toc: true
+last_modified_at: 2020-07-08
+comments: true
+---
+
+
+# test page
