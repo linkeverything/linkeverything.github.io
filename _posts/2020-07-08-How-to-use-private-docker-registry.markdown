@@ -33,29 +33,51 @@ kubectl create namespace mynamespace
 
 특정 docker registry 에 접근하게 하려면 우선 kubernetes 의 요소 중에서 secret을 생성해 주어야 합니다. 이것이 secret 이라고 불려지는 이유는, id / password 등을 이용해서 특정 docker registry 에 로그인하는 정보를 담고 있기 때문입니다. 
 
-여기서는 단순히 id / password를 이용해서 로그인 하는 것으로 예시를 들었습니다. 실제 환경에서는 password 대신에 github / gitlab 등에서 발생하는 token 등으로 대체하여야 보안 문제를 해소할 수 있습니다. 
+여기서는 단순히 id / password를 이용해서 로그인 하는 것으로 예시를 들었습니다. 실제 환경에서는 password 대신에 github / gitlab 등에서 발생하는 **token** 등으로 대체하여야 보안 문제를 해소할 수 있습니다. 
 {: .notice--warning}
 
 
 ```bash
-# kubectl delete secret docker-registry-login -n mynamespace # 삭제
-kubectl create secret docker-registry docker-registry-login --namespace=mynamespace --docker-server=<server-address>:<port> --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
-```  
+kubectl create secret registry-credentials docker-registry-login --namespace=mynamespace --docker-server=<server-address>:<port> --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
+```    
 
 
 # yaml 파일에 적용
 
+다음으로는 kubernetes의 deployment 를 생성하는 yaml 파일을 수정합니다. 다른 부분은 별도로 수정할 필요가 없고, 아래와 같이 containers 를 설정해 주는 부분만 추가해 주면 됩니다.
+
+```yaml
+
+...(중략)
+  template:
+    metadata:
+      labels:
+        app: appapp
+    spec:
+      imagePullSecrets:
+      - name: registry-credentials
+      containers:
+      - name: namenamename
+        image: image:tag
+        imagePullPolicy: Always
+        env:
+
+...(후략)
+
+```
 
 
 
 
 # 참고
 
+
 ### namespace 삭제 방법
 
 ```bash
 kubectl delete namespace mynamespace
 ```
+
 
 ### secret 삭제 방법
 
