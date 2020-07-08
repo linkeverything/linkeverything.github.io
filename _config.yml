@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 title                    : "Link Everything"
-title_separator          : "-"
+title_separator          : "|"
 subtitle                 : "about Software engineering" # site tagline that appears below site title in masthead
 name                     : "Jonghun Park"
 description              : ""
