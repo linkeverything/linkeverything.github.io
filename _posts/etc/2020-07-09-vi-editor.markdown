@@ -2,8 +2,7 @@
 title: "vi editor 명령어 정리"
 excerpt: "vi editor commands"
 categories:
-  - "Etc"
-  - "linux"
+  - "etc"
 tag:
   - "vi editor"
   - "commands"
