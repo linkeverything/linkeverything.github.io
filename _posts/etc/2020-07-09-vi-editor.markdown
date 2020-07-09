@@ -19,7 +19,7 @@ last_modified_at: 2020-07-09
 아래와 같은 문법으로 파일을 editing mode 로 진입합니다. 
 
 ```bash
-vi test.sh [enter](#link){: .btn .btn--inverse}
+vi test.sh
 ```
 #### 파일 수정 종료
 
