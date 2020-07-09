@@ -1,11 +1,12 @@
 ---
-title: "vi editor 명령어 정리"
-excerpt: "vi editor commands"
+title: "맥에서 마우스 속도 조절"
+excerpt: "Change mouse speed on mac"
 categories:
   - "etc"
+  - "apple"
 tag:
-  - "vi editor"
-  - "commands"
+  - "mouse"
+  - "scaling"
 last_modified_at: 2020-07-09
 ---
 
