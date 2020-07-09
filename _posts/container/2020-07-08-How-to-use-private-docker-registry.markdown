@@ -1,6 +1,9 @@
 ---
 title: "Kubernetes 에서 docker private registry 사용하기"
 excerpt: "How to use private docker registry on kubernetes"
+categories:
+  - "Container"
+  - "Kubernetes"
 tag:
   - "kubernetes"
   - "docker"
