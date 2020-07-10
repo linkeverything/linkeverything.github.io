@@ -10,14 +10,19 @@ tag:
 last_modified_at: 2020-07-10
 ---
 
-jQuery selector 라고 하면 보통은 ```#```으로 아이디를 검색하거나 ```.```으로 class를 검색하는 것으로 많이 사용합니다. 그런데 조금만 더 높은 수준의 화면을 개발하려면 그에 걸맞는 selector 가 필요합니다. 여기서는 잘 모르는 사람이 많지만, 알아두면 유용한 몇 가지 selector들을 정리해서 소개합니다. 
+jQuery selector 라고 하면 보통은 ```#```으로 아이디를 검색하거나 ```.```으로 class를 검색하는 것으로 많이 사용합니다. 그런데 조금만 더 높은 수준의 화면을 개발하려면 그에 걸맞는 selector 가 필요합니다. 여기서는 잘 모르는 사람이 많지만, 알아두면 유용한 몇 가지 selector들을 정리해서 소개합니다. 기본적인 id selector와 class selector는 소개하지 않겠습니다.
 
-작성 기준일인 **2020년 7월**현재 [jQuery 홈페이지](https://api.jquery.com/category/selectors/)에 올라와 있는 내용을 바탕으로 정리합니다. 
+작성 기준일인 **2020년 7월** 현재 [jQuery 홈페이지](https://api.jquery.com/category/selectors/)에 올라와 있는 내용을 바탕으로 정리합니다. 
 {: .notice--info}
   
-## 개요
+## Attribute 관련 selectors
 
-kubernetes 에 대한 글을 적으면서 반복적으로 설명하겠지만, kubernetes 에서 동일한 역할을 하는 pod, node 등의 집합은 동일한 namespace 로 관리해야 편합니다. deplo
+특정 속성 값을 기준으로 하여 선택하는 것은 아주 흔하고 많이 사용되는 방식입니다. 
+
+| 사용법 | 기능 | 예시 |
+|------|------|----|
+|```[name|="value"]```|속성의 값이 ```value```로 시작|```$( "a[hreflang|='en']" )```|
+
 
 #### namespace 생성
 
