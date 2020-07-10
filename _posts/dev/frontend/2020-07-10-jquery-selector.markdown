@@ -36,8 +36,22 @@ jQuery selector 라고 하면 보통은 ```#```으로 아이디를 검색하거�
 |```"parent > child"```|부모 요소의 바로 아래에 위치한 자식 선택자를 모두 반환|```$( "ul.topnav > li" )```<br>topnv클래스를 가진 ul 태그 **바로 아래에** 위치한 li 태그들을 선택|
 |```"ancestor descendant"```|조상 선택자 하위에 있는 모든 하위 선택자에 해당하는 요소들을 반환|```$( "form input" )```<br>form 태그 하위에 위치한 모든 input 태그를 선택(여러 단계를 거쳐도 선택됨)|
 
+## status 관련
 
+아래 설명하는 선택자는 특정 요소들의 상태값에 대한 선택자입니다. 
 
+| 사용법 | 기능 | 예시 |
+|------|------|----|
+|```":checked"```|상태가 checked 이거나 selected 인 요소들을 모두 반환<br>checkbox, radio, options 모두에 대해서 동작함|```$( "input:checked" )```<br>input 태그 중 checked 상태인 것들 반환함. checked="checked" 와 checked 만 있는 경우 모두 선택|
+|```":disabled"```<br>```":endabled"```|상태가 disabled / endabled 인 것들 반환|```$( "input:enabled" )```<br>input 태그 중 상태가 enabled 인 것들 모두 선택|
+|```":hidden"```|hidden 상태인 것들 반환|```$( "div:hidden" )```<br>div 태그 중 hidden 인 것들 선택|
+
+## 기타
+
+| 사용법 | 기능 | 예시 |
+|------|------|----|
+|```"prev ~ sibling"```|prev 선택자 이후에, 동일한 부모를 갖는, sibling 선택자에 해당하는 요소 반환|```$( "#prev ~ div" )```<br>prev 라는 id 를 가진 요소 이후에 나오면서, 동일한 부모를 가진 요소들을 선택|
+|```"prev + next"```|prev 하위에 next 가 있는 조합은 모두 선택됨|```$( "label + input" )```<br>label 하위에 있는 input은 모두 선택됨|
 
 #### 출처 및 참고자료
 
