@@ -198,6 +198,22 @@ tcp4       0      0  127.0.0.1.49389        127.0.0.1.51599        TIME_WAIT   2
 tcp4       0      0  127.0.0.1.49389        127.0.0.1.51603        TIME_WAIT   261312 146988    980      0 0x2131 0x0000000c
 ```
 
+pid 만 찾는 경우
+
+```bash
+lsof -t -i:포트번호
+```
+
+IPv4만 (TCP & UDP)
+```bash
+lsof -i 4
+```
+
+IPv6만 (TCP & UDP)
+```bash
+lsof -i 6
+```
+
 #### 참고
 
 https://woonizzooni.tistory.com/entry/Mac-listen-%ED%8F%AC%ED%8A%B8-pid-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95-TCPUDP-%EC%84%B8%EC%85%98-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95
