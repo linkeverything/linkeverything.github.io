@@ -18,16 +18,6 @@ last_modified_at: 2020-07-10
 
 TCP 중에서(t), Listening 상태인 것들만(l), 상세정보까지 포함하여(p), 10진수 숫자로 표현(n)
 
-아래 명령어는 Mac 에서는 정상적으로 구동되지 않습니디. 대신 아래 명령어로 확인 가능합니다.
-{: .notice--warning}
-
-```bash
-netstat -v
-```
-
-
-
-
 ```bash
 $ netstat -tnlp
 (Not all processes could be identified, non-owned process info
@@ -36,6 +26,13 @@ Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
 tcp6       0      0 :::22                   :::*                    LISTEN      -
+```
+
+이 명령어는 Mac 에서는 정상적으로 구동되지 않습니디. 대신 아래 명령어로 확인 가능합니다.
+{: .notice--warning}
+
+```bash
+netstat -v
 ```
 
 #### netstat
