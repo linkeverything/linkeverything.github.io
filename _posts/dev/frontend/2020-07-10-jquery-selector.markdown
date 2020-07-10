@@ -15,7 +15,7 @@ jQuery selector 라고 하면 보통은 ```#```으로 아이디를 검색하거�
 작성 기준일인 **2020년 7월** 현재 [jQuery 홈페이지](https://api.jquery.com/category/selectors/)에 올라와 있는 내용을 바탕으로 정리합니다. 
 {: .notice--info}
   
-## Attribute 관련 selectors
+## attribute 관련 selectors
 
 특정 속성 값을 기준으로 하여 선택하는 것은 아주 흔하고 많이 사용되는 방식입니다. 
 
@@ -29,11 +29,16 @@ jQuery selector 라고 하면 보통은 ```#```으로 아이디를 검색하거�
 |```[name!="value"]```|속성의 값이 ```value```가 아님|```$( "input[name!='newsletter']" )```<br>input태그 중에서 ```name```이라는 속성의 값이 ```newsletter```가 아님|
 |```[name^="value"]```|속성의 값이 ```value```로 시작|```$( "input[name^='news']" )```<br>input태그 중에서 ```name```이라는 속성의 값이 ```news```으로 시작|
 
-#### namespace 생성
+## child/descendant Selector
 
-다음 명령어로 namespace를 생성합니다. 이 이름이 모든 서비스들에 적용될 것이므로, 적절한 형태로 지어주는 것이 좋습니다.  
+| 사용법 | 기능 | 예시 |
+|------|------|----|
+|```"parent > child"```|부모 요소의 바로 아래에 위치한 자식 선택자를 모두 반환|```$( "ul.topnav > li" )```<br>topnv클래스를 가진 ul 태그 **바로 아래에** 위치한 li 태그들을 선택|
+|```"ancestor descendant"```|조상 선택자 하위에 있는 모든 하위 선택자에 해당하는 요소들을 반환|```$( "form input" )```<br>form 태그 하위에 위치한 모든 input 태그를 선택(여러 단계를 거쳐도 선택됨)|
 
-```bash
-kubectl create namespace mynamespace
-```
-이렇게 
+
+
+
+#### 출처 및 참고자료
+
+ https://api.jquery.com/category/selectors/
