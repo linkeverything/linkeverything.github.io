@@ -1,40 +1,41 @@
 ---
-title: "사용중인 네트워크 정보(port), pid 확인"
-excerpt: "list-up listening ports and pids on Mac"
+title: "열려있는 포트 확인, 방화벽 어픈"
+excerpt: "check opened network ports, open inbound at firewall"
 categories:
-  - "etc"
-  - "apple"
+  - "infra"
+  - "linux"
 tag:
   - "network"
   - "port"
+  - "open firewall"
 last_modified_at: 2020-07-10
 ---
 
-이 내용은 상당 부분이 linux 의 환경에서와 동일합니다. mac의 terminal 에서 사용하는 기능(명령어) 들이 거의 linux(ubuntu) 에서의 명령어들이니까요. 참고용으로만 봐주시고 혹시 잘못된 내용은 댓글 달아주세요. 
+몇 번을 찾아도 자꾸 까먹게 되는 명령어들이라 메모 형태로 적어서 보관합니다. 출처의 내용에서도 알 수 있듯이, Cent-os 기반으로 작성되었으나, 대부분의 linux 기반 시스템에서 유사하게 사용할 수 있으므로 참고용으로 활용할 수 있습니다. 
 {: .notice--info}
 
-맥이나 리눅스 환경에서 어떤 프로그램이 어떤 포트를 사용하는지를 확인하는 일이 빈번합니다. 프로그램이 제대로 종료되지 않아, 어떤 포트를 점유하고 있는 경우도 있고, 혹은 일반적으로 자주 사용하는 포트, 예를 들어 8080, 9000 등과 같은 경우에는 다른 프로그램이 점유하고 있는 경우가 많습니다. 이런 경우에 다음의 방법을 이용하여 사용중인 포트들과 그 포트들을 사용하는 프로그램 id 를 확인할 수 있습니다. 
+#### Check network ports
 
-#### lsof (list open files) 
+TCP 중에서(t), Listening 상태인 것들만(l), 상세정보까지 포함하여(p), 10진수 숫자로 표현(n)
+
+아래 명령어는 Mac 에서는 정상적으로 구동되지 않습니디. 대신 아래 명령어로 확인 가능합니다.
+{: .notice--warning}
 
 ```bash
- jonghunpark@Jonghun-mbpw  ~  sudo lsof -iTCP -sTCP:LISTEN -n -P
-COMMAND    PID        USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-UserEvent  115        root   75u  IPv6 0x36efe985d6956f91      0t0  TCP [fe80:8::aede:48ff:fe00:1122]:49161 (LISTEN)
-UserEvent  115        root   76u  IPv6 0x36efe985d6956351      0t0  TCP [fe80:8::aede:48ff:fe00:1122]:49162 (LISTEN)
-UserEvent  115        root   77u  IPv6 0x36efe985d6955d31      0t0  TCP [fe80:8::aede:48ff:fe00:1122]:49163 (LISTEN)
-UserEvent  115        root   78u  IPv6 0x36efe985d69575b1      0t0  TCP [fe80:8::aede:48ff:fe00:1122]:49164 (LISTEN)
-AnySign.e  126        root    9u  IPv4 0x36efe985d73e13c1      0t0  TCP 127.0.0.1:31026 (LISTEN)
-AnySign.e  126        root   13u  IPv4 0x36efe985d73dcea1      0t0  TCP 127.0.0.1:31027 (LISTEN)
-edpa       136        root    7u  IPv4 0x36efe985d88f6c41      0t0  TCP 127.0.0.1:56999 (LISTEN)
-rapportd   459 jonghunpark    4u  IPv4 0x36efe985d88f6261      0t0  TCP *:49224 (LISTEN)
-rapportd   459 jonghunpark    5u  IPv6 0x36efe985d6958e31      0t0  TCP *:49224 (LISTEN)
-LogiMgrDa  689 jonghunpark    4u  IPv4 0x36efe985d73e0001      0t0  TCP *:59866 (LISTEN)
-delfino    709 jonghunpark    9u  IPv4 0x36efe985dfb14881      0t0  TCP 127.0.0.1:16107 (LISTEN)
-UniCRSLoc  959 jonghunpark    3u  IPv4 0x36efe985d9cd9621      0t0  TCP *:15018 (LISTEN)
-Adguard    980 jonghunpark   46u  IPv4 0x36efe985dfb15c41      0t0  TCP 127.0.0.1:49388 (LISTEN)
-Adguard    980 jonghunpark   48u  IPv6 0x36efe985da63b351      0t0  TCP *:49389 (LISTEN)
-com.docke 1086 jonghunpark   10u  IPv4 0x36efe985da0cdc41      0t0  TCP 127.0.0.1:49336 (LISTEN)
+netstat -v
+```
+
+
+
+
+```bash
+$ netstat -tnlp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
 ```
 
 #### netstat
@@ -214,6 +215,6 @@ IPv6만 (TCP & UDP)
 lsof -i 6
 ```
 
-#### 참고
+#### 참고 및 출처
 
-https://woonizzooni.tistory.com/entry/Mac-listen-%ED%8F%AC%ED%8A%B8-pid-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95-TCPUDP-%EC%84%B8%EC%85%98-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95
+https://suzxc2468.tistory.com/m/165
