@@ -55,6 +55,20 @@ $ git push origin {tag name}
 $ git push --tags
 ```
 
+#### tag 삭제하기
+
+특정 tag를 삭제하려면 아래와 같이 입력합니다. 
+
+```bash
+git tag -d {tag name}
+```
+
+만약 github와 같은 원격 저장소에 push 했던 tag 를 삭제하려면 아래 명령어로 삭제하면 됩니다. (delete 가 아닌, :{tag name} 으로 push 하는 개념)
+
+```bash
+git push origin :{tag name}
+```
+
 ## 출처 및 참고자료
 
 https://mygumi.tistory.com/159
