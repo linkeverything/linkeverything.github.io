@@ -53,7 +53,6 @@ mysql> CREATE USER '{user_name}'@'localhost' IDENTIFIED BY '{user_password}';
 
 ```sql
 mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, DROP, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON {db_name}.* TO '{user_name}'@'localhost';
-
 ```
 
 만약 `FILE`권한을 주고 싶다면 다음 명령어를 추가합니다. (성능적인 이득이 있다고 하는데 정확한 부분은 모르겠습니다.)
