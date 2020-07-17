@@ -1,7 +1,7 @@
 Jonghun Park:
   name             : "Jonghun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Software engineer. interests `Java`, Spring, Infra structures_"
+  bio              : "Software engineer. interests `Java`, `Spring framework`, `Infra structures`, `Docker`, and `k8s`"
   location         : "Seoul, Korea"
   # email            : "jonghun.criss.android@gmail.com"
   links:
