@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Jonghun Park"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Software engineer."
+  bio              : "Software engineer. interests `Java`, Spring, Infra structures_"
   location         : "Seoul, Korea"
   # email            : "jonghun.criss.android@gmail.com"
   links:
@@ -277,7 +277,8 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+#      author_profile: true
+      author: Jonghun Park
       read_time: true
       comments: true
       share: true
