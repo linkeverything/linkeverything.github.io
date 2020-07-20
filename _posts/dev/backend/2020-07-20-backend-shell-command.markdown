@@ -7,16 +7,14 @@ categories:
 tag:
   - "java"
   - "remote command"
-header:
-  actions:
-    - label: "Download Sample code from GitHub"
-    - url: "https://github.com/Simplify-Criss/maven.test"
 last_modified_at: 2020-07-20
 ---
 
 > Java 에서 원격 서버 명령어를 실행하는 데에는 apache-commons 에 있는 라이브러리를 사용하면 편리합니다. maven / gradle 환경에서 apache-commons 을 빈번하게 사용하기 때문에 그래도 사용하면 됩니다.
 
 Java 에서 원격 서버에 명령을 날리는데 있어, 보안에 대한 부분을 확보하기 위해서는 ssh / sftp 를 이용해야 하며, 이를 도와주는 라이브러리가 jsch 라이브러리 입니다. 그 사용법을 간단히 정리해 보겠습니다. 
+
+[Download Sample code from GitHub](https://github.com/Simplify-Criss/maven.test){: .btn .btn--primary}
 
 #### maven dependency 설정
 
