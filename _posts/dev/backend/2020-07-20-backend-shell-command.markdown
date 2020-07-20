@@ -14,7 +14,7 @@ last_modified_at: 2020-07-20
 
 Java 에서 원격 서버에 명령을 날리는데 있어, 보안에 대한 부분을 확보하기 위해서는 ssh / sftp 를 이용해야 하며, 이를 도와주는 라이브러리가 jsch 라이브러리 입니다. 그 사용법을 간단히 정리해 보겠습니다. 
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/maven.test){: .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/Simplify-Criss/maven.test){:target="_blank" .btn .btn--primary}
 
 #### maven dependency 설정
 
