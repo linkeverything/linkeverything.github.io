@@ -7,6 +7,10 @@ categories:
 tag:
   - "java"
   - "remote command"
+header:
+  actions:
+    - label: "Download Sample code from GitHub"
+    - url: "https://github.com/Simplify-Criss/maven.test"
 last_modified_at: 2020-07-20
 ---
 
