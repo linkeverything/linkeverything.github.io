@@ -30,6 +30,29 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
 
-#### 참고자료 및 출처
+#### 애플리케이션 등록하기 
+
+우선 가입을 정상적으로 마치고, 로그인을 하고 나면, 아래 그림에서 처럼, `내 애플리케이션` > `애플리케이션 추가하기` 로 진입합니다.
+
+![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_21_26.jpg)
+
+아래 정보를 입력합니다. 모두 다 임의로 적어주면 됩니다. 
+
+- 앱 이름 : 임의의 구분할 수 있는 이름으로
+- 최사 이름 : 학습 목적이기 때문에 'Personal' 이라고 임의로 적음
+
+![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_27_48.jpg)
+
+생성하고 나오는 `요약정보` 에서 아래 표시된 REST API 키 항목에 대한 부분을 잘 적어둡니다. 
+
+이 정보는 애플리케이션에 고유하게 주어지는 정보이기 때문에 변경되지 않고, 나중에도 계속 확인이 가능한 정보입니다. 
+{: .notice--info}
+
+![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_29_17.jpg)
+
+
+
+
+## 참고자료 및 출처
 
 https://antdev.tistory.com/34
