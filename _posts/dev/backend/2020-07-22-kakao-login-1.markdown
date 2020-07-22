@@ -17,15 +17,18 @@ last_modified_at: 2020-07-22
 
 [Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/kakaoLogin){:target="_blank" .btn .btn--primary}
 
-## 카카오 개발자 등록
+## 카카오 API 사용 등록
 
 Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카카오 역시 API 를 개발하고, 문서를 만들고, 해당 API를 사용하려면 등록할 수 있는 페이지를 잘 구축해 두었습니다. 그저 가입하고 등록과정만 거치면 누구나 사용할 수 있습니다. 
 
 아마도 여기에는 일일 사용할 수 있는 API에 대해서 제한이 걸려 있을 것입니다. 진짜로 대 고객 서비스를 계획하고 있다면 정식으로 등록 과정을 거쳐야 할 것입니다. 
 {: .notice--warning}
 
+#### kakao developers 페이지 등록
 
+우선 [kakao developers](https://developers.kakao.com/) 페이지에 접속하여 사용자 등록을 합니다. 한번 가입하면 쭉 사용하게 될 것이고, 메일 주소를 주로 사용하기 때문에 주로 사용하는 메일을 이용해 줍니다. 저는 개발 편의 상 gmail로 등록했습니다. 
 
+![](/assets/images/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
 
 #### 참고자료 및 출처
 
