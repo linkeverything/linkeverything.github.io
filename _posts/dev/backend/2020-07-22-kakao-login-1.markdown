@@ -1,6 +1,6 @@
 ---
-title: "카카오톡 로그인 구현하기"
-excerpt: "How to login with Kakao account"
+title: "카카오톡 로그인 구현하기 - (1) API사용 설정"
+excerpt: "How to login with Kakao account - (1) API management"
 categories:
   - "dev"
   - "backend"
