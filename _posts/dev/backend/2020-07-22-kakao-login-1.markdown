@@ -66,6 +66,11 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_34_26.jpg)
 
+#### 플랫폼 추가하기
+
+이제 이 API를 사용할 플랫폼이 무엇인지에 대해서 설정을 하게 됩니다. 아래 그림처럼 `플랫폼` 메뉴로 이동하여 `Web`항목에 (개발 목적이므로) `http://localhost:8080/`을 추가해 줍니다.
+
+![](/assets/images/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_45_14.jpg)
 
 
 ## 참고자료 및 출처
