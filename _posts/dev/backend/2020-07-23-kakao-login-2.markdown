@@ -94,6 +94,8 @@ last_modified_at: 2020-07-23
 - client_id 부분의 값은 본인이 등록한 `REST API 키` 값으로 변경해 줍니다. 
 - `img` 태그의 이미지 경로는 본인이 다운로드 받은 경로를 입력해 줍니다. 
 
+<br/>
+
 #### application.properties 파일 수정하기
 
 우선 화면이 잘 나오는지 확인을 해봐야 할 텐데, 그 이전에 설정을 몇 가지 잡아주도록 하겠습니다. `application.properties` 파일을 열어 아래 내용을 추가해 줍니다. 
@@ -106,6 +108,8 @@ server.port=8080
 spring.mvc.view.prefix=/WEB-INF/views/
 spring.mvc.view.suffix=.jsp
 ```
+
+<br/>
 
 #### controller 생성하기
 
@@ -134,6 +138,21 @@ public class HomeController {
 }
 ```
 
+<br/>
+
+## 실행 및 결과 확인
+
+이제 기본 틀은 다 생성한 샘입니다. 프로젝트의 java 파일 중 최상위 파일 `*Application.java` 파일을 우클릭하고 `main()` 을 실행합니다. 아래처럼 로그인 버튼이 나타나면 우선 jsp 연동은 잘 되어있는 것입니다. 
+
+![](/assets/images/2020-07-23-kakao-login-2/screenCapture3.png){: .align-center}
+
+여기서 저 **카카오 로그인** 버튼을 눌러 본인의 카카오톡 아이디로 로그인을 하면 다시 `localhost:8080/login` 으로 redirection 되는 것을 볼 수 있습니다. 
+
+![](/assets/images/2020-07-23-kakao-login-2/screenCapture4.png){: .align-center}
+
+위 이미지에서 **로그아웃** 부분은 무시하세요. 다음에서 설명할 내용입니다.
+
+<br/>
 
 ## 참고자료 및 출처
 
