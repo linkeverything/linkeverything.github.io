@@ -61,12 +61,78 @@ last_modified_at: 2020-07-23
 
 화면도 기본 설정되어 있는 화면 리소스 위치를 기본으로 사용하겠습니다. Spring project 에 능숙한 분들이라면 원하시는 경로에 놓고 사용하셔도 무관합니다. 
 
-저는 `src/main/sebapp/WEB-INF/views` 하위에 index.jsp 파일을 만들어 사용해 보려고 합니다. 
+저는 `src/main/sebapp/WEB-INF/views` 하위에 `index.jsp` 파일을 만들어 사용해 보려고 합니다. 
 
 ![](/assets/images/2020-07-23-kakao-login-2/screenCapture.png){: .align-center}
 
+이렇게 파일을 생성해 주고, 다음 내용을 입력합니다. 
 
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+    <c:if test="${userId eq null}">
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id={REST API 키}&redirect_uri=http://localhost:8080/login&response_type=code">
+            <img src="/img/kakao_login/ko/kakao_login_medium_wide.png">
+        </a>
+    </c:if>
+    <c:if test="${userId ne null}">
+        <h1>로그인 성공입니다</h1>
+    </c:if>
+</body>
+</html>
+```
 
+위 내용을 그대로 붙여넣엇다면 챙겨야 할 부분이 몇 가지 있습니다. 
+- client_id 부분의 값은 본인이 등록한 `REST API 키` 값으로 변경해 줍니다. 
+- `img` 태그의 이미지 경로는 본인이 다운로드 받은 경로를 입력해 줍니다. 
+
+#### application.properties 파일 수정하기
+
+우선 화면이 잘 나오는지 확인을 해봐야 할 텐데, 그 이전에 설정을 몇 가지 잡아주도록 하겠습니다. `application.properties` 파일을 열어 아래 내용을 추가해 줍니다. 
+
+아래 두 개는 jsp 를 제대로 사용하기 위한 경로 값이고, 위의 서버 `port` 는 웹 서비스 할 포트 번호입니다. (서버 포트 번호는 기본값이 **8080**인 것으로 알고 있습니다만, 명시적으로 하기 위해 적어주었습니다.)
+
+```properties
+server.port=8080
+ 
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+```
+
+#### controller 생성하기
+
+이제 Controller를 생성해 보도록 하겠습니다. 저는 아래 경로에 파일을 생성하고 다음 내용을 입력하였습니다. 흐름으로 살펴보자면, 사용자가 `카카오 로그인` 버튼을 클릭하게 되면 카카오 측 로그인 화면으로 이동하고, 로그인이 완료되면 `redirect uri` 인 `localhost:8080/login` 으로 보내지게 됩니다. 그러면 controller 에서 `/index.jsp` 로 View를 이동시키고, 브라우저에서는 이 때 jsp 에서 사용자 정보가 있는지를 확인하고 있으면 **로그인 성공입니다** 라는 메시지를 보여주게 됩니다. 
+
+![](/assets/images/2020-07-23-kakao-login-2/screenCapture2.png){: .align-center}
+
+```java
+package com.simplify.kakaoLogin.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+    @RequestMapping(value="/")
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping(value="/login")
+    public String login() {
+        return "index";
+    }
+}
+```
 
 
 ## 참고자료 및 출처
