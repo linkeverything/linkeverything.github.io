@@ -63,7 +63,7 @@ last_modified_at: 2020-07-23
 
 저는 `src/main/sebapp/WEB-INF/views` 하위에 index.jsp 파일을 만들어 사용해 보려고 합니다. 
 
-![](/assets/images/2020-07-23-kakao-login-2/pic 2020-07-23 오후 1.20.53.png)
+![](/assets/images/2020-07-23-kakao-login-2/screenCapture.png)
 
 
 
