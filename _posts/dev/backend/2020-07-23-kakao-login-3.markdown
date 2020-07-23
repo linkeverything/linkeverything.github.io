@@ -136,7 +136,7 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 ```java
     @RequestMapping(value="/login")
-    public String login(@RequestParam("code") String code, HttpSession session) {
+    public String login(@RequestParam("code") String code) {
         System.out.println("code : " + code);
 
         String access_Token = kakaoAPI.getAccessToken(code);
@@ -146,15 +146,106 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 <br/>
 
-## 실행 후 결과 확인
-
-<br/>
-
-#### 로그 확인
+#### 실행 후 결과 확인
 
 이제 여기까지 수정한 사항을 가지고 실행하여 로그인 테스트 합니다. console 창에 나타난 로그를 잘 보면 다음과 같이 나타날 것입니다.
 
 ![](/assets/images/2020-07-23-kakao-login-3/screenCapture2.png){: .align-center}
+
+<br/>
+
+#### 정보 가져오기
+
+이제 앞서 가져온 access token 값을 이용해서 사용자 정보를 가져와 보도록 하겠습니다. 앞서 권한 처리에 대해서 설정을 해준 것 처럼 해당 동의가 없으면 사용자 정보를 가져올 수 없게 처리되어 있습니다.
+
+다시 Service 파일을 열어 아래 사항을 추가합니다.
+
+```java
+    public HashMap<String, Object> getUserInfo (String access_Token) {
+
+        //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
+        HashMap<String, Object> userInfo = new HashMap<>();
+        String reqURL = "https://kapi.kakao.com/v2/user/me";
+        try {
+            URL url = new URL(reqURL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+
+            //    요청에 필요한 Header에 포함될 내용
+            conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+
+            int responseCode = conn.getResponseCode();
+            System.out.println("responseCode : " + responseCode);
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            String line = "";
+            String result = "";
+
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+            System.out.println("response body : " + result);
+
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(result);
+
+            JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
+            JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
+
+            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+            String email = kakao_account.getAsJsonObject().get("email").getAsString();
+
+            userInfo.put("nickname", nickname);
+            userInfo.put("email", email);
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return userInfo;
+    }
+```
+
+<br/>
+
+#### controller 에서 해당 내용 호출하기 
+
+다시 controller 를 열어 아래 내용을 추가합니다. 
+
+```java
+    @RequestMapping(value="/login")
+    public String login(@RequestParam("code") String code, HttpSession session) {
+        System.out.println("code : " + code);
+
+        String access_Token = kakaoAPI.getAccessToken(code);
+        System.out.println("access_Token : " + access_Token);
+        
+        HashMap<String, Object> userInfo = kakaoAPI.getUserInfo(access_Token);
+        System.out.println("login Controller : " + userInfo);
+
+        //    클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
+        if (userInfo.get("email") != null) {
+            session.setAttribute("userId", userInfo.get("email"));
+            session.setAttribute("access_Token", access_Token);
+        }
+
+        return "index";
+    }
+```
+
+여기서는 앞서 만든 getUserInfo 메소드를 다시 호출하여 사용자 정보를 가져오고, 이를 session 에 저장하는 로직이 있습니다. 카카오 계정에서는 키가 될 만한 정보로 활용할 수 있는 것이 email 이기 떄문에 여기서는 email 을 저장하였습니다.
+
+<br/>
+
+#### 실행 후 확인
+
+실행하여 로그를 확인하면 다음의 정보를 알 수 있습니다.
+
+![](/assets/images/2020-07-23-kakao-login-3/screenCapture3.png){: .align-center}
+
+
 
 <br/>
 
