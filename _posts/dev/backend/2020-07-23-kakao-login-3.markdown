@@ -245,7 +245,89 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 ![](/assets/images/2020-07-23-kakao-login-3/screenCapture3.png){: .align-center}
 
+<br/>
 
+## 로그아웃 구현
+
+로그아웃 과정은 기존에 발급된 access token을 바로 만료시키게 서버에 요청하고, 저장해 두었던 session 정보를 삭제하는 과정입니다.
+
+<br/>
+
+#### logout 서비스 구현하기
+
+앞서 만든 서비스에 다음 method를 추가합니다.
+
+```java
+    public void kakaoLogout(String access_Token) {
+        String reqURL = "https://kapi.kakao.com/v1/user/logout";
+        try {
+            URL url = new URL(reqURL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+
+            int responseCode = conn.getResponseCode();
+            System.out.println("responseCode : " + responseCode);
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            String result = "";
+            String line = "";
+
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+            System.out.println(result);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+```
+
+<br/>
+
+#### controller 에서 api 개발
+
+로그아웃은 로그인 버튼에 대해서 dynamic 하게 처리해도 되지만 여기서는 그냥 별도로 처리하도록 하겠습니다.
+
+로그아웃 과정은 
+1. session에 저장된 access token을 가져와서, 
+2. 서버에 해당 access token에 대한 로그아웃 처리를 진행하고,
+3. session 에서 저장된 email 과 access token을 지우는
+
+과정으로 되어 있습니다. 
+
+```java
+    @RequestMapping(value="/logout")
+    public String logout(HttpSession session) {
+        String access_Token = (String)session.getAttribute("access_Token");
+
+        if(access_Token != null && !"".equals(access_Token)){
+            kakaoAPI.kakaoLogout(access_Token);
+            session.removeAttribute("access_Token");
+            session.removeAttribute("userId");
+        }else{
+            System.out.println("access_Token is null");
+            //return "redirect:/";
+        }
+        //return "index";
+        return "redirect:/";
+    }
+```
+
+<br/>
+
+#### index.jsp 수정하기
+
+화면에서도 logout 처리와 관련한 링크(혹은 버튼)가 있어야 하므로, 다음과 같이 수정합니다. 
+
+```jsp
+    <c:if test="${userId ne null}">
+        <h1>로그인 성공입니다</h1>
+        <input type="button" value="로그아웃" onclick="location.href='/logout'">
+    </c:if>
+```
 
 <br/>
 
