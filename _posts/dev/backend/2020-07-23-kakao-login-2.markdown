@@ -25,9 +25,46 @@ last_modified_at: 2020-07-23
 
 #### Spring Initializr 를 이용한 프로젝트 생성
 
-[Spring Initializr](https://start.spring.io/) 에 접속하여 아래 화면과 같이 생성을 해줍니다. Group, Artifact, Name, Description 등은 본인 환경에 맞게 잡아주면 됩니다.
+[Spring Initializr](https://start.spring.io/) 에 접속하여 아래 화면과 같이 생성을 해줍니다. Group, Artifact, Name, Description 등은 본인 환경에 맞게 잡아주면 됩니다. 그리고 dependency 에 web 으로 검색해서 그림과 같이 추가해 줍니다.
 
 ![](/assets/images/2020-07-23-kakao-login-2/start.spring.io-2020.07.23-11_26_38.png)
+
+아래 Generate 버튼을 누르고, 다운로드된 zip 파일을 IntelliJ 등 IDE 에 import 합니다.
+
+<br/>
+
+#### dependency 추가
+
+프로젝트가 import 되면 pom.xml 파일을 열어 dependency를 추가해 줍니다. jsp 파일로 화면을 간단하게 구현할 것이기 때문에 tomcat-embed-jasper 와 jstl 라이브러리를 추가해 줍니다.
+
+```xml
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+```
+
+<br/>
+
+#### 이미지 준비
+
+로그인 버튼에 사용되는 이미지는 없어도 그만이긴 합니다만, 그래도 카카오 로그인에 맞춰 공식 이미지를 다운로드 받아 사용해 보겠습니다. [카카오 리소스 다운로드 페이지](https://developers.kakao.com/tool/resource/login) 에 이동하여 다운로드 받고, 이 파일을 `src/main/resources/static` 경로 하위에 위치시킵니다. 이 위치를 사용하는 이유는, 화면 resource 에서 접근할 때에 저 위치까지를 기본 위치로 잡고, 그 하위 경로를 이용할 것이기 때문입니다. 
+
+<br/>
+
+#### 로그인 화면 개발하기
+
+화면도 기본 설정되어 있는 화면 리소스 위치를 기본으로 사용하겠습니다. Spring project 에 능숙한 분들이라면 원하시는 경로에 놓고 사용하셔도 무관합니다. 
+
+저는 `src/main/sebapp/WEB-INF/views` 하위에 index.jsp 파일을 만들어 사용해 보려고 합니다. 
+
+![](/assets/images/2020-07-23-kakao-login-2/pic 2020-07-23 오후 1.20.53.png)
+
 
 
 
