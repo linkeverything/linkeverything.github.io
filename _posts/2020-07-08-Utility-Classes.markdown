@@ -6,6 +6,7 @@ last_modified_at: 2018-11-25T19:46:43-05:00
 toc: true
 toc_label: "Utility Classes"
 toc_icon: "cogs"
+published: false
 ---
 
 Using the Kramdown Markdown renderer with Jekyll allows you to add [block](http://kramdown.gettalong.org/quickref.html#block-attributes) and [inline attributes](http://kramdown.gettalong.org/quickref.html#inline-attributes). This is nice if you want to add custom styling to text and image, and still write in Markdown.
