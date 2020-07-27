@@ -41,7 +41,19 @@ $ ifconfig
 ```
 
 ```sh
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
+enp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.143  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::5893:dcb:8646:7699  prefixlen 64  scopeid 0x20<link>
+        ether b4:2e:99:24:fb:0b  txqueuelen 1000  (Ethernet)
+        RX packets 130262  bytes 116557327 (116.5 MB)
+        RX errors 0  dropped 31  overruns 0  frame 0
+        TX packets 34235  bytes 2794367 (2.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        ine
 ```
 
 위 명령어 실행 결과 보여지는 화면에서 각 네트워크 아답터의 고유 ID를 알아낼 수 있습니다. (ip 등 정보들을 보고 잘 찾으시길 바랍니다) 저 값을 잘 기억해 둡니다.
@@ -57,15 +69,41 @@ $ sudo ethtool {network_id}
 ```
 
 ```sh
-
+Settings for enp2s0:
+	Supported ports: [ TP MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	                                     1000baseT/Half 1000baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 1000Mb/s
+	Duplex: Full
+	Port: MII
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: on
+	Supports Wake-on: pumbg
+	Wake-on: g
+	Current message level: 0x00000033 (51)
+			       drv probe ifdown ifup
+	Link detected: yes
 ```
 
 ```sh
 $ sudo ethtool -s {network_id} wol g
-```
-
-```sh
-
 ```
 
 <br/>
