@@ -58,6 +58,25 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 
 ![](/assets/images/2020-07-28-screenshot-name/new.png){: .align-center}
 
+#### 시간 정보 포함하지 않기
+
+캡쳐 이후 기본적으로 시간 정보가 포함되게 됩니다. 당연히 여러 파일을 캡쳐하는 경우를 생각하면 시간이 포함되어 구분이 편하게 되는 것이 좋습니다만, 원하는 경우에는 이를 표시하고 싶지 않을 수 있습니다. 
+
+다음을 입력하여 시간 정보를 제거합니다. 
+
+```sh
+defaults write com.apple.screencapture "include-date" 0;killall SystemUIServer
+```
+
+![](/assets/images/2020-07-28-screenshot-name/notime.png){: .align-center}
+
+스크린샷을 보면 아시겠지만, 시간/날짜 값이 사라진 경우 캡쳐를 연속해서 하면 맨 뒤에 숫자가 자동으로 붙게 됩니다. 윈도우에서 (1)... 이 붙는 것과 동일한 효과라고 보면 됩니다.
+
+다시 원상태로 되돌리려면 다음을 입력하면 됩니다.
+
+```sh
+defaults write com.apple.screencapture "include-date" 1;killall SystemUIServer
+```
 
 
 ## 참고
