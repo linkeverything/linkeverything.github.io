@@ -116,6 +116,20 @@ post-up /sbin/ethtool -s 인터페이스명 wol g
 post-down /sbin/ethtool -s 인터페이스명 wol g
 ```
 
+**2020-07-28 추가**
+
+> 위 설정을 어디에 넣어야 하는지 고민하다가, 차라리 그냥 init.d script 에 넣어버리기로 마음 먹었습니다. 더 좋은 방법들 많을 겁니다. 그런데, 저 처럼 진행해도 잘 동작하는 것을 확인하였으니, 이대로 진행해도 좋을 듯 합니다.
+
+우선 wakeonlanconfig.sh 파일을 하나 만들고, 아래처럼 내용을 넣었습니다. 
+
+```sh
+#!/bin/bash
+ethtool -s enp2s0 wol g
+exit
+```
+
+그리고 이 파일을 **/etc/init.d** 경로에 복사 해 주었습니다. 권한은 해당 폴더의 다른 파일들처럼 755 로 주었습니다. 
+
 <br/>
 
 ## 기타
