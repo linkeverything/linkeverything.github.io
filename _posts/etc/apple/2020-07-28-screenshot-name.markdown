@@ -40,6 +40,8 @@ last_modified_at: 2020-07-28
 
 ![](/assets/images/2020-07-28-screenshot-name/old.png){: .align-center}
 
+<br/>
+
 #### 파일명 변경하기
 
 이제 터미널을 띄우고, 아래 명령어를 입력하여 파일명 규칙을 변경합니다.
@@ -57,6 +59,8 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 그 결과는 다음과 같습니다.
 
 ![](/assets/images/2020-07-28-screenshot-name/new.png){: .align-center}
+
+<br/>
 
 #### 시간 정보 포함하지 않기
 
@@ -78,6 +82,7 @@ defaults write com.apple.screencapture "include-date" 0;killall SystemUIServer
 defaults write com.apple.screencapture "include-date" 1;killall SystemUIServer
 ```
 
+<br/>
 
 ## 참고
 
