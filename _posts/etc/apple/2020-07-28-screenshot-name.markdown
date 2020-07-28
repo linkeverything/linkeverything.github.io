@@ -40,27 +40,26 @@ last_modified_at: 2020-07-28
 
 ![](/assets/images/2020-07-28-screenshot-name/old.png){: .align-center}
 
-위와 같은 설정으로 변경된 값을 명령어로 확인 해 보겠습니다. 터미널을 열고 아래 내용을 입력합니다. 
+#### 파일명 변경하기
 
-```bash
-defaults read -g com.apple.mouse.scaling
+이제 터미널을 띄우고, 아래 명령어를 입력하여 파일명 규칙을 변경합니다.
+
+```sh
+$ defaults write com.apple.screencapture name {파일명};killall SystemUIServer
 ```
 
-슬라이더 최대 값은 3 입니다. 저 ```com.apple.mouse.scaling``` 항목이 최대가 5인 것으로 알고 있는데, 시스템 환경 설정을 통하면 최대 3으로밖에 설정이 안됩니다. 
+저는 새로운 파일명을 **screenCapture** 라고 지정해 보았습니다. 
 
-#### 최대 속도 수동 설정
-
-따라서 여기서는 시스템 환경 설정을 이용하지 않고, 명령어로만 설정을 하려고 합니다. 이렇게 하면 3을 초과하는 값으로 설정이 가능하고, 결국 더욱 빠른 속도의 마우스를 이용할 수 있습니다. 
-
-```bash
-defaults write -g com.apple.mouse.scaling {원하는 값}
+```sh
+$ defaults write com.apple.screencapture name screenCapture;killall SystemUIServer
 ```
 
-이렇게 넣으면 위의 ```read``` 명령어를 통했을 때 3보다 큰 값도 설정이 가능합니다.
+그 결과는 다음과 같습니다.
+
+![](/assets/images/2020-07-28-screenshot-name/new.png){: .align-center}
+
 
 
 ## 참고
 
-아래 링크의 내용을 상당 수 참고하였습니다. 제 블로그가 아니어서, 메모&백업 용도로 적어 둡니다.
-
-https://kimsungjin.tistory.com/287
+https://macread.tistory.com/3
