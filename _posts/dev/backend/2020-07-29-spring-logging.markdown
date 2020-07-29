@@ -29,6 +29,8 @@ Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생�
 
 ![](/assets/images/2020-07-29-spring-logging/start.spring.io-2020.07.29-18_04_14.png){: .align-center}
 
+<br/>
+
 #### 기본 설정된 logback
 
 Springboot 에는 기본적으로 logback 이 포함되어 있습니다. 따라서 Springboot 의 `*Application.java` 파일의 `main()`함수를 호출하여 실행할 떄, IDE의 console 창에 나타나는 내용이 그것입니다. 
@@ -64,6 +66,62 @@ public class LogbackApplication {
 그 결과는 아래와 같습니다. 
 
 ![](/assets/images/2020-07-29-spring-logging/screenCapture2.png){: .align-center}
+
+<br/>
+
+## logback 고도화
+
+<br/>
+
+#### logback 설정 파일 만들기
+
+logback은 기본적으로 `logback.xml` 파일을 로드하도록 되어 있습니다. 더 정확하게 이야기하자면 Springboot 에서는 `logback-spring.xml` 파일을 로드합니다. 
+
+resources 폴더 아래에 `logback-spring.xml` 파일을 생성합니다. 그리고 아래 내용을 넣어 줍니다. 
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--로그 파일 저장 위치-->
+    <property name="LOGS_PATH" value="./logs"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DAILY_ROLLING_FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/logback.log</file>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATH}/logback.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>5MB</maxFileSize>
+                <!-- kb, mb, gb -->
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="com.simplify.logback" level="INFO">
+        <appender-ref ref="DAILY_ROLLING_FILE_APPENDER" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+- `<appender>` 는 실제 로그를 출력할 방법에 대한 부분입니다. 프로그래밍 언어로 치면 method 구현체 비슷하다고 생각하면 됩니다.
+- `<logger>` 는 로그를 출력할 방식에 대한 것을 정의합니다. 여기 예제에서는 `com.simplify.logback` 이라는 패키지에 대해서 **INFO** 레벨로 `DAILY_ROLLING_FILE_APPENDER` 라는 이름의 appender 를 사용해서 출력하겠다는 의미입니다.
+- `<root>` 부분에서는 전체 logback 에 대한 **default** 설정을 다룹니다. 이 프로그램 전반에 대해서 **INFO** 레벨로, `STDOUT` 이라는 이름의 appender 를 사용해서 출력하겠다는 의미입니다.
+
 
 
 <br/>
