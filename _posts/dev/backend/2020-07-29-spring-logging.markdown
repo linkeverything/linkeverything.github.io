@@ -29,11 +29,42 @@ Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생�
 
 ![](/assets/images/2020-07-29-spring-logging/start.spring.io-2020.07.29-18_04_14.png){: .align-center}
 
-#### logback
+#### 기본 설정된 logback
 
 Springboot 에는 기본적으로 logback 이 포함되어 있습니다. 따라서 Springboot 의 `*Application.java` 파일의 `main()`함수를 호출하여 실행할 떄, IDE의 console 창에 나타나는 내용이 그것입니다. 
 
 ![](/assets/images/2020-07-29-spring-logging/screenCapture.png){: .align-center}
+
+아무런 설정을 하지 않고도 이렇게 로그가 나오고 있습니다. 기본 내장된 logback 때문에 나타나는 것입니다. 
+
+단순하게 이 것을 이용하여 log를 한 줄 넣어 보겠습니다. LogbackApplication.java 파일을 열어 아래와 같이 수정합니다. 
+
+```java
+@SpringBootApplication
+public class LogbackApplication {
+
+	private static final Logger logger = LoggerFactory.getLogger(LogbackApplication.class);
+
+	public static void main(String[] args) {
+
+		logger.info("Hello logback");
+
+		SpringApplication.run(LogbackApplication.class, args);
+	}
+
+}
+```
+
+- Logger 클래스를 멤버 변수로 하나 만듧니다. `LoggerFactory.getLogger({class명})` 을 이용해서 생성합니다. 
+
+    여기서 `{class명}`부분에 String 값을 넣지 않고, 해당 클래스를 그대로 넣어주면 나중에 관리하기 편해집니다. logback 설정 시, 패키지별로 분리를 해서 설정하게 되는 경우가 많은데, refactoring 하는 경우를 감안하면 위와 같이 설정해 주는 것이 좋습니다. 
+
+- 해당 객체를 이용해서 `info()`메소드를 이용하여 로그를 찍어주도록 하겠습니다. 
+
+그 결과는 아래와 같습니다. 
+
+![](/assets/images/2020-07-29-spring-logging/screenCapture2.png){: .align-center}
+
 
 <br/>
 
