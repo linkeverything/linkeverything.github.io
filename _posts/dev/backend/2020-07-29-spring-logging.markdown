@@ -145,8 +145,24 @@ Springboot 를 사용하면서 편리한 점 중 하나가 바로 프로파일 �
 `application-dev.properties` 파일을 생성하고, `-Dspring.profiles.active=dev` 라고 VM 옵션을 주어 실행하면, `application.properties` 파일에 선언된 정보들을 우선 로드한 뒤, `application-dev.properties` 를 로드합니다. 즉, 기본 값들은 `application.properties` 파일에 다 넣고, 변경되는 값들만 `application-dev.properties` 파일에 넣어주면 됩니다. (override 개념)
 {: .notice--warning}
 
+<br/>
 
+#### logback 설정 파일에서 프로파일 이용하기
 
+logback 파일에서 프로파일별로 설정을 분리하려면, 파일로 분리해도 되겠지만, 간단히 xml 파일 내에서 특정 부분을 `<springProfile>` 태그로 감싸주면 됩니다. 
+
+앞서 살펴본 `logback-spring.xml` 파일에서 아래와 같이 변경해 봅니다. 
+
+```xml
+...
+    <!--로그 파일 저장 위치-->
+    <springProfile name="dev">
+        <property name="LOGS_PATH" value="./logs/dev"/>
+    </springProfile>
+...
+```
+
+이렇게 하면 `dev` 라는 프로파일로 실행될 때에는 `./logs/dev` 폴더 하위에 로그파일을 생성하게 됩니다.
 
 <br/>
 
