@@ -122,7 +122,17 @@ resources 폴더 아래에 `logback-spring.xml` 파일을 생성합니다. 그�
 - `<logger>` 는 로그를 출력할 방식에 대한 것을 정의합니다. 여기 예제에서는 `com.simplify.logback` 이라는 패키지에 대해서 **INFO** 레벨로 `DAILY_ROLLING_FILE_APPENDER` 라는 이름의 appender 를 사용해서 출력하겠다는 의미입니다.
 - `<root>` 부분에서는 전체 logback 에 대한 **default** 설정을 다룹니다. 이 프로그램 전반에 대해서 **INFO** 레벨로, `STDOUT` 이라는 이름의 appender 를 사용해서 출력하겠다는 의미입니다.
 
+이렇게 만들고 샐행해 보면, 다음과 같이 출력되는 것을 확인할 수 있습니다. 
 
+![](/assets/images/2020-07-29-spring-logging/screenCapture3.png){: .align-center}
+
+결과로, 프로젝트에 log 폴더가 생성된 것을 확인할 수 있고, 
+
+![](/assets/images/2020-07-29-spring-logging/screenCapture4.png){: .align-center}
+
+파일 내용을 다음과 같습니다.
+
+![](/assets/images/2020-07-29-spring-logging/screenCapture5.png){: .align-center}
 
 <br/>
 
