@@ -33,7 +33,7 @@ Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생�
 
 Springboot 에는 기본적으로 logback 이 포함되어 있습니다. 따라서 Springboot 의 `*Application.java` 파일의 `main()`함수를 호출하여 실행할 떄, IDE의 console 창에 나타나는 내용이 그것입니다. 
 
-
+![](/assets/images/2020-07-29-spring-logging/screenCapture.png){: .align-center}
 
 <br/>
 
