@@ -136,6 +136,20 @@ resources 폴더 아래에 `logback-spring.xml` 파일을 생성합니다. 그�
 
 <br/>
 
+#### 프로파일 별 구분하기
+
+Springboot 를 사용하면서 편리한 점 중 하나가 바로 프로파일 관리 기능입니다. 개발/테스트/운영 서버에 배포하는 것을 각 프로파일로 만들고, 이 프로파일 별 설정 파일들을 구분할 수 있습니다. 
+
+구분된 프로파일을 이용해서 설정 값을 분리하려면 application.properties 파일의 파일명에 `-{프로파일명}` 을 붙여주면 됩니다. 만약 `dev` 라는 이름의 프로파일을 사용하려고 한다면 application-dev.properties 라고 파일을 생성하고 여기서 설정값을 지정해주면 됩니다.
+
+`application-dev.properties` 파일을 생성하고, `-Dspring.profiles.active=dev` 라고 VM 옵션을 주어 실행하면, `application.properties` 파일에 선언된 정보들을 우선 로드한 뒤, `application-dev.properties` 를 로드합니다. 즉, 기본 값들은 `application.properties` 파일에 다 넣고, 변경되는 값들만 `application-dev.properties` 파일에 넣어주면 됩니다. (override 개념)
+{: .notice--warning}
+
+
+
+
+<br/>
+
 ## 참고자료 및 출처
 
 - https://romeoh.tistory.com/entry/Spring-Boot-Logback-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
