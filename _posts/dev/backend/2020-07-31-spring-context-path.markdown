@@ -117,7 +117,7 @@ public EmbeddedServletContainerCustomizer
 6. application.properties in the classpath (src/main/resources or the packaged jar file)
 
 개인적인 견해로는 OS 환경변수를 이용해서 context path 를 조정하는 것은 맞지 않아 보이고, Java Config 혹은 command line argument 정도로 조정하는 것이 맞는 것 같습니다. 
-{: .notice-info}
+{: .notice--info}
 
 <br/>
 
