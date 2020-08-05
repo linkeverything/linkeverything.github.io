@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Link Everything"
 title_separator          : "|"
 subtitle                 : "about Software engineering" # site tagline that appears below site title in masthead
-name                     : "Jonghun Park"
+name                    d : "Jonghun Park"
 description              : ""
 url                      : "https://linkeverything.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
