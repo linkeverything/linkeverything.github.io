@@ -30,6 +30,10 @@ last_modified_at: 2020-08-07
 아무런 기타 설정을 하지 않았기 때문에 `port`는 `8080` 을 사용합니다.
 {: .notice--info}
 
+#### form 요청에 대한 controller 생성
+
+form 요청에 대한 controller는 다음과 같이 설정합니다. produce
+
 ```java
 @Controller
 public class ResponseController {
