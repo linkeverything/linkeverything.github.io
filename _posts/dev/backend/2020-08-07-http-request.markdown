@@ -1,6 +1,6 @@
 ---
-title: "서버 간 http 통신하기"
-excerpt: "How to send http request with Java(Spring)"
+title: "서버 간 http 통신하기 - Form / JSON"
+excerpt: "How to send http request with Java(Spring) (with Form  or JSON parameter"
 categories:
   - "dev"
   - "backend"
