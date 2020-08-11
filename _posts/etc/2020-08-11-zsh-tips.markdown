@@ -1,0 +1,71 @@
+---
+title: "Zsh 사용시 참고사항 정리"
+excerpt: "Tips for setting Zsh on MacOS"
+categories:
+  - "etc"
+tag:
+  - "zsh"
+  - "tips"
+last_modified_at: 2020-08-11
+---
+
+> zsh 을 사용하면서 참고하게 되는 사항들을 정리하여 둡니다. 나중에 재설정해야 하는 시점이나, 혹은 저처럼 맥북을 새로 구입하여 설정하시는 분들께 참고가 될 만한 자료입니다. zsh 은 시스템 설정인 만큼, 백업/복원이 쉽지는 않으니 참고가 되시기 바랍니다. (물론 타임머신 통백업/복구는 가능합니다.)
+
+<br/>
+
+## 대소문자 구분 여부 설정하기
+
+기본 설정으로는 대소문자 구분을 하지 않게 되어 있습니다. 그런데 저 같은 경우 사용자 홈 폴더(`~`)에 dev 폴더를 만들어서 개발 관련한 작업들을 진행하는데, `de` 까지 입력하고 `tab` 키를 누르면 `desktop` 이 되어버리는 경우가 있습니다. 이 때에는 `.zshrc` 파일에 아래와 같이 설정을 잡아줍니다. (기본적으로 사용자 홈 폴더에 있습니다.)
+
+```properties
+# Set to this to use case-sensitive completion
+CASE_SENSITIVE="true"
+```
+
+이 설정은 대소문자를 구분 하겠다는 뜻입니다. 기본값은 저 값이 `false`였다는 것입니다.
+
+<br/>
+
+## 추가 플러그인 설치하기
+
+zsh 은 다양한 형태의 플러그인을 제공하고 있고, 이들 중에서 추가로 필요한 플러그인은 다음 폴더에 설치하면 됩니다.
+
+```
+~/.oh-my-zsh/custom/plugins
+```
+
+저 폴더에 플러그인 졸더 자체를 두면 되기 때문에 해당 폴더에 그대로 원하는 플러그인을 check-out 받는 것이 편합니다.
+
+```sh
+# 플러그인 디렉토리로 이동
+$ cd ~/.oh-my-zsh/custom/plugins
+
+# zsh-syntax-highlighting 설치
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+# zsh-autosuggestions 설치
+$ git clone https://github.com/zsh-users/zsh-autosuggestions
+```
+
+저는 위 두 개의 플러그인만을 사용합니다. (많이 쓴다고 크게 무거워지는 경우는 없었지만, 군더더기 없이 쓰고 싶어서 그렇게 했습니다.)
+
+그리고 다시 `.zshrc` 파일을 열어 `plugins=` 부분에 아래와 같이 추가해 줍니다.
+
+```properties
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+ )
+```
+
+한줄에 한개씩 넣어주면 됩니다.
+
+이렇게 하면 조금 더 보기 좋은 형태로 zsh을 사용할 수 있습니다.
+
+<br/>
+
+## 참고
+
+- https://gist.github.com/logicmd/4015090
+- https://falsy.me/iterm2-vim-zsh%EC%9D%98-syntax-highlight%EB%A5%BC-%EB%B9%84%EB%A1%AF%ED%95%9C-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EB%B0%8F-%ED%85%8C%EB%A7%88-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-for-mac-os/
