@@ -2,8 +2,8 @@
 title: "MySQL에 데이터베이스 및 사용자 추가하기"
 excerpt: "How to create database and user on MySQL"
 categories:
-  - "dev"
   - "infra"
+  - "linux"
 tag:
   - "mysql"
   - "create database"

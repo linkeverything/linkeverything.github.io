@@ -2,8 +2,8 @@
 title: "우분투 서버 원격으로 깨우기"
 excerpt: "How to set up Wake on Lan on Ubuntu Server"
 categories:
-  - "dev"
   - "infra"
+  - "linux"
 tag:
   - "ubuntu"
   - "wol"

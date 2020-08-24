@@ -2,8 +2,8 @@
 title: "여러 파일 grep 하기"
 excerpt: "How to grep multiple files"
 categories:
-  - "dev"
   - "infra"
+  - "linux"
 tag:
   - "grep"
   - "files"
