@@ -1,5 +1,5 @@
 ---
-title: "열려있는 포트 확인, 방화벽 어픈"
+title: "열려있는 포트 확인, 방화벽 오픈"
 excerpt: "check opened network ports, open inbound at firewall"
 categories:
   - "infra"
