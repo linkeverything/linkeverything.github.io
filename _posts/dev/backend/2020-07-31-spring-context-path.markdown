@@ -1,6 +1,6 @@
 ---
 title: "Springboot 에서 Context Path 설정하기"
-excerpt: "How to configure Context Path in Springboot"
+excerpt: "How to configure or change 'Context Path' in Springboot (multiple options for this setting)"
 categories:
   - "dev"
   - "backend"
