@@ -166,7 +166,7 @@ LOG LEVEL CHANGE FROM INFO TO TRACE
 
 브라우저 화면에 위와 같은 문구가 나타나며, 콘솔 창에는 다음과 같이 나타납니다.
 
-```log
+```
 [2020-08-21 17:46:17:603223][http-nio-8080-exec-1] TRACE c.s.l.controller.LogbackController - Start step TEST
 [2020-08-21 17:46:17:603225][http-nio-8080-exec-1] DEBUG c.s.l.controller.LogbackController - Start step TEST
 [2020-08-21 17:46:17:603225][http-nio-8080-exec-1] INFO  c.s.l.controller.LogbackController - Start step TEST
