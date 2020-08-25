@@ -37,15 +37,17 @@ CREATE DATABASE {db_name};
 mysql> CREATE USER '{user_name}'@'localhost' IDENTIFIED WITH mysql_native_password BY '{user_password}';
 ```
 
+저는 docker 환경에서 최신 버전으로 구동했음에도 위 명령어가 동작하지 않아 아래 명령어로 성공하였습니다. 
+{: .notice}
+
 만약 위 명령어가 제대로 동작하지 않아 에러가 나거나, MySQL 5.1, 5.5, 5.6 버전 정도라면 다음 명령어를 입력합니다. 
 
 ```sql
 mysql> CREATE USER '{user_name}'@'localhost' IDENTIFIED BY '{user_password}';
 ```
 
-> 저는 docker 환경에서 최신 버전으로 구동했음에도 위 명령어가 동작하지 않아 아래 명령어로 성공하였습니다. 
-
-> 또한 맨 마지막에 있는 `'localhost'` 부분은 해당 시스템 내에서만 접근을 허용하겠다는 의미입니다. 보안 등의 목적으로 저렇게 활용하곤 하지만, 일반적인 개발환경에서는 어디서나 접근 가능하게 하기 위해서 `'%'` 로 처리하였습니다. (이렇게 해도 id/password는 넣어야 하기 때문에 보안에 아주 취약한 것은 아닙니다.)
+맨 마지막에 있는 `'localhost'` 부분은 해당 시스템 내에서만 접근을 허용하겠다는 의미입니다. 보안 등의 목적으로 저렇게 활용하곤 하지만, 일반적인 개발환경에서는 어디서나 접근 가능하게 하기 위해서 `'%'` 로 처리하였습니다. (이렇게 해도 id/password는 넣어야 하기 때문에 보안에 아주 취약한 것은 아닙니다.)
+{: .notice--warning}
 
 #### 사용자 권한 설정
 
