@@ -22,21 +22,32 @@ last_modified_at: 2020-08-21
 
 ## Log Level 변경 방법
 
+Springboot 프로그램 구동 중에 log level 을 변경하기 위해서는 특정 라이브러리를 하나 추가하고 그 추가된 라이브러리를 이용해서 LoggerContext 객체를 얻어와, 레벨을 변경해 주어야 합니다.
+
 <br/>
 
 #### pom.xml 파일 수정
 
-logback classic 라이브러리를 사용해야 하기 때문에 다음 부분을 pom.xml 파일에 추가해 줍니다.
+신규로 추가되는 라이브버리는 logback-classic 입니다. ch.qos.logback 그룹에 있는 라이브러리입니다. 저는 maven 환경을 사용하고 있으므로 pom.xml파일을 열어 아래 내용을 추가해 줍니다.
 
 ```xml
-        <dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
-		</dependency>
+<dependency>
+	<groupId>ch.qos.logback</groupId>
+	<artifactId>logback-classic</artifactId>
+	<version>1.2.3</version>
+</dependency>
 ```
 
+버전 부분은 이 글을 보는 시점에 따라서 조금 상이할 수 있습니다. 제 프로젝트를 보시고 동일하게 적용하거나, 혹은 최신 버전이 무엇인지를 [Maven Repository 홈페이지](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic)를 통해서 확인해 보시기 바랍니다. 
+{: .notice--warning}
+
 그리고 eclipse 는 maven update 를 실행, intellij 는 maven 탭에서 update 버튼을 눌러줘서 최신화 합니다.
+
+만약 gradle 을 이용하여 프로젝트를 구성했다면 아래와 같이 입력하고 gradle 쪽 업데이트를 수행합니다. 
+
+```gradle
+testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+```
 
 <br/>
 
@@ -52,11 +63,18 @@ logback classic 라이브러리를 사용해야 하기 때문에 다음 부분�
 
 여기서는 이름 부분에 `com.simplify.logback` 이라고 패키지명을 넣어주었습니다. 그리고 이는 STDOUT 이라는 기존 생성해 두었던 appender 를 참조합니다.
 
+여기서 logback 이름에 대해서 다음 내용을 보면 알겠지만, 해당 패키지에 동일하게 적용된 모든 로거와 동일합니다. 기존에 만들어둔 logger 가 별도오 없고, 따라서 root 설정에 따라서 로깅 처리가 되고 있었기 때문에 명시적으로 하기 위해서 위와 같이 별도로 생성해 준 것입니다. 실질적으로는 동일한 로거일 것입니다. 
+{: .notice--warning}
+
 <br/>
 
 #### 테스트용 Controller 생성
 
-기존에 만들어 두었던 Controller에 다음 부분을 추가해 줍니다. 
+실행과 동시에 로그 레벨을 변경하게 처리할 수 있겠지만, 실제 환경에서를 가졍하면 외부에서 로그 레벨을 바꿔주는 작업(?) 혹은 요청이 있어야 합니다. 
+
+예를 들면 <mark style='background-color: #fff5b1'>controller 에 `RequestMapping` 을 추가하여, API 형태로 기능을 제공</mark>하거나, 아니면 <mark style='background-color: #fff5b1'>특정한 property를 바라보게 하는 `@Configuration` Bean 을 이용</mark>할 수도 있을 것입니다. (이건 향후에 더욱 자세하게 다룰 수 있도록 준비하겠습니다.) 여기서는 controller에 API 를 하나 열어주고, 이에 따라서 동작하게 하도록 간단히 구성하겠습니다.
+
+기존에 만들어 두었던, 혹은 신규로 controller class를 하나 만들어서에 다음 부분을 추가해 줍니다. 
 
 ```java
     @RequestMapping( value="/changeLogLevel/{level}" )
@@ -90,9 +108,51 @@ logback classic 라이브러리를 사용해야 하기 때문에 다음 부분�
 
 - 그러면 미리 List 에 담아두었던 **유의미한** Log level 이 맞는지를 체크한 뒤에, 로그 레벨을 변경해 줍니다.
 
-- 여기서는 `setLevel()` 이라는 함수를 이용하여 logger의 레벨을 변경해 줍니다.
+- 여기서는 `setLevel()` 이라는 함수를 이용하여 logger의 레벨을 변경해 줍니다. 변경하고 나면 기존의 log level 과 변경된 log level 을 이용하여 메시지를 return 합니다.
 
 - 만약 유의미한 log level 이 아니라면 메시지를 적절하게 만들어 사용자에게 알려줍니다.
+
+위에서 확인용으로 각 로그 레벨에 맞게 메시지를 출력하는 메소드가 있습니다. 아래와 같이 간단히 구현하여 줍니다. 
+
+```java
+    private void testPrintLog(String logMessage) {
+
+        if (logger.isTraceEnabled()) {
+            logger.trace("Start step {}", logMessage);
+        }
+
+        if (logger.isDebugEnabled()) {
+            logger.debug("Start step {}", logMessage);
+        }
+
+        if (logger.isInfoEnabled()) {
+            logger.info("Start step {}", logMessage);
+        }
+
+        if (logger.isWarnEnabled()) {
+            logger.warn("Start step {}", logMessage);
+        }
+
+        if (logger.isErrorEnabled()) {
+            logger.error("Start step {}", logMessage);
+        }
+    }
+```
+
+아직도 조금 의구심이 드는 부분은 위 내용과 같이 level 체크하는 부분입니다. `isTraceEnabled()` 를 체크하여 `trace` 로그를 남기는데, 실제로 체크하지 않아도 레벨에 따라서 남기거나 안남기거나가 결정되어 있습니다. 저런 부분을 강제로 체크하는 것이 시스템 부담을 줄여주는지는 의문입니다. 어차피 `trace()`함수 내에서도 이를 체크할 것이기 때문입니다. 혹시 더 정확하게 확인 되는 부분이 있으면 공유하겠습니다. 
+{: .notice--info}
+
+**2020. 08. 25. 추가**
+
+위 내용에서 isDebugEnabled() 등으로 체크하는 것은 logger.debug() 함수에 파라미터로 들어가는 문자열의 연산(문자합치기)에 들어가는 부하를 최소화하기 위함입니다. 
+
+```java
+logger.debug("Start step {}", logMessage)
+```
+
+위와 같은 경우, `Start step ` 문자열과 logMessage 문자열을 합쳐서 긴 문장을 우선 만들고, 그 이후에 `debug()`함수를 호출하여 문자열을 logging 합니다. 이 때에 레벨이 안맞으면 그냥 문자열은 버려지게 됩니다. 
+
+만약 레벨 체크를 하지 않으면 위에서 문자열을 합쳐 문장을 만드는 작업을 필요없는 작업임에도 발생하게 되는 부분입니다. 따라서 앞에서 로그 레벨을 체크함으로써 시스템 부하를 조금이나마 줄여주는 효과를 갖는다고 볼 수 있습니다. 
 
 <br/>
 
@@ -104,9 +164,9 @@ logback classic 라이브러리를 사용해야 하기 때문에 다음 부분�
 LOG LEVEL CHANGE FROM INFO TO TRACE
 ```
 
-화면에 위와 같은 문구가 나타나며, 콘솔 창에는 다음과 같이 나타납니다.
+브라우저 화면에 위와 같은 문구가 나타나며, 콘솔 창에는 다음과 같이 나타납니다.
 
-```sh
+```log
 [2020-08-21 17:46:17:603223][http-nio-8080-exec-1] TRACE c.s.l.controller.LogbackController - Start step TEST
 [2020-08-21 17:46:17:603225][http-nio-8080-exec-1] DEBUG c.s.l.controller.LogbackController - Start step TEST
 [2020-08-21 17:46:17:603225][http-nio-8080-exec-1] INFO  c.s.l.controller.LogbackController - Start step TEST
