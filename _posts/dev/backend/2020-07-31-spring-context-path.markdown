@@ -27,26 +27,30 @@ last_modified_at: 2020-07-31
 
 ## Property 조정으로 설정하기
 
-다른 설정들 처럼, Springboot 에서는 property 파일을 통해 이를 설정할 수 있습니다. 키 값은 `server.servlet.context-path` 입니다.
+앞서 이야기한 것 처럼, `application.properties` 파일을 수정하여 적용하는 것이 가장 효율적인 적용 방법입니다. 다른 여러가지 방법이 있고, Spring 의 기본 객체를 상속(구현)하여 적용하는 방법 역시 가능합니다. 하지만 Springboot 는 `application.properties` 파일을 통한 설정 변경을 권장하고 있고, 더욱 상세한 설정이나 `properties` 파일로 적용되지 않는 사항을 제외하고는 가급적이면 `properties` 파일을 수정하여 적용하는 것을 권장합니다.
+
+다른 설정들 처럼, Springboot 에서는 property 파일을 통해 이를 설정할 수 있습니다. 키 값은 <mark style='background-color: #ffdce0'>server.servlet.context-path</mark> 입니다.
 
 Boot 1.X 에서는 `server.context-path` 입니다.
-{: .notice-info}
+{: .notice--info}
 
 <br/>
 
 #### application.properties / yml 파일 수정
 
-해당 파일에 다음과 같이 설정을 넣어줍니다. 
+해당 파일을 열어 다음 내용을 추가해 줍니다.  
 
 ```properties
 server.servlet.context-path=/simplify
 ```
 
+스프링 프로젝트를 재실행하면 `http://localhost:8080/simplify` 를 통해서만 접속되는 것을 확인할 수 있습니다. 
+
 <br/>
 
 #### Java System property 이용
 
-물론 Java System Property 를 이용할 수도 있습니다. 이 방식을 사용하려면 context 가 초기화되기 이전에 넣우줘야 합니다.
+앞서 설명한 `application.properties` 파일을 수정하는 방법 이외에도 Java System Property(환경변수) 를 이용할 수도 있습니다. 이 방식을 사용하려면 context 가 초기화되기 이전에 넣우줘야 합니다.
 
 ```java
 public static void main(String[] args) {
