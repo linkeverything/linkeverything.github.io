@@ -36,7 +36,10 @@ Boot 1.X 에서는 `server.context-path` 입니다.
 
 <br/>
 
-#### application.properties / yml 파일 수정
+#### application.properties / yml 파일 수정하여 적용하기
+
+Sptringboot는 기본적으로 appplication.properties 를 설정 파일로 사용합니다. 그런데 application.yml 파일로 설정하는 방법도 존재합니다. 어떤 이유로 이를 변경 적용해도 아래 사항은 동일합니다. 
+{: .notice--info}
 
 해당 파일을 열어 다음 내용을 추가해 줍니다.  
 
@@ -44,13 +47,15 @@ Boot 1.X 에서는 `server.context-path` 입니다.
 server.servlet.context-path=/simplify
 ```
 
-스프링 프로젝트를 재실행하면 `http://localhost:8080/simplify` 를 통해서만 접속되는 것을 확인할 수 있습니다. 
+스프링 프로젝트를 재실행하면 `http://localhost:8080/simplify`를 통해서만 접속되는 것을 확인할 수 있습니다. 
 
 <br/>
 
-#### Java System property 이용
+#### Java System property 이용하기
 
-앞서 설명한 `application.properties` 파일을 수정하는 방법 이외에도 Java System Property(환경변수) 를 이용할 수도 있습니다. 이 방식을 사용하려면 context 가 초기화되기 이전에 넣우줘야 합니다.
+앞서 설명한 `application.properties` 파일을 수정하는 방법 이외에도 Java System Property(환경변수) 를 이용할 수도 있습니다. 이 방식을 사용하려면 context 가 초기화되기 이전에 넣어주어야 합니다.
+
+생성한 프로젝트의 시작 `class`가 되는 `{프로젝트명}Application.java` 파일을 열어 `main()` 함수를 찾습니다. 이 곳이 프로젝트 구동의 시작점이 되는 곳이므로 아래와 같은 내용을 추가해 주면 됩니다. 환경 변수를 설정하는 것인데, `java -jar`  명령어와 함께 환경 변수를 넣어주는 것과 동일한 효과를 갖습니다. (아래에 설명하고 있습니다.)
 
 ```java
 public static void main(String[] args) {
@@ -59,19 +64,21 @@ public static void main(String[] args) {
 }
 ```
 
+위 예제에서 `SplingApplication.run()` 부분이 실제 서버가 구동되기 시작하는 부분이므로 그보다 앞에 작성하여야 합니다.
+
 <br/>
 
 #### OS 환경 변수 이용
 
-Springboot 는 시스템의 환경 변수를 사용할 수도 있습니다. 
+Springboot 는 시스템의 환경 변수를 사용할 수도 있습니다. 이는 앞서 설명한 `System.setProperty()`에서 설정하는 것과 동일한 효과를 갖습니다. 원하는 형태로 변경해서 진행해도 되지만, 하나의 시스템에 여러개의 어플리케이션을 구동하는 경우에는 정상적으로 구동되지 않을 수 있습니다. (물론 포트가 다르게 구성될 테니 구동상 이슈는 없겠지만 권장하지 않습니다.)
 
-Unix 기반 시스템에서는 다음을 입력합니다.
+Unix 기반 시스템에서는 다음을 입력하여 환경 변수를 설정해 줍니다. 이 명령을 입력한 창(putty등 console창)을 닫지 않고(세션을 그대로 둔 채로) 프로그램을 구동해야 합니다.
 
 ```sh
 $ export SERVER_SERVLET_CONTEXT_PATH=/simplify
 ```
 
-윈도우 환경이라면 아래 처럼 입력합니다.
+윈도우 환경이라면 아래 처럼 입력합니다. 마찬가지로 command 창 등을 닫지 않고 프로그램을 시작해야 합니다.
 
 ```sh
 > set SERVER_SERVLET_CONTEXT_PATH=/simplify
@@ -81,7 +88,7 @@ $ export SERVER_SERVLET_CONTEXT_PATH=/simplify
 
 #### Command line 에서 설정하기
 
-Springboot 를 실행하는 명령어 상에서 argument 로 설정할 수 있습니다. 
+Springboot 를 실행하는 명령어 상에서 argument 로 설정할 수 있습니다. 실제 운영에서 이렇게 사용하기보다는 특정 상황에 따라 가변적으로 적용해야 하는 경우에만 임시로 사용하기를 권장합니다.
 
 ```sh
 $ java -jar app.jar --server.servlet.context-path=/simplify
@@ -91,7 +98,9 @@ $ java -jar app.jar --server.servlet.context-path=/simplify
 
 ## Java Config 를 이용하기
 
-Bean Factory 를 Configuration Bean 과 함께 생성하는 방법으로도 context path 를 설정할 수 있습니다. 
+Bean Factory 를 Configuration Bean 과 함께 생성하는 방법으로도 context path 를 설정할 수 있습니다. 실제로 앞서 설명한 환경 변수, 혹은 설정 파일을 이용한 방법이 내부적으로는 Configuration 을 통해서 로드됩니다. 
+
+여기서 이야기하는 Configuration을 이용하는 것은 이미 설정 파일이나 환경 변수로 로드된 것을 다시 설정하는 것으로 이해하면 됩니다.
 
 Springboot 2.X 버전에서는 아래와 같이 설정합니다.
 
