@@ -1,6 +1,6 @@
 ---
 title: "맥에서 스크린샷 파일 명 변경하기"
-excerpt: "How to change screenshot file name on mac"
+excerpt: "How to set file name for screen capture on mac (by default it was "ScreenShot" and timestamp is included)"
 categories:
   - "etc"
   - "apple"
