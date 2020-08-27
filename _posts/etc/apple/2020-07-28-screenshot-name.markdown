@@ -51,7 +51,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
 
 ## 파일명 변경하기 
 
-일반적으로 캡쳐 기능을 사용하게 되면 다음 그림과 같이 **스크린샷 YYYY-MM-DD ㅇ{오전/오후} HH.mm.ss.png** 파일로 저장됩니다. 
+일반적으로 캡쳐 기능을 사용하게 되면 다음 그림과 같이 **스크린샷 YYYY-MM-DD ㅇ{오전/오후} HH.mm.ss.png** 파일로 저장됩니다. 다량의 스크린샷을 찍을것도 아니긴 하지만, 이 부분이 거슬리거나 불편하시면 다음 방법으로 변경할 수 있습니다. 
 
 ![](/assets/images/2020-07-28-screenshot-name/old.png){: .align-center}
 
@@ -59,7 +59,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
 
 #### 파일명 변경하기
 
-이제 터미널을 띄우고, 아래 명령어를 입력하여 파일명 규칙을 변경합니다.
+스크린샷 파일의 파일명을 변경해 보도록 하겠습니다. 터미널을 띄우고, 아래 명령어를 입력하여 파일명 규칙을 변경합니다.
 
 ```sh
 $ defaults write com.apple.screencapture name {파일명};killall SystemUIServer
@@ -71,6 +71,9 @@ $ defaults write com.apple.screencapture name {파일명};killall SystemUIServer
 $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServer
 ```
 
+이 명령어는 실제로 두 개의 명령이 합쳐진 형태입니다. 세미콜론(`;`) 으로 연결된 두 개의 명령문인데, 뒤에 SystemUIServer 라는 서비스를 중지시기기 때문에 이 명령을 치고 나면 화면이 한번 깜박입니다. 윈도우에서 `explorer.exe` 서비스 중지한 것과 유사하다고 보시면 됩니다. 
+{: .notice--warning}
+
 그 결과는 다음과 같습니다.
 
 ![](/assets/images/2020-07-28-screenshot-name/new.png){: .align-center}
@@ -79,7 +82,7 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 
 #### 시간 정보 포함하지 않기
 
-캡쳐 이후 기본적으로 시간 정보가 포함되게 됩니다. 당연히 여러 파일을 캡쳐하는 경우를 생각하면 시간이 포함되어 구분이 편하게 되는 것이 좋습니다만, 원하는 경우에는 이를 표시하고 싶지 않을 수 있습니다. 
+캡쳐 이후 기본적으로 시간 정보가 포함되게 됩니다. 당연히 여러 파일을 캡쳐하는 경우를 생각하면 시간이 포함되어 구분이 편하게 되는 것이 좋습니다만, 원하는 경우에는 이를 표시하고 싶지 않을 수 있습니다. 개인적으로도 캡쳐한 순서대로 구분/정렬 되는 것이 좋아 저는 이 설정을 하지 않았습니다.
 
 다음을 입력하여 시간 정보를 제거합니다. 
 
