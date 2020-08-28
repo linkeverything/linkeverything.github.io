@@ -47,25 +47,24 @@ defaults delete com.google.Chrome NSRequiresAquaSystemAppearance
 
 1. 구글 크롬을 실행하는 바로가기가 필요합니다. 
 
-  시작 메뉴에 있든, 작업표시줄에 있든, 바탕화면에 있는 무관합니다. 대부분의 사용자들이 크롬을 `program files` 아래에서 직접 실행하지 않기 때문에 본인이 사용하는 바로가기를 찾으면 됩니다.
+   시작 메뉴에 있든, 작업표시줄에 있든, 바탕화면에 있는 무관합니다. 대부분의 사용자들이 크롬을 `program files` 아래에서 직접 실행하지 않기 때문에 본인이 사용하는 바로가기를 찾으면 됩니다.
 
 2. 바로가기를 우클릭하고 구성/환경설정 으로 이동합니다. 
 
 3. 설정 창이 나타나면 **바로가기** 항목에서 **대상** 항목을 찾습니다. 
-
   아마도 대상 항목은 `chrome.exe` 로 끝나는 어떠한 경로를 가리키고 있을 것입니다.
 
 4. 아래 내용을 삽입하여 줍니다. 기존에 `chrome.exe`로 끝나는 부분에 <mark style='background-color: #ffdce0'>추가</mark>해 줍니다.
 
-  ```
-  --disable-features=DarkMode
-  ```
+   ```
+   --disable-features=DarkMode
+   ```
 
-  결국 아래와 비슷한 형태가 됩니다.
+   결국 아래와 비슷한 형태가 됩니다.
 
-  ```
-  C:\Users\{계정 명}\AppData\Local\Google\Chrome SxS\Application\chrome.exe" --disable-features=DarkMode
-  ```
+   ```
+   C:\Users\{계정 명}\AppData\Local\Google\Chrome SxS\Application\chrome.exe" --disable-features=DarkMode
+   ```
 
 5. **적용** 및 **확인** 을 눌러 창을 닫습니다.
 
