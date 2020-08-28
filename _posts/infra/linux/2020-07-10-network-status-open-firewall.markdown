@@ -14,11 +14,24 @@ last_modified_at: 2020-07-10
 몇 번을 찾아도 자꾸 까먹게 되는 명령어들이라 메모 형태로 적어서 보관합니다. 출처의 내용에서도 알 수 있듯이, Cent-os 기반으로 작성되었으나, 대부분의 linux 기반 시스템에서 유사하게 사용할 수 있으므로 참고용으로 활용할 수 있습니다. 
 {: .notice--info}
 
+<br/>
+
+## netstat 이용하기
+
+리눅스 시스템에서 네트워크 관련사항을 확인하는 가장 보편화된 명령어는 `netstat` 명령어입니다. 기본적으로 설치되어 있지 않은 시스템도 쉽게 설치가 가능하고, 사용법 역시 간단한 편입니다.
+
+<br/>
+
 ## Check network ports
 
-TCP 중에서(t), Listening 상태인 것들만(l), 상세정보까지 포함하여(p), 10진수 숫자로 표현(n)
+netstat 명령어는 그냥 명령어만 넣어도 모든 상태들을 다 보여줍니다. 대부분의 경우에는 다음 옵션을 주어 원하는 정보만을 보여줄 수 있습니다. 
 
-```bash
+- TCP 중에서(t)
+- Listening 상태인 것들만(l)
+- 상세정보까지 포함하여(p)
+- 10진수 숫자로 표현(n)
+
+```sh
 $ netstat -tnlp
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
@@ -28,17 +41,28 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
 tcp6       0      0 :::22                   :::*                    LISTEN      -
 ```
 
-이 명령어는 Mac 에서는 정상적으로 구동되지 않습니디. 대신 아래 명령어로 확인 가능합니다.
-{: .notice--warning}
+이 명령어는 MacOS 에서는 정상적으로 구동되지 않습니디. 대신 아래 명령어로 확인 가능합니다. 혹은 -tnl 까지만 입력하면 어느 정도의 정보를 볼 수 있습니다. 
 
 ```bash
 netstat -v
 ```
 
-만약 netstat 명령어를 찾지 못한다고 나오면, **yum** 이나 **apt-get** 명령어로 설치하여 실행하세요.
+만약 netstat 명령어를 찾지 못한다고 나오면, **yum** 이나 **apt-get** 명령어로 설치하여 실행하세요. (저는 별도 설치한 것인지 잘 기억이 나지 않아 확인이 불가합니다.)
 {: .notice--info}
 
+**2020. 08. 28. 추가**
+
+MacOS 에서는 아래 명령어로 확인하는 것이 더 가독성 있게 보여주는 것으로 확인하였습니다. ([관련 글:StackOverflow](https://stackoverflow.com/questions/4421633/who-is-listening-on-a-given-tcp-port-on-mac-os-x))
+
+```sh
+lsof -iTCP -sTCP:LISTEN -n -P
+```
+
+<br/>
+
 ## target 의 포트가 열려 있는지 확인
+
+<br/>
 
 #### nc -z {hostname} {port}
 
@@ -60,6 +84,8 @@ $ nc 1xx.1xx.2xx.1xx 43
 Ncat: Connection timed out.
 ```
 
+<br/>
+
 #### telnet {hostname} {port}
 
 아래와 같이 'connected to...' 가 나타나면 정상적으로 연결된 것입니다. 
@@ -72,10 +98,14 @@ Escape character is '^]'.
 SSH-2.0-OpenSSH_7.4
 ```
 
+<br/>
+
 ## Open firewall
 
 netstat 으로 확인했을 때에 상태가 listen 으로 보여진다고 하더라도, 방화벽에서 막혀 있다면 정상적으로 접근할 수 없습니다. (가장 많이 하는 실수) 내부적으로는 localhost 로 확인해서 정상 동작하는 줄 알고 있다가 외부 시스템에서는 접근이 안되는 경우, 방화벽 문제가 아닌지를 반드시 확인해 보아야 합니다.
 {: .notice--danger}
+
+<br/>
 
 #### 방화벽에 허용 포트 추가/확인/삭제
 
@@ -103,6 +133,8 @@ firewall-cmd --reload
 firewall-cmd --permanent --zone=public --remove-port=22/tcp
 ```
 
-#### 참고 및 출처
+<br/>
+
+## 출처 및 참고자료
 
 https://suzxc2468.tistory.com/m/165
