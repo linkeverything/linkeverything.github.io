@@ -117,31 +117,38 @@ netstat 으로 확인했을 때에 상태가 listen 으로 보여진다고 하�
 
 #### 방화벽에 허용 포트 추가/확인/삭제
 
-방화벽을 다루는 것은 `firewall-cmd`를 주로 사용합니다. 아마도 이 명령어는 기본적으로 설치되어 있지 않을 것입니다. 
+방화벽을 다루는 것은 `firewall-cmd`를 주로 사용합니다. 아마도 이 명령어는 기본적으로 설치되어 있지 않을 것입니다. 아래 명령어를 입력하여 방화벽 관리 프로그램을 설치합니다. (apt 명령어 이용)
 
 ```sh
-sudo apt update && sudo apt install firewalld -y
+$ sudo apt update && sudo apt install firewalld -y
 ```
 
-아래 명령어로 포트를 열어줄 수 있습니다. 
+제대로 설치되었는지 확인합니다.
 
-```bash
-firewall-cmd --permanent --zone=public --add-port=22/tcp
+```sh
+$ sudo firewall-cmd --version
+0.4.4.5
+```
+
+이제 아래 명령어로 포트를 열어줄 수 있습니다. <mark style='background-color: #fff5b1'>public zone</mark> 에, <mark style='background-color: #fff5b1'>영구적</mark>으로, <mark style='background-color: #fff5b1'>22</mark>번 <mark style='background-color: #fff5b1'>tcp</mark> 포트를 오픈하는 명령어입니다.
+
+```sh
+$ sudo firewall-cmd --permanent --zone=public --add-port=22/tcp
 ```
 
 포트 열렸는지 확인은 다음 명령어로 합니다.
 
-```bash
-firewall-cmd --list-all
+```sh
+$ sudo firewall-cmd --list-all
 ```
 
-그리고 방화벽 정보를 바탕으로 서비스를 재시작합니다. (이 과정을 빼먹으면 서버를 재부팅하는 시점에 반영됩니다.)
+그리고 <mark style='background-color: #dcffe4'>새로 저장한 방화벽 정보를 바탕으로 서비스를 재시작</mark>합니다. (이 과정을 빼먹으면 서버를 재부팅하는 시점에 반영됩니다.)
 
 ```bash
 firewall-cmd --reload
 ```
 
-만약 추가했던 포트를 다시 닫아주려면, 즉 방화벽 규칙에서 삭제하려면 다음 명령어를 입력합니다. 
+만약 추가했던 포트를 다시 닫아주려면, 즉 방화벽 규칙에서 삭제하려면 다음 명령어를 입력합니다. 앞서 `--add-port` 를 사용했던 옵션이 `--remove-port` 로 변경해서 명령어를 사용합니다.
 
 ```bash
 firewall-cmd --permanent --zone=public --remove-port=22/tcp
