@@ -27,6 +27,8 @@ Container 환경에 대해서 학습하기 시작하면서 가장 처음 접하�
 
 기본적으로는 아미지를 생성하여 업로드하는 곳으로 docker 공식 registry 를 사용하게 됩니다. 우리가 `hub.docker.com`을 통해서 검색하고 다운로드 받는 모든 이미지들은 이 공식 registry 에 업로드되어 있습니다. 
 
+그런데, Public network를 사용할 수 없는 상황, 즉 private cloud 를 구축해서 사용하는 경우이거나, 혹은 gitlab 같은 CI/CD 를 별도로 구축해서 사용하는 경우에는 private repository 를 사용해야 하는 경우가 생기고, 이럴 때에는 구동 환경, 즉  kubernetes 가 바라보는 registry 경로를 다르게 설정해야 합니다.
+
 <br/>
   
 ## 개요
