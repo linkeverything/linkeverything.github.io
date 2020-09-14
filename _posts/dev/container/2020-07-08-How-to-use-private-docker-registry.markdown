@@ -11,13 +11,19 @@ tag:
 last_modified_at: 2020-07-08
 ---
 
-Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 사용하지 않고, 별도로 구축한 private registry 를 사용하는 방법을 설명합니다. 기본적으로 kubernetes 는 공식 registry 를 바라보도록 설정되어 있습니다.  
-  
+> Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 사용하지 않고, 별도로 구축한 private registry 를 사용하는 방법을 설명합니다. 기본적으로 kubernetes 는 공식 registry 를 바라보도록 설정되어 있습니다.  
+
+Container 환경에 대해서 학습하기 시작하면서 가장 처음 접하게 되는 것이 아마도 docker 일 것입니다. docker 는 container 환경을 이용하여 특정 프로그램 등을 구동하는 container 구동 환경 그 자체라고 할 수 있습니다. docker 를 사용하게 되면 처음으로 어떤 이미지를 다운로드 받고(pull), 이를 구동(run) 하는 실습이 흔히 이루어집니다. 
+
+조금 더 발전시켜서 진행한다면 특정 이미지에서 일부분을 수정하여 나만의 이미지를 만들게 됩니다. 다운로드 받은 이미지의 
+
+<br/>
   
 ## 개요
 
 kubernetes 에 대한 글을 적으면서 반복적으로 설명하겠지만, kubernetes 에서 동일한 역할을 하는 pod, node 등의 집합은 동일한 namespace 로 관리해야 편합니다. deployment, service 등을 생성할 때에 namespace 를 별도로 설정하지 않으면 kubernetes 에 있는 default namespace를 사용하게 됩니다. 만약 하나의 집단만을 관리할 것이라면 이렇게 설정한 채로 default namespace를 그대로 사용해도 동작에는 지장이 없겠지만, 유지보수 측면이나 다른 사람이 관리하는 것을 감안한다면 별도의 namespace를 생성해서 관리해 주는 것이 좋습니다. 
 
+<br/>
 
 #### namespace 생성
 
@@ -28,6 +34,7 @@ kubectl create namespace mynamespace
 ```
 이렇게 해서 `mynamespace`라는 이름으로 namespace를 생성해 주고, 앞으로 생성되는 모든 요소에 metadata 부분에 `namespace : mynamespace`를 추가해 줍니다.
 
+<br/>
 
 ## secret 생성
 
@@ -41,6 +48,7 @@ kubectl create namespace mynamespace
 kubectl create secret registry-credentials docker-registry-login --namespace=mynamespace --docker-server=<server-address>:<port> --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
 ```    
 
+<br/>
 
 ## yaml 파일에 적용
 
@@ -69,11 +77,13 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 
 이렇게 하면, 해당 deployment 가 생성되는 시점에 image를 가져오는 것을 해당 registry 에서 가져오게 됩니다.
 
+<br/>
 
 ## 참고
 
 아래는 참고할 만 한 내용들입니다. 
 
+<br/>
 
 #### namespace 삭제 방법
 
@@ -81,6 +91,7 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 kubectl delete namespace mynamespace
 ```
 
+<br/>
 
 #### secret 삭제 방법
 
