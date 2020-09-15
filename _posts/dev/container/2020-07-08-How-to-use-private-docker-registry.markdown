@@ -75,11 +75,24 @@ kubectl create namespace mynamespace
 kubectl create secret registry-credentials docker-registry-login --namespace=mynamespace --docker-server=<server-address>:<port> --docker-username={아이디} --docker-password={패스워드} --docker-email={이메일}
 ```    
 
+위의 명령어를 분석해보면 다음과 같습니다. 
+
+- kubectl create secret : kubernetes 의 구성요소 중 secret 을 생성
+- registry-credentials docker-registry-login : registry-credentials 라는 것으로 생성할 것인데, 이것은 docker registry 에 로그인하는 정보를 가지고 있음
+
+이제 이 생성할 secret 에 부가정보를 추가해 주는 부분입니다. 
+
+- --namespace=mynamespace : namespace 정의
+- --docker-server=\<server-address\>:\<port\> : 접속할 서버 정보(사설로 구축한 docker registry 서버 정보)
+- --docker-username={아이디} : 로그인할 아이디
+- --docker-password={패스워드} : 로그인할 패스워드
+- --docker-email={이메일} : 이메일 정보(필수값 아닐 수 있지만, 넣어줍니다.)
+
 <br/>
 
 ## yaml 파일에 적용
 
-다음으로는 kubernetes의 deployment 를 생성하는 yaml 파일을 수정합니다. 다른 부분은 별도로 수정할 필요가 없고, 아래와 같이 containers 를 설정해 주는 부분만 추가해 주면 됩니다.
+다음으로는 kubernetes의 deployment 를 생성하는 yaml(yml) 파일을 수정합니다. 이미 설정해 두었던 yaml 파일이 있다면 다른 부분은 별도로 수정할 필요가 없고, 아래와 같이 containers 를 설정해 주는 부분만 추가해 주면 됩니다.
 
 ```yaml
 
@@ -99,16 +112,25 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
         env:
 
 ...(후략)
-
 ```
+
+위에서 중요하게 보아야 하는 부분은, <mark style='background-color: #fff5b1'>imagePullSecrets</mark> 부분입니다. 만약 public registry 를 그대로 사용한다면 저 부분 자체가 없고, spec 다음에 containers 부분이 바로 나타날 것입니다만, 여기서는 private registry 를 사용하려고 하는 것이므로 위와 같이 imagePullSecrets 부분을 추가해 주고, name 부분에 앞서 생성한 secret 의 이름을 지정해 줍니다. 
 
 이렇게 하면, 해당 deployment 가 생성되는 시점에 image를 가져오는 것을 해당 registry 에서 가져오게 됩니다.
 
 <br/>
 
+## 제언
+
+이러한 방식으로 구성하면 공식 public docker registry 를 바라보지 않고, private registry 를 바라보게 변경할 수 있습니다. kubernetes 를 사용할 환경을 구성하고 나면(예를 들어, AWS 에서 EKS 인스턴스 생성), 우선 들어가서 namespace 를 생성하고, 사용할 대상이 되는 registry 에 대한 secret을 미리 생성해 두는 것도 좋아 보입니다. 
+
+물론 여기에는 istio 같은 네트워크 관련 설정들도 모두 포함하여 기반 작업을 모두 진행한 뒤에, application이 구동될 수 있도록 구성해 주는 것이 좋겠습니다. 
+
+<br/>
+
 ## 참고
 
-아래는 참고할 만 한 내용들입니다. 
+아래는 kubernetes 사용 시 참고할 만 한 내용들입니다. 명령어가 익숙하지 않은 경우를 대비에 아래와 같이 추가로 정리합니다.
 
 <br/>
 
