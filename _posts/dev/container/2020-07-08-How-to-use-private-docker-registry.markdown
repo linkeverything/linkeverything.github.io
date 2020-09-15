@@ -27,11 +27,15 @@ Container 환경에 대해서 학습하기 시작하면서 가장 처음 접하�
 
 기본적으로는 아미지를 생성하여 업로드하는 곳으로 docker 공식 registry 를 사용하게 됩니다. 우리가 `hub.docker.com`을 통해서 검색하고 다운로드 받는 모든 이미지들은 이 공식 registry 에 업로드되어 있습니다. 
 
-그런데, Public network를 사용할 수 없는 상황, 즉 private cloud 를 구축해서 사용하는 경우이거나, 혹은 gitlab 같은 CI/CD 를 별도로 구축해서 사용하는 경우에는 private repository 를 사용해야 하는 경우가 생기고, 이럴 때에는 구동 환경, 즉  kubernetes 가 바라보는 registry 경로를 다르게 설정해야 합니다.
+그런데, Public network를 사용할 수 없는 상황, 즉 private cloud 를 구축해서 사용하는 경우이거나, 혹은 gitlab 같은 CI/CD 를 별도로 구축해서 사용하는 경우에는 private repository 를 사용해야 하는 경우가 생기고, 이럴 때에는 구동 환경, 즉 kubernetes 가 바라보는 registry 경로를 다르게 설정해야 합니다.
 
 <br/>
   
 ## 개요
+
+여기서는 단순히 docker registry 를 변경하는 방법만을 다루지는 않습니다. 그 과정에 있었던 개발 과정 중, 도움이 될 만한 것들 까지도 다 정리를 해 두겠습니다. kubernetes 를 처음 사용한다면, 아래 설명에서 이야기하는 것들을 모두 docker-compose 라고 생각해도 무방할 것입니다. 다만 문법이 조금씩 상이하기 때문에 조금은 어색하게 느껴질 수도 있으니, 문법에 맞게 생각해야 합니다. 
+
+또한 docker-compose 조차도 생소하다면 이 부분에 대해서는 다른 글을 조금 검색해 보시고 오시기를 권해 드립니다. 몰라도 그만인 부분이라고 할 수 있지만, docker, container, kubernetes 를 학습하는 데 도움이 되는 부분이고 자주 사용하게 되므로 짚고 넘어가는 것이 좋습니다.
 
 kubernetes 에 대한 글을 적으면서 반복적으로 설명하겠지만, kubernetes 에서 동일한 역할을 하는 pod, node 등의 집합은 동일한 namespace 로 관리해야 편합니다. deployment, service 등을 생성할 때에 namespace 를 별도로 설정하지 않으면 kubernetes 에 있는 default namespace를 사용하게 됩니다. 만약 하나의 집단만을 관리할 것이라면 이렇게 설정한 채로 default namespace를 그대로 사용해도 동작에는 지장이 없겠지만, 유지보수 측면이나 다른 사람이 관리하는 것을 감안한다면 별도의 namespace를 생성해서 관리해 주는 것이 좋습니다. 
 
