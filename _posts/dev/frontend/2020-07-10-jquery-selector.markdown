@@ -10,7 +10,13 @@ tag:
 last_modified_at: 2020-07-10
 ---
 
-> jQuery selector 라고 하면 보통은 `#`으로 아이디를 검색하거나 `.`으로 class를 검색하는 것으로 많이 사용합니다. 그런데 조금만 더 높은 수준의 화면을 개발하려면 그에 걸맞는 selector 가 필요합니다. 여기서는 잘 모르는 사람이 많지만, 알아두면 유용한 몇 가지 selector들을 정리해서 소개합니다. 기본적인 id selector와 class selector는 소개하지 않겠습니다.
+> 개인적으로 jquery 를 사용하는 데 있어서의 가장 큰 목적은 selector 사용의 편리성이라고 생각합니다. 주관적인 판단입니다만, jquery 는 selector 부분을 아주 잘 만들어놓은 것임에 틀림 없습니다. 
+
+jQuery selector 라고 하면 보통은 `#`으로 아이디를 검색하거나 `.`으로 class를 검색하는 것으로 많이 사용합니다. 그런데 조금만 더 높은 수준의 화면을 개발하려면 그에 걸맞는 selector 가 필요합니다. 여기서는 잘 모르는 사람이 많지만, 알아두면 유용한 몇 가지 selector들을 정리해서 소개합니다. 기본적인 id selector와 class selector는 소개하지 않겠습니다.
+
+아래 설명하는 것 이외에도, 또 위에서 강조한 내용 이외에도, jquery 는 특정 element 를 **조작**하는 데 아주 편리한 기능들을 가지고 있습니다. 가장 쉬운 예로, hide(), show() 등의 함수를 이용해서 화면의 요소를 가리거나 보여주는 등의 처리를 하는 데 유용합니다. 
+
+jquery selector 를 이용하면 간단히 어떠한 객체를 **선택** 할 수 있고, 이 객체를 원하는 데로 조정할 수 있습니다. 혹시나 어떠한 과정에 있어서, 혹은 web 검색을 통해 얻은 객체가 jquery 객체가 아닌, 일반 웹 객체라면 `jquery(this)`와 같이 `jquery` 함수로 감싸면 jquery 객체가 된다는 점도 참고하세요.
 
 작성 기준일인 **2020년 7월** 현재 [jQuery 홈페이지의 selector 관련 부분](https://api.jquery.com/category/selectors/)에 올라와 있는 내용을 바탕으로 정리합니다. 
 {: .notice--info}
