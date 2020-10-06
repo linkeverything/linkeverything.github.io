@@ -1,6 +1,6 @@
 ---
 title: "Springboot 에서 logback 레벨을 구동중에 변경하는 방법"
-excerpt: "How to change log level on runtime with Springboot"
+excerpt: "How to change log level on runtime with Springboot (+slf4j default auto scanning)"
 categories:
   - "dev"
   - "backend"
