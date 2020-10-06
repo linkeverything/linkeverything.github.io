@@ -176,6 +176,46 @@ LOG LEVEL CHANGE FROM INFO TO TRACE
 
 <br/>
 
+**2020. 10. 06 추가**
+
+이 글을 적고나서 조금 꼼꼼히 보니, 위 방법은 Spring boot 의 기본 logger를 확장해서 우회하는 방식처럼 보입니다. 
+
+거의 대부분의 경우에서 lombok 라이브러리를 사용하고 있고, 따라서 `@slf4j` 를 넣어 간편하게 사용하고 있을 것이니 아래 방법도 추가로 공유합니다.
+
+slf4j 를 사용하는 경우, 아래와 같이 `application.yml` (혹은 `application.properties`)파일에 설정할 수 있습니다.
+
+```yml
+logging:
+  config: /Users/jonghunpark/logback.xml
+  level:
+    root: info
+    com.simplify: debug
+```
+
+위와 같이 logback.xml 파일을 별도의 파일, 그러니까, jar의 classpath 에 포함되는 것이 아닌 별도 파일로 지정할 수 있습니다. logback.xml 파일에는 여러가지 설정들, 즉 로그를 남기는데 필요한 여러 appender들과 그를 사용하는 logger설정들이 잇는데, 이에 대해서 다음과 같이 <mark style='background-color: #fff5b1'>AUTO SCAN</mark> 기능을 설정할 수 있습니다. 
+
+```xml
+<configuration scan="true" scanPeriod="15 seconds">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>TEST %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+```
+
+- scan : 설정 파일인 logback.xml 파일이 변경되었는지 여부를 판단하는 auto scan 기능을 사용할지 여부를 설정합니다. 
+- scanPeriod : auto scan 주기를 설정합니다. 주기를 짧게 하면 바로바로 적용이 되는 것을 확인할 수 있겠지만, 너무 자주 scan 하게 하면 disk io 가 증가해서 오히려 부담이 될 수 있으니 적절한 값으로 설정합니다.
+
+위와 같이 설정한 뒤, spring boot는 `java -jar XXX.jar` 명령어로 실행하고, 설정 파일인 외부의 logback.xml 파일에서 로그 레벨을 변경하게 되면 최대 15초 후에 설정이 적용되어 변경된 로그 레벨이 설정되게 됩니다.
+
+<br/>
+
 ## 참고자료 및 출처
 
 - https://examples.javacodegeeks.com/enterprise-java/logback/logback-change-log-level-runtime-example/
+- https://www.baeldung.com/spring-boot-changing-log-level-at-runtime
