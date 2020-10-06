@@ -1,11 +1,12 @@
 ---
 title: "서버 간 http 통신하기 - Form / JSON"
-excerpt: "How to send http request with Java(Spring) (with Form  or JSON parameter"
+excerpt: "How to send http request with Java(Spring) (with Form  or JSON parameter)"
 categories:
   - "dev"
   - "backend"
 tag:
   - "java"
+  - "HttpClient"
   - "http request"
 last_modified_at: 2020-08-07
 ---

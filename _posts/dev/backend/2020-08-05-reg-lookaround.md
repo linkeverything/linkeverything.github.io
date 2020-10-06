@@ -1,6 +1,6 @@
 ---
 title: "자바에서 정규식 사용하기 - 전방/후방 탐색"
-excerpt: "How to use regular expression with Java"
+excerpt: "How to use regular expression with Java (look-around)"
 categories:
   - "dev"
   - "backend"
@@ -10,7 +10,7 @@ tag:
 last_modified_at: 2020-08-05
 ---
 
-> 파일 권한(permission) 관리하는 좋은 방법이 있어 공유합니다. 사실 프로그램 내에서 파일의 permission을 직접 관리하는 것은 문제의 소지가 분명히 있지만, 꼭 필요한 경우들이 있어 공유해 두겠습니다.
+> 정규식은 개발 업무를 하는 데 있어서 가장 많이 사용되는 부분 중 하나입니다. 인프라를 구성하면서 설정 파일을 만들던, Backend server개발을 하면서 특정 요청들에 대해서 처리를 하던, UI에서 validation 처리를 하던 아주 많이 사용되는 기술 중 하나입니다. 여기서는 이러한 정규식을 Java에서 사용하는 것에 대해서 이야기하지만, 환경만 달라질 뿐 정규식 자체의 의미는 동일하므로 잘 활용하면 될 것 같습니다.
 
 출처에 있는 정보와 조금 상이하게 동작하는 점이 있어 정리합니다. `Java1.8` 에서 확인된 내용임을 밝힙니다.
 {: .notice--info}
@@ -188,4 +188,4 @@ I saved $5 on this order.
 
 ## 참고자료 및 출처
 
-- http://minsone.github.io/regex/regexp-lookaround
+- <http://minsone.github.io/regex/regexp-lookaround>

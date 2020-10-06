@@ -1,6 +1,6 @@
 ---
-title: "여러 파일 grep 하기"
-excerpt: "How to grep multiple files"
+title: "리눅스 환경에서 여러 파일 grep 하기(파일 내용 찾기)"
+excerpt: "How to grep multiple files on Linux based systems(Search by file contents)"
 categories:
   - "infra"
   - "linux"
