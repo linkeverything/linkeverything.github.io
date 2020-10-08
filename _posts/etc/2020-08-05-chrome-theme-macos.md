@@ -7,6 +7,7 @@ tag:
   - "chrome"
   - "theme"
 last_modified_at: 2020-08-05
+published: false
 ---
 
 > OS 들에 어두운 테마(Dark theme) 가 나오기 시작한 이후, 별도의 설정 없이 **시스템 설정에 따라** 강제로 dark theme 가 활성화되는 경우가 있습니다. Google chrome 역시 이런 프로그램 중 하나인데, 강제로 변경하는 방법을 소개합니다.
