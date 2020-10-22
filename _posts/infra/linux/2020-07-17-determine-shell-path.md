@@ -112,6 +112,6 @@ ssh -i $PEM_PATH/aaa.pem root@10.10.10.10
 ```
 
 
-## 참고자료
+## 출처 및 참고자료
 
-https://codechacha.com/ko/how-to-get-path-of-bash-script/
+- <https://codechacha.com/ko/how-to-get-path-of-bash-script/>

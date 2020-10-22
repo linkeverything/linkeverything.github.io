@@ -81,7 +81,8 @@ defaults delete com.google.Chrome NSRequiresAquaSystemAppearance
 
 <br/>
 
-## 참고
+## 출처 및 참고자료
 
-- https://medium.com/@keysoodev/macos-%ED%81%AC%EB%A1%AC-google-chrome-%EC%97%90%EC%84%9C-%EB%8B%A4%ED%81%AC%EB%AA%A8%EB%93%9C-%EA%B0%95%EC%A0%9C-%ED%95%B4%EC%A0%9C%ED%95%98%EA%B8%B0-4a08070797c7
-- https://pureinfotech.com/disable-dark-mode-google-chrome-windows-10/
+- <https://medium.com/@keysoodev/macos-크롬-google-chrome-에서-다크모드-강제-해제하기-4a08070797c7>
+
+- <https://pureinfotech.com/disable-dark-mode-google-chrome-windows-10/>

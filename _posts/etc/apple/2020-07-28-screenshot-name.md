@@ -102,6 +102,6 @@ defaults write com.apple.screencapture "include-date" 1;killall SystemUIServer
 
 <br/>
 
-## 참고
+## 출처 및 참고자료
 
-https://macread.tistory.com/3
+- <https://macread.tistory.com/3>

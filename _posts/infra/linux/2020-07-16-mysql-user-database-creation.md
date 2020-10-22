@@ -170,6 +170,6 @@ MariaDB [mysql]>
 
 <br/>
 
-#### 참고자료 및 출처
+## 출처 및 참고자료
 
-https://matomo.org/faq/how-to-install/faq_23484/
+- <https://matomo.org/faq/how-to-install/faq_23484/>

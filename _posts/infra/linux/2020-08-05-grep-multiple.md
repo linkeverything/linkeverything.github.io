@@ -136,6 +136,6 @@ find ./ -maxdepth 1 -type f -name 'server*' -exec grep -Hni Error {} \;
 
 <br/>
 
-## 참고자료 및 출처
+## 출처 및 참고자료
 
-- https://zetawiki.com/wiki/여러_파일_grep_하기_+_파일명_보기
+- <https://zetawiki.com/wiki/여러_파일_grep_하기_+_파일명_보기>

@@ -81,7 +81,8 @@ token 발급 시, 이 토큰으로 로그인한 경우에 할 수 있는 동작�
 
 <br/>
 
-## 참고
+## 출처 및 참고자료
 
-- https://support.microsoft.com/en-us/office/pop-and-imap-email-settings-for-outlook-8361e398-8af4-4e97-b147-6c6c4ac95353
-- https://pdi-mz-support.zendesk.com/hc/ko/articles/115002387172--Gmail-2%EB%8B%A8%EA%B3%84-%EC%9D%B8%EC%A6%9D-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%95%B1-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%83%9D%EC%84%B1%ED%95%98%EC%97%AC-%ED%83%80-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EB%B3%B4%EC%95%88%EC%88%98%EC%A4%80%EC%9D%B4-%EB%82%AE%EC%9D%80-%EC%95%B1-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0
+- <https://support.microsoft.com/en-us/office/pop-and-imap-email-settings-for-outlook-8361e398-8af4-4e97-b147-6c6c4ac95353>
+
+- <https://pdi-mz-support.zendesk.com/hc/ko/articles/360050293051>

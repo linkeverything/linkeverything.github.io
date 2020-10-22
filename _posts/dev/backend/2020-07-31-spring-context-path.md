@@ -142,4 +142,4 @@ public EmbeddedServletContainerCustomizer
 
 ## 참고자료 및 출처
 
-- https://www.simplify.com/spring-boot-context-path
+- <https://www.simplify.com/spring-boot-context-path>

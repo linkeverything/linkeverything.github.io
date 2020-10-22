@@ -135,6 +135,6 @@ $ docker-compose exec api node
 
 docker compose를 이용하는 경우에는 `COMPOSE_` 또는 `DOCKER_` 로 시작하거나(prefix), [`CLI Environment Variables`](https://docs.docker.com/compose/reference/envvars/)에 명시된 내용에 대해서는 환경 변수가 적용되지 않습니다. (일종의 예약어라고 보면 됩니다.)
  
-#### 참고자료 및 출처
+## 참고자료 및 출처
 
-https://docs.docker.com/compose/environment-variables/
+- <https://docs.docker.com/compose/environment-variables/>

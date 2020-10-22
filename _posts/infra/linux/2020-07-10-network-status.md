@@ -215,6 +215,6 @@ IPv6만 (TCP & UDP)
 lsof -i 6
 ```
 
-#### 참고
+## 출처 및 참고자료
 
-https://woonizzooni.tistory.com/entry/Mac-listen-%ED%8F%AC%ED%8A%B8-pid-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95-TCPUDP-%EC%84%B8%EC%85%98-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95
+- <https://woonizzooni.tistory.com/entry/Mac-listen-포트-pid-확인-방법-TCPUDP-세션-확인-방법>

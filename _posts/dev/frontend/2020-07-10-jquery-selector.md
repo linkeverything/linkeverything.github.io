@@ -97,4 +97,4 @@ attribute 를 검색 조건으로 가져가는 경우에는 다음과 같은 부
 
 ## 출처 및 참고자료
 
- https://api.jquery.com/category/selectors/
+- <https://api.jquery.com/category/selectors/>

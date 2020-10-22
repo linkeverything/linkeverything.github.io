@@ -217,5 +217,5 @@ logging:
 
 ## 참고자료 및 출처
 
-- https://examples.javacodegeeks.com/enterprise-java/logback/logback-change-log-level-runtime-example/
-- https://www.baeldung.com/spring-boot-changing-log-level-at-runtime
+- <https://examples.javacodegeeks.com/enterprise-java/logback/logback-change-log-level-runtime-example/>
+- <https://www.baeldung.com/spring-boot-changing-log-level-at-runtime>

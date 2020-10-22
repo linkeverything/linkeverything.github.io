@@ -112,4 +112,4 @@ $ svn switch --relocate svn://svnserver svn://svnserver/a_repository
 
 ## 출처 및 참고자료
 
-http://wordaligned.org/articles/one-svnserve-multiple-repositories
+- <http://wordaligned.org/articles/one-svnserve-multiple-repositories>
