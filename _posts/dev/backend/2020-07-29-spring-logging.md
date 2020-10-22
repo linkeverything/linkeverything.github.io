@@ -168,6 +168,6 @@ logback 파일에서 프로파일별로 설정을 분리하려면, 파일로 분
 
 ## 참고자료 및 출처
 
-- https://romeoh.tistory.com/entry/Spring-Boot-Logback-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
-- https://supawer0728.github.io/2018/04/07/spring-boot-logging/
-- https://dailyheumsi.tistory.com/173
+- <https://romeoh.tistory.com/entry/Spring-Boot-Logback-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0>
+- <https://supawer0728.github.io/2018/04/07/spring-boot-logging/>
+- <https://dailyheumsi.tistory.com/173>

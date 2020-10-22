@@ -273,4 +273,4 @@ Process finished with exit code 0
 
 ## 참고자료 및 출처
 
-https://www.leafcats.com/177
+- <https://www.leafcats.com/177>
