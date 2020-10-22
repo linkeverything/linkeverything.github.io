@@ -84,5 +84,4 @@ token 발급 시, 이 토큰으로 로그인한 경우에 할 수 있는 동작�
 ## 출처 및 참고자료
 
 - <https://support.microsoft.com/en-us/office/pop-and-imap-email-settings-for-outlook-8361e398-8af4-4e97-b147-6c6c4ac95353>
-
 - <https://pdi-mz-support.zendesk.com/hc/ko/articles/360050293051>

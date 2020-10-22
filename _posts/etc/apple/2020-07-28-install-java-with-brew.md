@@ -140,5 +140,4 @@ $ jenv local oracle64-10.0.2
 ## 참고자료 및 출처
 
 - <https://findstar.pe.kr/2019/01/20/install-openjdk-by-homebrew/>
-
 - <https://jojoldu.tistory.com/329>
