@@ -48,7 +48,7 @@ defaults delete com.google.Chrome NSRequiresAquaSystemAppearance
 
 1. 구글 크롬을 실행하는 바로가기가 필요합니다. 
 
-   시작 메뉴에 있든, 작업표시줄에 있든, 바탕화면에 있는 무관합니다. 대부분의 사용자들이 크롬을 `program files` 아래에서 직접 실행하지 않기 때문에 본인이 사용하는 바로가기를 찾으면 됩니다.
+  시작 메뉴에 있든, 작업표시줄에 있든, 바탕화면에 있는 무관합니다. 대부분의 사용자들이 크롬을 `program files` 아래에서 직접 실행하지 않기 때문에 본인이 사용하는 바로가기를 찾으면 됩니다.
 
 2. 바로가기를 우클릭하고 구성/환경설정 으로 이동합니다. 
 
@@ -57,15 +57,15 @@ defaults delete com.google.Chrome NSRequiresAquaSystemAppearance
 
 4. 아래 내용을 삽입하여 줍니다. 기존에 `chrome.exe`로 끝나는 부분에 <mark style='background-color: #ffdce0'>추가</mark>해 줍니다.
 
-   ```
-   --disable-features=DarkMode
-   ```
+  ```
+  --disable-features=DarkMode
+  ```
 
-   결국 아래와 비슷한 형태가 됩니다.
+  결국 아래와 비슷한 형태가 됩니다.
 
-   ```
-   C:\Users\{계정 명}\AppData\Local\Google\Chrome SxS\Application\chrome.exe" --disable-features=DarkMode
-   ```
+  ```
+  C:\Users\{계정 명}\AppData\Local\Google\Chrome SxS\Application\chrome.exe" --disable-features=DarkMode
+  ```
 
 5. **적용** 및 **확인** 을 눌러 창을 닫습니다.
 
@@ -73,9 +73,9 @@ defaults delete com.google.Chrome NSRequiresAquaSystemAppearance
 
 거꾸로 시스템이 밝은 테마인데 크롬을 다크 테마로 사용하고자 하는 경우도 있을 것입니다. 이 경우에는 위와 같이 바로가기에 대한 설정을 연 다음, `4.` 번 과정에서 아래와 같이 추가합니다.
 
-   ```
-   --force-dark-mode
-   ```
+  ```
+  --force-dark-mode
+  ```
 
 이렇게 하면 강제로 다크 모드가 동작하게 됩니다.
 
