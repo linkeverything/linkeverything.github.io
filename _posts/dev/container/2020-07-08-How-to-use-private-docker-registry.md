@@ -1,17 +1,10 @@
 ---
 title: "Kubernetes 에서 docker private registry 사용하기"
-excerpt: "How to use private docker registry on kubernetes"
-categories:
-  - "dev"
-  - "container"
-tag:
-  - "kubernetes"
-  - "docker"
-  - "private registry"
+categories: [dev, container]
+tag: [kubernetes, docker, private repository]
 last_modified_at: 2020-07-08
 ---
-
-> Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 사용하지 않고, 별도로 구축한 private registry 를 사용하는 방법을 설명합니다. 기본적으로 kubernetes 는 공식 registry 를 바라보도록 설정되어 있습니다.  
+Kubernetes 사용하는 경우, [공식 docker hub](https://hub.docker.com) 를 사용하지 않고, 별도로 구축한 private registry 를 사용하는 방법을 설명합니다. 기본적으로 kubernetes 는 공식 registry 를 바라보도록 설정되어 있습니다.  
 
 Container 환경에 대해서 학습하기 시작하면서 가장 처음 접하게 되는 것이 아마도 docker 일 것입니다. docker 는 container 환경을 이용하여 특정 프로그램 등을 구동하는 container 구동 환경 그 자체라고 할 수 있습니다. docker 를 사용하게 되면 처음으로 어떤 이미지를 다운로드 받고(pull), 이를 구동(run) 하는 실습이 흔히 이루어집니다. 
 

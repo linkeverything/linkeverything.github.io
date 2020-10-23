@@ -1,16 +1,10 @@
 ---
 title: "Springboot 에서 logback 사용하기"
-excerpt: "How to use logback in Springboot"
-categories:
-  - "dev"
-  - "backend"
-tag:
-  - "spring"
-  - "logback"
+categories: [dev, backend]
+tag: [spring, logback]
 last_modified_at: 2020-07-29
 ---
-
-> backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 중요한 부분입니다. 특별히 truble-shooting을 위한 목적이 아니라고 하더라도 시스템의 운영 층면에서 필요한 부분이므로 아래와 같이 정리합니다.
+backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 중요한 부분입니다. 특별히 truble-shooting을 위한 목적이 아니라고 하더라도 시스템의 운영 층면에서 필요한 부분이므로 아래와 같이 정리합니다.
 
 다양한 방법, 각자 선호하는 방법이 있겠지만, 여기서는 Springboot 환경에서 가장 간단하게 접근할 수 있는 logging 처리인 **logback** 에 대해서 살펴봅니다. 
 {: .notice--info}

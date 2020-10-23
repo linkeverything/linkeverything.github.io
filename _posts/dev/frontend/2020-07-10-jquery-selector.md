@@ -1,16 +1,10 @@
 ---
 title: "알아두면 유용한 jQuery selectors"
-excerpt: "Some useful jQuery selectors those are useful in development"
-categories:
-  - "dev"
-  - "frontend"
-tag:
-  - "jquery"
-  - "selector"
+categories: [dev, frontend]
+tag: [jquery, selector]
 last_modified_at: 2020-07-10
 ---
-
-> 개인적으로 jquery 를 사용하는 데 있어서의 가장 큰 목적은 selector 사용의 편리성이라고 생각합니다. 주관적인 판단입니다만, jquery 는 selector 부분을 아주 잘 만들어놓은 것임에 틀림 없습니다. 
+개인적으로 jquery 를 사용하는 데 있어서의 가장 큰 목적은 selector 사용의 편리성이라고 생각합니다. 주관적인 판단입니다만, jquery 는 selector 부분을 아주 잘 만들어놓은 것임에 틀림 없습니다. 
 
 jQuery selector 라고 하면 보통은 `#`으로 아이디를 검색하거나 `.`으로 class를 검색하는 것으로 많이 사용합니다. 그런데 조금만 더 높은 수준의 화면을 개발하려면 그에 걸맞는 selector 가 필요합니다. 여기서는 잘 모르는 사람이 많지만, 알아두면 유용한 몇 가지 selector들을 정리해서 소개합니다. 기본적인 id selector와 class selector는 소개하지 않겠습니다.
 

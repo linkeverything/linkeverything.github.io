@@ -1,16 +1,10 @@
 ---
 title: "Java에서 원격 서버에 명령 실행하기"
-excerpt: "How to run command on remote server"
-categories:
-  - "dev"
-  - "backend"
-tag:
-  - "java"
-  - "remote command"
+categories: [dev, backend]
+tag: [java, remote command]
 last_modified_at: 2020-07-20
 ---
-
-> Java 에서 원격 서버 명령어를 실행하는 데에는 apache-commons 에 있는 라이브러리를 사용하면 편리합니다. maven / gradle 환경에서 apache-commons 을 빈번하게 사용하기 때문에 그대로 사용하면 됩니다.
+Java 에서 원격 서버 명령어를 실행하는 데에는 apache-commons 에 있는 라이브러리를 사용하면 편리합니다. maven / gradle 환경에서 apache-commons 을 빈번하게 사용하기 때문에 그대로 사용하면 됩니다.
 
 Backend, 즉 서버측 프로그래밍을 하는데, 어떤 이유로든, 서버의 명령어를 직접 실행하는 것은 지양해야 하는 기능입니다. 하나의 서버 프로그램이 동작하는 데 있어서 서버의 특정 명령어를 그 자체로 실행하는 것은 흔치 않을 뿐 아니라 <mark style='background-color: #ffdce0'>보안</mark> 측면에서도 매우 위험한 기능이라고 할 수 있습니다. 따라서 가급적이면 서버 측의 여러 부분을 직접 다루는 프로그램을 별도로 구성하고, 이 프로그램에 <mark style='background-color: #ffdce0'>요청(request)</mark> 하여 그 프로그램만이 그 기능을 수행하도록 한정하는 것이 좋습니다. 가급적이면 보안적인 측면을 잘 고려하여 문제가 없도록 구성하기 바랍니다.
 
