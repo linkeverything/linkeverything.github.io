@@ -1,6 +1,6 @@
 ---
 title: "MacOS/Windows 환경에서 크롬 테마설정 강제하기"
-
+excerpt: "How to force dark/light theme setting on MacOS and Windows (currently not in settings page)"
 categories:
   - "etc"
 tag:
