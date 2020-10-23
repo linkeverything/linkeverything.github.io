@@ -1,13 +1,7 @@
 ---
 title: "Springboot 에서 logback 레벨을 구동중에 변경하는 방법"
-
-categories:
-  - "dev"
-  - "backend"
-tag:
-  - "spring"
-  - "logback"
-  - "runtime"
+categories: [dev, backend]
+tag: [spring, logback, runtime]
 last_modified_at: 2020-08-21
 ---
 
