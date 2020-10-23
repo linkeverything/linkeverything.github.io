@@ -4,7 +4,7 @@ categories: [dev, container]
 tag: [docker, environment, variable]
 last_modified_at: 2020-07-16
 ---
-Docker container에서 환경변수를 활용하는 방법에 대해서 설명합니다. 현재 시점 기준으로 하여 [`docker documentation`](https://docs.docker.com/compose/environment-variables/)에 명시된 사항들을 대상으로 합니다. 다양한 방법을 소개하나, 각 인프라 환경에 맞게 취사선택하여 활용하는 것을 권장합니다.
+Docker container에서 환경변수를 활용하는 방법에 대해서 설명합니다. 현재 시점 기준으로 하여 [docker documentation](https://docs.docker.com/compose/environment-variables/)에 명시된 사항들을 대상으로 합니다. 다양한 방법을 소개하나, 각 인프라 환경에 맞게 취사선택하여 활용하는 것을 권장합니다.
 
 #### 기본 사용방법
 
