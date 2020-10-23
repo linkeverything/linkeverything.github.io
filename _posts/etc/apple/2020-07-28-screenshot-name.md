@@ -1,16 +1,10 @@
 ---
 title: "맥에서 스크린샷 파일 명 변경하기"
-excerpt: "How to set file name for screen capture on mac (by default it was 'ScreenShot' and timestamp is included)"
-categories:
-  - "etc"
-  - "apple"
-tag:
-  - "screenshot"
-  - "com.apple.screencapture"
+categories: [etc, apple]
+tag: [screenshot, com.apple.screencapture]
 last_modified_at: 2020-07-28
 ---
-
-> 화면을 캡쳐하는 동작은 업무를 막론하고 자주 있는 것 같습니다. 브라우저 내에서 화면의 내용을 캡쳐하는 것은 브라우저의 확장 프로그램을 사용하는 것이 편리할 수 있지만, PC내 전반에 걸친 캡쳐 기능도 상황에 따라서 유용하게 사용됩니다.
+화면을 캡쳐하는 동작은 업무를 막론하고 자주 있는 것 같습니다. 브라우저 내에서 화면의 내용을 캡쳐하는 것은 브라우저의 확장 프로그램을 사용하는 것이 편리할 수 있지만, PC내 전반에 걸친 캡쳐 기능도 상황에 따라서 유용하게 사용됩니다.
 
 윈도우에서는 `printscreen` key 를 눌러서 전체 화면을 캡쳐하거나, `alt` + `printscreen` 으로 현재 포커스가 되어있는 창을 캡쳐합니다. 다양한 방법도 있고 프로그램들도 있지만 기본 기능을 이용해도 충분합니다. 
 
