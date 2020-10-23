@@ -5,7 +5,6 @@ tag: [network, port, open firewall]
 last_modified_at: 2020-07-10
 ---
 몇 번을 찾아도 자꾸 까먹게 되는 명령어들이라 메모 형태로 적어서 보관합니다. 출처의 내용에서도 알 수 있듯이, Cent-os 기반으로 작성되었으나, 대부분의 linux 기반 시스템에서 유사하게 사용할 수 있으므로 참고용으로 활용할 수 있습니다. 
-{: .notice--info}
 
 <br/>
 
