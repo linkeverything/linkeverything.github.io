@@ -1,16 +1,10 @@
 ---
 title: "실행하는 쉘 파일에서 경로 얻기"
-excerpt: "How to determine directory path in shell file"
-categories:
-  - "infra"
-  - "linux"
-tag:
-  - "dirname"
-  - "shell path"
+categories: [infra, linux]
+tag: [dirname, shell path]
 last_modified_at: 2020-07-17
 ---
-
-> linux 환경에서 개발을 진행하다 보면 편의를 위해서든, 프로그램 구동을 위해서든 다양한 이유로 shell을 접하게 됩니다. 아래 예시와 같은 상황에서 어떻게 shell 파일의 path를 알아내고 이를 활용할 수 있는지 찾아보았고, 잘 정리된 내용이 있어 메모 용도로 작성해 둡니다. 
+linux 환경에서 개발을 진행하다 보면 편의를 위해서든, 프로그램 구동을 위해서든 다양한 이유로 shell을 접하게 됩니다. 아래 예시와 같은 상황에서 어떻게 shell 파일의 path를 알아내고 이를 활용할 수 있는지 찾아보았고, 잘 정리된 내용이 있어 메모 용도로 작성해 둡니다. 
 
 ## 상황
 

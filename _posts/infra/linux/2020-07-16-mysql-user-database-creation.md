@@ -1,16 +1,9 @@
 ---
 title: "MySQL에 데이터베이스 및 사용자 추가하기"
-excerpt: "How to create database and user on MySQL"
-categories:
-  - "infra"
-  - "linux"
-tag:
-  - "mysql"
-  - "create database"
-  - "create user"
+categories: [infra, linux]
+tag: [mysql, create database, create user]
 last_modified_at: 2020-07-16
 ---
-
 MySQL(mariadb) 에서 데이터베이스 생성, 사용자 생성 방법에 대해서 자꾸 잊어버려서, 백업 목적으로 작성해 둡니다. 다양한 mysql client 프로그램(Heidi SQL, Sequel Pro 등)을 이용하여 데이터베이스나 사용자를 생성해도 되지만, 쿼리문을 활용하는 것이 더욱 직관적이고 군더더기 없이 생성되는 것 같아 가급적이면 아래처럼 명령어를 활용하는 편입니다. 
 
 > 당연히, <mark style='background-color: #ffdce0'>root 사용자에 대한 접속 정보</mark>를 알아야 합니다. 더욱 정확하게는 데이터베이스 및 사용자를 추가할 수 있는 권한이 있는 사용자를 하나 알고 있어야 합니다. 

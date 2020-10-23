@@ -1,17 +1,10 @@
 ---
 title: "우분투 서버 원격으로 깨우기"
-excerpt: "How to set up Wake on Lan on Ubuntu Server"
-categories:
-  - "infra"
-  - "linux"
-tag:
-  - "ubuntu"
-  - "wol"
-  - "wake on lan"
+categories: [infra, linux]
+tag: [ubuntu, wol, wake on lan]
 last_modified_at: 2020-07-24
 ---
-
-> 윈도우와 마찬가지로 우분투 역시 WOL을 지원합니다. WOL은 원격지에서 Magic Packet 이라는 특정 패킷을 전송해서 Lan 카드를 통해 전원을 켜는 것을 말하는데, 전제 조건은 하드웨어 중 네트워크 카드가 이를 지원해야 합니다. (근래에 나온 거의 대부분의 랜카드가 이를 지원합니다.) 또한 BIOS 셋업에서도 이 설정을 On 으로 해 주어야 한다는 점 꼭 인지하고 진행하셔야 합니다.
+윈도우와 마찬가지로 우분투 역시 WOL을 지원합니다. WOL은 원격지에서 Magic Packet 이라는 특정 패킷을 전송해서 Lan 카드를 통해 전원을 켜는 것을 말하는데, 전제 조건은 하드웨어 중 네트워크 카드가 이를 지원해야 합니다. (근래에 나온 거의 대부분의 랜카드가 이를 지원합니다.) 또한 BIOS 셋업에서도 이 설정을 On 으로 해 주어야 한다는 점 꼭 인지하고 진행하셔야 합니다.
 
 Ubuntu 20.04 LTS 버전에서 테스트하고 확인한 내용입니다.
 

@@ -1,16 +1,10 @@
 ---
 title: "리눅스 환경에서 여러 파일 grep 하기(파일 내용 찾기)"
-excerpt: "How to grep multiple files on Linux based systems(Search by file contents)"
-categories:
-  - "infra"
-  - "linux"
-tag:
-  - "grep"
-  - "files"
+categories: [infra, linux]
+tag: [grep, files]
 last_modified_at: 2020-08-05
 ---
-
-> 개발을 하다 보면 특정 문자열이 포함된 파일을 찾게 되는 경우가 더러 있습니다. 개발했던 파일들 - 예를 들어 `.java`, `.properties`, `.xml`, `.json` 등 - 은 결국 다 text 파일들이고, 따라서 문자열 검색을 할 수 있습니다. class 파일이나 pptx 파일 등과 같이 텍스트 형태가 아닌 컴파일된 파일들은 문자열 검색이 용이 하지 않으나, 개발 대상 파일들은 문자열 검색이 가능하고 편리합니다.
+개발을 하다 보면 특정 문자열이 포함된 파일을 찾게 되는 경우가 더러 있습니다. 개발했던 파일들 - 예를 들어 `.java`, `.properties`, `.xml`, `.json` 등 - 은 결국 다 text 파일들이고, 따라서 문자열 검색을 할 수 있습니다. class 파일이나 pptx 파일 등과 같이 텍스트 형태가 아닌 컴파일된 파일들은 문자열 검색이 용이 하지 않으나, 개발 대상 파일들은 문자열 검색이 가능하고 편리합니다.
 
 <br/>
 

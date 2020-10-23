@@ -1,16 +1,10 @@
 ---
 title: "하나의 svnserve로 여러 repository 구동하기"
-excerpt: "One svnserve, multiple repositories"
-categories:
-  - "infra"
-  - "svn"
-tag:
-  - "svn"
-  - "multiple repositories"
+categories: [infra, svn]
+tag: [svn, multiple repositories]
 last_modified_at: 2020-07-20
 ---
-
-> linux 환경에서 여러 svn 서버를 구동하는 경우에, 각 repository 별로 svnserve 명령어를 실행하는 것은 귀찮은 일입니다. 그럼에도 불구하고 각각 실행하는 것이 편리한 경우도 있습니다. 예를 들어 각 repository 를 재실행 할 때에 다른 repository 는 여전히 사용 가능했으면 한다거나 하는 등의 경우입니다.
+linux 환경에서 여러 svn 서버를 구동하는 경우에, 각 repository 별로 svnserve 명령어를 실행하는 것은 귀찮은 일입니다. 그럼에도 불구하고 각각 실행하는 것이 편리한 경우도 있습니다. 예를 들어 각 repository 를 재실행 할 때에 다른 repository 는 여전히 사용 가능했으면 한다거나 하는 등의 경우입니다.
 
 그럼에도 불구하고 하나의 명령으로 실행하고자 하는 이유는, svn server 가 그렇게 자주 껏다 켰다를 반복하는 대상도 아닐 뿐더러, 서버를 내리고 올리는 데 시간이 과거만큼 많이 걸리지 않는다는 점도 있습니다.
 

@@ -1,16 +1,11 @@
 ---
 title: "MacOS/Windows 환경에서 크롬 테마설정 강제하기"
-excerpt: "How to force dark/light theme setting on MacOS and Windows (currently not in settings page)"
-categories:
-  - "etc"
-tag:
-  - "chrome"
-  - "theme"
+categories: [etc]
+tag: [chrome, theme]
 last_modified_at: 2020-08-05
 published: false
 ---
-
-> OS 들에 어두운 테마(Dark theme) 가 나오기 시작한 이후, 별도의 설정 없이 **시스템 설정에 따라** 강제로 dark theme 가 활성화되는 경우가 있습니다. Google chrome 역시 이런 프로그램 중 하나인데, 강제로 변경하는 방법을 소개합니다.
+OS 들에 어두운 테마(Dark theme) 가 나오기 시작한 이후, 별도의 설정 없이 **시스템 설정에 따라** 강제로 dark theme 가 활성화되는 경우가 있습니다. Google chrome 역시 이런 프로그램 중 하나인데, 강제로 변경하는 방법을 소개합니다.
 
 저 역시 다크 모드를 사용하고 있고, 눈에 피로감을 덜 준다는 점에서 환영하는 상황이지만, 경우에 따라서는 굉장히 불편할 수 있습니다. 특히나 제대로 구현되지 않은 웹 페이지 등은 다크 모드에서 오히려 내용이 잘 보이지 않고, 브라우저 자체 기능으로 즐겨찾기 등 설정하는 경우에도 검정색 아이콘들은 잘 보이지 않는 등 문제가 좀 있을 수 있습니다. 
 

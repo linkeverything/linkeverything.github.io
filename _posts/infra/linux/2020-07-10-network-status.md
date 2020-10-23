@@ -1,16 +1,10 @@
 ---
 title: "사용중인 네트워크 정보(port), pid 확인"
-excerpt: "list-up listening ports and pids on Mac"
-categories:
-  - "infra"
-  - "linux"
-tag:
-  - "network"
-  - "port"
+categories: [infra, linux]
+tag: [network, port]
 last_modified_at: 2020-07-10
 published: false
 ---
-
 이 내용은 상당 부분이 linux 의 환경에서와 동일합니다. mac의 terminal 에서 사용하는 기능(명령어) 들이 거의 linux(ubuntu) 에서의 명령어들이니까요. 참고용으로만 봐주시고 혹시 잘못된 내용은 댓글 달아주세요. 
 {: .notice--info}
 
