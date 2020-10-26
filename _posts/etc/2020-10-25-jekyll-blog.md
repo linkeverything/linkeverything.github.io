@@ -83,7 +83,7 @@ public class Test{
 }
 ```
 
-이렇게 `` ``` `` 세 개를 적고, 그 위에 formatting 이 필요한 언어를 적으면 아래와 같이 Code highlighting이 됩니다.
+이렇게 `` ` `` 세 개를 적고, 그 위에 formatting 이 필요한 언어를 적으면 아래와 같이 Code highlighting이 됩니다.
 
 ```java
 public class Test{
