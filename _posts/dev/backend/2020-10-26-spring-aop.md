@@ -11,6 +11,8 @@ published: false
 
 이렇게 <mark style='background-color: #dcffe4'>Annotation을 통해 공통의 기능들을 개발하여 중복을 최소화하고, 개발 편의성을 도모</mark>하는 것이 AOP(Aspect Object Programming) 의 시작입니다.
 
+[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/com.simplify.api){:target="_blank" .btn .btn--primary}
+
 <br/>
 
 ## AOP?
@@ -49,6 +51,8 @@ AOP는 이러한 공통 부분을 뽑아 모듈화하고, 주 로직(기능)에�
 
 #### Spring AOP?
 
+스프링에서의 AOP는 접근 제어, 부가기능을 추가하기 위해서 프록시 패턴 기반의 AOP구현체를 사용한다는 것이 특징입니다. 당연하게도 Spring Bean 에만 AOP를 적용하는 것이 가능하며, AOP 자체의 모든 기능을 제공하는 것이 아니라 IoC와 연동하여 기능 개선을 하는 데 목적이 있다고 볼 수 있습니다. (차용한 내용)
+
 <br/>
 
 ## Spring Boot 에서 AOP 구현하기
@@ -57,17 +61,69 @@ AOP는 이러한 공통 부분을 뽑아 모듈화하고, 주 로직(기능)에�
 
 #### library
 
+Spring Boot 에서 AOP를 사용하려면 spring-boot-starter-aop 라이브러리가 필요합니다. 이를 위해 아래 코드를 pom.xml 이나 build.gradle에 추가합니다.
+
+**pom.xml**
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+    <version>2.3.4.RELEASE</version>
+</dependency>
+
+```
+**build.gradle**
+```gradle
+compile 'org.springframework.boot:spring-boot-starter-aop'
+```
+
+2020.10.28 현재 Springboot 의 최신 버전인 2.3.4.RELEASE 에서는 해당 라이브러리가 포함되어 있기 때문에 별도로 라이브러리를 추가해줄 필요가 없습니다.
+{: .notice--warning}
+
 <br/>
 
 #### @EnableAspectJAutoProxy
+
+Springboot의 Application.java 파일 맨 앞에 @EnableAspectJAutoProxy 를 붙여 줍니다. 이 annotation은 AOP 기능을 사용하겠다는 의미로 사용됩니다. 
+
+2020.10.28 현재 Springboot 의 최신 버전인 2.3.4.RELEASE 에서는 [Stackoverflow 에서 가이드](https://stackoverflow.com/questions/48625149/spring-aop-works-without-enableaspectjautoproxy) 한 것 처럼 이 annotation을 추가하지 않습니다.
+{: .notice--warning}
 
 <br/>
 
 ## 샘플 구현하기
 
+여기서는 참고자료에 있는 금칙어 체크 로직을 넣어 구현하도록 하겠습니다. 설명 순서만 다를 뿐 해당 샘플을 그대로 차용했다는 점을 미리 말씀드립니다. 아래 순서대로 하셔도 좋고 출처에 있는 자료를 활용해도 됩니다.
+
 <br/>
 
 #### @Aspect / @interface 생성
+
+이제 @Aspect와 @interface를 생성하겠습니다. 아래 사즌처럼 package를 구성하고 interface 를 아래와 같이 생성합니다.
+
+![](/assets/images/2020-10-26-spring-aop/capture%202020-10-28%20PM%202.22.59.png)
+
+```java
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ForbiddenWordCheck {
+    String param() default "paramsPost.content";
+    Class<?> checkClazz() default ParamsPost.class;
+}
+```
+
+interface 앞에 `@` 가 있는 것이 특징입니다. 그 앞에 다음의 내용이 있습니다. 
+
+- `@Target` : 어떤 부분에 대해서 annotation이 감지하여 동작할지를 결정합니다. 여기서는 `ElementType.METHOD` 라고 주어 method 에 대해서 AOP 기능을 적용하는 것으로 정의하였습니다. 필요에 따라서는 다른 타입으로 지정할 수 있으며, 여러 개를 지정하여 여러 타입에 대해서도 적용이 가능합니다.
+
+- `@Retention(RetentionPolicy.RUNTIME)` : annotation의 생명주기에 관한 내용입니다. 여기서와 같이 RUNTIME 을 지정하면 실행중인 동안에 정보를 가져갈 수 있다는 것을 의미합니다.
+
+- `@interface` : interface앞에 `@`를 붙여 annotation 임을 의미합니다.
+
+- `String param() default "paramsPost.content";` : 
+
+- `Class<?> checkClazz() default ParamsPost.class;` : 
+
 
 <br/>
 
@@ -82,5 +138,6 @@ AOP는 이러한 공통 부분을 뽑아 모듈화하고, 주 로직(기능)에�
 ## 참고자료 및 출처
 
 - <https://engkimbs.tistory.com/746>
+- <https://daddyprogrammer.org/post/11356/springboot2-forbidden-word-by-aop-annotation/>
 - <https://jeong-pro.tistory.com/171>
 - <https://stackoverflow.com/questions/48625149/spring-aop-works-without-enableaspectjautoproxy>
