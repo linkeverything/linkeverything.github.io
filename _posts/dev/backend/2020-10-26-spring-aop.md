@@ -3,7 +3,6 @@ title: "Springboot 에서 Custom Annotation 활용하기 (AOP, Aspect Object Pro
 categories: [dev, backend]
 tag: [spring, aop, annotation]
 last_modified_at: 2020-10-26
-published: false
 ---
 일반적인 Java Programming 을 하다가, Spring Framework, Spring Boot 를 사용하여 개발을 진행하면, 가장 크게 다가오는 것이 Annotation이라고 할 수 있습니다. 현재는 다양한 분야에서 이 Annotation을 이용하여 여러 기능들을 구현하게 하고 있어, 흔한 일들이 되었지만, Spring이 처음 개발/배포되던 때만 하더라도 꽤나 신기한 부분이었다고 말할 수 있습니다. 
 
@@ -97,7 +96,7 @@ Springboot의 Application.java 파일 맨 앞에 @EnableAspectJAutoProxy 를 붙
 
 <br/>
 
-#### @Aspect / @interface 생성
+#### @interface 생성
 
 이제 @Aspect와 @interface를 생성하겠습니다. 아래 사즌처럼 package를 구성하고 interface 를 아래와 같이 생성합니다.
 
@@ -120,18 +119,166 @@ interface 앞에 `@` 가 있는 것이 특징입니다. 그 앞에 다음의 내
 
 - `@interface` : interface앞에 `@`를 붙여 annotation 임을 의미합니다.
 
-- `String param() default "paramsPost.content";` : 
+아래 두 부분은 실재 Aspect class에서 사용하게 될 부분으로서, 이 예시에 걸맞게 설정된 것입니다. ParamsPost 는 게시판에 글을 남기는 것을 염두에 둔 객체로서 아래 그 내용을 첨부합니다. (출처의 다른 예제에서 이어지는 내용이라, 상세한 내용이 필요하시면 [출처](https://daddyprogrammer.org/post/11356/springboot2-forbidden-word-by-aop-annotation/)를 참고하시기 바랍니다.)
 
-- `Class<?> checkClazz() default ParamsPost.class;` : 
+- `String param() default "paramsPost.content";` : 대상이 되는 method의 parameter 중에 paramsPost 라는 이름의 객체에서 content 항목을 뽑아내는 것을 기본으로 하는 param() 함수를 의미합니다.
 
+  만약, 이 부분이 객체가 아닌 파라미터, 예를 들어 String 파라미터에 대해서 param() 함수가 동작하게 하려면 `@ForbiddenWordCheck(param="{파라미터명}")` 형태로 넣으면 됩니다.
+
+- `Class<?> checkClazz() default ParamsPost.class;` : 체크할 대상이 되는 클래스 정보를 넣어둡니다. 아래 부분에서 설명하겠지만 객체에 대해서 안전한 처리를 하는 대신 파라미터를 고정적으로 사용한다면 안적어도 될 것 같습니다(확장성을 고려한다면 넣어주는 것이 좋습니다).
+
+```java
+@Getter
+@Setter
+@NoArgsConstructor
+public class ParamsPost {
+
+    @NotEmpty
+    @Size(min=2, max=50)
+    @ApiModelProperty(value = "작성자명", required = true)
+    private String author;
+
+    @NotEmpty
+    @Size(min=2, max=100)
+    @ApiModelProperty(value = "제목", required = true)
+    private String title;
+
+    @Size(min=2, max=500)
+    @ApiModelProperty(value = "내용", required = true)
+    private String content;
+}
+```
+
+<br/>
+
+#### @Aspect 생성
+
+아래와 같이 `@Aspect` annotation을 가진 ForbiddenWordCheckAspect 클래스를 생성합니다.
+
+```java
+@Slf4j
+@Aspect
+@Component
+public class ForbiddenWordCheckAspect {
+
+    @Before(value = "@annotation(forbiddenWordCheck)")
+    public void forbiddenWordCheck(JoinPoint joinPoint, ForbiddenWordCheck forbiddenWordCheck) throws Throwable {
+
+        log.debug(this.getClass().getSimpleName() + " - forbiddenWordCheck()");
+
+        String[] param = forbiddenWordCheck.param().split("\\.");
+        String paramName;
+        String fieldName = "";
+        if (param.length == 2) {
+            paramName = param[0];
+            fieldName = param[1];
+        } else {
+            paramName = forbiddenWordCheck.param();
+        }
+
+        Integer parameterIdx = getParameterIdx(joinPoint, paramName);
+        if (parameterIdx == -1) {
+            throw new IllegalArgumentException();
+        }
+
+        String checkWord;
+        if (StringUtils.isNotEmpty(fieldName)) {
+            Class<?> clazz = forbiddenWordCheck.checkClazz();
+            Field field = clazz.getDeclaredField(fieldName);
+            field.setAccessible(true);
+            checkWord = (String) field.get(joinPoint.getArgs()[parameterIdx]);
+        }else{
+            checkWord = (String) joinPoint.getArgs()[parameterIdx];
+        }
+
+        checkForbiddenWord(checkWord);
+    }
+
+    private Integer getParameterIdx(JoinPoint joinPoint, String paramName) {
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        String[] parameterNames = methodSignature.getParameterNames();
+        for (int i = 0; i < parameterNames.length; i++) {
+            String pName = parameterNames[i];
+            if (pName.equals(paramName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void checkForbiddenWord(String content) {
+        List<String> forbiddenWords = Arrays.asList("개새끼", "쌍년", "씨발");
+        Optional<String> forbiddenWord = forbiddenWords.stream().filter(content::contains).findFirst();
+        if (forbiddenWord.isPresent()) {
+
+            log.debug(this.getClass().getSimpleName() + " " + forbiddenWord.get());
+
+            throw new CForbiddenWordException(forbiddenWord.get());
+        }
+    }
+```
+
+이 부분에 대한 상세 설명은 다음과 같습니다. 
+
+1. forbiddenWordCheck 이라는 annotation이 들어오면, param() 함수를 통해 <mark style='background-color: #fff5b1'>앞서 지정했던 것 처럼 paramsPost.content</mark> 라는 것을 뽑아냅니다. 그리고 그 것을 `.` 으로 split 합니다. 
+
+2. 그 결과로 나온 개수를 확인합니다. 2개라면 `클래스명.필드명` 형태라고 가정하고 각각을 변수에 넣고, 1개라면 String이라고 가정하고 param() 의 결과를 그대로 변수에 넣습니다. 
+   
+3. paramName 이라는 변수, 즉 파라미터 이름으로 되어있는 것을 이용해서 몇 번째 파라미터인지를 확인합니다. (getParameterIdx()) 이 과정에서 index를 구하지 못하면 <mark style='background-color: #ffdce0'>exception 을 발생</mark>시킵니다.
+
+4. 해당 파라미터를 객체에서 뽑아냅니다. 그 과정에서 JointPoint 에서 앞서 구한 index가 사용됩니다. 만약 객체형이 아니라면 그냥 JointPoint 에서 뽑아내면 됩니다.
+
+5. 금칙어가 포함되어 있는지 확인하고 포함되어 있다면 <mark style='background-color: #ffdce0'>exception 을 발생</mark>시킵니다.
+
+이 과정에서 발생시킨 exception은 아래 후처리 부분에서 exception handling하여 처리합니다.
 
 <br/>
 
 #### Service에 반영
 
+이제 이러한 기능(금칙어 확인)에 대하여 Service에 반영합니다. service에 반영하는 것에 대해서도 여러 의견이 있지만, service 혹인 controller 에 대해서 프로젝트 상황에 맞는 곳에 지정하면 됩니다. 
+
+```java
+...
+
+    @ForbiddenWordCheck
+    public Post writePost(String uid, String boardName, ParamsPost paramsPost){
+
+...
+```
+
+`@ForbiddenWordCheck` annotation을 원하는 <mark style='background-color: #fff5b1'>method</mark> 앞에 선언하면 그 처리는 완료됩니다.
+
 <br/>
 
 #### 후처리
+
+`@Aspect` 에서는 특정한 return을 하기가 매우 껄끄러운 상황이고 문제가 없다면 패스 하는 형태가 될 것입니다. 따라서, 문제가 있을 때에는 오류를 return 하는 것이 아니라 exception을 throw 하는 형태로 구현해야 합니다. 
+
+```java
+@RequiredArgsConstructor
+@RestControllerAdvice
+public class ExceptionAdvice {
+
+    // 생략...
+
+    @ExceptionHandler(CForbiddenWordException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public CommonResult forbiddenWordException(HttpServletRequest request, CForbiddenWordException e) {
+        return responseService.getFailResult(Integer.valueOf(getMessage("forbiddenWord.code")), getMessage("forbiddenWord.msg", new Object[]{e.getMessage()}));
+    }
+
+    // 생략...
+}
+```
+
+미리 구현해 두었던 ExceptionAdvice에 해당 Exception을 handle하는 코드를 넣어 마무리합니다.
+
+<br/>
+
+## 결론 및 활용
+
+실제 구현을 해보면 구현 당시에는 class, field 등에 대한 충분한 이해와 함께 JointPoint를 어떻게 활용하는지에 대한 문제, 그리고 Exception 처리에 대한 부분까지 모두를 신경쓰게 되어 고려할 부분이 많아지고 개발양이 많은 것처럼 보이지만, 기능 API들이 많아지고 동일 처리를 반복적으로 이루어지는 경우에는 한번 만들어둔 AOP기능을 이용하여 annotation만 추가하면 되므로 개발이 편리해 집니다. 또한 기능상에 변경점이 있는 경우에는 Aspect만 수정하면 되어 관리도 편해집니다.
 
 <br/>
 
