@@ -3,7 +3,7 @@ title: "리눅스 환경에서의 파일 및 디렉토리 권한(permissions)에
 categories: [infra, linux]
 tag: [file, permission]
 last_modified_at: 2020-10-28
-published: false
+published: true
 ---
 이번에는 일반적인 서버 환경에서의 권한(permission)에 대한 이야기를 해 볼까 합니다. 리눅스 계열의 서버 환경에서 파일 permission에 대한 부분은 아주 중요한 부분입니다. 개인용 PC용 OS인 Windows 와 MacOS 에서는 이 권한에 대한 부분을 크게 신경쓰지 않고 사용하게 되는데, 이처럼 화면이 있는 OS의 경우 복수의 사용자가 동시에 접근하여 프로그램을 실행하는 것이 불가능한 상태이고, 따라서 현재 구동되는 프로그램은 화면에 보이는 그 사용자가 됩니다. 이렇게 되면 실행하는 모든 프로그램(화면이 있는 것이든 background에서 실행되는 서비스 형태이든)들은 모두 내가 실행 권한이 있거나 없거나가 결정되어 있는 상태입니다. 
 
