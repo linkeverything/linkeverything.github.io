@@ -99,9 +99,58 @@ umask 값은 777에서 권한을 뺀 값입니다. 다시 말하면 777에서 um
 
 - 디렉토리에 대한 기본 permission은 777이고, 파일에 대한 기본 권한은 666입니다.
 
+더욱 정확하게 이야기하자면 기본 permission이 파일은 666, 디렉토리는 777이라고 보면 됩니다(그러니 위 설명에서처럼 111을 빼라고 하는 것입니다). 이렇게 되어있는 기본 permission에 umask 값을 빼면 그 것이 기본 permission이 됩니다.
+
+<br/>
+
+## MacOS에서는?
+
+서버 환경에서는 `/etc/bashrc` 파일이나 `/etc/profile` 에 아래와 같이 설정되어 있을 것입니다. 
+
+```sh
+umash 022
+```
+
+그러나 MacOS 에서는 이 값이 보이지 않습니다. 
+
+맥에서는 다음과 같이 설정할 수 있습니다. 
+
+<br/>
+
+#### 사용자 앱의 umask
+
+관리자로 로그인한 뒤 터미널에 다음 명령을 입력하여 nnn을 027 또는 002와 같은 umask 값으로 대체합니다. 이 명령은 열려 있는 모든 앱에 대해 사용자의 umask를 설정합니다. 여기에는 명령어 라인에서 접근하는 앱과 이러한 앱이 생성하는 새 파일도 포함됩니다. 이 명령을 입력한 후 Mac을 재시동해야 할 수 있습니다. 
+
+```sh
+sudo launchctl config user umask nnn
+```
+
+터미널이 '구성을 쓸 수 없음: 해당 파일 또는 디렉토리 없음'이라고 응답하는 경우 시동 디스크에 /private/var/db/com.apple.xpc.launchd/config 폴더가 있는지 확인합니다. 구성 폴더가 없는 경우 다음 명령을 입력하여 구성 폴더를 생성한 후 다시 시도합니다.
+
+```sh
+sudo mkdir -m 755 /private/var/db/com.apple.xpc.launchd/config
+```
+
+<br/>
+
+#### 시스템 프로세스의 umask
+
+관리자로 로그인한 뒤 터미널에 다음 명령을 입력하여 nnn을 027 또는 002와 같은 umask 값으로 대체합니다. 이 명령은 시스템 컨텍스트에서 실행되는 모든 데몬에 대해 사용자의 umask를 설정합니다. 시스템 소프트웨어에서 사용하는 파일의 권한이 변경될 수 있기 때문에 이 작업은 전혀 권장되지 않습니다. 권한이 너무 제한적이면 소프트웨어가 작동하지 않을 수 있으며, 권한이 너무 개방되어 있으면 보안 문제가 발생할 수 있습니다. 이 명령을 입력한 후 Mac을 재시동해야 할 수 있습니다. 
+
+```sh
+sudo launchctl config system umask nnn
+```
+
+터미널이 '구성을 쓸 수 없음: 해당 파일 또는 디렉토리 없음'이라고 응답하는 경우 시동 디스크에 /private/var/db/com.apple.xpc.launchd/config 폴더가 있는지 확인합니다. 구성 폴더가 없는 경우 다음 명령을 입력하여 구성 폴더를 생성한 후 다시 시도합니다.
+
+```sh
+sudo mkdir -m 755 /private/var/db/com.apple.xpc.launchd/config
+```
+
 <br/>
 
 ## 출처 및 참고자료
 
 - <https://lift2k.tistory.com/entry/Permission-리눅스유닉스의-퍼미션접근제어접근권한>
 - <https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html>
+- <https://support.apple.com/ko-kr/HT201684>
