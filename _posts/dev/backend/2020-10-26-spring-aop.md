@@ -218,7 +218,36 @@ public class ForbiddenWordCheckAspect {
     }
 ```
 
-이 부분에 대한 상세 설명은 다음과 같습니다. 
+위에서 보면 `@Before(value = "@annotation(forbiddenWordCheck)")` 를 통해서 <mark style='background-color: #fff5b1'>@forbiddenWordCheck 라는 annotation 앞에서 이 처리가 이루어짐</mark>을 정의한 것을 볼 수 있습니다.[^1]
+
+[^1]: 이러한 표현식을 pointcut expression 이라고 하며, 다음과 같이 사용할 수 있습니다. 
+
+    |Pointcut|JoinPoints|
+    |--------|----------|
+    |execution(public * *(..))|public 메소드 실행|
+    |execution(* set*(..))|이름이 set으로 시작하는 모든 메소드명 실행|
+    |execution(* set*(..))|이름이 set으로 시작하는 모든 메소드명 실행|
+    |execution(* com.xyz.service.AccountService.*(..))|AccountService 인터페이스의 모든 메소드 실행|
+    |execution(* com.xyz.service.*.*(..))|service 패키지의 모든 메소드 실행|
+    |execution(* com.xyz.service..*.*(..))|service 패키지와 하위 패키지의 모든 메소드 실행|
+    |within(com.xyz.service.*)|service 패키지 내의 모든 결합점 (클래스 포함)|
+    |within(com.xyz.service..*)|service 패키지 및 하위 패키지의 모든 결합점 (클래스 포함)|
+    |this(com.xyz.service.AccountService)|AccountService 인터페이스를 구현하는 프록시 개체의 모든 결합점|
+    |target(com.xyz.service.AccountService)|AccountService 인터페이스를 구현하는 대상 객체의 모든 결합점|
+    |args(java.io.Serializable)|하나의 파라미터를 갖고 전달된 인자가 Serializable인 모든 결합점|
+    |@target(org.springframework.transaction.annotation.Transactional)|대상 객체가 @Transactional 어노테이션을 갖는 모든 결합점|
+    |@within(org.springframework.transaction.annotation.Transactional)|대상 객체의 선언 타입이 @Transactional 어노테이션을 갖는 모든 결합점|
+    |@annotation(org.springframework.transaction.annotation.Transactional)|실행 메소드가 @Transactional 어노테이션을 갖는 모든 결합점|
+    |@args(com.xyz.security.Classified)|단일 파라미터를 받고, 전달된 인자 타입이 @Classified 어노테이션을 갖는 모든 결합점|
+    |bean(accountRepository)|“accountRepository” 빈|
+    |!bean(accountRepository)|“accountRepository” 빈을 제외한 모든 빈|
+    |bean(*)|모든 빈|
+    |bean(account*)|이름이 'account'로 시작되는 모든 빈|
+    |bean(*Repository)|이름이 “Repository”로 끝나는 모든 빈|
+    |bean(accounting/*)|이름이 “accounting/“로 시작하는 모든 빈|
+    |bean(*dataSource) \|\| bean(*DataSource)|이름이 “dataSource” 나 “DataSource” 으로 끝나는 모든 빈|
+
+각 부분에 대한 상세 설명은 다음과 같습니다. 
 
 1. forbiddenWordCheck 이라는 annotation이 들어오면, param() 함수를 통해 <mark style='background-color: #fff5b1'>앞서 지정했던 것 처럼 paramsPost.content</mark> 라는 것을 뽑아냅니다. 그리고 그 것을 `.` 으로 split 합니다. 
 
@@ -226,7 +255,7 @@ public class ForbiddenWordCheckAspect {
    
 3. paramName 이라는 변수, 즉 파라미터 이름으로 되어있는 것을 이용해서 몇 번째 파라미터인지를 확인합니다. (getParameterIdx()) 이 과정에서 index를 구하지 못하면 <mark style='background-color: #ffdce0'>exception 을 발생</mark>시킵니다.
 
-4. 해당 파라미터를 객체에서 뽑아냅니다. 그 과정에서 JointPoint 에서 앞서 구한 index가 사용됩니다. 만약 객체형이 아니라면 그냥 JointPoint 에서 뽑아내면 됩니다.
+4. 해당 파라미터를 객체에서 뽑아냅니다. 그 과정에서 JoinPoints 에서 앞서 구한 index가 사용됩니다. 만약 객체형이 아니라면 그냥 JoinPoints 에서 뽑아내면 됩니다.
 
 5. 금칙어가 포함되어 있는지 확인하고 포함되어 있다면 <mark style='background-color: #ffdce0'>exception 을 발생</mark>시킵니다.
 
@@ -278,7 +307,7 @@ public class ExceptionAdvice {
 
 ## 결론 및 활용
 
-실제 구현을 해보면 구현 당시에는 class, field 등에 대한 충분한 이해와 함께 JointPoint를 어떻게 활용하는지에 대한 문제, 그리고 Exception 처리에 대한 부분까지 모두를 신경쓰게 되어 고려할 부분이 많아지고 개발양이 많은 것처럼 보이지만, 기능 API들이 많아지고 동일 처리를 반복적으로 이루어지는 경우에는 한번 만들어둔 AOP기능을 이용하여 annotation만 추가하면 되므로 개발이 편리해 집니다. 또한 기능상에 변경점이 있는 경우에는 Aspect만 수정하면 되어 관리도 편해집니다.
+실제 구현을 해보면 구현 당시에는 class, field 등에 대한 충분한 이해와 함께 JoinPoints를 어떻게 활용하는지에 대한 문제, 그리고 Exception 처리에 대한 부분까지 모두를 신경쓰게 되어 고려할 부분이 많아지고 개발양이 많은 것처럼 보이지만, 기능 API들이 많아지고 동일 처리를 반복적으로 이루어지는 경우에는 한번 만들어둔 AOP기능을 이용하여 annotation만 추가하면 되므로 개발이 편리해 집니다. 또한 기능상에 변경점이 있는 경우에는 Aspect만 수정하면 되어 관리도 편해집니다.
 
 <br/>
 
