@@ -28,7 +28,7 @@ published: false
 
 <br/>
 
-#### 환경 변수 설정하기
+#### PATH에 추가하기
 
 <br/>
 
