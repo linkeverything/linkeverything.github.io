@@ -245,7 +245,7 @@ public class ForbiddenWordCheckAspect {
     |bean(account*)|이름이 'account'로 시작되는 모든 빈|
     |bean(*Repository)|이름이 "Repository"로 끝나는 모든 빈|
     |bean(accounting/*)|이름이 "accounting/"로 시작하는 모든 빈|
-    |bean(*dataSource) 또는 bean(*DataSource)|이름이 "dataSource" 나 "DataSource" 으로 끝나는 모든 빈|
+    |bean(&ast;dataSource) 또는 bean(&ast;DataSource)|이름이 "dataSource" 나 "DataSource" 으로 끝나는 모든 빈|
 
 각 부분에 대한 상세 설명은 다음과 같습니다. 
 
