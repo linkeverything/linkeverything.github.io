@@ -109,9 +109,13 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 <br/>
 
-## MacOS - Homebrew 이용하기
+## MacOS - Homebrew 이용하기[^7]
 
+homebrew 를 사용한다면 다음 명령어로 손쉽게 설치가 가능합니다. 제 기억에 homebrew를 이용해서 설치하면 자동으로 `PATH`에도 잡아주기 때문에 여러모로 편리합니다. 
 
+```sh
+brew install android-platform-tools
+```
 
 <br/>
 
@@ -131,3 +135,5 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 [^5]: 프로그램이 설치되면서 자동으로 설정되는 경우도 있으므로, 이 부분이 생략 가능한지는 해당 설정화면에서 확인하고 진행하시기 바랍니다.
 
 [^6]: 명령어 우선순위를 주려면 스크린샷처럼 아래가 아닌, 맨 위에 주는 것이 맞을 겁니다. 그렇지만 명령어가 겹칠 일이 거의 없다는 가정으로 맨 아래에 추가하였습니다.
+
+[^7]: homebrew 설치법에 대해서는 [제 티스토리블로그](https://4urdev.tistory.com/112)에 정리해 두었습니다.
