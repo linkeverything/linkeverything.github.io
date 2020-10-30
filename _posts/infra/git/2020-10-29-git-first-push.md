@@ -2,8 +2,7 @@
 title: "git 처름 사용하기(2fa 인증 관련사항 포함)"
 categories: [infra, git]
 tag: [git, personal access token]
-last_modified_at: 2020-07-20
-published: false
+last_modified_at: 2020-10-29
 ---
 Git이나 SVN을 처음 접하고, 개발을 진행할 때에는 회사에서 단순히 '개발자' 였기 때문에 별다른 어려움 없이 매일 같은 명령어만 사용해 왔습니다. 그러던 중 신규로 repository를 생성해야 할 일이 발생하였는데, 아무렇지 않게 가져다가 사용하던 repository들이, 직접 설정하여 사용하려고 하니 꽤나 어려움이 있었습니다. 
 
