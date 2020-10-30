@@ -1,5 +1,5 @@
 ---
-title: "git 처름 사용하기(2fa 인증 관련사항 포함)"
+title: "Local 개발환경 git에 연결하기(2fa 인증 관련사항 포함)"
 categories: [infra, git]
 tag: [git, personal access token]
 last_modified_at: 2020-10-29
