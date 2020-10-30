@@ -48,21 +48,15 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 
 ## adb 다운로드
 
-<br/>
-
-## Windows
+다운로드는 Windows나 MacOS나 동일합니다. 공식 홈페이지의 [다운로드 페이지](https://developer.android.com/studio/releases/platform-tools?hl=ko)에서 각 플랫폼에 맞는 버전을 다운로드 합니다. 다운로드를 시작하면 약관 동의를 하게 하고, 설치 프로그램이 다운로드 됩니다. 어느 일반적인 프로그램들 처럼 실행하고 설치하면 됩니다.
 
 <br/>
 
-#### 환경 변수 설정하기
+#### (Windows) 환경 변수 설정하기
 
 <br/>
 
-## MacOS
-
-<br/>
-
-#### PATH에 추가하기
+#### (MacOS) PATH에 추가하기
 
 <br/>
 
@@ -79,4 +73,4 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 
 [^2]: Software Development Kit, 개발도구
 
-[^3]: 맥 OS 의 경우, ~/Library/Android/sdk 경로에, Windows 의 경우 c:\Users\{사용자명}\AppData\Local\Android\Sdk 경로가 기본값입니다.
+[^3]: 맥 OS 의 경우, ~/Library/Android/sdk 경로에, Windows 의 경우 c:\Users\\{사용자명}\AppData\Local\Android\Sdk 경로가 기본값입니다.
