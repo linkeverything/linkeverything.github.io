@@ -1,7 +1,7 @@
 ---
-title: "Springboot 에서 logback 레벨을 구동중에 변경하는 방법"
-categories: [dev, backend]
-tag: [spring, logback, runtime]
+title: "Spring Boot 에서 logback 레벨을 구동중에 변경하는 방법"
+categories: [Spring Boot]
+tag: [spring boot, logback, runtime]
 last_modified_at: 2020-08-21
 ---
 여기서는 앞선 포스트에서 살펴본 logback 기능에 대해서 log level을 실시간으로 변경하는 방법에 대해서 작성하겠습니다. 시스템을 개발하는 중에는 로그 레벨을 변경하고 빌드하면 그만이고, 이를 설정값 등으로 조정하면 되겠지만, 운영중인 시스템에서 로그 레벨을 부득이하게 변경해야 한다면 이 방법이 도움이 될 수 있습니다.

@@ -1,7 +1,7 @@
 ---
 title: "카카오톡 로그인 구현하기 - (2) Spring 샘플 구현"
-categories: [dev, backend]
-tag: [spring, kakao login]
+categories: [Spring Boot]
+tag: [spring boot, kakao login]
 last_modified_at: 2020-07-23
 ---
 웹이든 앱이든 서비스를 개발하는 데 있어서 SSO(Single Sign On) 의 필요성이 계속 화두가 되는 것 같습니다. 이제 **기존 시스템** 이라는 것이 거의 다 있게 마련이고, 따라서 기존에 사용하던 로그인정보를 그대로 유지해 달라고 하거나, 더 나아가서 session 도 유지해 달라는 요구사항이 더러 있습니다. 다양한 방식의 SSO 를 구현할 수 있고, 프로그램도 많이 있지만, B2C 서비스에서 필수라고 할 수 있는 카카오 계정 로그인 방식에 대해서 설명해 보고자 합니다. 

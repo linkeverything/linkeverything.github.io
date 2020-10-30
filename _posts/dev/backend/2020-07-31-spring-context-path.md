@@ -1,7 +1,7 @@
 ---
-title: "Springboot 에서 Context Path 설정하기"
-categories: [dev, backend]
-tag: [spring, context path]
+title: "Spring Boot 에서 Context Path 설정하기"
+categories: [Spring Boot]
+tag: [spring boot, context path]
 last_modified_at: 2020-07-31
 ---
 Springboot 에서는 default context path 를 **/** 로 설정합니다. 대부분의 웹서버, WAS, 혹은 Springboot 의 내장 서버 역시 다 root 를 기본으로 가지고 있습니다. 즉, 로컬 개발 시 **http://localhost:8080/** 과 같은 주소가 되는 것입니다. 그리고 각 `controller` 에서 설정한 Request Mapping 정보에 따라서 그 하위로 경로가 생성됩니다. 

@@ -1,6 +1,6 @@
 ---
 title: "Java에서 원격 서버에 명령 실행하기"
-categories: [dev, backend]
+categories: [Java]
 tag: [java, remote command]
 last_modified_at: 2020-07-20
 ---

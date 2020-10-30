@@ -1,7 +1,7 @@
 ---
-title: "Springboot 에서 logback 사용하기"
-categories: [dev, backend]
-tag: [spring, logback]
+title: "Spring Boot 에서 logback 사용하기"
+categories: [Spring Boot]
+tag: [spring boot, logback]
 last_modified_at: 2020-07-29
 ---
 backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 중요한 부분입니다. 특별히 truble-shooting을 위한 목적이 아니라고 하더라도 시스템의 운영 층면에서 필요한 부분이므로 아래와 같이 정리합니다.
