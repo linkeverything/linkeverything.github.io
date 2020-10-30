@@ -48,11 +48,42 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 
 ## adb 다운로드
 
-다운로드는 Windows나 MacOS나 동일합니다. 공식 홈페이지의 [다운로드 페이지](https://developer.android.com/studio/releases/platform-tools?hl=ko)에서 각 플랫폼에 맞는 버전을 다운로드 합니다. 다운로드를 시작하면 약관 동의를 하게 하고, 설치 프로그램이 다운로드 됩니다. 어느 일반적인 프로그램들 처럼 실행하고 설치하면 됩니다.
+다운로드는 Windows나 MacOS나 동일합니다. 공식 홈페이지의 [다운로드 페이지](https://developer.android.com/studio/releases/platform-tools?hl=ko)에서 각 플랫폼에 맞는 버전을 다운로드 합니다. 다운로드를 시작하면 약관 동의를 하게 하고, 설치 프로그램이 다운로드 됩니다. 어느 일반적인 프로그램들 처럼 실행하고 설치하면 됩니다.[^4]
+
+![](/assets/images/2020-10-29-install-adb/capture 2020-10-30 PM 05.53.57.png)
 
 <br/>
 
 #### (Windows) 환경 변수 설정하기
+
+Windows 에서 환경 변수 설정을 하는 것은 `cmd`창, 그러니까 `명령 프롬프트`에서 자유롭게 adb 명령어를 사용하기 위함입니다.[^5]
+
+1. 우선 제어판 > 시스템에 진입합니다. (win키를 눌러 시작 메뉴가 올라온 상태에서 '제어판'을 입력하면 됩니다) 그리고 고급 시스템 설정을 누릅니다. 
+    ![](/assets/images/2020-10-29-install-adb/win1.png)
+
+2. 아래 버튼 중 '환경 변수'를 누릅니다. 
+
+    ![](/assets/images/2020-10-29-install-adb/win2.png)
+
+3. 위 아래 두 개의 영역 중에서 아래쪽에 '시스템 변수'부분에서 새로만들기를 클릭합니다. 
+
+    ![](/assets/images/2020-10-29-install-adb/win3.png)
+
+4. 새로만들기 창이 나타나면 아래와 같이 입력합니다. <mark style='background-color: #ffdce0'>여기서 변수 값 이라고 되어 있는 부분에는 본인이 설치한 SDK 위치를 입력</mark>해 줍니다. 만약 기본 설정 그대로 다음, 다음을 눌러 진행했다면 `c:\Users\\{사용자명}\AppData\Local\Android\Sdk\platform-tools` 가 될 것입니다. '확인'을 눌러 빠져나옵니다. 
+
+    ![](/assets/images/2020-10-29-install-adb/win4.png)
+
+5. 이제 '시스템 변수' 영역에서 Path 라는 값을 찾습니다(99.99%확률로 있습니다. 만약 없다면 만들어주면 되지만, 잘 찾아보세요.) 그리고 '편집'을 눌러줍니다.
+
+    ![](/assets/images/2020-10-29-install-adb/win5.png)
+
+6. `Path` 변수에 대한 편집 창이 나타나면 아래 그림과 같이 아까 설정한 변수의 앞, 뒤에 `%`를 붙여서 추가해 줍니다.[^6]
+
+    ![](/assets/images/2020-10-29-install-adb/win6.png)
+
+7. '확인' 버튼을 계속 눌러 빠져나옵니다. 
+
+이제 '명령 프롬프트'를 실행하고 adb 를 입력해 봅니다. 명령어가 주르륵 나오면 정상 설치된 것입니다. 
 
 <br/>
 
@@ -74,3 +105,9 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 [^2]: Software Development Kit, 개발도구
 
 [^3]: 맥 OS 의 경우, ~/Library/Android/sdk 경로에, Windows 의 경우 c:\Users\\{사용자명}\AppData\Local\Android\Sdk 경로가 기본값입니다.
+
+[^4]: 설치 방법은 따로 설명하지 않습니다. 그냥 다음, 다음만 눌러도 설치가 잘 됩니다.
+
+[^5]: 프로그램이 설치되면서 자동으로 설정되는 경우도 있으므로, 이 부분이 생략 가능한지는 해당 설정화면에서 확인하고 진행하시기 바랍니다.
+
+[^6]: 명령어 우선순위를 주려면 스크린샷처럼 아래가 아닌, 맨 위에 주는 것이 맞을 겁니다. 그렇지만 명령어가 겹칠 일이 거의 없다는 가정으로 맨 아래에 추가하였습니다.
