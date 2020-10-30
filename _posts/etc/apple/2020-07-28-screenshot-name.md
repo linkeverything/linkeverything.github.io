@@ -1,6 +1,6 @@
 ---
 title: "맥에서 스크린샷 파일 명 변경하기"
-categories: [etc, apple]
+categories: [Mac]
 tag: [screenshot, com.apple.screencapture]
 last_modified_at: 2020-07-28
 ---

@@ -1,6 +1,6 @@
 ---
 title: "알아두면 유용한 jQuery selectors"
-categories: [dev, frontend]
+categories: [JQuery]
 tag: [jquery, selector]
 last_modified_at: 2020-07-10
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Windows, MacOS 에 adb 설치하기"
-categories: [etc]
+categories: [Etc]
 tag: [adb]
 last_modified_at: 2020-10-29
 published: false

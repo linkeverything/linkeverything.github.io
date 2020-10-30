@@ -1,7 +1,7 @@
 ---
-title: "Springboot 에서 Custom Annotation 활용하기 (AOP, Aspect Object Programming)"
-categories: [dev, backend]
-tag: [spring, aop, annotation]
+title: "Spring Boot 에서 Custom Annotation 활용하기 (AOP, Aspect Object Programming)"
+categories: [Spring Boot]
+tag: [spring boot, aop, annotation]
 last_modified_at: 2020-10-26
 ---
 일반적인 Java Programming 을 하다가, Spring Framework, Spring Boot 를 사용하여 개발을 진행하면, 가장 크게 다가오는 것이 Annotation이라고 할 수 있습니다. 현재는 다양한 분야에서 이 Annotation을 이용하여 여러 기능들을 구현하게 하고 있어, 흔한 일들이 되었지만, Spring이 처음 개발/배포되던 때만 하더라도 꽤나 신기한 부분이었다고 말할 수 있습니다. 

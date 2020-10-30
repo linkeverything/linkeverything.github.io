@@ -1,6 +1,6 @@
 ---
 title: "Homebrew 를 이용한 Java 설치 및 관리"
-categories: [dev, infra]
+categories: [Mac]
 tag: [homebrew, java, jenv]
 last_modified_at: 2020-07-28
 ---

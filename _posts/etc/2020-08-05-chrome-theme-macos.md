@@ -1,6 +1,6 @@
 ---
 title: "MacOS/Windows 환경에서 크롬 테마설정 강제하기"
-categories: [etc]
+categories: [Etc]
 tag: [chrome, theme]
 last_modified_at: 2020-08-05
 published: false

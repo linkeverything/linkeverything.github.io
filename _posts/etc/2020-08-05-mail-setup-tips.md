@@ -1,6 +1,6 @@
 ---
 title: "이메일 설정 시 팁 모음 - 2FA 인증 포함"
-categories: [etc]
+categories: [Etc]
 tag: [email, tips]
 last_modified_at: 2020-08-05
 ---

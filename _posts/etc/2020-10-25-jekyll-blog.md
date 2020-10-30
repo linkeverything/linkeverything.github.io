@@ -1,6 +1,6 @@
 ---
 title: "GitHub pages 에 jekyll 로 블로그 만들기 (블로그 장단점 비교)"
-categories: [etc]
+categories: [Etc]
 tag: [blog, jekyll, github]
 last_modified_at: 2020-10-25
 ---

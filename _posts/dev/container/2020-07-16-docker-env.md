@@ -1,6 +1,6 @@
 ---
 title: "Docker 에 환경변수 관리하기"
-categories: [dev, container]
+categories: [Container]
 tag: [docker, environment, variable]
 last_modified_at: 2020-07-16
 ---
