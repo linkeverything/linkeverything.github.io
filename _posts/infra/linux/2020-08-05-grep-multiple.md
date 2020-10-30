@@ -1,6 +1,6 @@
 ---
 title: "리눅스 환경에서 여러 파일 grep 하기(파일 내용 찾기)"
-categories: [infra, linux]
+categories: [Linux]
 tag: [grep, files]
 last_modified_at: 2020-08-05
 ---

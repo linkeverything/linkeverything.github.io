@@ -1,6 +1,6 @@
 ---
 title: "사용중인 네트워크 정보(port), pid 확인"
-categories: [infra, linux]
+categories: [Linux]
 tag: [network, port]
 last_modified_at: 2020-07-10
 published: false

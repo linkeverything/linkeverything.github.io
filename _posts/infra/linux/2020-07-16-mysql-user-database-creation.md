@@ -1,6 +1,6 @@
 ---
 title: "MySQL에 데이터베이스 및 사용자 추가하기"
-categories: [infra, linux]
+categories: [Linux]
 tag: [mysql, create database, create user]
 last_modified_at: 2020-07-16
 ---
