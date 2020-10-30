@@ -83,15 +83,35 @@ Windows 에서 환경 변수 설정을 하는 것은 `cmd`창, 그러니까 `명
 
 7. '확인' 버튼을 계속 눌러 빠져나옵니다. 
 
-이제 '명령 프롬프트'를 실행하고 adb 를 입력해 봅니다. 명령어가 주르륵 나오면 정상 설치된 것입니다. 
+이제 '명령 프롬프트'를 실행하고 `adb --version` 를 입력해 봅니다. 명령어가 주르륵 나오면 정상 설치된 것입니다. 
 
 <br/>
 
 #### (MacOS) PATH에 추가하기
 
+맥에서의 방법은 Linux 계열과 동일합니다. 저는 .zshrc 파일에 수정하게 되겠지만 .bash_profile 등 적절한 파일에 추가해 주면 됩니다. 
+
+우선 sdk 가 설치된 폴더의 경로를 알아냅니다. 설치 과정에서 지정하여 주었을 수 있고 지정하지 않았다면 아마도 아래와 같은 경로에 설치되어 있을 것입니다. 
+
+![](/assets/images/2020-10-29-install-adb/capture 2020-10-30 PM 06.35.42.png)
+
+그러면 본인의 상황에 맞게(저의 경우 .zshrc) 파일을 수정해 주면 됩니다. 아래 그림처럼 PATH에 해당 경로를 추가해주는 식으로 넣어주면 됩니다. 
+
+```
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+```
+
+![](/assets/images/2020-10-29-install-adb/capture 2020-10-30 PM 06.37.28.png)
+
+다시 해당 파일을 로드하고 `adb --version` 명령어를 입력하여 제대로 설정되었는지를 확인합니다. 
+
+![](/assets/images/2020-10-29-install-adb/capture 2020-10-30 PM 06.43.10.png)
+
 <br/>
 
 ## MacOS - Homebrew 이용하기
+
+
 
 <br/>
 
