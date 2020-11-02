@@ -129,8 +129,70 @@ $ jenv local oracle64-10.0.2
 
 <br/>
 
+## jdk를 풀어서 사용하기
+
+Linux 계열 특성 상 명령어를 그대로 압축해서 들고다녀도 충분히 사용할 수 있을 것 같아 찾아본 자료입니다. 아래 최종 `Contents/Home` 폴더를 압축해서 옮기면 그대로 사용할 수 있습니다. `/` 아래에 프로그램이 마구잡이로 설치되는 것을 방지할 수 있지만 현재는 크게 권장하지는 않습니다(잘 아는 고급 사용자용 옵션입니다).
+
+1. Oracle 홈페이지에서 정식 dmg 파일을 다운로드 받습니다.
+   
+   Download the installer .dmg files. They contain the good stuff.
+   
+2. `.dmg`파일을 마운트하고 `.pkg`파일을 작업할 공간으로 복사합니다.
+   
+   Mount the .dmg and copy the .pkg file to somewhere
+
+3. 터미널을 열고 `.pkg`파일을 복사한 곳으로 이동합니다.
+   
+   Open a terminal and cd to the folder you copied the .pkg file into
+
+4. 다음 명령어를 입력합니다. `.pkg`파일이 압축 해제되어 하위 폴더가 생성됩니다.
+
+   ```sh
+   pkgutil --expand JDK\ 7\ Update\ 60.pkg JDK7u60
+   ```
+   
+   pkgutil --expand JDK\ 7\ Update\ 60.pkg JDK7u60 - extract pkg file to folder
+
+5. 압축이 해제된 폴더로 이동합니다.
+
+   ```sh
+   cd JDK7u60/
+   ```
+
+   cd JDK7u60/ - move to the extracted pkg
+
+6. `pkg`로 끝나는 폴더가 하나 더 있을 것입니다. 그 곳으로 이동합니다.
+   
+   ```sh
+   cd jdk17060.pkg/
+   ```
+   
+   cd jdk17060.pkg/ - there's a folder with the version number ending with .pkg (but it's just a folder), go there
+
+7. 아래 명령어로 `Payload`를 엽니다. **open**명령어가 압축 형태인 Payload 를 압축해제하여 진입합니다.
+   
+   ```sh
+   open Payload
+   ```
+   
+   open Payload - this is a gzipped "ASCII cpio archive (pre-SVR4 or odc)", according to file. The "open" command will extract it using the Archive Utility app.
+
+8. 완료되었습니다. 이제 원하는 곳에 복사해 두고 사용하면 됩니다.
+   
+   **Done!** Now you just need to copy the files.
+
+9. 아래와 같이 입력하여 원하는 위치로 이동합니다. 
+   
+   ```sh
+   cp Contents/Home ~/local/jdk_1.7u60
+   ```
+
+   그리고 이동시킨 폴더를 PATH 변수에 추가하여 줍니다.
+
+<br/>
 
 ## 참고자료 및 출처
 
 - <https://findstar.pe.kr/2019/01/20/install-openjdk-by-homebrew/>
 - <https://jojoldu.tistory.com/329>
+- <https://augustl.com/blog/2014/extracting_java_to_folder_no_installer_osx/>
