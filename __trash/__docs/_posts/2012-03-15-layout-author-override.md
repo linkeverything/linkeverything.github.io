@@ -32,7 +32,7 @@ Billy Rick:
 Cornelius Fiddlebone:
   name        : "Cornelius Fiddlebone"
   bio         : "I ordered what?"
-  avatar      : "/assets/images/bio-photo.jpg"
+  avatar      : "/assets/images/blog/bio-photo.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

@@ -234,7 +234,7 @@ header:
 To insert a logo before the site title, place a graphic in the `/assets/images/` directory and add the filename to `_config.yml`:
 
 ```yaml
-logo: "/assets/images/88x88.png"
+logo: "/assets/images/blog/88x88.png"
 ```
 
 <figure>
@@ -791,7 +791,7 @@ Used as the defaults for defining what appears in the author sidebar.
 ```yaml
 author:
   name     : "Your Name"
-  avatar   : "/assets/images/bio-photo.jpg"
+  avatar   : "/assets/images/blog/bio-photo.jpg"
   bio      : "My awesome biography constrained to a sentence or two goes here."
   location : "Somewhere, USA"
 ```
@@ -807,7 +807,7 @@ Author links are all optional, include the ones you want visible under the `auth
 ```yaml
 author:
   name: "Your Name"
-  avatar: "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/blog/bio-photo.jpg"
   bio: "I am an **amazing** person." # Note: Markdown is allowed
   location: "Somewhere"
   links:

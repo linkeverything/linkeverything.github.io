@@ -19,7 +19,7 @@ url                      : # the base hostname & protocol for your site e.g. "ht
 baseurl                  : "/test"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/apple-touch-icon.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "/assets/images/apple-touch-icon.png" # path of logo image to display in the masthead, e.g. "/assets/images/blog/88x88.png"
 masthead_title           : "Custom Title" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -63,7 +63,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/bio-photo.jpg"
+og_image                 : "/assets/images/blog/bio-photo.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -83,7 +83,7 @@ analytics:
 # Site Author
 author:
   name             : "Your Name"
-  avatar           : "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/blog/bio-photo.jpg"
   bio              : "I am an **amazing** person."
   location         : "Somewhere"
   links:
