@@ -3,7 +3,7 @@ title: "Java에서 Random String 생성하기 (숫자 나누기 포함)"
 categories: [java]
 tag: [java, string, integer, random]
 last_modified_at: 2020-11-03
-published: false
+published: true
 ---
 Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니다.
 
@@ -35,12 +35,52 @@ System.out.println(generatedString);
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.36.51.png)
 
+<br/>
+
+#### Plain Java 이용 - bounded
+
+이번에는 정해진 범위 내에서 랜덤 문자열을 추출하는 방법을 보겠습니다. 위 방법과 유사하지만 연산하는 과정이 좀 더 있고, 시작과 끝에 해당하는 숫자 값을 알아야 합니다.
+
+아래 예제에서는 문자열 `a` 부터 `z`까지의 문자 중에서 랜덤하게 10개를 추출하는 예제입니다. 시작점에서부터 랜덤하게 생성된 float 값을 종료 문자 까지의 범위 내에서 더합니다. 이렇게 되면 시작~종료 범위에 있는 랜덤한 숫자가 추출되고, 이를 char 로 casting하여 StringBuilder 에 append 해 줍니다.
+
+```java
+int leftLimit = 97; // letter 'a'
+int rightLimit = 122; // letter 'z'
+int targetStringLength = 10;
+Random random = new Random();
+StringBuilder buffer = new StringBuild(targetStringLength);
+for (int i = 0; i < targetStringLength; i++) {
+    int randomLimitedInt = leftLimit + (int)
+            (random.nextFloat() * (rightLimit - leftLimit + 1));
+    buffer.append((char) randomLimitedInt);
+}
+String generatedString = buffer.toString()
+System.out.println(generatedString);
+```
+
+결과:
+
+![](assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.42.04.png)
 
 <br/>
 
-#### 
+#### Java 8 을 이용한 알파벳으로 된 랜덤 문자열
 
+Java 8 에서는 
 
+{{ site }}
+
+{{ site.url }}
+
+<br/>
+
+## Comment
+
+랜덤하게 문자열을 생성하는 방법이나 숫자를 생성하는 것 등은 이것들 말고도 다양하게 있을 것입니다. Random 객체가 생성하는 숫자 자체가 실제로는 Random 하지 않다는 의견도 있는 만큼, 이러한 방법들이 항상 최상의 결과를 가져온다고 생각하면 안됩니다.
+
+더불어, 대부분의 방법들이 문자에 해당하는 숫자를 랜덤하게 뽑은 뒤 문자열로 변환하고 이를 모아서 출력해주는 형태를 가지고 있기 때문에, TPS(Transaction Per Second)가 매우 높은 경우 성능에 영향을 줄 수 있다는 것을 반드시 명심해야 합니다.
+
+만약 랜덤하게 생성한 것이 ID처럼 쓰이고, 앞뒤로 날짜나 시간 등을 붙여줄 수 있는 경우라면 간단히 현재시간의 밀리세컨드 값이나, timestamp의 마지막 3자리를 뽑아쓰는 등으로 가볍게 처리하기도 합니다.
 
 <br/>
 
