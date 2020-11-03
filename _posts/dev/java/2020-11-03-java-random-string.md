@@ -32,7 +32,7 @@ System.out.println(generatedString);
 
 결과:
 
-![](2020-11-03-java-random-string/capture%202020-11-03%20PM%2005.09.25.png)
+![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.09.25.png)
 
 
 <br/>
