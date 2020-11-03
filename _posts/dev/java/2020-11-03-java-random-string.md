@@ -146,6 +146,26 @@ System.out.println(generatedString);
 
 <br/>
 
+## 숫자를 나누기
+
+만약 세 사람이 10개의 사과를 랜덤하게 나눠 갖는다 라고 가정하면 처음엔 조금 막막한 느낌입니다. 위 예제들을 쭉 봐온 것 처럼, 시작과 끝 값을 지정한 뒤, 그 안에서 숫자를 랜덤하게 생성하면 이 문제 역시 간단하게 해결할 수 있습니다. 
+
+만약 모수가 정해진 값이 아니어서 백분률 값을 나누어야 한다면 0~100까지의 숫자 중에서 아래 로직을 조금만 수정하면 그 결과를 얻을 수 있습니다. 
+
+```java
+int[] nums = new int[5];
+int total = 100;
+Random rand = new Random();
+for (int i = 0; i < nums.length-1; i++) {
+    nums[i] = rand.nextInt(total);
+    total -= nums[i];
+}
+nums[nums.length-1] = total;
+Arrays.sort(nums);
+```
+
+<br/>
+
 ## Comment
 
 랜덤하게 문자열을 생성하는 방법이나 숫자를 생성하는 것 등은 이것들 말고도 다양하게 있을 것입니다. Random 객체가 생성하는 숫자 자체가 실제로는 Random 하지 않다는 의견도 있는 만큼, 이러한 방법들이 항상 최상의 결과를 가져온다고 생각하면 안됩니다.
