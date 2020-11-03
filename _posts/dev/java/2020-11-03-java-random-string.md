@@ -3,7 +3,6 @@ title: "Java에서 Random String 생성하기 (숫자 나누기 포함)"
 categories: [java]
 tag: [java, string, integer, random]
 last_modified_at: 2020-11-03
-published: true
 ---
 Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니다.
 
@@ -66,11 +65,84 @@ System.out.println(generatedString);
 
 #### Java 8 을 이용한 알파벳으로 된 랜덤 문자열
 
-Java 8 에서는 
+Java 8 에서는 *Random.ints* 라는 함수를 사용할 수 있습니다. 
 
-{{ site }}
+```java
+int leftLimit = 97; // letter 'a'
+int rightLimit = 122; // letter 'z'
+int targetStringLength = 10;
+Random random = new Random()
+String generatedString = random.ints(leftLimit, rightLimit + 1)
+        .limit(targetStringLength)
+        .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+        .toString()
+System.out.println(generatedString);
+```
 
-{{ site.url }}
+- ints() : 시작과 끝 범위를 넣어줍니다.
+
+- limit() : 최종 길이를 설정합니다.
+
+- collect() : 결과로 얻어진 것에 대해서 어떻게 처리할지를 정의합니다. 여기서는 StringBuilder를 이용해서 append, 즉 이어붙여 줍니다. 
+
+- toString() : 마지막으로는 문자화 해줍니다. (이 toString()함수는 StringBuilder의 것입니다.)
+
+<br/>
+
+#### Java 8 을 이용한 숫자 및 알파벳으로 된 랜덤 문자열
+
+위와 동일한 방식이지만, 시작 문자를 `0`부터로 하고, filter를 추가합니다. 중간에 이 로직에 필요없는 부분은 제거하고 나머지 숫자들만 가지고 문자열을 추출합니다.
+
+```java
+int leftLimit = 48; // numeral '0'
+int rightLimit = 122; // letter 'z'
+int targetStringLength = 10;
+Random random = new Random();
+
+String generatedString = random.ints(leftLimit,rightLimit + 1)
+  .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+  .limit(targetStringLength)
+  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+  .toString();
+
+System.out.println(generatedString);
+```
+
+![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.05.55.png)
+
+<br/>
+
+#### Apache Commons Lang 을 이용하는 방법
+
+이러한 것들을 조금 편하게 해 놓은 Library가 Apache Commons Lang 에 있습니다. 앞서 설명한 내용들이 거의 대부분 함수로 구현되어 있어 간단히 사용할 수 있습니다. 
+
+RandomStringUtils 의 가장 기본적인 사용법입니다. 길이를 얼마나 할 것인지, 문자를 포함할 것인지, 숫자를 포함할 것인지에 대해서 설정하고 rand()함수를 호출하면 그 결과를 반환합니다.
+
+```java
+int length = 10;
+boolean useLetters = true;
+boolean useNumbers = false;
+String generatedString = RandomStringUtils.rand(length, useLetters, useNumbers)
+System.out.println(generatedString);
+```
+
+그냥 간단히 길이값만 주어도 정상적으로 동작할 수 있도록 아래와 같은 함수도 제공합니다. 여기서 보이는 `randomAlphabetic` 은 문자만을 포함하는 것을 생성하라는 의미입니다.
+
+```java
+String generatedString = RandomStringUtils.randomAlphabetic(10)
+System.out.println(generatedString);
+```
+
+`randomAlphanumeric` 은 숫자와 문자 조합으로 랜덤하게 생성하라는 의미입니다.
+
+```java
+String generatedString = RandomStringUtils.randomAlphanumeric(10)
+System.out.println(generatedString);
+```
+
+결과:
+
+![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.23.25.png)
 
 <br/>
 
