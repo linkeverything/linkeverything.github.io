@@ -34,7 +34,7 @@ last_modified_at: 2020-07-23
 
 위와 같이 수정하고 실행한 뒤, 카카오 계정으로 로그인하면 아래와 같이 나오는 것을 확인할 수 있습니다. 
 
-![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-3/screenCapture.png){: .align-center}
+![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture.png){: .align-center}
 
 <br/>
 
@@ -144,7 +144,7 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 이제 여기까지 수정한 사항을 가지고 실행하여 로그인 테스트 합니다. console 창에 나타난 로그를 잘 보면 다음과 같이 나타날 것입니다.
 
-![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-3/screenCapture2.png){: .align-center}
+![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture2.png){: .align-center}
 
 <br/>
 
@@ -237,7 +237,7 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 실행하여 로그를 확인하면 다음의 정보를 알 수 있습니다.
 
-![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-3/screenCapture3.png){: .align-center}
+![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture3.png){: .align-center}
 
 <br/>
 

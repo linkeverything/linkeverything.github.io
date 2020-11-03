@@ -47,7 +47,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
 
 일반적으로 캡쳐 기능을 사용하게 되면 다음 그림과 같이 **스크린샷 YYYY-MM-DD ㅇ{오전/오후} HH.mm.ss.png** 파일로 저장됩니다. 다량의 스크린샷을 찍을것도 아니긴 하지만, 이 부분이 거슬리거나 불편하시면 다음 방법으로 변경할 수 있습니다. 
 
-![](/assets/images/_posts/etc/apple/2020-07-28-screenshot-name/old.png){: .align-center}
+![](/assets/images/posts/etc/apple/2020-07-28-screenshot-name/old.png){: .align-center}
 
 <br/>
 
@@ -70,7 +70,7 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 
 그 결과는 다음과 같습니다.
 
-![](/assets/images/_posts/etc/apple/2020-07-28-screenshot-name/new.png){: .align-center}
+![](/assets/images/posts/etc/apple/2020-07-28-screenshot-name/new.png){: .align-center}
 
 <br/>
 
@@ -84,7 +84,7 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 defaults write com.apple.screencapture "include-date" 0;killall SystemUIServer
 ```
 
-![](/assets/images/_posts/etc/apple/2020-07-28-screenshot-name/notime.png){: .align-center}
+![](/assets/images/posts/etc/apple/2020-07-28-screenshot-name/notime.png){: .align-center}
 
 스크린샷을 보면 아시겠지만, 시간/날짜 값이 사라진 경우 캡쳐를 연속해서 하면 맨 뒤에 숫자가 자동으로 붙게 됩니다. 윈도우에서 (1)... 이 붙는 것과 동일한 효과라고 보면 됩니다.
 

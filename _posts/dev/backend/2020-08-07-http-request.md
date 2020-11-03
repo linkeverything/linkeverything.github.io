@@ -13,7 +13,7 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 
 이 글에 사용된 프로젝트는 다음과 같습니다. 간혹 버전이 상이하여 다르게 동작한다는 분들이 있어, 아래 내용도 공유합니다.
 
-![](/assets/images/_posts/dev/backend/2020-08-07-http-request/start.spring.io-2020.08.07-14_02_00.png)
+![](/assets/images/posts/dev/backend/2020-08-07-http-request/start.spring.io-2020.08.07-14_02_00.png)
 
 <br/>
 
