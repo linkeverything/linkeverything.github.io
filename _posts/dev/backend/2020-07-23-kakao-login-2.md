@@ -21,7 +21,7 @@ last_modified_at: 2020-07-23
 
 [Spring Initializr](https://start.spring.io/) 에 접속하여 아래 화면과 같이 생성을 해줍니다. Group, Artifact, Name, Description 등은 본인 환경에 맞게 잡아주면 됩니다. 그리고 dependency 에 web 으로 검색해서 그림과 같이 추가해 줍니다.
 
-![](/assets/images/_posts/2020-07-23-kakao-login-2/start.spring.io-2020.07.23-11_26_38.png)
+![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-2/start.spring.io-2020.07.23-11_26_38.png)
 
 아래 Generate 버튼을 누르고, 다운로드된 zip 파일을 IntelliJ 등 IDE 에 import 합니다.
 
@@ -57,7 +57,7 @@ last_modified_at: 2020-07-23
 
 저는 `src/main/sebapp/WEB-INF/views` 하위에 `index.jsp` 파일을 만들어 사용해 보려고 합니다. 
 
-![](/assets/images/_posts/2020-07-23-kakao-login-2/screenCapture.png){: .align-center}
+![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-2/screenCapture.png){: .align-center}
 
 이렇게 파일을 생성해 주고, 다음 내용을 입력합니다. 
 
@@ -109,7 +109,7 @@ spring.mvc.view.suffix=.jsp
 
 이제 Controller를 생성해 보도록 하겠습니다. 저는 아래 경로에 파일을 생성하고 다음 내용을 입력하였습니다. 흐름으로 살펴보자면, 사용자가 `카카오 로그인` 버튼을 클릭하게 되면 카카오 측 로그인 화면으로 이동하고, 로그인이 완료되면 `redirect uri` 인 `localhost:8080/login` 으로 보내지게 됩니다. 그러면 controller 에서 `/index.jsp` 로 View를 이동시키고, 브라우저에서는 이 때 jsp 에서 사용자 정보가 있는지를 확인하고 있으면 **로그인 성공입니다** 라는 메시지를 보여주게 됩니다. 
 
-![](/assets/images/_posts/2020-07-23-kakao-login-2/screenCapture2.png){: .align-center}
+![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-2/screenCapture2.png){: .align-center}
 
 ```java
 package com.simplify.kakaoLogin.controller;
@@ -138,11 +138,11 @@ public class HomeController {
 
 이제 기본 틀은 다 생성한 샘입니다. 프로젝트의 java 파일 중 최상위 파일 `*Application.java` 파일을 우클릭하고 `main()` 을 실행합니다. 아래처럼 로그인 버튼이 나타나면 우선 jsp 연동은 잘 되어있는 것입니다. 
 
-![](/assets/images/_posts/2020-07-23-kakao-login-2/screenCapture3.png){: .align-center}
+![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-2/screenCapture3.png){: .align-center}
 
 여기서 저 **카카오 로그인** 버튼을 눌러 본인의 카카오톡 아이디로 로그인을 하면 다시 `localhost:8080/login` 으로 redirection 되는 것을 볼 수 있습니다. 
 
-![](/assets/images/_posts/2020-07-23-kakao-login-2/screenCapture4.png){: .align-center}
+![](/assets/images/_posts/dev/backend/2020-07-23-kakao-login-2/screenCapture4.png){: .align-center}
 
 위 이미지에서 **로그아웃** 부분은 무시하세요. 다음에서 설명할 내용입니다.
 

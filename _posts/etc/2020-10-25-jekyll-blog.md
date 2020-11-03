@@ -209,7 +209,7 @@ github page에서는 jekyll 블로그를 자동으로 감지하여 빌드하기 
 저의 경우 사용되는 이미지들(첨부 파일)을 `/assets` 라는 폴더 하위에 `images` 라는 폴더를 생성하여 구성하였습니다. 이렇게 되면 이미지를 첨부할 때에 다음과 같이 작성하면 됩니다. (jekyll 구조의 root 폴더가 `/`가 됩니다.)
 
 ```
-![](/assets/images/_posts/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
+![](/assets/images/_posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
 ```
 
 <br/>
