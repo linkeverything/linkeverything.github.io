@@ -3,6 +3,7 @@ title: "Java에서 Random String 생성하기 (숫자 나누기 포함)"
 categories: [java]
 tag: [java, string, integer, random]
 last_modified_at: 2020-11-03
+published: false
 ---
 Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니다.
 
@@ -32,7 +33,7 @@ System.out.println(generatedString);
 
 결과:
 
-![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.09.25.png)
+![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.36.51.png)
 
 
 <br/>
