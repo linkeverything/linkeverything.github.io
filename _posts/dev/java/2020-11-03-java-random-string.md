@@ -25,11 +25,14 @@ Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니�
 ```java
 byte[] array = new byte[7]; // length is bounded by 7
 new Random().nextBytes(array);
-String generatedString = new String(array, Charset.forNam("UTF-8"));
+String generatedString = new String(array, Charset.forName("UTF-8"));
 
 System.out.println(generatedString);
 ```
 
+결과:
+
+![](2020-11-03-java-random-string/capture%202020-11-03%20PM%2005.09.25.png)
 
 
 <br/>
