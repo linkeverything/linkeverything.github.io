@@ -224,7 +224,31 @@ Password: your_token
 
 <br/>
 
+## IntelliJ 에서 Remote Repository 연결하기
+
+Git repository 로 설정되지 않은, 현재 작업중인 project에 대해서 Remote Git에 연결하는 방법입니다.
+
+1. IntelliJ 메뉴에서 `VCS` &rarr; `Import into Version Control` &rarr; `Create Git Repository` 로 차례로 이동합니다.
+
+2. 팝업 윈도우에서 프로젝트를 선택하고 `OK` 선택합니다.
+   
+3. local branch master에 필요한 모든 파일들을 commit 합니다.
+
+4. 터미널 등을 실행하여 프로젝트 폴더 루트로 이동합니다. (윈도우에서는 명령 프롬프트)
+
+5. `git remote add origin {remote git address}` 를 입력합니다
+
+6. `git push origin master` 입력합니다.
+
+7. IntelliJ 로 돌아와서 프로젝트를 우클릭하고 `Synchronize` 선택
+
+8. 프로젝트로에서 우클릭하여 `Git` &rarr; `Repository` &rarr; `Branches` &rarr; `origin/master` &rarr; `Checkout as new local branch` 선택
+
+
+<br/>
+
 ## 출처 및 참고자료
 
 - <https://emflant.tistory.com/123>
 - <https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token#using-a-token-on-the-command-line>
+- <https://coderwall.com/p/gkyqmg/intellij-idea-how-to-upload-project-to-remote-branch>
