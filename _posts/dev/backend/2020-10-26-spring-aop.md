@@ -100,7 +100,7 @@ Springboot의 Application.java 파일 맨 앞에 @EnableAspectJAutoProxy 를 붙
 
 이제 @Aspect와 @interface를 생성하겠습니다. 아래 사즌처럼 package를 구성하고 interface 를 아래와 같이 생성합니다.
 
-![](/assets/images/2020-10-26-spring-aop/capture%202020-10-28%20PM%202.22.59.png)
+![](/assets/images/_posts/2020-10-26-spring-aop/capture%202020-10-28%20PM%202.22.59.png)
 
 ```java
 @Target({ElementType.METHOD})

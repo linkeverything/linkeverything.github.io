@@ -20,7 +20,7 @@ A라는 사용자가 실행한 프로그램에서 생성한 log 파일은 B라�
 
 권한들에 대해 보려면 터미널에서 `ls -al` 을 입력하면 됩니다. `ll` 도 결국 저 명령어를 축약에서 지정해 놓은 것입니다. 
 
-![](/assets/images/2020-10-28-permissions/capture%202020-10-28%20PM%2006.47.29.png)
+![](/assets/images/_posts/2020-10-28-permissions/capture%202020-10-28%20PM%2006.47.29.png)
 
 편의상 스크린샷은 MacOS 의 것을 사용하겠습니다. 
 {: .notice--info}
@@ -43,7 +43,7 @@ A라는 사용자가 실행한 프로그램에서 생성한 log 파일은 B라�
 
 - (1) `-` : 디렉토리 여부를 표시합니다. 만약 디렉토리인 경우 이 부분이 `d`로 표시됩니다. 
    
-   ![](/assets/images/2020-10-28-permissions/capture 2020-10-29 PM 02.17.37.png)
+   ![](/assets/images/_posts/2020-10-28-permissions/capture 2020-10-29 PM 02.17.37.png)
 
 - (3) `rw-` : <mark style='background-color: #dcffe4'>소유자(User)</mark> 에 대한 권한을 표시합니다. 소유자, 즉 생성한 사람은 읽기와 쓰기에 대한 권한을 가지고 있습니다.[^3]
 
@@ -83,7 +83,7 @@ $ chmod 777 README.md
 
 MacOS 에서 파일을 하나 생성해 보겠습니다. 
 
-![](/assets/images/2020-10-28-permissions/capture 2020-10-29 PM 02.40.12.png)
+![](/assets/images/_posts/2020-10-28-permissions/capture 2020-10-29 PM 02.40.12.png)
 
 위에서는 `touch` 명령어와 `mkdir` 명령어를 통해 파일과 디렉토리를 생성하였습니다. 그런데 생성하고 난 뒤에 permission 이 기본적으로 설정되어 있는 것을 발견할 수 있습니다. 파일에는 `-rw-r--r--`, 디렉토리에는 `drwxr-xr-x` 로 되어 있습니다. 
 

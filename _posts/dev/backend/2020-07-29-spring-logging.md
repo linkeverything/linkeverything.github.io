@@ -21,7 +21,7 @@ backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 �
 
 Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생성하면 됩니다. 해당 페이지에서 아래와 같이 설정값을 적어주고 `GENERATE` 버튼을 눌러 다운로드 받고, 이를 IntelliJ 등 IDE 환경으로 Import 하면 됩니다.
 
-![](/assets/images/2020-07-29-spring-logging/start.spring.io-2020.07.29-18_04_14.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/start.spring.io-2020.07.29-18_04_14.png){: .align-center}
 
 <br/>
 
@@ -29,7 +29,7 @@ Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생�
 
 Springboot 에는 기본적으로 logback 이 포함되어 있습니다. 따라서 Springboot 의 `*Application.java` 파일의 `main()`함수를 호출하여 실행할 떄, IDE의 console 창에 나타나는 내용이 그것입니다. 
 
-![](/assets/images/2020-07-29-spring-logging/screenCapture.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/screenCapture.png){: .align-center}
 
 아무런 설정을 하지 않고도 이렇게 로그가 나오고 있습니다. 기본 내장된 logback 때문에 나타나는 것입니다. 
 
@@ -59,7 +59,7 @@ public class LogbackApplication {
 
 그 결과는 아래와 같습니다. 
 
-![](/assets/images/2020-07-29-spring-logging/screenCapture2.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/screenCapture2.png){: .align-center}
 
 <br/>
 
@@ -118,15 +118,15 @@ resources 폴더 아래에 `logback-spring.xml` 파일을 생성합니다. 그�
 
 이렇게 만들고 샐행해 보면, 다음과 같이 출력되는 것을 확인할 수 있습니다. 
 
-![](/assets/images/2020-07-29-spring-logging/screenCapture3.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/screenCapture3.png){: .align-center}
 
 결과로, 프로젝트에 log 폴더가 생성된 것을 확인할 수 있고, 
 
-![](/assets/images/2020-07-29-spring-logging/screenCapture4.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/screenCapture4.png){: .align-center}
 
 파일 내용을 다음과 같습니다.
 
-![](/assets/images/2020-07-29-spring-logging/screenCapture5.png){: .align-center}
+![](/assets/images/_posts/2020-07-29-spring-logging/screenCapture5.png){: .align-center}
 
 <br/>
 
