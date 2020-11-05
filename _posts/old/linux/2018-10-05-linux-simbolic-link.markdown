@@ -1,7 +1,8 @@
 ---
 title:      "Linux Symbolic link"
 categories: [Old]
-last_modified_at:       2018-10-05tags:
+last_modified_at:       2018-10-05
+tags:
   - linux
   - Ubuntu
   - CentOS

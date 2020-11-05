@@ -1,7 +1,8 @@
 ---
 title:      "How to make Collection with ArrayList"
 categories: [Old]
-last_modified_at:       2019-04-30 00:00 tags:
+last_modified_at:       2019-04-30 00:00 
+tags:
   - java
   - ArrayList
   - collection

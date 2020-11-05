@@ -1,7 +1,8 @@
 ---
 title:      "How to check character and number in java"
 categories: [Old]
-last_modified_at:       2019-03-18 00:00 tags:
+last_modified_at:       2019-03-18 00:00 
+tags:
   - java
 published: false
 ---
