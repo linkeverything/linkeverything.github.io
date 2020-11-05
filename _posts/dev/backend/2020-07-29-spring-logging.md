@@ -9,7 +9,7 @@ backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 �
 다양한 방법, 각자 선호하는 방법이 있겠지만, 여기서는 Springboot 환경에서 가장 간단하게 접근할 수 있는 logging 처리인 **logback** 에 대해서 살펴봅니다. 
 {: .notice--info}
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
 
 <br/>
 

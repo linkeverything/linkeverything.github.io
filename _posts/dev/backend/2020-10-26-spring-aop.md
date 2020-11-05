@@ -10,7 +10,7 @@ last_modified_at: 2020-10-26
 
 이렇게 <mark style='background-color: #dcffe4'>Annotation을 통해 공통의 기능들을 개발하여 중복을 최소화하고, 개발 편의성을 도모</mark>하는 것이 AOP(Aspect Object Programming) 의 시작입니다.
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/com.simplify.api){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/com.simplify.api){:target="_blank" .btn .btn--primary}
 
 <br/>
 

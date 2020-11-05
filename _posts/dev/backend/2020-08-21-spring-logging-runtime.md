@@ -9,7 +9,7 @@ last_modified_at: 2020-08-21
 기존에 작성하고 셈플로 올려둔 소스에 일부만 수정하여 반영합니다. 동일 프로젝트입니다.
 {: .notice--info}
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
 
 <br/>
 

@@ -38,7 +38,7 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 1. 우선 앞서 만든 repository를 clone 합니다. 이 repository에는 online/offline 으로 아무런 작업을 하지 않았기 때문에 repository 명 폴더만 생성되면서 clone 될 것입니다. 
 
   ```sh
-  git clone https://github.com/Simplify-Criss/testRepository.git
+  git clone https://github.com/simpl-ify/testRepository.git
   ```
 
   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/capture 2020-10-30 PM 02.06.16.png)

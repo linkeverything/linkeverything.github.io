@@ -19,7 +19,7 @@ System.out.println(matcher.find());
 true
 ```
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/regLookAround){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/regLookAround){:target="_blank" .btn .btn--primary}
 
 <br/>
 

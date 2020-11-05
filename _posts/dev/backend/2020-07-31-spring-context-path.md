@@ -15,7 +15,7 @@ Springboot 에서는 default context path 를 **/** 로 설정합니다. 대부�
 아래 문서에는 1.X, 2.X 버전에 대해서 각각 설명하고 있지만, 2.X를 사용하시길 권장합니다. 많은 부분이 개선, 수정되었으며 2.X이 출시된 지도 오래되어 이제는 2.X 버전을 사용하는 것이 맞습니다.
 {: .notice--info}
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/contextPathExample){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/contextPathExample){:target="_blank" .btn .btn--primary}
 
 <br/>
 

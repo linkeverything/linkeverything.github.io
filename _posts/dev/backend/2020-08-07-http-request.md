@@ -9,7 +9,7 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 편의상 Springboot 를 이용하여 요청과 응답을 모두 받을 것입니다. 내가 나 자신에게 요청을 보내는 것이지만, 두 개의 시스템이라면 서버 주소 등을 수정하여 적용 가능합니다.
 {: .notice--warning}
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/httpReq){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/httpReq){:target="_blank" .btn .btn--primary}
 
 이 글에 사용된 프로젝트는 다음과 같습니다. 간혹 버전이 상이하여 다르게 동작한다는 분들이 있어, 아래 내용도 공유합니다.
 

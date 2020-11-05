@@ -12,7 +12,7 @@ Java 에서 원격 서버에 명령을 보내는데 있어, <mark style='backgro
 
 이 문서에서 사용한 소스는 다음의 gitHub 링크에 있습니다. 
 
-[Download Sample code from GitHub](https://github.com/Simplify-Criss/SampleProjects/tree/master/jsch-sample){:target="_blank" .btn .btn--primary}
+[Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/jsch-sample){:target="_blank" .btn .btn--primary}
 
 <br/>
 
