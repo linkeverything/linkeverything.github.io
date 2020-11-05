@@ -25,4 +25,4 @@ studySpringBoot:
   - title: "Getting Started"
     children:
       - title: "Install Java"
-        url: /study/spring%20boot/00110-install-java/
+        url: /study/spring%20boot/01010-install-java/
