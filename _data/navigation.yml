@@ -5,7 +5,7 @@ main:
 #  - title: "About"
 #    url: /about/
   - title: "Spring Boot"
-    icon: "fas fa-terminal"
+    icon: "fab fa-fw fa-github"
     url: /study/spring%20boot/00000-getting-started/
   - title: "Categories"
     url: /categories/

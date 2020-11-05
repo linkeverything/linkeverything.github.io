@@ -15,7 +15,7 @@
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>
-                {% if link.icon %}<i class="{{ link.icon }}" aria-hidden="true"></i>{% endif %}{{ link.title }}
+                {% if link.icon %}<i class="{{ link.icon }}" aria-hidden="true"></i> {% endif %}{{ link.title }}
               </a>
             </li>
           {%- endfor -%}
