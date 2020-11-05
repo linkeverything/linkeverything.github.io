@@ -266,7 +266,7 @@ defaults:
 #      toc: true
       classes: wide
   - scope:
-      path: "/study/spring boot/"
+      path: "/study/spring%20boot/"
       type: posts
     values:
       sidebar:
