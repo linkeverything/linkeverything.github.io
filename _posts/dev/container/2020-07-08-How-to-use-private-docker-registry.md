@@ -21,8 +21,6 @@ Container 환경에 대해서 학습하기 시작하면서 가장 처음 접하�
 기본적으로는 아미지를 생성하여 업로드하는 곳으로 docker 공식 registry 를 사용하게 됩니다. 우리가 `hub.docker.com`을 통해서 검색하고 다운로드 받는 모든 이미지들은 이 공식 registry 에 업로드되어 있습니다. 
 
 그런데, Public network를 사용할 수 없는 상황, 즉 private cloud 를 구축해서 사용하는 경우이거나, 혹은 gitlab 같은 CI/CD 를 별도로 구축해서 사용하는 경우에는 private repository 를 사용해야 하는 경우가 생기고, 이럴 때에는 구동 환경, 즉 kubernetes 가 바라보는 registry 경로를 다르게 설정해야 합니다.
-
-
   
 ## 개요
 
@@ -37,8 +35,6 @@ deployment, service 등을 생성할 때에 namespace 를 별도로 설정하지
 현재의 상황에 대해서 국한하는 것이 아니라, 단 하나의 namespace만 필요한 정도로 작은 시스템이라고 하더라도 namespace를 생성하기를 권장합낟.
 {: .notice--warning}
 
-
-
 ## namespace 생성
 
 이제 namespace를 생성하겠습니다. namespace는 일종의 tag같은 개념이기 때문에 그 안에 포함될 deployment, pod, container 등의 이름들을 포괄할 수 있는 것으로 정하겠습니다.
@@ -50,8 +46,6 @@ kubectl create namespace mynamespace
 ```
 
 이렇게 하면 별다른 미시지 없이 namespace생성이 완료됩니다. 여기서는 `mynamespace`라는 이름으로 namespace를 생성해 주었고, 이 namespace안에 포함하게 될 pod, deployment 등의 모든 요소에는 `metadata` 부분에 `namespace : mynamespace`를 추가해 줍니다. (yml파일 내에 정의합니다)
-
-
 
 ## secret 생성
 
@@ -81,8 +75,6 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 - --docker-password={패스워드} : 로그인할 패스워드
 - --docker-email={이메일} : 이메일 정보(필수값 아닐 수 있지만, 넣어줍니다.)
 
-
-
 ## yaml 파일에 적용
 
 다음으로는 kubernetes의 deployment 를 생성하는 yaml(yml) 파일을 수정합니다. 이미 설정해 두었던 yaml 파일이 있다면 다른 부분은 별도로 수정할 필요가 없고, 아래와 같이 containers 를 설정해 주는 부분만 추가해 주면 됩니다.
@@ -111,21 +103,15 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 
 이렇게 하면, 해당 deployment 가 생성되는 시점에 image를 가져오는 것을 해당 registry 에서 가져오게 됩니다.
 
-
-
 ## 제언
 
 이러한 방식으로 구성하면 공식 public docker registry 를 바라보지 않고, private registry 를 바라보게 변경할 수 있습니다. kubernetes 를 사용할 환경을 구성하고 나면(예를 들어, AWS 에서 EKS 인스턴스 생성), 우선 들어가서 namespace 를 생성하고, 사용할 대상이 되는 registry 에 대한 secret을 미리 생성해 두는 것도 좋아 보입니다. 
 
 물론 여기에는 istio 같은 네트워크 관련 설정들도 모두 포함하여 기반 작업을 모두 진행한 뒤에, application이 구동될 수 있도록 구성해 주는 것이 좋겠습니다. 
 
-
-
 ## 참고
 
 아래는 kubernetes 사용 시 참고할 만 한 내용들입니다. 명령어가 익숙하지 않은 경우를 대비에 아래와 같이 추가로 정리합니다.
-
-
 
 #### namespace 삭제 방법
 
@@ -133,13 +119,9 @@ kubectl create secret registry-credentials docker-registry-login --namespace=myn
 kubectl delete namespace mynamespace
 ```
 
-
-
 #### secret 삭제 방법
 
 ```bash
 kubectl delete secret docker-registry-login -n mynamespace
 ```
-
-
 

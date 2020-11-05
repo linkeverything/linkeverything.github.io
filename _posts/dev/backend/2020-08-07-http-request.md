@@ -15,8 +15,6 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 
 ![](/assets/images/posts/dev/backend/2020-08-07-http-request/start.spring.io-2020.08.07-14_02_00.png)
 
-
-
 ## pom.xml 수정하기
 
 앞서 생성한 프로젝트에, 라이브러리를 추가합니다. 
@@ -30,8 +28,6 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 ```
 
 버전은 이 글을 작성하는 시점에서 최신버전이지만, 본인 프로젝트에 맞게 수정/적용하여야 합니다.
-
-
 
 ## 수신 서버 먼저 생성하기
 
@@ -77,8 +73,6 @@ public class ResponseController {
 일반 Form request의 경우에는 별도로 produces 옵션을 주지 않았습니다. 
 {: .notice--info}
 
-
-
 #### 요청 Service 생성하기
 
 이제 이 각가의 controller 에 요청하는 service를 생성하도록 하겠습니다. service 에서는 단순이 각 형태 - Form 또는 json - 에 맞는 Body 를 생성한 뒤 해당 서버에 요청을 보냅니다. (여기서는 `localhost`) 
@@ -119,8 +113,6 @@ public class ResponseController {
             } else {
                 System.out.println("response is error : " + response.getStatusLine().getStatusCode());
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -177,8 +169,6 @@ Map<String, Object> 에 대해서 json 형태로 반환하는 것은 springboot 
 
 앞서 생성한 form 호출과 유사하지만, 여기서는 json 형태의 String 을 이용하여 StringEntity 객체를 이용합니다. 지금은 그냥 고정 형태라 저렇게 적어놓았지만, Map 등으로 파라미터들을 받아서 처리해야 하는 경우에는 **ObjectMapper** 등의 객체를 이용하여 json 을 String으로 변환해서 사용하면 됩니다.
 
-
-
 #### 요청 controller 작성
 
 이제 저 서비스를 이용하여 호출하는 controller를 작성합니다. 단순하게 `@Autowired` 로 해당 service를 이용하여 호출해주면 됩니다.
@@ -207,8 +197,6 @@ public class RequestController {
 #### 구동 및 확인
 
 이제 프로젝트를 구동시키고 브라우저에 http://localhost:8080/req/json 와 http://localhost:8080/req/form 을 호출해 봅니다.
-
-
 
 ## 참고자료 및 출처
 

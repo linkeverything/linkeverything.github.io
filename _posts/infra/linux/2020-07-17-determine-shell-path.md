@@ -93,8 +93,6 @@ $ ./bin/ssh.sh
 ```
 
 이렇게 실행하게 되면, `RELATIVE_DIR`에는 **./bin** 이 할당되고, `cd ./bin`으로 이동한 뒤에 `pwd -P`로 shell파일의 절대 경로를 알아낸 뒤에, 같은 위치에 있는 pem 파일을 찾아 ssh 접속을 하는 개념입니다.
-
-
 #### 줄여보자
 
 어려운 개념은 아니기 때문에, 다음과 같이 줄여서 쓸 수 있습니다. 조금 더 간단한 shell파일이 완성되었습니다. 
@@ -104,8 +102,6 @@ $ ./bin/ssh.sh
 PEM_PATH="$( cd "$( dirname "$0" )" && pwd -P )"
 ssh -i $PEM_PATH/aaa.pem root@10.10.10.10
 ```
-
-
 ## 출처 및 참고자료
 
 - <https://codechacha.com/ko/how-to-get-path-of-bash-script/>

@@ -17,8 +17,6 @@ Springboot 에서는 default context path 를 **/** 로 설정합니다. 대부�
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/contextPathExample){:target="_blank" .btn .btn--primary}
 
-
-
 ## Property 조정으로 설정하기
 
 앞서 이야기한 것 처럼, `application.properties` 파일을 수정하여 적용하는 것이 가장 효율적인 적용 방법입니다. 다른 여러가지 방법이 있고, Spring 의 기본 객체를 상속(구현)하여 적용하는 방법 역시 가능합니다. 하지만 Springboot 는 `application.properties` 파일을 통한 설정 변경을 권장하고 있고, 더욱 상세한 설정이나 `properties` 파일로 적용되지 않는 사항을 제외하고는 가급적이면 `properties` 파일을 수정하여 적용하는 것을 권장합니다.
@@ -27,8 +25,6 @@ Springboot 에서는 default context path 를 **/** 로 설정합니다. 대부�
 
 Boot 1.X 에서는 `server.context-path` 입니다.
 {: .notice--info}
-
-
 
 #### application.properties / yml 파일 수정하여 적용하기
 
@@ -42,8 +38,6 @@ server.servlet.context-path=/simplify
 ```
 
 스프링 프로젝트를 재실행하면 `http://localhost:8080/simplify`를 통해서만 접속되는 것을 확인할 수 있습니다. 
-
-
 
 #### Java System property 이용하기
 
@@ -59,8 +53,6 @@ public static void main(String[] args) {
 ```
 
 위 예제에서 `SplingApplication.run()` 부분이 실제 서버가 구동되기 시작하는 부분이므로 그보다 앞에 작성하여야 합니다.
-
-
 
 #### OS 환경 변수 이용
 
@@ -78,8 +70,6 @@ $ export SERVER_SERVLET_CONTEXT_PATH=/simplify
 > set SERVER_SERVLET_CONTEXT_PATH=/simplify
 ```
 
-
-
 #### Command line 에서 설정하기
 
 Springboot 를 실행하는 명령어 상에서 argument 로 설정할 수 있습니다. 실제 운영에서 이렇게 사용하기보다는 특정 상황에 따라 가변적으로 적용해야 하는 경우에만 임시로 사용하기를 권장합니다.
@@ -87,8 +77,6 @@ Springboot 를 실행하는 명령어 상에서 argument 로 설정할 수 있�
 ```sh
 $ java -jar app.jar --server.servlet.context-path=/simplify
 ```
-
-
 
 ## Java Config 를 이용하기
 
@@ -116,8 +104,6 @@ public EmbeddedServletContainerCustomizer
 }
 ```
 
-
-
 ## 설정한 내용들의 우선순위
 
 이런 다양한 방법으로 설정 가능한데, 만약 중복으로 설정을 조정한 경우, 그 우선순위는 다음과 같이 작동합니다. 
@@ -131,8 +117,6 @@ public EmbeddedServletContainerCustomizer
 
 개인적인 견해로는 OS 환경변수를 이용해서 context path 를 조정하는 것은 맞지 않아 보이고, Java Config 혹은 command line argument 정도로 조정하는 것이 맞는 것 같습니다. 하지만 개발 편의성을 따진다면 properties 파일에 설정하는 것이 가장 빠르고 정확합니다. (사실 이 설정들이 중복되어 우선순위를 따진다는 것 자체가 문제입니다) 
 {: .notice--info}
-
-
 
 ## 참고자료 및 출처
 

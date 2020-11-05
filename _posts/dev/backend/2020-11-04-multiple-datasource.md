@@ -12,13 +12,9 @@ Spring Boot를 사용하면서 다중 데이터소스를 사용하는 필요성�
 
 여기서는 일반적인 Spring 환경에서 어떻게 다중 데이터소스를 이용할 수 있는지 살펴보고, Spring Boot 에서도 어떻게 구현하는지를 간단히 살펴봅니다.
 
-
-
 ## 사전 준비 및 준비물
 
 개발 및 테스트를 위해 다음을 준비합니다. 더 편리한 방법이 있다면 어떤 것을 사용해도 무방합니다. 
-
-
 
 #### Database
 
@@ -69,8 +65,6 @@ CONTAINER_NAME_1=maria_db_1
 여기서 사용자 추가 및 database 추가에 대한 부부은 작성하지 않겠습니다. 해당 내용은 [MySQL에 데이터베이스 및 사용자 추가하기](https://linkeverything.github.io/linux/mysql-user-database-creation/)글을 참고하세요
 {: .notice--warning}
 
-
-
 #### Spring Boot
 
 이제 [Spring Initializr 페이지](https://start.spring.io/)에서 프로젝트를 하나 생성합니다. 바로 이어지는 내용은 Spring Framework 공통이지만, Spring Boot를 활용해도 무방합니다. 
@@ -87,13 +81,9 @@ CONTAINER_NAME_1=maria_db_1
 	annotationProcessor 'org.projectlombok:lombok'
 ```
 
-
-
 ## 적용하기
 
 간단한 예제만을 소개합니다. 
-
-
 
 #### Entity
 
@@ -133,8 +123,6 @@ public class Product {
 
 위 두 개의 entity는 서로 다른 패키지에 위치시킵니다.
 
-
-
 #### JPA repository
 
 다음으로는 각각의 repository를 생성합니다. 이는 예전 Dao를 대체하는 요소로 jpa를 이용합니다. 추가적인 method 는 정의하지 않고 넘어가고 자동 생성되는 요소만 이용합니다.
@@ -160,8 +148,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 ```
 
 extends 받는 JpaRepository에 대해서는 앞서 생성한 entity와 그 key에 해당하는 것을 넣어줍니다. 둘다 `@Id` annotation을 사용하면서 int 로 지정하였으므로 이를 넣어주면 됩니다. 만약 long 으로 id를 잡았다면 `<User, Long>` 과 같은 형태가 될 것입니다.
-
-
 
 #### JPA configuration 
 
@@ -291,8 +277,6 @@ jdbc.pass=
 ```
 
 여기서는 그저 같은 사용자/비밀번호를 사용하고 있고, url 만 다르게 설정하여 간단하게 테스트 목적으로만 구현합니다.
-
-
 
 #### Controller
 
@@ -428,8 +412,6 @@ public class MultiDataSourceController {
 
 사실 `@Autowired` 를 사용하여 Field Injection을 사용하는 것을 지양하는 것이 맞지만 예제이므로 무시합니다.
 
-
-
 #### 테스트
 
 다음과 같이 테스트할 수 있습니다. 
@@ -460,13 +442,9 @@ public class MultiDataSourceController {
   
   sample_datasource, User 테이블에 사용자도 저장 안됨 <mark style='background-color: #dcffe4'>(transaction관리 성공)</mark>
 
-
-
 ## Spring Boot에 적용하기
 
 Spring Boot 에 적용하는 것은 앞선 과정과 동일합니다. 실제로 위 내용을 그대로 Spring Boot 환경에 넣어도 무방합니다. 그러나 아주 조금 더 편리하게 구성을 할 수 있다고 소개하고 있습니다. 
-
-
 
 #### .properties
 
@@ -483,8 +461,6 @@ spring.second-datasource.password =
 ```
 
 위와 같이 각 property의 앞 부분(prefix)만 다르게 하여 동일한 내용들을 입력해 줍니다. 아마도 조금 더 다양한 형태로 구성된다면 그를 다 반영해 주면 될 것입니다. 
-
-
 
 #### configuration 
 
@@ -509,8 +485,6 @@ spring.second-datasource.password =
 
 이렇게 하면 자동적으로 해당 datasource를 잡아줍니다. 이 정도 수준으로 약간 편한 수준입니다. 
 
-
-
 ## Comment
 
 실질적으로 이 post에서 중요한 내용은 두 개의 서로다른 jpaRepository를 생성했다는 점, 그리고 각각에 대해서 사용하는 쪽(여기서는 controller)에 설정된 `@Transactional` annotation에 따라서 어떻게 동작하는지 입니다. 
@@ -518,8 +492,6 @@ spring.second-datasource.password =
 `@Transactional`이 선언된 request를 요청하면, user 추가가 정상적으로 이루어지고 난 뒤에 product 추가 시 에러가 발생하면 기존에 추가했던 user 역시 삭제가 됩니다. transaction관리가 되고 있다는 의미입니다. 
 
 이 내용만으로 다중 데이터 소스에 대한 transaction 관리 내용이 완벽하게 커버되기는 힘들겠지만, 더 확장해서 구현하면 원하는 기능을 추가적으로 구현할 수 있을 것입니다.
-
-
 
 ## 참고자료 및 출처
 

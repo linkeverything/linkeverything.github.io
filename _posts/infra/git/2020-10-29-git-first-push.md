@@ -10,13 +10,9 @@ Git이나 SVN을 처음 접하고, 개발을 진행할 때에는 회사에서 �
 
 [^1]: 이 문서에서의 가이드들은 편의상 Git에 한정하여 설명합니다. 그리고 그 예제로 사용된 git server는 GitHub를 사용하는 것으로 하겠습니다.
 
-
-
 ## 좋지 않은 사용
 
 이 방법은 지양해야 할 방법입니다. 물론 동작하지 않는 것은 아니지만, 뒷쪽에 설명하는 것이 실제 상황에서는 더 정확하고 올바른 방향인 것 같습니다. 간단히 요약하자면, git 에 빈 깡통인 repository를 만들고, 작업중인 폴더를 덮어쓰기 하여 원래부터 버전관리를 해 왔던 것 처럼 진행하는 것입니다.
-
-
 
 #### repository 생성 및 clone
 
@@ -28,8 +24,6 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 {: .notice--info}
 
 ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/capture%202020-10-30%20PM%2001.47.37.png)
-
-
 
 #### 작업중이던 파일 push 하기
 
@@ -73,15 +67,11 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 
 - 간혹 기존 project와 clone 한 project가 헷갈리는 경우도 발생합니다. IDE가 기존 작업 폴더를 기억하고 있어, 기존 폴더가 open되는 경우도 허다하고 git에 연결되지 않는 기존 작업 프로젝트에 계속 작업하게 되는 경우도 있을 것입니다. 
 
-
-
 ## 이상적인 사용법
 
 제가 **이상적인** 이라는 단어로 표현한 것은 일반적인 경우를 이야기하는 것입니다. repository를 만들고 이 위에다가 프로젝트를 생성하는 경우도 있겠지만, IDE들의 특성상, 그리고 보편적인 절차가, IDE에서 그저 프로젝트를 생성하고 우선 prototype처럼 개발을 진행하게 됩니다. 
 
 이렇게 local환경에서 개발을 하고 나서 조금 쓸만한 수준이 되었을 때, 혹은 이 정도면 함께 일하는 사람들과 공유하고 본격적으로 개발을 할 수 있겠다 싶은 수준이 되면 이를 git server(github)에 push하여 공유하고 개발을 시작합니다.
-
-
 
 #### 작업 시작하기
 
@@ -94,13 +84,9 @@ IDE에서 기본 프로젝트 생성하듯 프로젝트를 생성합니다. 본�
 
 생성됩니다. 이러한 파일들에는 프로젝트 자체에 대한 정보를 가지고 있음은 물론이고, IDE의 각종 설정에 대한 정보도 가지고 있습니다. 예를 들어 이 프로젝트에서 특정 플러그인을 활성화 했다거나, 빌드하는 Java JDK 버전에 대한 정보 및 alias도 가지고 있습니다. 최근에는 이러한 부분이 개발 환경에 따라 맞지 않으면 알아서 보정해 주기도 하지만, 아래쪽에서 이 부분은 ignore하는 방법도 공유하겠습니다.
 
-
-
 #### repository 생성
 
 repository생성은 앞서 설명한 내용과 동일합니다. git server(github)에서 repository 를 생성해 둡니다. 그리고 역시 해당 repository의 주소를 복사해 둡니다. 
-
-
 
 #### .gitignore 에 설정하기
 
@@ -121,8 +107,6 @@ IDE에서 제외하고자 하는 파일이나 폴더를 선택/우클릭 하여 
 git이나 svn모두 push 한 내용을 추후에 ignore하게 되면 서버에는 그 파일이 그대로 남아 있게 되어 지저분한 상태가 됩니다. 이런 때에는 서버에서 직접 삭제해 주거나 해야 하는데 그 과정이 복잡하고 꼬일 수 있는 소지가 있으니 미리 작업하시길 권합니다. 
 
 `.gitignore` 파일은 공동 작업하는 모두가 동일하게 적용되어야 하므로 git 에 push 합니다. 이렇게 되면 git clone (git pull) 하는 사용자 모두에게 동일하게 적용되므로 모두 같은 상태로 개발이 가능합니다.
-
-
 
 #### 작업중인 내용 연결하기
 
@@ -155,8 +139,6 @@ git push -u origin master
 
 이렇게 하면 이제 git server(github)에 해당 내용이 올라갑니다. 
 
-
-
 ## GitHub의 2중 인증 처리하기
 
 꼭 github가 아니더라도 개인 계정을 보호하기 위해서 2중인증(2 factor authrentication)은 활성화 해 두기를 권장합니다.
@@ -167,50 +149,46 @@ google, naver등과 마찬가지로 github역시 token을 발급해야 위 과�
 
 이 때문에 로그인 처리를 해주는 임시 비밀번호인 token을 생성하고 이를 비밀번호 대신 사용하게 해 주어야 문제가 생겼을 때에 비밀번호를 변경(만료)시키는 것이 아니라 해당 token만 만료시켜서 문제를 해결해야 합니다.
 
-
-
 #### personal access token 생성
 
 다음 과정으로 token을 생성합니다. 
 
 1. email 주소를 확인(verity)합니다.
-   
+
 2. github에 로그인하고 본인의 계정 하위에 settings에 진입합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/1.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/1.png)
 
 3. 좌측 메뉴에서 Developer settings를 선택합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/2.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/2.png)
 
 4. 좌측에서 Personal access tokens를 선택합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/3.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/3.png)
 
 5. Generate new token을 선택합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/4.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/4.png)
 
 6. token 설명을 넣습니다. 겉으로 보이는 정보는 이 것들이 전부이기 때문에 이해 가능한 수준으로 적절히 입력해 줍니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/5.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/5.png)
 
 7. 범위나 권한 등에 대한 정보를 체크합니다. 만약 command line 에서 사용하고자 한다면 `repo`를 선택합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/6.gif)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/6.gif)
 
 8. Gernerate token 버튼을 눌러 생성합니다.
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/7.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/7.png)
 
 9. 다음 나타난 화면에서 복사 아이콘을 눌러 복사합니다. 
 
-  ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/8.png)
+   ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/8.png)
 
-  이 정보는 생성 직후에만 1회 보여집니다. 따라서 잘 복사해 두고 사용해야 합니다. 
-  {: .notice--warning}
-
-
+   이 정보는 생성 직후에만 1회 보여집니다. 따라서 잘 복사해 두고 사용해야 합니다. 
+   {: .notice--warning}
 
 #### personal access token 활용
 
@@ -221,8 +199,6 @@ $ git clone https://github.com/username/repo.git
 Username: your_username
 Password: your_token
 ```
-
-
 
 ## IntelliJ 에서 Remote Repository 연결하기
 
@@ -243,8 +219,6 @@ Git repository 로 설정되지 않은, 현재 작업중인 project에 대해서
 7. IntelliJ 로 돌아와서 프로젝트를 우클릭하고 `Synchronize` 선택
 
 8. 프로젝트로에서 우클릭하여 `Git` &rarr; `Repository` &rarr; `Branches` &rarr; `origin/master` &rarr; `Checkout as new local branch` 선택
-
-
 
 
 ## 출처 및 참고자료

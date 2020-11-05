@@ -12,11 +12,7 @@ last_modified_at: 2020-10-26
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/com.simplify.api){:target="_blank" .btn .btn--primary}
 
-
-
 ## AOP?
-
-
 
 #### 개념/정의
 
@@ -46,17 +42,11 @@ AOP는 이러한 공통 부분을 뽑아 모듈화하고, 주 로직(기능)에�
 
 설명이 복잡하지만, 특정 기능을 하는 것을 하나하나의 별도 모듈로 개발하고, 이를 Annotation(Aspect) 으로 개발하여 필요한 곳에 `@annotation`형태로 넣을 수 있게 하겠다는 것이 AOP의 편리한 점이라고 할 수 있습니다.
 
-
-
 #### Spring AOP?
 
 스프링에서의 AOP는 접근 제어, 부가기능을 추가하기 위해서 프록시 패턴 기반의 AOP구현체를 사용한다는 것이 특징입니다. 당연하게도 Spring Bean 에만 AOP를 적용하는 것이 가능하며, AOP 자체의 모든 기능을 제공하는 것이 아니라 IoC와 연동하여 기능 개선을 하는 데 목적이 있다고 볼 수 있습니다. (차용한 내용)
 
-
-
 ## Spring Boot 에서 AOP 구현하기
-
-
 
 #### library
 
@@ -79,8 +69,6 @@ compile 'org.springframework.boot:spring-boot-starter-aop'
 2020.10.28 현재 Springboot 의 최신 버전인 2.3.4.RELEASE 에서는 해당 라이브러리가 포함되어 있기 때문에 별도로 라이브러리를 추가해줄 필요가 없습니다.
 {: .notice--warning}
 
-
-
 #### @EnableAspectJAutoProxy
 
 Springboot의 Application.java 파일 맨 앞에 @EnableAspectJAutoProxy 를 붙여 줍니다. 이 annotation은 AOP 기능을 사용하겠다는 의미로 사용됩니다. 
@@ -88,13 +76,9 @@ Springboot의 Application.java 파일 맨 앞에 @EnableAspectJAutoProxy 를 붙
 2020.10.28 현재 Springboot 의 최신 버전인 2.3.4.RELEASE 에서는 [Stackoverflow 에서 가이드](https://stackoverflow.com/questions/48625149/spring-aop-works-without-enableaspectjautoproxy) 한 것 처럼 이 annotation을 추가하지 않습니다.
 {: .notice--warning}
 
-
-
 ## 샘플 구현하기
 
 여기서는 참고자료에 있는 금칙어 체크 로직을 넣어 구현하도록 하겠습니다. 설명 순서만 다를 뿐 해당 샘플을 그대로 차용했다는 점을 미리 말씀드립니다. 아래 순서대로 하셔도 좋고 출처에 있는 자료를 활용해도 됩니다.
-
-
 
 #### @interface 생성
 
@@ -148,8 +132,6 @@ public class ParamsPost {
     private String content;
 }
 ```
-
-
 
 #### @Aspect 생성
 
@@ -261,8 +243,6 @@ public class ForbiddenWordCheckAspect {
 
 이 과정에서 발생시킨 exception은 아래 후처리 부분에서 exception handling하여 처리합니다.
 
-
-
 #### Service에 반영
 
 이제 이러한 기능(금칙어 확인)에 대하여 Service에 반영합니다. service에 반영하는 것에 대해서도 여러 의견이 있지만, service 혹인 controller 에 대해서 프로젝트 상황에 맞는 곳에 지정하면 됩니다. 
@@ -277,8 +257,6 @@ public class ForbiddenWordCheckAspect {
 ```
 
 `@ForbiddenWordCheck` annotation을 원하는 <mark style='background-color: #fff5b1'>method</mark> 앞에 선언하면 그 처리는 완료됩니다.
-
-
 
 #### 후처리
 
@@ -303,13 +281,9 @@ public class ExceptionAdvice {
 
 미리 구현해 두었던 ExceptionAdvice에 해당 Exception을 handle하는 코드를 넣어 마무리합니다.
 
-
-
 ## 결론 및 활용
 
 실제 구현을 해보면 구현 당시에는 class, field 등에 대한 충분한 이해와 함께 JoinPoints를 어떻게 활용하는지에 대한 문제, 그리고 Exception 처리에 대한 부분까지 모두를 신경쓰게 되어 고려할 부분이 많아지고 개발양이 많은 것처럼 보이지만, 기능 API들이 많아지고 동일 처리를 반복적으로 이루어지는 경우에는 한번 만들어둔 AOP기능을 이용하여 annotation만 추가하면 되므로 개발이 편리해 집니다. 또한 기능상에 변경점이 있는 경우에는 Aspect만 수정하면 되어 관리도 편해집니다.
-
-
 
 ## 참고자료 및 출처
 

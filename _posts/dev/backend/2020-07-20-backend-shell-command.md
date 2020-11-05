@@ -14,11 +14,7 @@ Java 에서 원격 서버에 명령을 보내는데 있어, <mark style='backgro
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/jsch-sample){:target="_blank" .btn .btn--primary}
 
-
-
 ## 샘플 소스
-
-
 
 #### Java project 에 라이브러리 추가하기
 
@@ -28,8 +24,6 @@ Java 에서 원격 서버에 명령을 보내는데 있어, <mark style='backgro
 
 사용하고 있는 IDE(개발 툴)에 따라 프로젝트에 포함시키는 방법이 조금 상이할 수 있습니다. 각 IDE에 맞추어 적절한 방법으로 포함해주는 것이 좋습니다. 저는 주력으로 IntelliJ 를 사용하고 있지만, 거의 대부분의 프로젝트가 Maven / Gradle 기반이기 때문에 이에 대한 설명을 하겠습니다.
 {: .notice--info}
-
-
 
 #### maven dependency 설정
 
@@ -52,11 +46,7 @@ dependencies {
 }
 ```
 
-
-
 ## Java 샘플 소스 코드
-
-
 
 #### 필요한 정보
 
@@ -81,8 +71,6 @@ dependencies {
         String username = "root";
         String password = "root";
 ```
-
-
 
 #### JSch 객체 생성, Session 생성
 
@@ -117,8 +105,6 @@ session.setConfig(config);
 만약 위에서 java.util.Properties 부분이 어색하면 Properties 만 넣어주면서 명시적으로 import 해 주면 됩니다. 이 예제에서는 편의상 jsch.* 로 import 하였기 때문에 그 패키지 안의 Properties 객체와 중첩되는 것을 방지하기 위해 이렇게 설정해 주었습니다. 
 {: .notice--warning}
 
-
-
 #### 접속하기
 
 이제 앞서 `host`, `port`, `username`, `password` 를 설정하고 설정 정보를 추가해준 `session` 객체를 이용해서 서버에 접속해 줍니다. 접속 방법은 `session`객체의 `connect()` 메소드를 이용하면 되는데, 이 메소드는 void 를 리턴하므로 아무런 객체도 반환하지 않습니다. 그 때문에 `try ~ catch` 로 감싸주고 접속에 문제가 생겼을 때에 대한 대비책을 마련해 두어야 합니다.
@@ -126,8 +112,6 @@ session.setConfig(config);
 ```java
 session.connect();
 ```
-
-
 
 #### 명령 요청하기
 
@@ -164,8 +148,6 @@ channelExec.connect();
 
 여기서의 명령은 사용자 홈 폴더(~)에 `jschTest.txt` 파일을 생성(`touch`) 하라는 의미입니다. 마지막에 `connect()` 함수를 호출해 주면 이 때에 원격지에 명령을 호출합니다.
 
-
-
 #### finally
 
 마지막으로는 앞서 사용한 session 객체와 channel 객체를 닫아주는 것입니다. 닫아주지 않으면 앞서 접속안 정보가 불필요하게 남아 Memory leak 등의 원인이 될 수 있고, 서버에 접속한 상태(열린 상태)로 남아있을 수 있으므로 반드시 닫아줍니다.
@@ -178,8 +160,6 @@ channelExec.connect();
         session.disconnect();
     }
 ```
-
-
 
 ## 전체 소스 코드
 
@@ -238,14 +218,10 @@ public class JschSample {
                 session.disconnect();
             }
         }
-
-
     }
 
 }
 ```
-
-
 
 #### 실행 및 확인
 
@@ -262,8 +238,6 @@ Process finished with exit code 0
 ```sh
 -rw-rw-r--  1 root root    0  7월 20 13:38 jschTest.txt
 ```
-
-
 
 ## 참고자료 및 출처
 

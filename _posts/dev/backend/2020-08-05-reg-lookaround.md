@@ -21,15 +21,11 @@ true
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/regLookAround){:target="_blank" .btn .btn--primary}
 
-
-
 ## 전방탐색 vs. 후방탐색
 
 전방 탐색은 앞에서부터 후방 탐색은 뒤에서부터 특정 문자열을 찾는 방법입니다. 여러가지 방법을 이용할 수 있으나, 여기서는 정규식(regular expression)을 이용한 방법을 설명합니다
 '전방', '후방' 이라는 말 자체가 너무 한자스러워서.. 적당한 다른 단어를 찾아보고 싶은데 못찾고 있습니다. 혹시 아시는 분 있으면 댓글좀 부탁드립니다...
 {: .notice--info}
-
-
 
 #### 전방탐색
 
@@ -76,8 +72,6 @@ https
 ftp
 ```
 
-
-
 #### 후방탐색
 
 전방탐색과 반대의 경우로서, 뒤에서부터 문자열을 찾아갑니다. 사용하는 문자열은 `?<=` 이며 뒤에서부터 탐색합니다. 
@@ -106,8 +100,6 @@ Total items found: 4
 899.00
 69.96
 ```
-
-
 
 ## 응용하기
 
@@ -138,8 +130,6 @@ xml 파일의 단점 중 하나가 parsing 하기가 힘들다는 점입니다. 
 ```
 Simplify linkeverything
 ```
-
-
 
 #### 부정어 사용하기
 
@@ -181,8 +171,6 @@ I saved $5 on this order.
 
 또한 Java 에서 정규식을 이용하는 경우, Pattern, Matcher 객체를 활용하게 되는데 이에 대한 예제도 함께 포함하고 있으니, 참고가 되시면 좋겠습니다. (맨 위 GitHub 링크 참고)
 {: .notice--info}
-
-
 
 ## 참고자료 및 출처
 

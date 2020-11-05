@@ -11,8 +11,6 @@ last_modified_at: 2020-07-22
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/kakaoLogin){:target="_blank" .btn .btn--primary}
 
-
-
 ## 카카오 API 사용 등록
 
 Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카카오 역시 API 를 개발하고, 문서를 만들고, 해당 API를 사용하려면 등록할 수 있는 페이지를 잘 구축해 두었습니다. 그저 가입하고 등록과정만 거치면 누구나 사용할 수 있습니다. 
@@ -20,15 +18,11 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 아마도 여기에는 일일 사용할 수 있는 API에 대해서 제한이 걸려 있을 것입니다. 진짜로 대 고객 서비스를 계획하고 있다면 정식으로 등록 과정을 거쳐야 할 것입니다. 
 {: .notice--warning}
 
-
-
 #### kakao developers 페이지 등록
 
 우선 [kakao developers](https://developers.kakao.com/) 페이지에 접속하여 사용자 등록을 합니다. 한번 가입하면 쭉 사용하게 될 것이고, 메일 주소를 주로 사용하기 때문에 주로 사용하는 메일을 이용해 줍니다. 저는 개발 편의 상 gmail로 등록했습니다. 
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
-
-
 
 #### 애플리케이션 등록하기 
 
@@ -50,8 +44,6 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_29_17.jpg)
 
-
-
 #### 카카오 로그인 API 사용설정하기
 
 이제 좌측 메뉴 중 `카카오 로그인` 항목으로 이동하여 `활성화 설정` 부분을 ON 으로 바꾸어 줍니다. 
@@ -61,23 +53,17 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 어떤 API 를 사용하든 다 비슷한 과정으로 설명할 수 있습니다. 애플리케이션이라는 단위로 사용 설정을 하고, 그 앱에서 어떤 API를 사용할지를 각각 설정하게 됩니다. 특히나 여기서 다루는 사용자 정보 부분은 아주 민감한 정보이기 때문에 저렇게 별도의 메뉴로 나와 있습니다. 
 {: .notice--warning}
 
-
-
 #### 정보 제공 동의 항목 활성화 하기
 
 이제 좌측 메뉴 중 `동의항목`으로 이동하여 `프로필 정보`와 `카카오계정(이메일)` 부분을 각각 **필수**, **선택** 동의 항목으로 활성화 해 줍니다. 
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_34_26.jpg)
 
-
-
 #### 플랫폼 추가하기
 
 이제 이 API를 사용할 플랫폼이 무엇인지에 대해서 설정을 하게 됩니다. 아래 그림처럼 `플랫폼` 메뉴로 이동하여 `Web`항목에 (개발 목적이므로) `http://localhost:8080/`을 추가해 줍니다.
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_45_14.jpg)
-
-
 
 #### Redirect URI 설정하기
 
@@ -90,11 +76,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_53_02.jpg)
 
-
-
 여기까지 설정하고 나면 개발자 페이지에서 API를 사용하기 위한 설정은 마무리 된 것입니다. 이 다음부터는 이에 맞추어 Spring project를 간단히 생성하고 테스트해보는 것으로 진행하겠습니다.
-
-
 ## 참고자료 및 출처
 
 - <https://antdev.tistory.com/34>

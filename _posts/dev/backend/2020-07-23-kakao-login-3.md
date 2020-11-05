@@ -11,8 +11,6 @@ last_modified_at: 2020-07-23
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/kakaoLogin){:target="_blank" .btn .btn--primary}
 
-
-
 ## Access token 받아오기
 
 앞서 설명한 과정까지를 하면 `code`라는 `key`에 어떠한 값이 넘어옵니다. 카카오에서 로그인이 성공했을 때에 넘겨주는 값인데, 이 값을 이용해서 access token 과 refresh token 을 다시 요청해서 받아와야 합니다. 이러한 프로세스는 우리가 흔히 이야기하는 OAuth 방식의 기본 사상을 그대로 수용한 것이므로 해당 내용들을 조금 더 찾아보시면 더욱 자세한 내용을 찾아보실 수 있습니다. 
@@ -36,8 +34,6 @@ last_modified_at: 2020-07-23
 
 ![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture.png){: .align-center}
 
-
-
 #### gson 라이브러리 포함시키기
 
 이 이후에 호출하는 대부분의 API들은 거의 대부분 json 형태의 값을 return 하게 되어 있습니다. 따라서 사용 편의를 위해 gson 라이브러리를 포함시키겠습니다. (개인적인 선호도에 따라 jackson 등 본인에게 편한 라이브러리를 사용하면 됩니다.)
@@ -51,8 +47,6 @@ pom.xml 파일을 열어 아래 내용을 추가합니다.
 			<version>2.8.5</version>
 		</dependency>
 ```
-
-
 
 #### acces token 을 가져오는 service 구현하기
 
@@ -122,8 +116,6 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 위에서도 다음 사항을 본인 환경에 맞게 수정해 주어야 합니다. 
 - `client_id` 부분의 값은 본인이 등록한 `REST API 키` 값으로 변경해 줍니다. 
 
-
-
 #### controller를 수정하기
 
 이제 만들어둔 위 Service를 호출하여 access token 등을 받아오도록 수정해 보겠습니다. 다시 Controller 파일을 열어 다음과 같이 수정합니다.
@@ -138,15 +130,11 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
     }
 ```
 
-
-
 #### 실행 후 결과 확인
 
 이제 여기까지 수정한 사항을 가지고 실행하여 로그인 테스트 합니다. console 창에 나타난 로그를 잘 보면 다음과 같이 나타날 것입니다.
 
 ![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture2.png){: .align-center}
-
-
 
 #### 정보 가져오기
 
@@ -202,8 +190,6 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
     }
 ```
 
-
-
 #### controller 에서 해당 내용 호출하기 
 
 다시 controller 를 열어 아래 내용을 추가합니다. 
@@ -231,21 +217,15 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
 
 여기서는 앞서 만든 getUserInfo 메소드를 다시 호출하여 사용자 정보를 가져오고, 이를 session 에 저장하는 로직이 있습니다. 카카오 계정에서는 키가 될 만한 정보로 활용할 수 있는 것이 email 이기 떄문에 여기서는 email 을 저장하였습니다.
 
-
-
 #### 실행 후 확인
 
 실행하여 로그를 확인하면 다음의 정보를 알 수 있습니다.
 
 ![](/assets/images/posts/dev/backend/2020-07-23-kakao-login-3/screenCapture3.png){: .align-center}
 
-
-
 ## 로그아웃 구현
 
 로그아웃 과정은 기존에 발급된 access token을 바로 만료시키게 서버에 요청하고, 저장해 두었던 session 정보를 삭제하는 과정입니다.
-
-
 
 #### logout 서비스 구현하기
 
@@ -279,8 +259,6 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
     }
 ```
 
-
-
 #### controller 에서 api 개발
 
 로그아웃은 로그인 버튼에 대해서 dynamic 하게 처리해도 되지만 여기서는 그냥 별도로 처리하도록 하겠습니다.
@@ -310,8 +288,6 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
     }
 ```
 
-
-
 #### index.jsp 수정하기
 
 화면에서도 logout 처리와 관련한 링크(혹은 버튼)가 있어야 하므로, 다음과 같이 수정합니다. 
@@ -322,8 +298,6 @@ java 파일을 하나 생성하여 아래 내용을 넣어 주었습니다. 기�
         <input type="button" value="로그아웃" onclick="location.href='/logout'">
     </c:if>
 ```
-
-
 
 ## 참고자료 및 출처
 

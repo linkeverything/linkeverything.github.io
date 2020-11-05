@@ -10,11 +10,7 @@ Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니�
 
 여기선 몇 가지 랜덤 문자열 생성 방법을 정리하고, 마지막으로는 숫자를 랜덤하게 나누는 것도 정리합니다.
 
-
-
 ## 문자열 나누기
-
-
 
 #### Plain Java 이용 - unbounded
 
@@ -33,8 +29,6 @@ System.out.println(generatedString);
 결과:
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.36.51.png)
-
-
 
 #### Plain Java 이용 - bounded
 
@@ -61,8 +55,6 @@ System.out.println(generatedString);
 
 ![](assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.42.04.png)
 
-
-
 #### Java 8 을 이용한 알파벳으로 된 랜덤 문자열
 
 Java 8 에서는 *Random.ints* 라는 함수를 사용할 수 있습니다. 
@@ -87,8 +79,6 @@ System.out.println(generatedString);
 
 - toString() : 마지막으로는 문자화 해줍니다. (이 toString()함수는 StringBuilder의 것입니다.)
 
-
-
 #### Java 8 을 이용한 숫자 및 알파벳으로 된 랜덤 문자열
 
 위와 동일한 방식이지만, 시작 문자를 `0`부터로 하고, filter를 추가합니다. 중간에 이 로직에 필요없는 부분은 제거하고 나머지 숫자들만 가지고 문자열을 추출합니다.
@@ -109,8 +99,6 @@ System.out.println(generatedString);
 ```
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.05.55.png)
-
-
 
 #### Apache Commons Lang 을 이용하는 방법
 
@@ -144,8 +132,6 @@ System.out.println(generatedString);
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.23.25.png)
 
-
-
 ## 숫자를 나누기
 
 만약 세 사람이 10개의 사과를 랜덤하게 나눠 갖는다 라고 가정하면 처음엔 조금 막막한 느낌입니다. 위 예제들을 쭉 봐온 것 처럼, 시작과 끝 값을 지정한 뒤, 그 안에서 숫자를 랜덤하게 생성하면 이 문제 역시 간단하게 해결할 수 있습니다. 
@@ -164,8 +150,6 @@ nums[nums.length-1] = total;
 Arrays.sort(nums);
 ```
 
-
-
 ## Comment
 
 랜덤하게 문자열을 생성하는 방법이나 숫자를 생성하는 것 등은 이것들 말고도 다양하게 있을 것입니다. Random 객체가 생성하는 숫자 자체가 실제로는 Random 하지 않다는 의견도 있는 만큼, 이러한 방법들이 항상 최상의 결과를 가져온다고 생각하면 안됩니다.
@@ -173,8 +157,6 @@ Arrays.sort(nums);
 더불어, 대부분의 방법들이 문자에 해당하는 숫자를 랜덤하게 뽑은 뒤 문자열로 변환하고 이를 모아서 출력해주는 형태를 가지고 있기 때문에, TPS(Transaction Per Second)가 매우 높은 경우 성능에 영향을 줄 수 있다는 것을 반드시 명심해야 합니다.
 
 만약 랜덤하게 생성한 것이 ID처럼 쓰이고, 앞뒤로 날짜나 시간 등을 붙여줄 수 있는 경우라면 간단히 현재시간의 밀리세컨드 값이나, timestamp의 마지막 3자리를 뽑아쓰는 등으로 가볍게 처리하기도 합니다.
-
-
 
 ## 참고자료 및 출처
 
