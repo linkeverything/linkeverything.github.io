@@ -11,11 +11,11 @@ backend나 frontend나 프로그램 개발에 있어, logging 처리는 아주 �
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## 기본사항
 
-<br/>
+
 
 #### Springboot 생성
 
@@ -23,7 +23,7 @@ Springboot 프로젝트는 단순히 [Spring Initializr]()를 이용해서 생�
 
 ![](/assets/images/posts/dev/backend/2020-07-29-spring-logging/start.spring.io-2020.07.29-18_04_14.png){: .align-center}
 
-<br/>
+
 
 #### 기본 설정된 logback
 
@@ -61,11 +61,11 @@ public class LogbackApplication {
 
 ![](/assets/images/posts/dev/backend/2020-07-29-spring-logging/screenCapture2.png){: .align-center}
 
-<br/>
+
 
 ## logback 고도화
 
-<br/>
+
 
 #### logback 설정 파일 만들기
 
@@ -128,7 +128,7 @@ resources 폴더 아래에 `logback-spring.xml` 파일을 생성합니다. 그�
 
 ![](/assets/images/posts/dev/backend/2020-07-29-spring-logging/screenCapture5.png){: .align-center}
 
-<br/>
+
 
 #### 프로파일 별 구분하기
 
@@ -139,7 +139,7 @@ Springboot 를 사용하면서 편리한 점 중 하나가 바로 프로파일 �
 `application-dev.properties` 파일을 생성하고, `-Dspring.profiles.active=dev` 라고 VM 옵션을 주어 실행하면, `application.properties` 파일에 선언된 정보들을 우선 로드한 뒤, `application-dev.properties` 를 로드합니다. 즉, 기본 값들은 `application.properties` 파일에 다 넣고, 변경되는 값들만 `application-dev.properties` 파일에 넣어주면 됩니다. (override 개념)
 {: .notice--warning}
 
-<br/>
+
 
 #### logback 설정 파일에서 프로파일 이용하기
 
@@ -158,7 +158,7 @@ logback 파일에서 프로파일별로 설정을 분리하려면, 파일로 분
 
 이렇게 하면 `dev` 라는 프로파일로 실행될 때에는 `./logs/dev` 폴더 하위에 로그파일을 생성하게 됩니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

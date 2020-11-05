@@ -10,7 +10,7 @@ last_modified_at: 2020-07-28
 
 MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 캡쳐 기능의 단축키는 `command` + `shift` + `3` ~ `5` 키를 이용하여 화면을 캡쳐할 수 있습니다. 여기서는 캡쳐 방법은 간단히 요약하고 캡쳐된 파일의 파일명을 변경하는 방법을 공유합니다.
 
-<br/>
+
 
 ## 기본적인 화면 캡쳐 방법
 
@@ -18,7 +18,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
 
 다음과 같이 기본 캡쳐 방법을 정리할 수 있습니다. 
 
-<br/>
+
 
 #### `command` + `shift` + `3`
 
@@ -27,7 +27,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
   복수 개의 데스크탑을 사용하고 있는 경우 이를 모두 캡쳐하는 방법이 있는지는 조금 더 찾아봐야 할 것 같습니다. MacOS 에서는 각각의 데스크탑을 분리된 작업 공간으로 간주하기 때문에 연결해서 캡쳐하는 것은 지원하지 않는 것 같습니다.
   {: .notice--info}
 
-<br/>
+
 
 #### `command` + `shift` + `4`
 
@@ -35,13 +35,13 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
   
   이 단축키를 이용하여 **창 캡쳐**가 가능합니다. 캡쳐하려는 창 위에 십자가로 된 커서를 둔 상태에서 `spacebar` 를 누르면 그 창이 선택되어지고, 거기서 다시 `return` 키를 눌러 캡쳐할 수 있습니다.
 
-<br/>
+
 
 #### `command` + `shift` + `5`
 
   영역 캡쳐입니다. 쉽게 영역을 조절하고 캡쳐할 수 있습니다. 위에서 이야기한 **4** 를 이용해도 되지만, 마우스를 사용하지 않는 경우에는 이 방법이 더 정확하게 캡쳐가 가능합니다. 
 
-<br/>
+
 
 ## 파일명 변경하기 
 
@@ -49,7 +49,7 @@ MacOS 에서도 이와 마찬가지로 기본 캡쳐 기능을 제공합니다. 
 
 ![](/assets/images/posts/etc/apple/2020-07-28-screenshot-name/old.png){: .align-center}
 
-<br/>
+
 
 #### 파일명 변경하기
 
@@ -72,7 +72,7 @@ $ defaults write com.apple.screencapture name screenCapture;killall SystemUIServ
 
 ![](/assets/images/posts/etc/apple/2020-07-28-screenshot-name/new.png){: .align-center}
 
-<br/>
+
 
 #### 시간 정보 포함하지 않기
 
@@ -94,7 +94,7 @@ defaults write com.apple.screencapture "include-date" 0;killall SystemUIServer
 defaults write com.apple.screencapture "include-date" 1;killall SystemUIServer
 ```
 
-<br/>
+
 
 ## 출처 및 참고자료
 

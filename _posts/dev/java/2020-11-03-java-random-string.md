@@ -10,11 +10,11 @@ Java 에서 종종 필요한 기능 중 하나가 랜덤 문자열 생성입니�
 
 여기선 몇 가지 랜덤 문자열 생성 방법을 정리하고, 마지막으로는 숫자를 랜덤하게 나누는 것도 정리합니다.
 
-<br/>
+
 
 ## 문자열 나누기
 
-<br/>
+
 
 #### Plain Java 이용 - unbounded
 
@@ -34,7 +34,7 @@ System.out.println(generatedString);
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.36.51.png)
 
-<br/>
+
 
 #### Plain Java 이용 - bounded
 
@@ -61,7 +61,7 @@ System.out.println(generatedString);
 
 ![](assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 05.42.04.png)
 
-<br/>
+
 
 #### Java 8 을 이용한 알파벳으로 된 랜덤 문자열
 
@@ -87,7 +87,7 @@ System.out.println(generatedString);
 
 - toString() : 마지막으로는 문자화 해줍니다. (이 toString()함수는 StringBuilder의 것입니다.)
 
-<br/>
+
 
 #### Java 8 을 이용한 숫자 및 알파벳으로 된 랜덤 문자열
 
@@ -110,7 +110,7 @@ System.out.println(generatedString);
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.05.55.png)
 
-<br/>
+
 
 #### Apache Commons Lang 을 이용하는 방법
 
@@ -144,7 +144,7 @@ System.out.println(generatedString);
 
 ![](/assets/images/posts/dev/java/2020-11-03-java-random-string/capture 2020-11-03 PM 06.23.25.png)
 
-<br/>
+
 
 ## 숫자를 나누기
 
@@ -164,7 +164,7 @@ nums[nums.length-1] = total;
 Arrays.sort(nums);
 ```
 
-<br/>
+
 
 ## Comment
 
@@ -174,7 +174,7 @@ Arrays.sort(nums);
 
 만약 랜덤하게 생성한 것이 ID처럼 쓰이고, 앞뒤로 날짜나 시간 등을 붙여줄 수 있는 경우라면 간단히 현재시간의 밀리세컨드 값이나, timestamp의 마지막 3자리를 뽑아쓰는 등으로 가볍게 처리하기도 합니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

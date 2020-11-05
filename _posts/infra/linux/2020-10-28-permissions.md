@@ -14,7 +14,7 @@ A라는 사용자가 실행한 프로그램에서 생성한 log 파일은 B라�
 
 이러한 점들에 착안해서 파일 및 디렉토리 권한에 대한 이야기를 조금 해보겠습니다.
 
-<br/>
+
 
 ## 권한(permission)
 
@@ -57,7 +57,7 @@ A라는 사용자가 실행한 프로그램에서 생성한 log 파일은 B라�
 
 위 내용을 숫자로 표현하는 경우가 많이 있습니다. 위 권한을 숫자로 표현하면 `644` 입니다.
 
-<br/>
+
 
 #### 권한의 변경
 
@@ -77,7 +77,7 @@ $ chmod 777 README.md
 
 대상이 되는 파일이나 디렉토리는 여러 개를 파라미터로 할 수 있습니다. 예를 들어 위 경우에서 `README.md` 파일과 `Rakefile` 이라는 두 파일을 수정하려면 `chmod 777 README.md Rakefile` 이라고 띄어쓰기로 구분하면 됩니다. 
 
-<br/>
+
 
 ## UMASK
 
@@ -101,7 +101,7 @@ umask 값은 777에서 권한을 뺀 값입니다. 다시 말하면 777에서 um
 
 더욱 정확하게 이야기하자면 기본 permission이 파일은 666, 디렉토리는 777이라고 보면 됩니다(그러니 위 설명에서처럼 111을 빼라고 하는 것입니다). 이렇게 되어있는 기본 permission에 umask 값을 빼면 그 것이 기본 permission이 됩니다.
 
-<br/>
+
 
 ## MacOS에서는?
 
@@ -115,7 +115,7 @@ umash 022
 
 맥에서는 다음과 같이 설정할 수 있습니다. 
 
-<br/>
+
 
 #### 사용자 앱의 umask
 
@@ -131,7 +131,7 @@ sudo launchctl config user umask nnn
 sudo mkdir -m 755 /private/var/db/com.apple.xpc.launchd/config
 ```
 
-<br/>
+
 
 #### 시스템 프로세스의 umask
 
@@ -147,7 +147,7 @@ sudo launchctl config system umask nnn
 sudo mkdir -m 755 /private/var/db/com.apple.xpc.launchd/config
 ```
 
-<br/>
+
 
 ## 출처 및 참고자료
 

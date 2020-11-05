@@ -18,7 +18,7 @@ adb install aaa.apk
 
 각설하고 각 OS별로 설치법에 대해서 설명해 보겠습니다. 
 
-<br/>
+
 
 ## 원래는 어떻게 쓰는건데?
 
@@ -44,7 +44,7 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 
 우리가 이야기하는 adb 는 두 번째 스크린샷에서 보이는 `Android SDK Platform Tools` 패키지에 포함되어 있습니다. Android 에서는 당연히 Android Studio 를 통한 설치를 권장하겠지만, 루팅이나, Device연결만 되면 되는 가벼운 이유로 Android Studio 까지 설치할 이유는 없습니다. 
 
-<br/>
+
 
 ## adb 다운로드
 
@@ -52,7 +52,7 @@ Android Studio를 설치하려고 하면 설치 도중에 SDK[^2] Manager를 설
 
 ![](/assets/images/posts/dev/mobile/2020-10-29-install-adb/capture 2020-10-30 PM 05.53.57.png)
 
-<br/>
+
 
 #### (Windows) 환경 변수 설정하기
 
@@ -85,7 +85,7 @@ Windows 에서 환경 변수 설정을 하는 것은 `cmd`창, 그러니까 `명
 
 이제 '명령 프롬프트'를 실행하고 `adb --version` 를 입력해 봅니다. 명령어가 주르륵 나오면 정상 설치된 것입니다. 
 
-<br/>
+
 
 #### (MacOS) PATH에 추가하기
 
@@ -107,7 +107,7 @@ export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 ![](/assets/images/posts/dev/mobile/2020-10-29-install-adb/capture 2020-10-30 PM 06.43.10.png)
 
-<br/>
+
 
 ## MacOS - Homebrew 이용하기[^7]
 
@@ -117,7 +117,7 @@ homebrew 를 사용한다면 다음 명령어로 손쉽게 설치가 가능합�
 brew install android-platform-tools
 ```
 
-<br/>
+
 
 ## 출처 및 참고자료
 

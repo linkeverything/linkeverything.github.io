@@ -15,7 +15,7 @@ last_modified_at: 2020-08-05
 
 이렇게 네 가지 정도를 사용하고 있습니다. 여기에 추가적으로 업무용, 업무 테스트용으로 사용중인 gmail 아이디가 2개 정도 되는 것 같습니다. (다 테스트 용도의 이메일들이고, 주 이메일로 등록한 GCP, Azure, AWS 등의 인스턴스와 꼬이는 것을 방지하기 위해서 별도의 이메일로 업무용을 사용중입니다.)
 
-<br/>
+
 
 ## 여러 메일을 한 곳에서 받기
 
@@ -23,7 +23,7 @@ last_modified_at: 2020-08-05
 
 수신하는 모든 메일에 대해서 <mark style='background-color: #ffdce0'>전달</mark> 기능을 사용할 수도 있습니다. 하지만 이렇게 되면 <mark style='background-color: #fff5b1'>FW</mark> 같은 문구가 제목 앞에 포시되기도 하고, 회신 할 경우 본 메일이 아닌 다른 메일로 하게 되는 격이 되므로 권장하는 방법은 아닙니다. 물론 "보기만" 하는 경우에는 쓸수있는 기능이긴 합니다.
 
-<br/>
+
 
 #### IMAP or POP server settings
 
@@ -37,13 +37,13 @@ pop3 는 복잡한 기술적인 설명을 배제하면 단순히 해당 메일 �
 
 | Email Provider | IMAP Settings | POP Settings | SMTP Settings |
 |----------------|---------------|--------------|---------------|
-|AOL (including Verizon.net)|Server: imap.aol.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server: pop.aol.com<br/>Port: 995<br/>Encryption: SSL/TLS|Server: smtp.aol.com<br/>Port: 465<br/>Encryption: SSL/TLS|
-|Gmail|Server: imap.gmail.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server: pop.gmail.com<br/>Port: 995<br/>Encryption: SSL/TLS|Server: smtp.gmail.com<br/>Port: 465<br/>Encryption: SSL/TLS|
-|iCloud|Server: imap.mail.me.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server:<br/>Port:<br/>Encryption:|Server: smtp.mail.me.com<br/>Port: 587<br/>Encryption: STARTTLS|
-|MSN|Server: imap-mail.outlook.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server: pop-mail.outlook.com<br/>Port: 995<br/>Encryption: SSL/TLS|Server: smtp-mail.outlook.com<br/>Port: 587<br/>Encryption: STARTTLS|
-|Microsoft 365|Server: outlook.office365.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server: outlook.office365.com<br/>Port: 995<br/>Encryption: SSL/TLS|Server: smtp.office365.com<br/>Port: 587<br/>Encryption: STARTTLS|
-|Outlook.com<br/>Hotmail.com<br/>Live.com|Server: outlook.office365.com<br/>Port: 993<br/>Encryption: SSL/TLS|Server: outlook.office365.com<br/>Port: 995<br/>Encryption: SSL/TLS|Server: smtp.office365.com<br/>Port: 587<br/>Encryption: STARTTLS|
-|Yahoo!|Server: imap.mail.yahoo.com <br/>Port: 993<br/>Encryption: SSL|Server: pop.mail.yahoo.com<br/>Port: 995<br/>Encryption: SSL|Server: smtp.mail.yahoo.com <br/>Port: 587 or 465<br/>Encryption: TLS/STARTTLS or SSL|
+|AOL (including Verizon.net)|Server: imap.aol.comPort: 993Encryption: SSL/TLS|Server: pop.aol.comPort: 995Encryption: SSL/TLS|Server: smtp.aol.comPort: 465Encryption: SSL/TLS|
+|Gmail|Server: imap.gmail.comPort: 993Encryption: SSL/TLS|Server: pop.gmail.comPort: 995Encryption: SSL/TLS|Server: smtp.gmail.comPort: 465Encryption: SSL/TLS|
+|iCloud|Server: imap.mail.me.comPort: 993Encryption: SSL/TLS|Server:Port:Encryption:|Server: smtp.mail.me.comPort: 587Encryption: STARTTLS|
+|MSN|Server: imap-mail.outlook.comPort: 993Encryption: SSL/TLS|Server: pop-mail.outlook.comPort: 995Encryption: SSL/TLS|Server: smtp-mail.outlook.comPort: 587Encryption: STARTTLS|
+|Microsoft 365|Server: outlook.office365.comPort: 993Encryption: SSL/TLS|Server: outlook.office365.comPort: 995Encryption: SSL/TLS|Server: smtp.office365.comPort: 587Encryption: STARTTLS|
+|Outlook.comHotmail.comLive.com|Server: outlook.office365.comPort: 993Encryption: SSL/TLS|Server: outlook.office365.comPort: 995Encryption: SSL/TLS|Server: smtp.office365.comPort: 587Encryption: STARTTLS|
+|Yahoo!|Server: imap.mail.yahoo.com Port: 993Encryption: SSL|Server: pop.mail.yahoo.comPort: 995Encryption: SSL|Server: smtp.mail.yahoo.com Port: 587 or 465Encryption: TLS/STARTTLS or SSL|
 
 pop3 설정에서 유의해야 할 부분이 있습니다. 왜 그런지 모르겠으나 이 글을 작성하는 시점에는 다단계 pop3 가 지원되지 않습니다. 원래 그렇게 지원을 안해주는 것인지는 확인해봐야 하겠습니다.
 
@@ -51,7 +51,7 @@ pop3 설정에서 유의해야 할 부분이 있습니다. 왜 그런지 모르�
 
 아마도 다단계로 처리되는 것이 시스템에 부하를 줄 수도 있고, 이런식으로 꼬리에 꼬리를 물게 되면, 루프(loop) 를 돌며 시스템에 문제를 줄 수 있어서일 수도 있습니다. 
 
-<br/>
+
 
 #### pop3 설정 시 2FA 를 설정중인 경우
 
@@ -74,7 +74,7 @@ pop3 설정에서 유의해야 할 부분이 있습니다. 왜 그런지 모르�
 
 token 발급 시, 이 토큰으로 로그인한 경우에 할 수 있는 동작을 설정할 수 잇어(권한 처리), 보안을 유지하고, 유지보수에 도움을 줍니다. 
 
-<br/>
+
 
 ## 출처 및 참고자료
 

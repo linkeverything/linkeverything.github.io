@@ -10,13 +10,13 @@ Git이나 SVN을 처음 접하고, 개발을 진행할 때에는 회사에서 �
 
 [^1]: 이 문서에서의 가이드들은 편의상 Git에 한정하여 설명합니다. 그리고 그 예제로 사용된 git server는 GitHub를 사용하는 것으로 하겠습니다.
 
-<br/>
+
 
 ## 좋지 않은 사용
 
 이 방법은 지양해야 할 방법입니다. 물론 동작하지 않는 것은 아니지만, 뒷쪽에 설명하는 것이 실제 상황에서는 더 정확하고 올바른 방향인 것 같습니다. 간단히 요약하자면, git 에 빈 깡통인 repository를 만들고, 작업중인 폴더를 덮어쓰기 하여 원래부터 버전관리를 해 왔던 것 처럼 진행하는 것입니다.
 
-<br/>
+
 
 #### repository 생성 및 clone
 
@@ -29,7 +29,7 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 
 ![](/assets/images/posts/infra/git/2020-10-29-git-first-push/capture%202020-10-30%20PM%2001.47.37.png)
 
-<br/>
+
 
 #### 작업중이던 파일 push 하기
 
@@ -73,7 +73,7 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 
 - 간혹 기존 project와 clone 한 project가 헷갈리는 경우도 발생합니다. IDE가 기존 작업 폴더를 기억하고 있어, 기존 폴더가 open되는 경우도 허다하고 git에 연결되지 않는 기존 작업 프로젝트에 계속 작업하게 되는 경우도 있을 것입니다. 
 
-<br/>
+
 
 ## 이상적인 사용법
 
@@ -81,7 +81,7 @@ GitHub에서 repository를 생성하면 첫 화면에 주소를 확인할 수 �
 
 이렇게 local환경에서 개발을 하고 나서 조금 쓸만한 수준이 되었을 때, 혹은 이 정도면 함께 일하는 사람들과 공유하고 본격적으로 개발을 할 수 있겠다 싶은 수준이 되면 이를 git server(github)에 push하여 공유하고 개발을 시작합니다.
 
-<br/>
+
 
 #### 작업 시작하기
 
@@ -94,13 +94,13 @@ IDE에서 기본 프로젝트 생성하듯 프로젝트를 생성합니다. 본�
 
 생성됩니다. 이러한 파일들에는 프로젝트 자체에 대한 정보를 가지고 있음은 물론이고, IDE의 각종 설정에 대한 정보도 가지고 있습니다. 예를 들어 이 프로젝트에서 특정 플러그인을 활성화 했다거나, 빌드하는 Java JDK 버전에 대한 정보 및 alias도 가지고 있습니다. 최근에는 이러한 부분이 개발 환경에 따라 맞지 않으면 알아서 보정해 주기도 하지만, 아래쪽에서 이 부분은 ignore하는 방법도 공유하겠습니다.
 
-<br/>
+
 
 #### repository 생성
 
 repository생성은 앞서 설명한 내용과 동일합니다. git server(github)에서 repository 를 생성해 둡니다. 그리고 역시 해당 repository의 주소를 복사해 둡니다. 
 
-<br/>
+
 
 #### .gitignore 에 설정하기
 
@@ -122,7 +122,7 @@ git이나 svn모두 push 한 내용을 추후에 ignore하게 되면 서버에�
 
 `.gitignore` 파일은 공동 작업하는 모두가 동일하게 적용되어야 하므로 git 에 push 합니다. 이렇게 되면 git clone (git pull) 하는 사용자 모두에게 동일하게 적용되므로 모두 같은 상태로 개발이 가능합니다.
 
-<br/>
+
 
 #### 작업중인 내용 연결하기
 
@@ -155,7 +155,7 @@ git push -u origin master
 
 이렇게 하면 이제 git server(github)에 해당 내용이 올라갑니다. 
 
-<br/>
+
 
 ## GitHub의 2중 인증 처리하기
 
@@ -167,7 +167,7 @@ google, naver등과 마찬가지로 github역시 token을 발급해야 위 과�
 
 이 때문에 로그인 처리를 해주는 임시 비밀번호인 token을 생성하고 이를 비밀번호 대신 사용하게 해 주어야 문제가 생겼을 때에 비밀번호를 변경(만료)시키는 것이 아니라 해당 token만 만료시켜서 문제를 해결해야 합니다.
 
-<br/>
+
 
 #### personal access token 생성
 
@@ -210,7 +210,7 @@ google, naver등과 마찬가지로 github역시 token을 발급해야 위 과�
   이 정보는 생성 직후에만 1회 보여집니다. 따라서 잘 복사해 두고 사용해야 합니다. 
   {: .notice--warning}
 
-<br/>
+
 
 #### personal access token 활용
 
@@ -222,7 +222,7 @@ Username: your_username
 Password: your_token
 ```
 
-<br/>
+
 
 ## IntelliJ 에서 Remote Repository 연결하기
 
@@ -245,7 +245,7 @@ Git repository 로 설정되지 않은, 현재 작업중인 project에 대해서
 8. 프로젝트로에서 우클릭하여 `Git` &rarr; `Repository` &rarr; `Branches` &rarr; `origin/master` &rarr; `Checkout as new local branch` 선택
 
 
-<br/>
+
 
 ## 출처 및 참고자료
 

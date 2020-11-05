@@ -11,13 +11,13 @@ last_modified_at: 2020-08-21
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/logback){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## Log Level 변경 방법
 
 Springboot 프로그램 구동 중에 log level 을 변경하기 위해서는 특정 라이브러리를 하나 추가하고 그 추가된 라이브러리를 이용해서 LoggerContext 객체를 얻어와, 레벨을 변경해 주어야 합니다.
 
-<br/>
+
 
 #### pom.xml 파일 수정
 
@@ -42,7 +42,7 @@ Springboot 프로그램 구동 중에 log level 을 변경하기 위해서는 �
 testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 ```
 
-<br/>
+
 
 #### logger 생성
 
@@ -59,7 +59,7 @@ testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 여기서 logback 이름에 대해서 다음 내용을 보면 알겠지만, 해당 패키지에 동일하게 적용된 모든 로거와 동일합니다. 기존에 만들어둔 logger 가 별도오 없고, 따라서 root 설정에 따라서 로깅 처리가 되고 있었기 때문에 명시적으로 하기 위해서 위와 같이 별도로 생성해 준 것입니다. 실질적으로는 동일한 로거일 것입니다. 
 {: .notice--warning}
 
-<br/>
+
 
 #### 테스트용 Controller 생성
 
@@ -147,7 +147,7 @@ logger.debug("Start step {}", logMessage)
 
 만약 레벨 체크를 하지 않으면 위에서 문자열을 합쳐 문장을 만드는 작업을 필요없는 작업임에도 발생하게 되는 부분입니다. 따라서 앞에서 로그 레벨을 체크함으로써 시스템 부하를 조금이나마 줄여주는 효과를 갖는다고 볼 수 있습니다. 
 
-<br/>
+
 
 #### 실행 및 확인
 
@@ -167,7 +167,7 @@ LOG LEVEL CHANGE FROM INFO TO TRACE
 [2020-08-21 17:46:17:603225][http-nio-8080-exec-1] ERROR c.s.l.controller.LogbackController - Start step TEST
 ```
 
-<br/>
+
 
 **2020. 10. 06 추가**
 
@@ -206,7 +206,7 @@ logging:
 
 위와 같이 설정한 뒤, spring boot는 `java -jar XXX.jar` 명령어로 실행하고, 설정 파일인 외부의 logback.xml 파일에서 로그 레벨을 변경하게 되면 최대 15초 후에 설정이 적용되어 변경된 로그 레벨이 설정되게 됩니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

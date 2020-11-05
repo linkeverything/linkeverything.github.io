@@ -6,13 +6,13 @@ last_modified_at: 2020-07-10
 ---
 몇 번을 찾아도 자꾸 까먹게 되는 명령어들이라 메모 형태로 적어서 보관합니다. 출처의 내용에서도 알 수 있듯이, Cent-os 기반으로 작성되었으나, 대부분의 linux 기반 시스템에서 유사하게 사용할 수 있으므로 참고용으로 활용할 수 있습니다. 
 
-<br/>
+
 
 ## netstat 이용하기
 
 리눅스 시스템에서 네트워크 관련사항을 확인하는 가장 보편화된 명령어는 `netstat` 명령어입니다. 기본적으로 설치되어 있지 않은 시스템도 쉽게 설치가 가능하고, 사용법 역시 간단한 편입니다.
 
-<br/>
+
 
 ## Check network ports
 
@@ -53,11 +53,11 @@ lsof -iTCP -sTCP:LISTEN -n -P
 당연히 이러한 명령어들에 `sudo` 를 붙여서 최상위 권한으로 실행하면 시스템에서 관리하는 프로세스에 대한 정보들까지 같이 보입니다. 
 {: .notice--info}
 
-<br/>
+
 
 ## 원격 서버의 포트가 열려 있는지 확인
 
-<br/>
+
 
 #### nc -z {hostname} {port}
 
@@ -81,7 +81,7 @@ $ nc 1xx.1xx.2xx.1xx 43
 Ncat: Connection timed out.
 ```
 
-<br/>
+
 
 #### telnet {hostname} {port} 명령어 이용하기
 
@@ -95,7 +95,7 @@ Escape character is '^]'.
 SSH-2.0-OpenSSH_7.4
 ```
 
-<br/>
+
 
 ## 방화벽 열기
 
@@ -105,7 +105,7 @@ netstat 으로 확인했을 때에 상태가 listen 으로 보여진다고 하�
 
 참고로 대부분의 docker 이미지에서는 그 이미지가 사용하는 기본 포트 - 예를 들어 웹서버의 8080등 - 들에 대해서는 열어둔 채로 이미지가 배포되어 있습니다. 반대로 이야기하자면, 이미지를 linux 등 OS부터 빌드업해서 구성하는 경우 <mark style='background-color: #fff5b1'>포트를 오픈하는 것 까지 `Dockerfile` 에 명시</mark>해서 이미지를 생성해 주어야 한다는 것입니다. 
 
-<br/>
+
 
 #### 방화벽에 허용 포트 추가/확인/삭제
 
@@ -146,7 +146,7 @@ firewall-cmd --reload
 firewall-cmd --permanent --zone=public --remove-port=22/tcp
 ```
 
-<br/>
+
 
 ## 출처 및 참고자료
 

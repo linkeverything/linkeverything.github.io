@@ -11,7 +11,7 @@ last_modified_at: 2020-07-22
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/kakaoLogin){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## 카카오 API 사용 등록
 
@@ -20,7 +20,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 아마도 여기에는 일일 사용할 수 있는 API에 대해서 제한이 걸려 있을 것입니다. 진짜로 대 고객 서비스를 계획하고 있다면 정식으로 등록 과정을 거쳐야 할 것입니다. 
 {: .notice--warning}
 
-<br/>
+
 
 #### kakao developers 페이지 등록
 
@@ -28,7 +28,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_13_33.jpg)
 
-<br/>
+
 
 #### 애플리케이션 등록하기 
 
@@ -50,7 +50,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_29_17.jpg)
 
-<br/>
+
 
 #### 카카오 로그인 API 사용설정하기
 
@@ -61,7 +61,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 어떤 API 를 사용하든 다 비슷한 과정으로 설명할 수 있습니다. 애플리케이션이라는 단위로 사용 설정을 하고, 그 앱에서 어떤 API를 사용할지를 각각 설정하게 됩니다. 특히나 여기서 다루는 사용자 정보 부분은 아주 민감한 정보이기 때문에 저렇게 별도의 메뉴로 나와 있습니다. 
 {: .notice--warning}
 
-<br/>
+
 
 #### 정보 제공 동의 항목 활성화 하기
 
@@ -69,7 +69,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_34_26.jpg)
 
-<br/>
+
 
 #### 플랫폼 추가하기
 
@@ -77,7 +77,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_45_14.jpg)
 
-<br/>
+
 
 #### Redirect URI 설정하기
 
@@ -90,7 +90,7 @@ Google 서비스 API 를 사용하려고 할 때에도 마찬가지이듯, 카�
 
 ![](/assets/images/posts/dev/backend/2020-07-22-kakao-login-1/screenshot-developers.kakao.com-2020.07.22-17_53_02.jpg)
 
-<br/>
+
 
 여기까지 설정하고 나면 개발자 페이지에서 API를 사용하기 위한 설정은 마무리 된 것입니다. 이 다음부터는 이에 맞추어 Spring project를 간단히 생성하고 테스트해보는 것으로 진행하겠습니다.
 

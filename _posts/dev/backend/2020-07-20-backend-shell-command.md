@@ -14,11 +14,11 @@ Java 에서 원격 서버에 명령을 보내는데 있어, <mark style='backgro
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/jsch-sample){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## 샘플 소스
 
-<br/>
+
 
 #### Java project 에 라이브러리 추가하기
 
@@ -29,7 +29,7 @@ Java 에서 원격 서버에 명령을 보내는데 있어, <mark style='backgro
 사용하고 있는 IDE(개발 툴)에 따라 프로젝트에 포함시키는 방법이 조금 상이할 수 있습니다. 각 IDE에 맞추어 적절한 방법으로 포함해주는 것이 좋습니다. 저는 주력으로 IntelliJ 를 사용하고 있지만, 거의 대부분의 프로젝트가 Maven / Gradle 기반이기 때문에 이에 대한 설명을 하겠습니다.
 {: .notice--info}
 
-<br/>
+
 
 #### maven dependency 설정
 
@@ -52,11 +52,11 @@ dependencies {
 }
 ```
 
-<br/>
+
 
 ## Java 샘플 소스 코드
 
-<br/>
+
 
 #### 필요한 정보
 
@@ -82,7 +82,7 @@ dependencies {
         String password = "root";
 ```
 
-<br/>
+
 
 #### JSch 객체 생성, Session 생성
 
@@ -117,7 +117,7 @@ session.setConfig(config);
 만약 위에서 java.util.Properties 부분이 어색하면 Properties 만 넣어주면서 명시적으로 import 해 주면 됩니다. 이 예제에서는 편의상 jsch.* 로 import 하였기 때문에 그 패키지 안의 Properties 객체와 중첩되는 것을 방지하기 위해 이렇게 설정해 주었습니다. 
 {: .notice--warning}
 
-<br/>
+
 
 #### 접속하기
 
@@ -127,7 +127,7 @@ session.setConfig(config);
 session.connect();
 ```
 
-<br/>
+
 
 #### 명령 요청하기
 
@@ -164,7 +164,7 @@ channelExec.connect();
 
 여기서의 명령은 사용자 홈 폴더(~)에 `jschTest.txt` 파일을 생성(`touch`) 하라는 의미입니다. 마지막에 `connect()` 함수를 호출해 주면 이 때에 원격지에 명령을 호출합니다.
 
-<br/>
+
 
 #### finally
 
@@ -179,7 +179,7 @@ channelExec.connect();
     }
 ```
 
-<br/>
+
 
 ## 전체 소스 코드
 
@@ -245,7 +245,7 @@ public class JschSample {
 }
 ```
 
-<br/>
+
 
 #### 실행 및 확인
 
@@ -263,7 +263,7 @@ Process finished with exit code 0
 -rw-rw-r--  1 root root    0  7월 20 13:38 jschTest.txt
 ```
 
-<br/>
+
 
 ## 참고자료 및 출처
 

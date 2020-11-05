@@ -9,11 +9,11 @@ Mac 시스템을 사용하면서 Homebrew 의 이용은 거의 필수적입니�
 Homebrew 는 설치되어 있다는 전제하에 글을 적겠습니다. Homebrew의 설치 방법에 대해서는 따로 글을 적겠지만, 홈페이지에도 너무 쉽게 설명이 되어 있으므로, 그대로 따라하셔도 됩니다. 
 {: .notice--info}
 
-<br/>
+
 
 ## java(jdk) 설치하기
 
-<br/>
+
 
 #### Homebrew 를 이용한 openjdk 설치
 
@@ -33,7 +33,7 @@ $ brew cask install adoptopenjdk8
 
 저는 위와 같이 입력해서 1.8 버전을 설치했고, 그 이후에도 11, 14버전도 설치하였습니다. 
 
-<br/>
+
 
 #### oracle java 설치
 
@@ -45,7 +45,7 @@ oracle java 설치는 [공식 홈페이지](https://www.oracle.com/kr/java/techn
 /Library/Java/JavaVirtualMachines/{jdk 버전 명}
 ```
 
-<br/>
+
 
 ## 여러 버전의 java 설치 / 관리하기
 
@@ -53,7 +53,7 @@ oracle java 설치는 [공식 홈페이지](https://www.oracle.com/kr/java/techn
 
 Windows 시스템의 경우에는 시스템 설정의 환경변수 쪽에서만 변경해 주거나, java 설정 프로그램(공식)을 이용해서 현재 활성화된 java 버전을 관리할 수 있습니다만 Mac 시스템은 그게 쉽지 않아, `jenv` 라는 프로그램을 통해 설정해 보고자 합니다. 
 
-<br/>
+
 
 #### jenv 설치
 
@@ -71,7 +71,7 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 추가해 준 뒤에는 source 명령어로 다시 load 해 주거나, 터미널을 재실행합니다. 
 
-<br/>
+
 
 #### jenv 에 버전 관리하기
 
@@ -127,7 +127,7 @@ $ jenv local oracle64-10.0.2
 
 이제 버전을 바꾸어 가며 사용하고 싶다면 **global** 옵션을 이용해서 설정하고 프로그램을 실행하면 됩니다. `java -version` 으로 확인해 보시기 바랍니다.
 
-<br/>
+
 
 ## jdk를 풀어서 사용하기
 
@@ -189,7 +189,7 @@ Linux 계열 특성 상 명령어를 그대로 압축해서 들고다녀도 충�
 
    그리고 이동시킨 폴더를 PATH 변수에 추가하여 줍니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

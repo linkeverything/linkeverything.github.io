@@ -1,15 +1,24 @@
 ---
 ---
 
+.page__content h2{
+    margin-top: 3em;
+}
+
 .page__content h2:before {
     content: '|';
     color: #ff8d37;
     margin-right: 0.3em;
+
+}
+
+.page__content h4{
+    margin-top: 2.3em;
 }
 
 .page__content h4:before {
     content: '•';
-    color: #ff9b5182;
+    color: #917d6d82;
     margin-right: 0.3em;
 }
 

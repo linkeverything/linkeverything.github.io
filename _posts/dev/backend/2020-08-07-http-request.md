@@ -15,7 +15,7 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 
 ![](/assets/images/posts/dev/backend/2020-08-07-http-request/start.spring.io-2020.08.07-14_02_00.png)
 
-<br/>
+
 
 ## pom.xml 수정하기
 
@@ -31,7 +31,7 @@ Back-end 서버를 개발함에 있어, 보통은 client 의 요청(request)을 
 
 버전은 이 글을 작성하는 시점에서 최신버전이지만, 본인 프로젝트에 맞게 수정/적용하여야 합니다.
 
-<br/>
+
 
 ## 수신 서버 먼저 생성하기
 
@@ -77,7 +77,7 @@ public class ResponseController {
 일반 Form request의 경우에는 별도로 produces 옵션을 주지 않았습니다. 
 {: .notice--info}
 
-<br/>
+
 
 #### 요청 Service 생성하기
 
@@ -177,7 +177,7 @@ Map<String, Object> 에 대해서 json 형태로 반환하는 것은 springboot 
 
 앞서 생성한 form 호출과 유사하지만, 여기서는 json 형태의 String 을 이용하여 StringEntity 객체를 이용합니다. 지금은 그냥 고정 형태라 저렇게 적어놓았지만, Map 등으로 파라미터들을 받아서 처리해야 하는 경우에는 **ObjectMapper** 등의 객체를 이용하여 json 을 String으로 변환해서 사용하면 됩니다.
 
-<br/>
+
 
 #### 요청 controller 작성
 
@@ -208,7 +208,7 @@ public class RequestController {
 
 이제 프로젝트를 구동시키고 브라우저에 http://localhost:8080/req/json 와 http://localhost:8080/req/form 을 호출해 봅니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

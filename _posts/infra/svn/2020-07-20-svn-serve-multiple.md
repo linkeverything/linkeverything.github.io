@@ -11,7 +11,7 @@ linux 환경에서 여러 svn 서버를 구동하는 경우에, 각 repository �
 여기서는 하나의 `svnserve` 명령어를 이용해서 다수의 repository 를 구동하는 것에 대해서 설명합니다. 무려 2007년에 작성된 문서이지만, 깔끔하게 설명되어 있어 차용하여 설명합니다. 
 {: .notice--info}
 
-<br/>
+
 
 #### 하나의 repository가 실행 중
 
@@ -25,7 +25,7 @@ $ svnserve -d -r /home/svn/repository
 
 /home/svn/repository 라는 경로를 대상으로 하여 svn repository 를 구동하게 됩니다. 아마도 svn 사용자의 홈 폴더 아래에 repository 폴더를 만들어 두고, 그 폴더에 대해서 svn 서버를 구동해 왔던 것 같습니다. 
 
-<br/>
+
 
 #### svn repository의 추가
 
@@ -68,7 +68,7 @@ $ svnadmin create c_repository
 주목할 점은, 기존의 <mark style='background-color: #fff5b1'>A</mark> respoitory 는 나머지 <mark style='background-color: #ffdce0'>B</mark>, <mark style='background-color: #dcffe4'>C</mark> repository 들과는 다르게 한 단계 위에 위치해 있습니다.
 {: .notice--info}
 
-<br/>
+
 
 #### 기존 repository 의 이동
 
@@ -89,7 +89,7 @@ $ svnserve -d -r /home/svn/repositories
 - svn://svnserver/b_repository
 - svn://svnserver/c_repository
 
-<br/>
+
 
 #### 기존 사용자의 변경
 
@@ -102,7 +102,7 @@ $ svnserve -d -r /home/svn/repositories
 $ svn switch --relocate svn://svnserver svn://svnserver/a_repository
 ```
 
-<br/>
+
 
 ## 출처 및 참고자료
 

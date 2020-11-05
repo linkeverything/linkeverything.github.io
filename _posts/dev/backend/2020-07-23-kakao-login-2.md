@@ -11,11 +11,11 @@ last_modified_at: 2020-07-23
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/kakaoLogin){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## Spring project 생성
 
-<br/>
+
 
 #### Spring Initializr 를 이용한 프로젝트 생성
 
@@ -25,7 +25,7 @@ last_modified_at: 2020-07-23
 
 아래 Generate 버튼을 누르고, 다운로드된 zip 파일을 IntelliJ 등 IDE 에 import 합니다.
 
-<br/>
+
 
 #### dependency 추가
 
@@ -43,13 +43,13 @@ last_modified_at: 2020-07-23
 </dependency>
 ```
 
-<br/>
+
 
 #### 이미지 준비
 
 로그인 버튼에 사용되는 이미지는 없어도 그만이긴 합니다만, 그래도 카카오 로그인에 맞춰 공식 이미지를 다운로드 받아 사용해 보겠습니다. [카카오 리소스 다운로드 페이지](https://developers.kakao.com/tool/resource/login) 에 이동하여 다운로드 받고, 이 파일을 `src/main/resources/static` 경로 하위에 위치시킵니다. 이 위치를 사용하는 이유는, 화면 resource 에서 접근할 때에 저 위치까지를 기본 위치로 잡고, 그 하위 경로를 이용할 것이기 때문입니다. 
 
-<br/>
+
 
 #### 로그인 화면 개발하기
 
@@ -88,7 +88,7 @@ last_modified_at: 2020-07-23
 - client_id 부분의 값은 본인이 등록한 `REST API 키` 값으로 변경해 줍니다. 
 - `img` 태그의 이미지 경로는 본인이 다운로드 받은 경로를 입력해 줍니다. 
 
-<br/>
+
 
 #### application.properties 파일 수정하기
 
@@ -103,7 +103,7 @@ spring.mvc.view.prefix=/WEB-INF/views/
 spring.mvc.view.suffix=.jsp
 ```
 
-<br/>
+
 
 #### controller 생성하기
 
@@ -132,7 +132,7 @@ public class HomeController {
 }
 ```
 
-<br/>
+
 
 ## 실행 및 결과 확인
 
@@ -146,7 +146,7 @@ public class HomeController {
 
 위 이미지에서 **로그아웃** 부분은 무시하세요. 다음에서 설명할 내용입니다.
 
-<br/>
+
 
 ## 참고자료 및 출처
 

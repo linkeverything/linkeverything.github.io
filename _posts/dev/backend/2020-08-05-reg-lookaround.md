@@ -21,7 +21,7 @@ true
 
 [Download Sample code from GitHub](https://github.com/simpl-ify/SampleProjects/tree/master/regLookAround){:target="_blank" .btn .btn--primary}
 
-<br/>
+
 
 ## 전방탐색 vs. 후방탐색
 
@@ -29,7 +29,7 @@ true
 '전방', '후방' 이라는 말 자체가 너무 한자스러워서.. 적당한 다른 단어를 찾아보고 싶은데 못찾고 있습니다. 혹시 아시는 분 있으면 댓글좀 부탁드립니다...
 {: .notice--info}
 
-<br/>
+
 
 #### 전방탐색
 
@@ -76,7 +76,7 @@ https
 ftp
 ```
 
-<br/>
+
 
 #### 후방탐색
 
@@ -107,7 +107,7 @@ Total items found: 4
 69.96
 ```
 
-<br/>
+
 
 ## 응용하기
 
@@ -139,7 +139,7 @@ xml 파일의 단점 중 하나가 parsing 하기가 힘들다는 점입니다. 
 Simplify linkeverything
 ```
 
-<br/>
+
 
 #### 부정어 사용하기
 
@@ -182,7 +182,7 @@ I saved $5 on this order.
 또한 Java 에서 정규식을 이용하는 경우, Pattern, Matcher 객체를 활용하게 되는데 이에 대한 예제도 함께 포함하고 있으니, 참고가 되시면 좋겠습니다. (맨 위 GitHub 링크 참고)
 {: .notice--info}
 
-<br/>
+
 
 ## 참고자료 및 출처
 
