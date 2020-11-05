@@ -1,8 +1,7 @@
 ---
 title: "Markup: Title with Special&nbsp;---&nbsp;Characters"
 categories:
-  - Markup
-tags:
+  - Markuptags:
   - html
   - markup
   - post

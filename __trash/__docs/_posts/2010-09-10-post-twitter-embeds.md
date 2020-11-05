@@ -1,8 +1,7 @@
 ---
 title: "Post: Twitter Embed"
 categories:
-  - Media
-tags:
+  - Mediatags:
   - content
   - embeds
   - media

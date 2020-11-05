@@ -4,8 +4,7 @@ header:
   overlay_color: "#333"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - edge case
   - image
   - layout

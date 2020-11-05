@@ -3,8 +3,7 @@ title: "Layout: Comments Enabled"
 comments: true
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - comments
   - layout
 ---

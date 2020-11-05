@@ -2,8 +2,7 @@
 title: "Layout: Code Excerpt (Generated)"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - content
   - excerpt
   - layout

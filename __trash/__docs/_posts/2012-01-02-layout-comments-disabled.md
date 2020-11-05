@@ -3,8 +3,7 @@ title: "Layout: Comments Disabled"
 comments: false
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - comments
   - layout
 ---

@@ -3,8 +3,7 @@ title: "Layout: Excerpt (Defined)"
 excerpt: "This is a user-defined post excerpt. It should be displayed in place of the post content in archive-index pages."
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - content
   - excerpt
   - layout

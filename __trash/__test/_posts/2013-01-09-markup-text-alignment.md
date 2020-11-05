@@ -1,8 +1,7 @@
 ---
 title: "Markup: Text Alignment"
 categories:
-  - Markup
-tags:
+  - Markuptags:
   - alignment
   - content
   - css

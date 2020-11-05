@@ -1,8 +1,7 @@
 ---
 title: "Edge Case: Many Tags"
 categories:
-  - Edge Case
-tags:
+  - Edge Casetags:
   - 8BIT
   - alignment
   - Articles

@@ -6,8 +6,7 @@ share: false
 related: false
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - related posts
   - social
   - comments

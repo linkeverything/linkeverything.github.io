@@ -8,8 +8,7 @@ header:
       url: "https://unsplash.com"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - edge case
   - image
   - layout

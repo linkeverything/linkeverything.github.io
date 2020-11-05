@@ -1,8 +1,7 @@
 ---
 title: "Edge Case: No Body Content"
 categories:
-  - Edge Case
-tags:
+  - Edge Casetags:
   - content
   - edge case
   - layout

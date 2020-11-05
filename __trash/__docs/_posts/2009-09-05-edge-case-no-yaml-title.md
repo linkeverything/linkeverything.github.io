@@ -1,7 +1,6 @@
 ---
 categories:
-  - Edge Case
-tags:
+  - Edge Casetags:
   - edge case
   - layout
   - title

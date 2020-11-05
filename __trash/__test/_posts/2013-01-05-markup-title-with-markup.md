@@ -1,8 +1,7 @@
 ---
 title: "Markup: Title *with* **Markdown**"
 categories:
-  - Markdown
-tags:
+  - Markdowntags:
   - css
   - html
   - title

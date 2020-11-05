@@ -3,8 +3,7 @@ title: "Layout: Excerpt (Generated)"
 excerpt_separator: "<!--more-->"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - content
   - excerpt
   - layout

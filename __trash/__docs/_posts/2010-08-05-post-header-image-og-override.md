@@ -5,8 +5,7 @@ header:
   og_image: /assets/images/page-header-og-image.png
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - edge case
   - image
   - layout

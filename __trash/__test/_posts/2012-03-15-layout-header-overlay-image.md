@@ -10,8 +10,7 @@ header:
       url: "https://mademistakes.com"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - edge case
   - image
   - layout

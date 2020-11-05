@@ -3,8 +3,7 @@ title: "Layout: Social Sharing Links Enabled"
 share: true
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - social
   - layout
 ---

@@ -5,8 +5,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
   - Layout
-  - Uncategorized
-tags:
+  - Uncategorizedtags:
   - edge case
   - featured image
   - image

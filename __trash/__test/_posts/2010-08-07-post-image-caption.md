@@ -1,8 +1,7 @@
 ---
 title: "Post: Image (Caption)"
 categories:
-  - Post Formats
-tags:
+  - Post Formatstags:
   - image
   - Post Formats
 ---
