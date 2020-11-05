@@ -264,6 +264,7 @@ defaults:
         overlay_filter: "0.5"
         overlay_image: /assets/images/blog/wallpaper.jpg
       classes: wide
+
   # _posts study > spring boot
   - scope:
       path: "study/springboot"
