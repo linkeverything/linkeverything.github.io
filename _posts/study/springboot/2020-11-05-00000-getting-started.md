@@ -43,9 +43,9 @@ Spring Boot 에 대한 Study를 진행하면서 얻게 된 정보들, 그리고 
 
 JDK 는 편의 상 1.8을 기준으로 작성합니다. 역시 현재 기준으로 가장 보편적인 버전이라고 판단되며, lamda표현식 등 가장 큰 변화가 있는 시점의 버전이라고 판단됩니다.[^2]
 
-- oracle JDK 1.8_121 : <https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html> 에서 '121'로 검색
+- oracle JDK 1.8_121 : <https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html> 에서 `121`로 검색
 
-- Open JDK 1.8 : https://openjdk.java.net/install/
+- Open JDK 1.8 : <https://openjdk.java.net/install/>
 
 - brew 를 이용한 JDK 1.8 설치 : <https://linkeverything.github.io/mac/install-java-with-brew/>
 
