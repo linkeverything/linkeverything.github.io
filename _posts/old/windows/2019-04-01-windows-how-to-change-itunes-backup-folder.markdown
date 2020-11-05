@@ -1,6 +1,6 @@
 ---
 title:      "How to change itunes backup folder in Windows 10 (Store ver.)"
-categories: [old]
+categories: [Old]
 last_modified_at:       2019-04-01 00:00
 tags:
   - Windows

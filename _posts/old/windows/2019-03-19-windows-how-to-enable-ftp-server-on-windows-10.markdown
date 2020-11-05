@@ -1,6 +1,6 @@
 ---
 title:      "How to set up and manage an FTP server on Windows 10"
-categories: [old]
+categories: [Old]
 last_modified_at:       2019-03-19 01:20
 tags:
   - Windows

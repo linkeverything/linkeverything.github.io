@@ -1,6 +1,6 @@
 ---
 title:      "SpringBoot - (3) Controller"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-09-21
 tags:
   - Spring

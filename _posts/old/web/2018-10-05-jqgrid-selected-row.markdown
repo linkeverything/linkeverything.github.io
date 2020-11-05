@@ -1,6 +1,6 @@
 ---
 title:      "Selected Row for jqGrid"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-05
 tags:
   - web

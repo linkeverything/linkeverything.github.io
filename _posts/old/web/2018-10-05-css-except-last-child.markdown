@@ -1,6 +1,6 @@
 ---
 title:      "CSS select except last child"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-05
 tags:
   - web

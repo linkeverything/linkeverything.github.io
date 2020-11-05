@@ -1,6 +1,6 @@
 ---
 title:      "How to convert string to number, how to cut decimal point from number"
-categories: [old]
+categories: [Old]
 last_modified_at:       2015-07-22 23:38:00
 tags:
   - javascript

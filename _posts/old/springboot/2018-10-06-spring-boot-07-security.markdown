@@ -1,6 +1,6 @@
 ---
 title:      "SpringBoot - (7) Security"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-06
 tags:
   - Spring

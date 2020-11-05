@@ -1,6 +1,6 @@
 ---
 title:      "Start script and service when boot"
-categories: [old]
+categories: [Old]
 last_modified_at:       2019-03-19 01:00tags:
   - linux
   - devian

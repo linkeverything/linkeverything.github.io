@@ -1,6 +1,6 @@
 ---
 title:      "SpringBoot - (6) Hide private information"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-02
 tags:
   - Spring

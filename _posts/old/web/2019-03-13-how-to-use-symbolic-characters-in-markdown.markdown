@@ -1,6 +1,6 @@
 ---
 title:      "How to use symbolic character in markdown"
-categories: [old]
+categories: [Old]
 last_modified_at:       2019-03-13 00:00 
 tags:
   - Markdown

@@ -1,6 +1,6 @@
 ---
 title:      "How to merge different object in javascript"
-categories: [old]
+categories: [Old]
 last_modified_at:       2017-02-26
 tags:
   - javascript

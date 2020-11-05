@@ -1,6 +1,6 @@
 ---
 title:      "How to do synchronized task AFTER async tasks are done"
-categories: [old]
+categories: [Old]
 last_modified_at:       2017-02-27
 tags:
   - javascript

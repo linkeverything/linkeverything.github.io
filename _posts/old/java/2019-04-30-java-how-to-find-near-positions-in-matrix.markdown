@@ -1,6 +1,6 @@
 ---
 title:      "How to find near positions in matrix"
-categories: [old]
+categories: [Old]
 last_modified_at:       2019-04-30 01:00 tags:
   - java
   - ArrayList

@@ -1,6 +1,6 @@
 ---
 title:      "How to list-up properties in an object"
-categories: [old]
+categories: [Old]
 last_modified_at:       2015-07-29 23:14:00
 tags:
   - javascript

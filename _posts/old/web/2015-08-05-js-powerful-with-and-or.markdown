@@ -1,6 +1,6 @@
 ---
 title:      "JavaScripting Powerful JavaScript with && and ||"
-categories: [old]
+categories: [Old]
 last_modified_at:       2015-08-05
 tags:
   - javascript

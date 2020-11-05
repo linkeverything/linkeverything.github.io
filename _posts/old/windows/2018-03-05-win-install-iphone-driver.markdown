@@ -1,6 +1,6 @@
 ---
 title:      "How to install Apple USB driver without iTunes"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-03-05
 tags:
   - Windows

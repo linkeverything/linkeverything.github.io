@@ -1,6 +1,6 @@
 ---
 title:      "Set and use property value for an object in javascript with jQuery"
-categories: [old]
+categories: [Old]
 last_modified_at:       2017-03-05
 tags:
   - javascript

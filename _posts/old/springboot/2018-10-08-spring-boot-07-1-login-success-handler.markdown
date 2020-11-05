@@ -1,6 +1,6 @@
 ---
 title:      "SpringBoot - (7-1) Handler for Login Success"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-08 10:00
 tags:
   - Spring

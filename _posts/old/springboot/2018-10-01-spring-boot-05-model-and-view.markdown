@@ -1,6 +1,6 @@
 ---
 title:      "SpringBoot - (5) Create View"
-categories: [old]
+categories: [Old]
 last_modified_at:       2018-10-01
 tags:
   - Spring
