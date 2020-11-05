@@ -1,11 +1,11 @@
 # main links
 main:
-  - title: "Home"
-    url: /
+#  - title: "Home"
+#    url: /
 #  - title: "About"
 #    url: /about/
   - title: "Spring Boot"
-    icon: "fab fa-fw fa-github"
+    icon: "fas fa-terminal"
     url: /study/spring%20boot/00000-getting-started/
   - title: "Categories"
     url: /categories/
