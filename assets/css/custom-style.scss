@@ -3,7 +3,13 @@
 
 .page__content h2:before {
     content: '|';
-    color: #ff9b51;
+    color: #ff8d37;
+    margin-right: 0.3em;
+}
+
+.page__content h4:before {
+    content: '|';
+    color: #ff9b5182;
     margin-right: 0.3em;
 }
 
