@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2019-03-19 01:00tags:
   - linux
   - devian
+published: false
 ---
 
 ## 들어가며

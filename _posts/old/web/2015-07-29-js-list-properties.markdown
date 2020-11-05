@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2015-07-29 23:14:00
 tags:
   - javascript
+published: false
 ---
 
 Javascript 에서 객체는 모든 변수들을 의미한다. 자주 사용하게 되는 var 변수는 물론이고, function역시 하나의 객체로서 그 실행부를 포함하고 있는 것이다. 

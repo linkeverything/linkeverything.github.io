@@ -5,6 +5,7 @@ last_modified_at:       2018-10-08 23:01
 tags:
   - Spring
   - SpringBoot
+published: false
 ---
 
 ## 들어가며
@@ -63,12 +64,14 @@ logging:
   path: c:/dev/log/spring
   file: log-file  
   
+published: false
 ---
 spring:
   profiles: log-windows
   
 logging:
   path: c:/dev/log/spring
+published: false
 ---
 spring:
   profiles: log-linux

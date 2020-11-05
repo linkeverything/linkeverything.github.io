@@ -5,6 +5,7 @@ last_modified_at:       2019-03-19 01:20
 tags:
   - Windows
   - FTP
+published: false
 ---
 
 ## How to install an FTP server on Windows 10

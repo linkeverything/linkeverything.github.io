@@ -5,6 +5,7 @@ last_modified_at:       2018-10-05tags:
   - linux
   - Ubuntu
   - CentOS
+published: false
 ---
 
 ## 들어가며

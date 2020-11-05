@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2018-02-23
 tags:
   - Windows
+published: false
 ---
 
 ## 들어가며

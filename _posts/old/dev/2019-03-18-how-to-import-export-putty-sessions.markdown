@@ -2,6 +2,7 @@
 title:      "How to Backup and restore putty sessions"
 categories: [old]
 last_modified_at:       2019-03-18 01:00 tags: [putty, windows]
+published: false
 ---
 
 ## 들어가며

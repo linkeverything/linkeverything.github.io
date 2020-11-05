@@ -5,6 +5,7 @@ last_modified_at:       2017-03-05
 tags:
   - javascript
   - jQuery
+published: false
 ---
 
 자바스크립트를 사용하는데 jQuery 라이브러리는 빼놓을 수 없는 요소가 되어버렸습니다. 물론 순수 javascript 를 이용한 코딩이 원론적(?)이라서 더욱 선호하는 분들도 있을지 모르겠으나, 네트워크 속도가 워낙 빨라지고, 기기들의 성능이 좋아진 만큼, 많이들 사용하게 된 것 같습니다. 

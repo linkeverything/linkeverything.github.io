@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2017-02-26
 tags:
   - javascript
+published: false
 ---
 
 Javascript 를 사용하다 보면, 두 개의 Object 를 병합해야 하는 경우가 생깁니다. 다양한 경우가 있을 수 있겠지만, 다음 예를 통해서 알아보겠습니다.

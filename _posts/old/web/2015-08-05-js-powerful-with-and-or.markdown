@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2015-08-05
 tags:
   - javascript
+published: false
 ---
 
 ## 들어가며

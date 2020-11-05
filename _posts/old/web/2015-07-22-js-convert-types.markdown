@@ -4,6 +4,7 @@ categories: [old]
 last_modified_at:       2015-07-22 23:38:00
 tags:
   - javascript
+published: false
 ---
 
 javascript 는 특정 타입을 구분하지 않기 때문에 아래 두 가지 케이스는 동일한 함수를 이용해서 처리할 수 있다.
