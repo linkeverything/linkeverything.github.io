@@ -55,7 +55,30 @@ JDK 는 편의 상 1.8을 기준으로 작성합니다. 역시 현재 기준으�
 
 Spring Boot 프로젝트는 신규 생성 시, IntelliJ의 방식을 사용하지 않습니다. IntelliJ IDEA 에서 제공하는 Spring initializr 기능은 일반 Community 버전(무료)이 아닌 Ultimate 버전에서만 사용 가능하기 때문에 보편적인 기능을 제공하지 못합니다. 따라서 위 그림에서 보이는 것 처럼 web 에서 Spring initializr를 실행하고, 이를 통해 IDE에 import하는 개념으로 사용합니다.
 
+## 그 외 도구들
+
+이 이외에도 다음과 같은 도구들을 활용할 예정입니다. 반드시 필요한 요소임에는 틀림없지만, 각자의 환경에 맞는 방식으로 처리하면 됩니다. 설치형이든, 설치되어있는 것을 사용하든, Public Cloud에 있는 SaaS를 활용하든 자유입니다. 
+
+#### Httpie / Postman
+
+자주는 아닐 수 있지만, API를 테스트하는 데 필요한 도구입니다. http/https 요청을 보내고 response를 확인할 수 있는 툴입니다. 
+
+Httpie 는 명령어 형태로, 즉, MacOS 의 terminal이나 Windows의 명령프롬프트, 혹은 Powershell 등의 도구를 이용하여 명령어를 직접 typing하여 기능을 동작시킵니다. 
+
+반면에 postman은 UI가 있는 툴입니다. 많은 양의 request를 보내는 것은 유료로 구입해야 가능하지만, 평소 개발하면서 간단히 요청 보내는 수준은 충분합니다. 설치형이고 [홈페이지의 다운로드 페이지](https://www.postman.com/downloads/)를 통해 다운로드 후 설치하면 됩니다.
+
+#### Docker
+
+Spring Boot로 만든 어플리케이션이 아닌 다른 시스템, 즉 DB나 Queue, 혹은 다른 web server 등을 구동시키는 데 docker를 사용합니다. docker 설치 방법에 대해서도 추가로 정리를 할 예정이니 따라하시거나, 혹은 홈페이지의 설명에 따라 설치하면 됩니다.[^3] 
+
+#### Database
+
+Database는 특별한 이유가 없는 한, mariadb를 사용합니다. 테스트 목적으로 local에서 완벽하게 H2를 구현하는 방법도 있겠지만, 거의 대부분의 운영 환경은 H2 Database를 사용하지 않고 있으므로 mariadb로 선정하였습니다. 기본적으로 mySql과 유사하지만 조금 더 편하게 사용할 수 있고, 그 대신 아주 세세한 설정은 조금 복잡할 수 있습니다. 
+
+mariadb를 사용하기 때문에 Windows 에서는 HeidiSQL, MacOS에서는 Sequel Pro 를 다운로드 받고 설치합니다. Database의 내용을 보고 사용자 등을 설치할 수 있습니다.
 
 [^1]: 만약 아래 disqus 기능을 이용하여 안되는 부분을 지적해 주시면 확인 후 수정하도록 하겠습니다.
 
 [^2]: 저는 MacOS 상에서 brew를 이용한 설치 방법을 사용하고 있습니다.
+
+[^3]: Windows 와 MacOS 의 경우에는 Docker Desktop 버전을 설치하는 것이 편합니다. 
