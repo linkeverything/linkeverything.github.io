@@ -267,7 +267,7 @@ defaults:
 
   # _posts in study > spring boot
   - scope:
-      path: "/_posts/study/springboot"
+      path: "_posts/study/springboot"
       type: posts
     values:
       author_profile: false
