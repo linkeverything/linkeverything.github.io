@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot 에서 logback 사용하기"
-categories: [Spring Boot]
+categories: [SpringBoot]
 tag: [spring boot, logback]
 last_modified_at: 2020-07-29
 ---

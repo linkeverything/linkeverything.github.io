@@ -37,3 +37,10 @@ springnav:
         url: /child-2-page-url/
       - title: "Child Link 3"
         url: /child-3-page-url/
+
+studySpringBoot:
+  - title: "Getting Started"
+    url:
+    children:
+      - title: "Install Java"
+        url: /Study/Spring Boot/

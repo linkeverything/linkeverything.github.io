@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot에서 여러 Datasource 사용하기"
-categories: [SpringBoot]
+categories: [Study, Spring Boot]
 tag: [multiple, datasource, jpa]
 last_modified_at: 2020-11-04
 ---

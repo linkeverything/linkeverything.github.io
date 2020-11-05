@@ -265,5 +265,10 @@ defaults:
         overlay_image: /assets/images/blog/wallpaper.jpg
 #      toc: true
       classes: wide
-
+  - scope:
+      path: "/study/spring boot/"
+      type: posts
+    values:
+      sidebar:
+        nav: "studySpringBoot"
 
