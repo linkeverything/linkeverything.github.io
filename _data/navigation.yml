@@ -4,8 +4,12 @@ main:
     url: /
 #  - title: "About"
 #    url: /about/
-  - title: "Spring Boot"
-    url: /study/spring%20boot/00000-getting-started/
+#  - title: "Spring Boot"
+#    url: /study/spring%20boot/00000-getting-started/
+  - title: "Study"
+    subfolderitems:
+      - page: "Spring Boot"
+        url: /study/spring%20boot/00000-getting-started/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
