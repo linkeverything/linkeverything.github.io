@@ -21,7 +21,6 @@ main:
 
 studySpringBoot:
   - title: "Getting Started"
-    url:
     children:
       - title: "Install Java"
-        url: /Study/Spring Boot/
+        url: /study/spring%20boot/
