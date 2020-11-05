@@ -270,7 +270,7 @@ defaults:
       path: "_posts/study/springboot"
       type: posts
     values:
-      layout: single-bottomad
+      #layout: single-bottomad
       author_profile: false
       sidebar:
         nav: "studySpringBoot"
