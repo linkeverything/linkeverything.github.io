@@ -263,12 +263,13 @@ defaults:
         overlay_color: "#000"
         overlay_filter: "0.5"
         overlay_image: /assets/images/blog/wallpaper.jpg
-#      toc: true
       classes: wide
+  # _posts study > spring boot
   - scope:
       path: "/study/spring%20boot/"
       type: posts
     values:
+      author_profile: false
       sidebar:
         nav: "studySpringBoot"
 

@@ -3,8 +3,6 @@ title: "Spring Study 시작하기"
 categories: [Study, Spring Boot]
 tag: [multiple, datasource, jpa]
 last_modified_at: 2020-11-05
-sidebar:
-  nav: "studySpringBoot"
 ---
 Spring Boot를 사용하면서 다중 데이터소스를 사용하는 필요성이 가끔 있습니다. 과거 EJB환경이나 Web/WAS 등의 구조를 보면 이렇게 다중 데이터소스를 활용하는 일이 많았고, 현재도 여러 데이터소스, 예를 들어 사용자 관련 Datasource와 Transaction관련 부분을 별도 DB로 분리해서 구성하는 경우가 있어 종종 필요한 부분입니다. 
 
