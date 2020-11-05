@@ -4,6 +4,8 @@ main:
     url: /
 #  - title: "About"
 #    url: /about/
+  - title: "Spring Boot"
+    url: /study/spring%20boot/00000-getting-started/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
@@ -23,4 +25,4 @@ studySpringBoot:
   - title: "Getting Started"
     children:
       - title: "Install Java"
-        url: /study/spring%20boot/
+        url: /study/spring%20boot/00110-install-java/
