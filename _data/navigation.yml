@@ -35,6 +35,8 @@ studySpringBoot:
         url: /study/springboot/01040-install-docker/
   - title: "Basics"
     children:
+      - title: "Create Project"
+        url: /study/springboot/02001-create-project/
       - title: "Add Library"
         url: /study/springboot/02010-add-library/
       - title: "Create API"
@@ -43,7 +45,13 @@ studySpringBoot:
         url: /study/springboot/02030-datasource/
       - title: "Presentation"
         url: /study/springboot/02040-presentation/
+      - title: "Properties"
+        url: /study/springboot/02050-properties/
+      - title: "Logging"
+        url: /study/springboot/03060-logging/
   - title: "Advanced"
     children:
       - title: "Multiple Datasource"
         url: /study/springboot/03010-multiple-datasource/
+      - title: "Security"
+        url: /study/springboot/03020-security/
