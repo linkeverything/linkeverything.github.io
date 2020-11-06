@@ -27,3 +27,23 @@ studySpringBoot:
     children:
       - title: "Install Java"
         url: /study/springboot/01010-install-java/
+      - title: "Install Homebrew"
+        url: /study/springboot/01020-install-homebrew/
+      - title: "Install IDE"
+        url: /study/springboot/01030-install-ide/
+      - title: "Install Docker"
+        url: /study/springboot/01040-install-docker/
+  - title: "Basics"
+    children:
+      - title: "Add Library"
+        url: /study/springboot/02010-add-library/
+      - title: "Create API"
+        url: /study/springboot/02020-create-api/
+      - title: "Datasource"
+        url: /study/springboot/02030-datasource/
+      - title: "Presentation"
+        url: /study/springboot/02040-presentation/
+  - title: "Advanced"
+    children:
+      - title: "Multiple Datasource"
+        url: /study/springboot/03010-multiple-datasource/
