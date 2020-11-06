@@ -15,23 +15,25 @@ Spring Boot 에 대한 Study를 진행하면서 얻게 된 정보들, 그리고 
 
 예제 등을 개발하면서 공유하려고 하고 있으며 모든 정보들은 이 [linkeverything GitHub Organization](https://github.com/linkeverything) 안에 있는 별도의 repository인 [studySpringBoot](https://github.com/linkeverything/studySpringBoot)로 관리하려고 합니다. 최초 시작부터 하여 모든 과정들은 branch 로 분리하여 각 과정의 시작부터 끝까지를 관리해보려고 합니다(이 정책은 향후 변경될 수 있습니다).
 
+[studySpringBoot](https://github.com/linkeverything/studySpringBoot) repository로 이동하여 branch 정보를 원하는 글의 번호로 대체합니다. 글 번호는 URL 주소의 마지막 부분으로 넣어 두겠습니다. `git` 명령어 중 `git checkout` 명령어를 이용하여 해당 내용을 내려받고 실행해 보면 그 과정에 대해서 확인이 가능합니다. `Master` branch에는 이 Study section의 모든 내용이 포함되겠지만, 각각의 branch에서는 <mark style='background-color: #fff5b1'>해당 post에 대한 내용만</mark> 담을 수 있도록 할 예정입니다. 
+
 #### 출처 및 참고자료
 
-모든 출처, 참고자료 들에 대해서는 그 원본 링크를 첨부하거나, 도서인 경우 어떤 도서에서 참고하였는지 명시합니다. 저작권 침해가 없는 수준에서 참고 및 자료 활용이 이루어질 예정입니다. 
+모든 출처, 참고자료 들에 대해서는 그 원본 링크를 첨부합니다. 만약, 도서인 경우 어떤 도서에서 참고하였는지 명시합니다. 저작권 침해가 없는 수준에서 참고 및 자료 활용이 이루어질 예정입니다. 제가 적은 글에 저작권 문제가 있을 소지가 있으면 언제든 연락주시기 바랍니다. 빠른 시간 내에 조치하겠습니다.
 
 ## 사전 정의(Pre-defined)
 
-여기에는 다음의 정보들을 기본으로 가지고 가겠습니다. 중간에 필요에 의해서 다른 방식을 참고할 수는 있겠지만, 큰 틀은 이 룰을 유지합니다.
+여기에는 다음의 정보들을 기본으로 가지고 가겠습니다. 중간에 필요에 의해서 다른 방식을 참고할 수는 있겠지만, 큰 틀은 이 룰을 유지합니다. 변경 사항이 발생하는 경우, 이 글에도 update하겠습니다.
 
 #### 소스 및 라이브러리
 
-모든 라이브러리는 작성하는 시점 기준으로 최신 소스를 반영합니다. 만약 Spring Boot나 사용하는 라이브러리의 업데이트가 발생한 경우, 정상적으로 동작하지 않을 수 있습니다.[^1] 
+모든 라이브러리는 작성하는 시점 기준으로 최신 버전을 반영합니다. 만약 Spring Boot나 사용하는 라이브러리의 업데이트가 발생한 경우, 정상적으로 동작하지 않을 수 있습니다.[^1] 이에 대해서는 확인이 가능한 즉시 수정하여 반영할 계획입니다.
 
 #### 빌드 도구
 
 ![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/gradle.png)
 
-빌드 도구는 크게 Maven 과 Gradle이 있습니다. 그 중에서 Gradle을 선정합니다. 더 오랫동안 사용해 온 것은 Maven이고 관련 자료들도 많이 있겠지만, 현재 추세에 맞게 gradle로 선정하였습니다. 두 빌드 도구 간에 유사성이 많고 호환성을 갖을 수도 있으니 maven을 사용하는 환경이더라도 여기에 남겨진 내용으로 유사하게 구현할 수 있을 것입니다. 
+빌드 도구는 크게 Maven 과 Gradle이 있습니다. 그 중에서 Gradle을 선정합니다. 더 오랫동안 사용해 온 것은 Maven이고 관련 자료들도 많이 있겠지만, 현재 추세에 맞게 gradle로 선정하였습니다. 두 빌드 도구 간에 유사성이 많고 호환성을 갖을 수도 있으니 maven을 사용하는 환경이더라도 여기에 남겨진 내용으로 유사하게 구현할 수 있을 것입니다.
 
 #### IntelliJ IDEA
 
@@ -45,11 +47,13 @@ Spring Boot 에 대한 Study를 진행하면서 얻게 된 정보들, 그리고 
 
 - IntelliJ 홈페이지 : <https://www.jetbrains.com/idea/>
 
+참고로, IntelliJ IDEA는 여러 설정 정보들을 기기간 연동할 수 있는 기능을 제공합니다. `Settings Repository` 가 그것인데, GitHub에 repository를 하나 생성하고 그 repository에 설정 정보들을 commit&push 하거나 pull 하는 형태로 sync 합니다. [참고링크](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html)
+
 #### Java(JDK)
 
 ![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/java.png)
 
-JDK 는 편의 상 1.8을 기준으로 작성합니다. 역시 현재 기준으로 가장 보편적인 버전이라고 판단되며, lamda표현식 등 가장 큰 변화가 있는 시점의 버전이라고 판단됩니다.[^2]
+JDK 는 편의 상 1.8을 기준으로 작성합니다. 역시 현재 기준으로 가장 보편적인 버전이라고 판단되며, lamda표현식 등 가장 큰 변화가 있는 시점의 버전이라고 판단됩니다.[^2] JDK에 대해서는 하위호환을 해줄 것이라고 가정하고 모든 코드를 작성합니다. 예를 들어 JDK 11을 사용한다고 해서 여기서 소개하는 코드가 빌드되지 않을 현상은 없을 것입니다.
 
 - oracle JDK 1.8_121 : <https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html> 에서 `121`로 검색
 
@@ -73,7 +77,7 @@ Spring Boot 프로젝트는 신규 생성 시, IntelliJ의 방식을 사용하�
 
 자주는 아닐 수 있지만, API를 테스트하는 데 필요한 도구입니다. http/https 요청을 보내고 response를 확인할 수 있는 툴입니다. 
 
-Httpie 는 명령어 형태로, 즉, MacOS 의 terminal이나 Windows의 명령프롬프트, 혹은 Powershell 등의 도구를 이용하여 명령어를 직접 typing하여 기능을 동작시킵니다. 
+Httpie 는 명령어 형태로, 즉, MacOS 의 terminal이나 Windows의 명령프롬프트, 혹은 Powershell 등의 도구를 이용하여 명령어를 직접 typing하여 기능을 동작시킵니다. (참고: [Httpie 홈페이지](https://httpie.io/))
 
 반면에 postman은 UI가 있는 툴입니다. 많은 양의 request를 보내는 것은 유료로 구입해야 가능하지만, 평소 개발하면서 간단히 요청 보내는 수준은 충분합니다. 설치형이고 [홈페이지의 다운로드 페이지](https://www.postman.com/downloads/)를 통해 다운로드 후 설치하면 됩니다.
 
@@ -81,15 +85,15 @@ Httpie 는 명령어 형태로, 즉, MacOS 의 terminal이나 Windows의 명령�
 
 ![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/docker.png)
 
-Spring Boot로 만든 어플리케이션이 아닌 다른 시스템, 즉 DB나 Queue, 혹은 다른 web server 등을 구동시키는 데 docker를 사용합니다. docker 설치 방법에 대해서도 추가로 정리를 할 예정이니 따라하시거나, 혹은 홈페이지의 설명에 따라 설치하면 됩니다.[^3] 
+Spring Boot로 만든 어플리케이션이 아닌 다른 시스템, 즉 DB나 Queue, 혹은 다른 web server 등을 구동시키는 데 docker를 사용합니다. docker 설치 방법에 대해서도 추가로 정리를 할 예정이니 따라하시거나, 혹은 [홈페이지](https://www.docker.com/)의 설명에 따라 설치하면 됩니다.[^3] 
 
 #### Database
 
 ![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/mariadb.png)
 
-Database는 특별한 이유가 없는 한, mariadb를 사용합니다. 테스트 목적으로 local에서 완벽하게 H2를 구현하는 방법도 있겠지만, 거의 대부분의 운영 환경은 H2 Database를 사용하지 않고 있으므로 mariadb로 선정하였습니다. 기본적으로 mySql과 유사하지만 조금 더 편하게 사용할 수 있고, 그 대신 아주 세세한 설정은 조금 복잡할 수 있습니다. 
+Database는 특별한 이유가 없는 한, [mariadb](https://mariadb.org/)를 사용합니다. 테스트 목적으로 local에서 완벽하게 H2를 구현하는 방법도 있겠지만, 거의 대부분의 운영 환경은 H2 Database를 사용하지 않고 있으므로 mariadb로 선정하였습니다. 기본적으로 mySql과 유사하지만 조금 더 편하게 사용할 수 있고, 그 대신 아주 세세한 설정은 조금 복잡할 수 있습니다. 
 
-mariadb를 사용하기 때문에 Windows 에서는 HeidiSQL, MacOS에서는 Sequel Pro 를 다운로드 받고 설치합니다. Database의 내용을 보고 사용자 등을 설치할 수 있습니다.
+mariadb를 사용하기 때문에 Windows 에서는 [HeidiSQL](https://www.heidisql.com/)이나 [MySQL Workbench](https://www.mysql.com/products/workbench/), MacOS에서는 [Sequel Pro](https://www.sequelpro.com/) 를 다운로드 받고 설치합니다. Database의 내용을 보고 사용자 등을 설치할 수 있습니다.
 
 [^1]: 만약 아래 disqus 기능을 이용하여 안되는 부분을 지적해 주시면 확인 후 수정하도록 하겠습니다.
 
