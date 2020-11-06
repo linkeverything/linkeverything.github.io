@@ -55,3 +55,7 @@ studySpringBoot:
         url: /study/springboot/03010-multiple-datasource/
       - title: "Security"
         url: /study/springboot/03020-security/
+      - title: "Lombok"
+        url: /study/springboot/03030-lombok/
+      - title: "Swagger"
+        url: /study/springboot/03040-swagger/
