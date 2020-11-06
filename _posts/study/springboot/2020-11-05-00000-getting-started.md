@@ -59,8 +59,6 @@ JDK 는 편의 상 1.8을 기준으로 작성합니다. 역시 현재 기준으�
 
 #### Spring Initializr
 
-![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/spring-boot.png)
-
 ![](/assets/images/posts/study/springboot/2020-11-05-00000-getting-started/capture%202020-11-05%20PM%2002.29.00.png)
 
 Spring Boot 프로젝트는 신규 생성 시, IntelliJ의 방식을 사용하지 않습니다. IntelliJ IDEA 에서 제공하는 Spring initializr 기능은 일반 Community 버전(무료)이 아닌 Ultimate 버전에서만 사용 가능하기 때문에 보편적인 기능을 제공하지 못합니다. 따라서 위 그림에서 보이는 것 처럼 web 에서 Spring initializr를 실행하고, 이를 통해 IDE에 import하는 개념으로 사용합니다.
