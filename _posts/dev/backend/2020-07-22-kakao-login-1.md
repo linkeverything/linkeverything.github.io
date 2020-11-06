@@ -1,6 +1,6 @@
 ---
 title: "카카오톡 로그인 구현하기 - (1) API사용 설정"
-categories: [SpringBoot]
+categories: [springboot]
 tag: [spring boot, kakao login]
 last_modified_at: 2020-07-22
 ---

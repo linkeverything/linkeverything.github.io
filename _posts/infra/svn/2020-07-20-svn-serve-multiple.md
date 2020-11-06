@@ -1,6 +1,6 @@
 ---
 title: "하나의 svnserve로 여러 repository 구동하기"
-categories: [Svn]
+categories: [svn]
 tag: [svn, multiple repositories]
 last_modified_at: 2020-07-20
 ---

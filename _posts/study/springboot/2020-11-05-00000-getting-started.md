@@ -1,6 +1,6 @@
 ---
 title: "Spring Study 시작하며"
-categories: [Study, Spring Boot]
+categories: [study, springboot]
 tag: [spring boot]
 last_modified_at: 2020-11-05
 ---

@@ -1,6 +1,6 @@
 ---
 title: "열려있는 포트 확인, 방화벽 오픈"
-categories: [Linux]
+categories: [linux]
 tag: [network, port, open firewall]
 last_modified_at: 2020-07-10
 ---

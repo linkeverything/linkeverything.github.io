@@ -1,6 +1,6 @@
 ---
 title: "실행하는 쉘 파일에서 경로 얻기"
-categories: [Linux]
+categories: [linux]
 tag: [dirname, shell path]
 last_modified_at: 2020-07-17
 ---

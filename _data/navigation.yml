@@ -6,7 +6,7 @@ main:
 #    url: /about/
   - title: "Spring Boot"
     icon: "fab fa-fw fa-github"
-    url: /study/spring%20boot/00000-getting-started/
+    url: /study/springboot/00000-getting-started/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
@@ -26,4 +26,4 @@ studySpringBoot:
   - title: "Getting Started"
     children:
       - title: "Install Java"
-        url: /study/spring%20boot/01010-install-java/
+        url: /study/springboot/01010-install-java/

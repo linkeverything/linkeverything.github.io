@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes 에서 docker private registry 사용하기"
-categories: [Container]
+categories: [container]
 tag: [kubernetes, docker, private repository]
 last_modified_at: 2020-07-08
 ---

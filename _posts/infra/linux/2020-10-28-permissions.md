@@ -1,6 +1,6 @@
 ---
 title: "리눅스 환경에서의 파일 및 디렉토리 권한(permissions)에 대해"
-categories: [Linux]
+categories: [linux]
 tag: [file, permission]
 last_modified_at: 2020-10-28
 ---

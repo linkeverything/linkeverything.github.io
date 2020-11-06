@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot 에서 Context Path 설정하기"
-categories: [SpringBoot]
+categories: [springboot]
 tag: [spring boot, context path]
 last_modified_at: 2020-07-31
 ---

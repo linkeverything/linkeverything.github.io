@@ -1,6 +1,6 @@
 ---
 title: "우분투 서버 원격으로 깨우기"
-categories: [Linux]
+categories: [linux]
 tag: [ubuntu, wol, wake on lan]
 last_modified_at: 2020-07-24
 ---

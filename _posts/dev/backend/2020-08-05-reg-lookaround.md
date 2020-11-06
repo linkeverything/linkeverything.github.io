@@ -1,6 +1,6 @@
 ---
 title: "자바에서 정규식 사용하기 - 전방/후방 탐색"
-categories: [Java]
+categories: [java]
 tag: [java, regular expression]
 last_modified_at: 2020-10-07
 ---

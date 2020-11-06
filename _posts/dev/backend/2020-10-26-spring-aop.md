@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot 에서 Custom Annotation 활용하기 (AOP, Aspect Object Programming)"
-categories: [SpringBoot]
+categories: [springboot]
 tag: [spring boot, aop, annotation]
 last_modified_at: 2020-10-26
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Spring (Boot)에서의 의존성 주입(Dependency Injection)에 대한 이야기"
-categories: [SpringBoot]
+categories: [springboot]
 tag: [dependency, injection, RequiredArgsConstructor]
 last_modified_at: 2020-11-04
 ---

@@ -1,6 +1,6 @@
 ---
 title: "서버 간 http 통신하기 - Form / JSON"
-categories: [Java]
+categories: [java]
 tag: [java, HttpClient, http request]
 last_modified_at: 2020-08-07
 ---

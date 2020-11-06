@@ -1,6 +1,6 @@
 ---
 title: "맥에서 마우스 속도 조절"
-categories: [Mac]
+categories: [mac]
 tag: [mouse, com.apple.mouse.scaling]
 last_modified_at: 2020-07-09
 published: false
