@@ -69,7 +69,7 @@ dependencies {
         String host = "192.168.56.1";
         int    port = 22;
         String username = "root";
-        String password = "root";
+        String password = ;
 ```
 
 #### JSch 객체 생성, Session 생성
@@ -175,7 +175,7 @@ public class JschSample {
         String host = "192.168.56.1";
         int    port = 22;
         String username = "root";
-        String password = "root";
+        String password = ;
         
         System.out.println("==> Connecting to" + host);
         Session session = null;
