@@ -37,7 +37,7 @@ brew -v
 
 #### 검색하기
 
-Homebrew 에서는 설치하는 프로그램들을 Formula 라고 부릅니다. 다음 예시에서 처럼 brew search <formula 이름> 으로 검색해서 어떤 것들을 설치할 수 있고, 어떤 버전을 설치할 수 있는지 확인할 수 있습니다. 
+Homebrew 에서는 설치하는 프로그램들을 Formula 라고 부릅니다. 다음 예시에서 처럼 `brew search <formula 이름>` 으로 검색해서 어떤 것들을 설치할 수 있고, 어떤 버전을 설치할 수 있는지 확인할 수 있습니다. 
 
 ```sh
 brew search java
@@ -47,16 +47,19 @@ brew search java
 brew search chrome
 ```
 
-(위 예시에서 볼 수 있듯, 설치되는 프로그램 (formula) 이 화면이 있는 것인지 아니면 어떤 명령어 집합인지 등은 아무런 문제가 되지 않습니다. 그저 검색해서 원하는 formula 가 있다면 설치/실행할 수 있습니다. 심지어는 intelliJ, Eclipse 같은 화면이 있는 프로그램도 Homebrew 로 설치하고 관리하는 것이 가능한것으로 알고 있습니다.)
+위 예시에서 볼 수 있듯, 설치되는 프로그램 (formula) 이 화면이 있는 것인지 아니면 어떤 명령어 집합인지 등은 아무런 문제가 되지 않습니다. 그저 검색해서 원하는 formula 가 있다면 설치/실행할 수 있습니다. 심지어는 intelliJ, Eclipse 같은 화면이 있는 프로그램도 Homebrew 로 설치하고 관리하는 것이 가능한것으로 알고 있습니다.
+{: .notice--info}
 
 #### 설치하기
-formula 의 설치는brew install <formula 이름>으로 할 수 있습니다. 
+
+formula 의 설치는 `brew install <formula 이름>`으로 할 수 있습니다. 
 
 ```sh
 brew install rbenv
 ```
 
 #### 업그레이드(업데이트)하기
+
 설치된 formula 를 업데이트 하기 위해서는 우선 brew outdated 를 입력하여 오래된(구형인) formula 를 검색합니다. 그리고 `brew upgrade <formula 이름>`  를 입력하여 업데이트를 진행합니다. 
 
 ```sh
@@ -71,6 +74,7 @@ brew upgrade
 ```
 
 #### 삭제하기
+
 Homebrew 에서는 특정 버전으로 업그레이드 하더라도 이전 버전을 삭제하지는 않기 때문에 깔끔한 정리를 위해서는 삭제를 해줘야 합니다. 특정 formula 를 삭제하려면, `brew cleanup <formula 이름>` 를 입력합니다. 
 
 ```sh
@@ -84,6 +88,7 @@ brew uninstall rbenv
 ```
 
 #### 관리하기
+
 만약 사용중인 formula 목록을 확인하고 싶다면 brew list 를, 특정 formula 의 상세 정보를 보고 싶다면 brew info <formula 이름> 를 입력합니다. 
 
 ```sh
@@ -95,6 +100,7 @@ brew info rbenv
 ```
 
 ## Homebrew 관리
+
 계속해서 사용을 하다 보면 Homebrew 자체를 업데이트/삭제 해야 하는 경우도 있습니다. 
 
 #### 업데이트 하기
@@ -110,10 +116,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 ## 참고
+
 위에서 설명한 명령어들로 모든 작업들을 할 수 있지만, 보기 좋게 나열해 놓고 확인하고 싶은 경우에는 <mark style='background-color: #fff5b1'>Cakebrew</mark> 라는 것을 검색해서 설치해 보시기를 바랍니다. 터미널 만으로 관리하는 것이 크게 와닿지 않아 어려운 분들에게는 도움이 많이 될 것입니다. (저는 조금 사용하다가, 최근에는 사용하고 있지 않습니다.)
 
 ![](/assets/images/posts/study/springboot/2020-11-16-01020-install-homebrew/cakebrew.png)
 
 
 ## 참고자료 및 출처
+
 - <https://tutorialpost.apptilus.com/code/posts/tools/homebrew-for-mac/>
