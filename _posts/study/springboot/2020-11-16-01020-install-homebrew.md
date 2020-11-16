@@ -63,6 +63,9 @@ formula 의 설치는 `brew install <formula 이름>`으로 할 수 있습니다
 brew install rbenv
 ```
 
+![Sample for brew install](/assets/images/posts/study/springboot/2020-11-16-01020-install-homebrew/homebrew-and-homebrew-cask-header2.png)
+
+
 만약 특정 명령어에 대한 formula 를 설치했다면, 자동으로 PATH에 추가해 줍니다. 따라서 다른 패키지 설치 과정보다 조금 더 편리하게 구성이 가능합니다.
 
 #### 업그레이드(업데이트)하기
@@ -139,6 +142,7 @@ brew update
 
 - <https://brew.sh/index_ko>
 - <https://tutorialpost.apptilus.com/code/posts/tools/homebrew-for-mac/>
+- 이미지 출처 : <https://www.howtogeek.com/211541/homebrew-for-os-x-easily-installs-desktop-apps-and-terminal-utilities/>
 
 [^1]: Homebrew 는 홈페이지에 명시되어 있는 것 처럼, Mac 용 패키지 관리자 입니다. 다른 환경에 설치를 해보지도 않았고, 설치 되더라도 정상적으로 구동되지 않을 수 있습니다.
 
