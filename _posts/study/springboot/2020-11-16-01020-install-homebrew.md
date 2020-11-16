@@ -142,7 +142,7 @@ brew update
 
 - <https://brew.sh/index_ko>
 - <https://tutorialpost.apptilus.com/code/posts/tools/homebrew-for-mac/>
-- 이미지 출처 : <https://www.howtogeek.com/211541/homebrew-for-os-x-easily-installs-desktop-apps-and-terminal-utilities/>
+- 이미지 출처 : <https://superuser.com/questions/563657/homebrew-terminal-emoticons-how>
 
 [^1]: Homebrew 는 홈페이지에 명시되어 있는 것 처럼, Mac 용 패키지 관리자 입니다. 다른 환경에 설치를 해보지도 않았고, 설치 되더라도 정상적으로 구동되지 않을 수 있습니다.
 
