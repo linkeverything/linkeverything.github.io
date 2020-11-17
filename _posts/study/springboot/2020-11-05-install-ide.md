@@ -41,6 +41,16 @@ OSGi 방식을 도입했다고 하는데, 쉽게 설명하면 jar 파일로 압�
 
 그 이후에도 Spring 등은 여전히 eclipse 와의 유대 관계를 가져가고 있지만, Android 는 다시는 돌아오지 않는 형태가 되었습니다.
 
+#### 설치 방법
+
+1. 홈페이지에 접속하여 다운로드를 받습니다. 
+   
+   installer 형태의 다운로드를 받지 않으시길 권장합니다. [패키지 다운로드 링크](https://www.eclipse.org/downloads/packages/)로 이동하여 온라인 다운로드 툴이 아닌, 완전체 버전을 받으시기 바랍니다. 
+
+2. Eclipse 는 별도의 설치 과정이 없습니다. 
+
+   Windows용은 압축을 해제하면 되고, MacOS 는 .app 패키지를 실행하면 그만입니다. 다만 더 다양한 기능을 활용하고자 하는 경우에는 설치 이후에도 여러가지 Plug-in을 다운로드 받고 설정을 잡아줘야 합니다만, 이는 어떤 IDE도 공통입니다.
+
 ## IntelliJ
 
 ![](/assets/images/posts/study/springboot/2020-11-17-install-ide/IntelliJ-Idea-logo1.png)
