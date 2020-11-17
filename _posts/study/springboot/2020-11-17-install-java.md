@@ -84,7 +84,8 @@ MacOS 의 경우에는 조금 다른 형태로 지정합니다. 일반적으로�
 
 ## 참고자료 및 출처
 
-- <https://www.baeldung.com/spring-data-jpa-multiple-databases>
+- [Homebrew 를 이용한 패키지 관리](https://linkeverything.github.io/study/springboot/install-homebrew/)
+- [Homebrew 를 이용한 Java 설치 및 관리](https://linkeverything.github.io/mac/install-java-with-brew/)
 
 [^1]: 반드시 편리한 것은 아닙니다. 여러 버전의 Java를 설치해 두고 변경해가면서 테스트해야 하는 경우 등, 오히려 환경변수에 선언되어 있지 않아야 편한 경우도 있습니다.
 
