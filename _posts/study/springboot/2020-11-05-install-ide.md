@@ -51,13 +51,26 @@ OSGi 방식을 도입했다고 하는데, 쉽게 설명하면 jar 파일로 압�
 
    Windows용은 압축을 해제하면 되고, MacOS 는 .app 패키지를 실행하면 그만입니다. 다만 더 다양한 기능을 활용하고자 하는 경우에는 설치 이후에도 여러가지 Plug-in을 다운로드 받고 설정을 잡아줘야 합니다만, 이는 어떤 IDE도 공통입니다.
 
-## IntelliJ
+## IntelliJ IDEA
 
 ![](/assets/images/posts/study/springboot/2020-11-17-install-ide/IntelliJ-Idea-logo1.png)
 
+IntelliJ IDEA는 JetBrains 라는 회사에서 만든 프로그램입니다. 개발 도구들 중에서 몇 안되는 유료 툴 중 하나이지만, 전무 유료는 아니고 특정 기능을 활용하기 위해서는 유료 버전을 구매해야 합니다.
+
 #### 혜성같이 나타난 IDE
 
+Spring, Java 1.8, Android Studio.. 아마도 이러한 시기였던 것 같습니다. 갑자기 개발자들 사이에서 IntelliJ IDEA를 사용하는 사람들이 많아지기 시작했고, 처음 시작은 이뻐서, 혹은 깔끔하고 속도가 빨라서 였습니다. 
+
+제 개인적으로는 Android Studio가 아얘 IntelliJ IDEA기반으로 빌드되어 출시되기 시작하면서부터 알게 되었고, 그 이후 Robot용 SDK 개발과제를 거치면서 Plugin을 개발하고 더 자주 사용하게 된 것 같습니다. 
+
 #### Eclipse 와 차이점
+
+그 전까지 많이 사용하던 Eclipse와 차이점, 우선은 깔끔한 UI와 빠른 실행 속도라고 볼 수 있습니다. 개발 툴 중에서도 UI가 깔끔하고 예쁜 편에 속하고 사용 중에 버벅인다거나 하는 점 없이 부드러운 구동력을 보여줍니다. 또한 Plug-in의 설치 과정이 조금 간편하고, 파일 검색 등 탐색 과정이 간편하다는 장점도 있습니다. 
+
+또 다른 차이점은 개발 환경에 대한 View가 다릅니다. Eclipse의 경우, Workspace를 두고 이를 좌측 Explorer에 모두 띄워놓고 여러 프로젝트를 관리하는 느낌이라면, IntelliJ는 그러한 개념이 아니라 Module 단위의 개발을 하기 때문에 1개의 프로젝트가 하나의 IntelliJ IDEA Window 를 갖습니다. IntelliJ가 예쁘고 쓰기 편하다고 해서 무턱대호 eclipse에 있던 프로젝트를 import하면 낭패를 보는 까닭이 이것입니다. 
+
+기존 eclipse에서 사용하던 프로젝트를 import하여 사용하려면 조금의 변형 과정이 필요합니다. 그래야 원하는 수준의 관리가 가능합니다.
+{: notice--info}
 
 #### 아쉬움
 
