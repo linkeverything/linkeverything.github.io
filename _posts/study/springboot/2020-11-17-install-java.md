@@ -65,7 +65,7 @@ oracle은 해당 홈페이지에 exe, dmg 등과 함께 zip / tar.gz 파일도 �
 
 Homebrew 를 사용하는 방법은 다음 두 가이드를 보고 따라하면 됩니다. 앞서 설명한 방법만 가지고도 사용하는 데 아무런 지장이 없고, 제대로 알지 못한다면 차라리 위 방법을 추천합니다만, 경우에 따라서 Java 버전을 자주 변경해야 한다거나, 다운로드 후 인스톨.. 등과 같은 귀찮은 작업을 지양한다면 권할 만 한 작업입니다.
 
-- [Homebrew 를 이용한 패키지 관리](https://linkeverything.github.io/study/springboot/01020-install-homebrew/)
+- [Homebrew 를 이용한 패키지 관리](https://linkeverything.github.io/study/springboot/install-homebrew/)
 - [Homebrew 를 이용한 Java 설치 및 관리](https://linkeverything.github.io/mac/install-java-with-brew/)
 
 ## 환경 변수 설정 (선택사항)

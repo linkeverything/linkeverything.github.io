@@ -63,7 +63,7 @@ formula 의 설치는 `brew install <formula 이름>`으로 할 수 있습니다
 brew install rbenv
 ```
 
-![](/assets/images/posts/study/springboot/2020-11-16-01020-install-homebrew/homebrew-and-homebrew-cask-header2.png)
+![](/assets/images/posts/study/springboot/2020-11-16-install-homebrew/homebrew-and-homebrew-cask-header2.png)
 
 
 만약 특정 명령어에 대한 formula 를 설치했다면, 자동으로 PATH에 추가해 줍니다. 따라서 다른 패키지 설치 과정보다 조금 더 편리하게 구성이 가능합니다.
@@ -135,7 +135,7 @@ brew update
 
 위에서 설명한 명령어들로 모든 작업들을 할 수 있지만, 보기 좋게 나열해 놓고 확인하고 싶은 경우에는 <mark style='background-color: #fff5b1'>Cakebrew</mark> 라는 것을 검색해서 설치해 보시기를 바랍니다. 터미널 만으로 관리하는 것이 크게 와닿지 않아 어려운 분들에게는 도움이 많이 될 것입니다. (저는 조금 사용하다가, 최근에는 사용하고 있지 않습니다.)
 
-![](/assets/images/posts/study/springboot/2020-11-16-01020-install-homebrew/cakebrew.png)
+![](/assets/images/posts/study/springboot/2020-11-16-install-homebrew/cakebrew.png)
 
 
 ## 참고자료 및 출처

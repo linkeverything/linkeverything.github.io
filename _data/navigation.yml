@@ -5,8 +5,8 @@ main:
 #  - title: "About"
 #    url: /about/
   - title: "Spring Boot"
-    icon: "fab fa-fw fa-github"
-    url: /study/springboot/00000-getting-started/
+    icon: "fab fa-fw fa-code"
+    url: /study/springboot/getting-started/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
@@ -26,36 +26,36 @@ studySpringBoot:
   - title: "Getting Started"
     children:
       - title: "Install Java"
-        url: /study/springboot/01010-install-java/
+        url: /study/springboot/install-java/
       - title: "Install Homebrew"
-        url: /study/springboot/01020-install-homebrew/
+        url: /study/springboot/install-homebrew/
       - title: "Install IDE"
-        url: /study/springboot/01030-install-ide/
+        url: /study/springboot/install-ide/
       - title: "Install Docker"
-        url: /study/springboot/01040-install-docker/
+        url: /study/springboot/install-docker/
   - title: "Basics"
     children:
       - title: "Create Project"
-        url: /study/springboot/02001-create-project/
+        url: /study/springboot/create-project/
       - title: "Add Library"
-        url: /study/springboot/02010-add-library/
+        url: /study/springboot/add-library/
       - title: "Create API"
-        url: /study/springboot/02020-create-api/
+        url: /study/springboot/create-api/
       - title: "Datasource"
-        url: /study/springboot/02030-datasource/
+        url: /study/springboot/datasource/
       - title: "Presentation"
-        url: /study/springboot/02040-presentation/
+        url: /study/springboot/presentation/
       - title: "Properties"
-        url: /study/springboot/02050-properties/
+        url: /study/springboot/properties/
       - title: "Logging"
-        url: /study/springboot/03060-logging/
+        url: /study/springboot/logging/
   - title: "Advanced"
     children:
       - title: "Multiple Datasource"
-        url: /study/springboot/03010-multiple-datasource/
+        url: /study/springboot/multiple-datasource/
       - title: "Security"
-        url: /study/springboot/03020-security/
+        url: /study/springboot/security/
       - title: "Lombok"
-        url: /study/springboot/03030-lombok/
+        url: /study/springboot/lombok/
       - title: "Swagger"
-        url: /study/springboot/03040-swagger/
+        url: /study/springboot/swagger/
