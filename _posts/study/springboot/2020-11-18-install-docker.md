@@ -3,7 +3,6 @@ title: "Container기반 환경 (Docker 설치하고 사용하기)"
 categories: [study, springboot]
 tag: [install, docker]
 last_modified_at: 2020-11-18
-published: false
 ---
 
 Docker는 Container 기반의 프로그램 구동을 돕는 도구 중 하나입니다. Container기반 이라고 이야기를 하였지만 현재는 `container = docker` 라고 할 정도로 docker가 정점을 찍고 있는 것 같습니다. 
