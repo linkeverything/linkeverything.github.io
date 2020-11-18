@@ -66,6 +66,83 @@ container에서 사용하는 특정 포트는 외부 노출이 필요하다면 H
 
 #### Ubuntu
 
+Ubuntu 의 경우에는 별도의 설치 과정을 거쳐야 하고, 이는 공식 문서에도 잘 설명되어 있으므로 해당 페이지를 찾아가서 따라하시기를 권장합니다. 아주 자주 변경되는 사항은 아니지만, 최신 정보를 찾아가서 그대로 수행하는 것이 불편함 없이 설치하는 가장 좋은 방법입니다. 제 이전 블로그에도 해당 내용이 설명되어 있습니다. 
+
+- 우분투에 도커 설치하기 (How to install Docker in Ubuntu 18.x) <https://4urdev.tistory.com/78>
+
+1. 다음 명령어들을 하나하나 입력하면서 과정을 진행합니다. 
+
+   ```sh
+   $ sudo apt update 
+   $ sudo apt install apt-transport-https ca-certificates curl software-properties-common 
+   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+   $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" 
+   $ sudo apt update
+   ```
+
+2. 이제, 다음을 입력하여 확인합니다. 
+
+   ```sh
+   $ apt-cache policy docker-ce
+   ```
+
+   ```sh
+   docker-ce:
+     Installed: (none) 
+     Candidate: 18.06.1~ce~3-0~ubuntu 
+     Version table: 
+        18.06.1~ce~3-0~ubuntu 500
+           500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages 
+        18.06.0~ce~3-0~ubuntu 500 
+           500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages 
+        18.03.1~ce~3-0~ubuntu 500
+   
+   ... (후략) ...
+   ```
+
+   Installed 부분이 `(none)`으로 되어 있으므로, 아직 설치되지 않았다는 것입니다.
+
+3. 다음을 입력하여 docker를 설치합니다.
+
+   ```sh
+   $ sudo apt install docker-ce
+   ```
+
+4. 설치가 완료되면 다음을 입력하여 확인합니다.
+
+   ```sh
+   $ sudo systemctl status docker
+   ```
+
+   ```sh
+   jonghiphop@simplify:~$ sudo systemctl status docker 
+   [sudo] password for jonghiphop: 
+   ● docker.service - Docker Application Container Engine 
+      Loaded: loaded (/lib/systemd/system/docker.service;    enabled; vendor preset: enabled) 
+      Active: active (running) since Tue 2019-06-11 22:55:00    UTC; 1 day 4h ago 
+        Docs: https://docs.docker.com 
+    Main PID: 12449 (dockerd) 
+       Tasks: 52 
+      CGroup: /system.slice/docker.service
+              ├─ 1274 /usr/bin/docker-proxy -proto tcp -host-ip    0.0.0.0 -host-port 63306 -contai
+              ├─12449 /usr/bin/dockerd -H fd:// --containerd=/   run/containerd/containerd.sock 
+              ├─27331 /usr/bin/docker-proxy -proto tcp -host-ip    0.0.0.0 -host-port 60150 -contai 
+              ├─27345 /usr/bin/docker-proxy -proto tcp -host-ip    0.0.0.0 -host-port 60180 -contai 
+              └─29079 /usr/bin/docker-proxy -proto tcp -host-ip    0.0.0.0 -host-port 60280 -contai 
+   
+   Jun 12 12:19:17 simplify dockerd[12449]:    time="2019-06-12T12:19:17.988834020Z" level=info msg 
+   Jun 12 12:19:32 simplify dockerd[12449]:    time="2019-06-12T12:19:32.360698202Z" level=info msg 
+   Jun 12 12:19:59 simplify dockerd[12449]:    time="2019-06-12T12:19:59.557327356Z" level=info msg 
+   Jun 12 12:20:52 simplify dockerd[12449]:    time="2019-06-12T12:20:52.326830733Z" level=info msg 
+   Jun 12 12:21:53 simplify dockerd[12449]:    time="2019-06-12T12:21:53.908691389Z" level=info msg 
+   Jun 12 12:23:20 simplify dockerd[12449]:    time="2019-06-12T12:23:20.848503291Z" level=info msg 
+   Jun 12 13:04:11 simplify dockerd[12449]:    time="2019-06-12T13:04:11.702052297Z" level=info msg 
+   Jun 12 23:50:08 simplify dockerd[12449]:    time="2019-06-12T23:50:08.746503268Z" level=info msg 
+   Jun 13 00:19:18 simplify dockerd[12449]:    time="2019-06-13T00:19:18.641940478Z" level=info msg 
+   Jun 13 00:27:03 simplify dockerd[12449]:    time="2019-06-13T00:27:03.855330361Z" level=info msg 
+   lines 1-23/23 (END)
+   ```
+
 ## 기본 사용법
 
 #### 실행하기
