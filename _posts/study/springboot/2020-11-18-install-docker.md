@@ -147,9 +147,34 @@ Ubuntu 의 경우에는 별도의 설치 과정을 거쳐야 하고, 이는 공�
 
 #### 실행하기
 
+일반적으로 docker는 다음과 같은 명령어로 간단히 실행할 수 있습니다. 
+- Windows 의 Powershell (혹은 명령 프롬프트)
+- MacOS 의 Terminal (iterm2, etc.)
+- Ubuntu 의 Terminal
+
+등에서 다음과 같이 실행합니다. 
+
+```sh
+$ docker run mariadb
+```
+
+물론 이미지 명은 [도커 허브](https://hub.docker.com/)에서 찾아봐야 하지만 저렇게만 해도 동작은 합니다. 다만 아래 설정들은 추가적으로 해 주어야 합니다.
+
 #### Volume
 
+볼륨 설정은 `-v` 옵션으로 합니다. 그리고 docker의 모든 설정은 host에 대한 정보가 앞에 오고, `:` 으로 구분한 뒤, container 내부의 정보를 적게 되어 있습니다. 
+
+```sh
+$ docker run mariadb -v /var/:/var/temp
+```
+
 #### Network
+
+네트워크에 대해서는 `-p` 옵션을 이용해서 포트를 지정합니다. 역시나 host의 포트를 앞에 적고 `:` 으로 구분한 뒤, container 내부에 매핑될 포트를 적습니다. 
+
+```sh
+$ docker run mariadb -v /var/:/var/temp -p 63306:3306
+```
 
 ## Spring Boot를 Docker로?
 
