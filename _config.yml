@@ -272,5 +272,5 @@ defaults:
     values:
       #layout: single-bottomad
       author_profile: false
-      sidebar: sidebar-studyspringboot.studyspringboot
-        #nav: 
+      sidebar: 
+        nav: sidebar-studyspringboot.studyspringboot

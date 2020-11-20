@@ -2,9 +2,6 @@
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}
-
-<span>{{ page.sidebar }}</span>
-
     {% for s in page.sidebar %}
       {% if s.image %}
         <img src="{{ s.image | relative_url }}"
