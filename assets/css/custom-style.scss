@@ -43,3 +43,18 @@ p.page__lead>code {
 .nav__list .nav__items .active {
     color: #077d00;
 }
+
+// top navigation mouse over
+.greedy-nav .visible-links a:before {
+    width: 0 !important;
+}
+
+.greedy-nav .visible-links a:hover{
+    color: #077d00;
+}
+
+// author links
+ul.author__urls.social-icons a:hover{
+    text-decoration: none;
+    color: #077d00;
+}
