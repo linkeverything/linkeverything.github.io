@@ -1,4 +1,5 @@
 sidebar:
+  - image: "/assets/images/sidebar/springboot.png"
   - title: "Getting Started"
     children:
       - title: "Install Java"

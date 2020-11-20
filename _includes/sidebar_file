@@ -4,6 +4,12 @@
   {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+
+  {% if navigation.image %}
+    <img src="{{ navigation.image | relative_url }}"
+          alt="{% if navigation.image_alt %}{{ navigation.image_alt }}{% endif %}">
+  {% endif %}
+
   <ul class="nav__items">
     {% for nav in navigation %}
       <li>
