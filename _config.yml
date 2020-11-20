@@ -273,4 +273,4 @@ defaults:
       #layout: single-bottomad
       author_profile: false
       sidebar: 
-        file: studyspringboot
+        file: sidebar-studyspringboot
