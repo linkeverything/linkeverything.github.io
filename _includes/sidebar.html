@@ -3,9 +3,6 @@
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}
     {% for s in page.sidebar %}
-
-<span>????{{ s }}</span>
-
       {% if s.image %}
         <img src="{{ s.image | relative_url }}"
              alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
@@ -16,6 +13,9 @@
     {% endfor %}
     {% if page.sidebar.nav %}
       {% include nav_list nav=page.sidebar.nav %}
+    {% endif %}
+    {% if page.sidebar.file %}
+      {% include sidebar_file nav=page.sidebar.file %}
     {% endif %}
   {% endif %}
   </div>
