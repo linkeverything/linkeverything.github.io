@@ -54,7 +54,7 @@ p.page__lead>code {
 }
 
 // author links
-ul.author__urls.social-icons a:hover{
+ul.author__urls.social-icons a:hover, ul.author__urls.social-icons a i:hover{
     text-decoration: none;
     color: #077d00;
 }
