@@ -1,6 +1,7 @@
 ---
 ---
 
+// ##
 .page__content h2{
     margin-top: 3em;
 }
@@ -12,6 +13,7 @@
 
 }
 
+// ####
 .page__content h4{
     margin-top: 2.3em;
 }
@@ -22,10 +24,12 @@
     margin-right: 0.3em;
 }
 
+// for footnotes
 .footnotes {
     margin-top: 2.5em;
 }
 
+// ` ` 
 p>code, a>code, li>code, figcaption>code, td>code {
     background: #dadada !important;
 }
@@ -33,4 +37,9 @@ p>code, a>code, li>code, figcaption>code, td>code {
 p.page__lead>code {
     color: #000000;
     text-shadow: none;
+}
+
+// for sidebar active
+.nav__list .nav__items .active {
+    color: #077d00;
 }
