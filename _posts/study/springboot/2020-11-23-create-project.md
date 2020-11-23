@@ -32,6 +32,54 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 ![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-23 PM 11.48.37.png)
 
+이제 차례대로 선택하면서 프로젝트를 생성해 보겠습니다. 
+
+
+
+- Project : Gradle Project
+
+  여기서는 Gradle Project를 생성합니다. Maven으로 해도 무방하나, 최근 Gradle을 많이 사용하시는 것 같아 저 역시 예시를 Gradle로 하겠습니다. 
+
+- Language : Java
+
+  언어는 Java / Kotlin / Groovy 를 지원하는 것으로 보입니다. 가장 일반적인 형태인 Java를 선택하겠습니다. 
+
+- Spring Boot : 2.4.0
+
+  현재 이 글을 쓰는 시점 기준으로 하여 기본값이 2.4.0 입니다. 그대로 사용하겠습니다. (앞서 여러 글을 적을 당시만 하더라도 2.3.6을 자주 사용했던 것 같은데 그새 버전이 조금 올라갔습니다. 만약 향후에 호환성 문제가 없다면 프로젝트 생성 이후에도 변경할 수 있는 부분이니 크게 걱정하지 않아도 됩니다.)
+
+- Project Metadata
+
+  - Group : `com.simplify`
+
+    여기는 개발하는 프로젝트의 소속(?)을 입력합니다. 대게의 경우에 대형 프로젝트이고 그 프로젝트 자체가 의미를 갖는 경우, 그 이름을 그대로 적기도 합니다만, 그렇지 않은 일반적인 경우에는 회사 명이 이를 대체하기도 합니다. _`aaa.com` 과 같은 형태의 URL을 뒤집어 놓은 것 같은 느낌이다.._ 정도로 생각하면 됩니다.
+
+  - Artifact / Name : `studySpringBoot`
+
+    여기서 주어진 이름이 향후 결과물과도 연관이 있습니다. 보통의 경우 빌드의 경과물 이름을 의미하기도 하는 Artifact 는 역시나 입력하게 되면 아래 Name 부분에도 자동으로 입력이 됩니다. (거의 동일한 뜻으로 사용된다는 의미)
+
+  - Description : `Study project for Spring Boot`
+
+    여기서는 `Demo` 라는 글자만 `Study`라고 변경하여 그대로 사용하겠습니다. 
+
+  - Package name : `com.simplify.studySpringBoot`
+
+    역시 group 과 Artifact, name 을 적으면 자동 생성되는 부분입니다. 
+
+  - Packaging : `Jar`
+
+    `Jar`를 선택합니다. Tomcat 등 WAS에 올려서 구동할 것이 아니라면 Spring Boot 프로젝트는 내장 WAS를 그대로 사용하는 것이 편리합니다. 또한 나중에 설명하게 될 Docker Container 를 활용하는 경우에도 Jar로 빌드하여 Java로 실행하는 것이 훨씬 편하기 때문에 여기서는 `Jar`를 선택하겠습니다. 
+
+  - Java : `8`
+
+    11 정도도 최근에는 많이 사용하는 줄 알지만, 현재 대부분의 서버 프로젝트에서 1.8 정도까지는 지원하는 것으로 보고 최소 수준인 `JDK 1.8`을 사용하겠습니다. 물론 아직도 경우에 따라서는 1.6 같은 오래된 버전을 사용하기도 하지만 그렇게까지 하지는 않겠습니다. (여기에 Java 6 가 선택지가 없다는 것은, 내가 선택하고 만들려는 Spring Boot 프로젝트가 Java 8 이상만 지원하기 때문입니다^^)
+
+여기까지 설정하고 나면 아래 그림과 같은 형태가 됩니다. 
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-24 AM 12.06.57.png)
+
+아제 아래 `GENERATE` 버튼을 눌러 봅니다. 브라우져를 통해서 압축된 형태로 프로젝트가 다운로드 될 것입니다. 이제 이 프로젝트를 본인이 사용하는 IDE(IntelliJ, VSCode, Eclipse)에 import 하고 사용하면 됩니다.
+
 #### IDE에 Import하기
 
 ## Gradle 프로젝트를 수동으로 구성하기
