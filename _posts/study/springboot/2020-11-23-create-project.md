@@ -24,7 +24,13 @@ Spring, Spring Boot 모두 다 특이한 것은 아닙니다. 심지어는 과�
 
 ## Spring Initializr를 활용하기
 
+Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간단히 Spring Boot Project를 구성할 수 있고 그 틀을 다운로드 할 수 있습니다. 
+
 #### 사이트 이용하기
+
+[Spring Initializr](https://start.spring.io/)의 주소는 `https://start.spring.io/` 입니다. 이 주소를 브라우저의 주소표시줄에 넣고 화면을 불러옵니다. 
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-23 PM 11.48.37.png)
 
 #### IDE에 Import하기
 
@@ -42,5 +48,5 @@ Spring, Spring Boot 모두 다 특이한 것은 아닙니다. 심지어는 과�
 
 ## 참고자료 및 출처
 
-- <https://www.baeldung.com/spring-data-jpa-multiple-databases>
+- 
 
