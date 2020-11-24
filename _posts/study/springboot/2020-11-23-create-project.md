@@ -76,7 +76,7 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 여기까지 설정하고 나면 아래 그림과 같은 형태가 됩니다. 
 
-![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-24 AM 12.06.57.png)
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-24 AM 12.06.57.png){: .align-center}
 
 아제 아래 `GENERATE` 버튼을 눌러 봅니다. 브라우져를 통해서 압축된 형태로 프로젝트가 다운로드 될 것입니다. 이제 이 프로젝트를 본인이 사용하는 IDE(IntelliJ, VSCode, Eclipse)에 import 하고 사용하면 됩니다.
 
