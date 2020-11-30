@@ -76,11 +76,33 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 여기까지 설정하고 나면 아래 그림과 같은 형태가 됩니다. 
 
-![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-24 AM 12.06.57.png){: .align-center}
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.16.11.png){: .align-center}
 
 아제 아래 `GENERATE` 버튼을 눌러 봅니다. 브라우져를 통해서 압축된 형태로 프로젝트가 다운로드 될 것입니다. 이제 이 프로젝트를 본인이 사용하는 IDE(IntelliJ, VSCode, Eclipse)에 import 하고 사용하면 됩니다.
 
 #### IDE에 Import하기
+
+앞서 이야기한 것 처럼, IDE는 IntelliJ를 사용하겠습니다. 거의 개념은 유사하니 본인이 사용하는 IDE에 맞춰서 사용법을 적절히 활용하면 됩니다.
+
+우선 IntelliJ IDEA 를 실행합니다. 
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.01.09.png)
+
+첫 실행 안에서, `Open or Import`를 선택합니다. 그리고 앞서 Spring Initializr 를 이용하여 생성한 `zip` 파일을 선택하면, 아래와 같이 에러가 납니다.[^1] 다시 탐색기 혹은 파인더로 돌아와서 아까 생성했던 zip파일의 압축을 풀어줍니다. 그러면 Spring Boot 프로젝트 형태에 맞는, 폴더 구조로 된 하나의 패키지가 나오게 됩니다. 
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.05.39.png)
+
+이제 다시 `Open or Import`버튼을 눌러 선택기를 띄우고, <mark style='background-color: #ffdce0'>압축을 해제한 폴더를 선택</mark>하면 정상적으로 import 됩니다.
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.17.53.png)
+
+최초 실행하면 아래 그림처럼 조금 기다려줘야 합니다. 이 작업은 모든 IDE에서 동일한 작업이고, 필수 라이브러리들을 다운로드 받는 과정입니다. 여기서는 아마도 Spring Boot 관련 라이브러리들을 다운로드 받을 것이고(별도의 라이브러리는 추가하지 않았습니다), 조금 기다려 주고 대기 상태가 되면 됩니다.
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.21.30.png)
+
+다 완료가 되면, 아래 그림처럼, 프로젝트 구조가 보인다면 정상적으로 로드된(import된) 상태입니다. 
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.23.57.png)
 
 ## Gradle 프로젝트를 수동으로 구성하기
 
@@ -94,7 +116,30 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 ## IntelliJ IDEA Ultimate 가 있다면?
 
+유료 버전이고, 제가 사용하는 것이 어떠한 수익으로 연결되면 안되는 교육용 버전이기 때문에, 여기에 별도로 스크린샷을 붙이거나 하지는 않겠습니다. 
+
+단지, IntelliJ IDEA Ultimate 버전을 사용할 수 있는 기회가 있다면 `웹에서 생성` &rarr; `IDE로 import` 과정을 `IDE에서 생성` 하나의 과정으로 마칠 수 있다는 장점이 있을 뿐 일반적인 개발을 하는 데 있어서 큰 차이점은 없습니다.(무료로도 충분히 사용할 만 합니다.)
+
+## 실행하기
+
+Spring Boot 초기 버전이 생성되었으니 이제 이것을 실행해 볼 차례입니다. 단축키도 있고 뭔가 실행 configuration을 만들어서 실행하는 방법도 있지만, 여기서는 쉽고 직관적으로 `java`파일의 `main` 함수를 실행해 보도록 하겠습니다.
+
+조금 전 import 한 프로젝트에서 아래 경로에 있는 파일을 찾아갑니다.
+
+```
+/src/main/java/com.simplify.studySpringBoot/StudySpringBootApplication.java
+```
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.29.20.png)
+
+그리고 위 그림과 같이 우클릭하고 `Run ... main()` 을 선택합니다. 실행하고 나면, 별도의 어떠한 처리도 하지 않은 Spring Boot 프로젝트이기 때문에 실행과 동시에 종료되는 것이 맞습니다. 아래 그림과 같이 console 창에 나타난다면 정상적인 상태입니다.
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.32.25.png)
+
+이 뒤부터는 진짜 Backend Server 처럼 동작하게 하기 위해서 어떤 처리들을 거치고 어떻게 활용할 수 있는지 확인해보도록 하겠습니다.
+
 ## 참고자료 및 출처
 
-- 
+- <https://start.spring.io/>
 
+[^1]: Eclipse 와 다르게, IntelliJ IDEA는 압축 파일의 Import를 제공하지 않습니다. 
