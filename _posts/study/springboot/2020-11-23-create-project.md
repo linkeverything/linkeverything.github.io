@@ -106,13 +106,67 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 ## Gradle 프로젝트를 수동으로 구성하기 (특수한 경우, 고급과정)
 
+이 과정은 완전히 특수한 상황입니다. 기존에 사용하고 있던 프로젝트가 있다고 하더라도 이 방법을 굳이 사용하는 것을 권장하지는 않습니다. 다만 필요에 의해서든, 궁금증 때문이든, 이러한 원리로도 구성할 수 있다는 것을 참고로만 알아두시기 바랍니다. 
+
+여기서는 IntelliJ IDEA 기준으로 설명합니다. 
+{: .notice--info}
+
 #### Gradle 프로젝트 생성하기
+
+IntelliJ IDEA 에서 New Project를 실행하고, Gradle 프로젝트, Java 형태입을 아래와 같이 선택합니다. 나머지 정보들은 적당히 입력하여 프로젝트 생성을 마무리하고 IDE에 정상적으로 import된 것을 확인합니다.
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-12-01 AM 12.02.42.png)
+
+![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-12-01 AM 12.03.10.png)
 
 #### Library import하기
 
+이제 `build.gradle` 파일을 열어 아래와 같이 수정합니다. 
+
+1. `plugins` 부분에 다음을 추가합니다. 
+
+   ```
+   id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+   ```
+2. dependencies 부분에 다음을 추가합니다.
+
+   ```
+   implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+   ```
+
+   만약 순수 Java 프로젝트에 맞는 아래 내용이 있다면 삭제합니다.
+
+   ```
+   testCompile group: 'junit', name: 'junit', version: '4.12'
+   ```
+
+3. gradle 을 업데이트 합니다. 
+
+   ![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-12-01 AM 12.08.35.png)
+
 #### Main Java 파일 생성하기
 
+이제 `/src/main/java` 경로 하위에 적절한 이름으로 패키지를 생성하고, 그 하위에 Java파일을 `~Application.java` 와 같이 생성한 뒤 아래와 같이 main 함수를 입력해 줍니다. 중요한 것은 <mark style='background-color: #ffdce0'>@SpringBootApplication</mark> annotation을 반드시 추가해 주어야 합니다. 
+
+```java
+package com.sample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SampleApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SampleApplication.class, args);
+    }
+}
+```
+
 #### properties 파일 추가하기
+
+`/src/main/resources` 하위에 `application.properties` 파일을 생성합니다. (약속된 이름이므로 그대로 입력합니다.) 그리고 안에 내용은 지금은 입력하지 않아도 됩니다. 
 
 ## IntelliJ IDEA Ultimate 가 있다면?
 
