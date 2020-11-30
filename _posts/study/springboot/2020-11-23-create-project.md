@@ -104,7 +104,7 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 ![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.23.57.png)
 
-## Gradle 프로젝트를 수동으로 구성하기
+## Gradle 프로젝트를 수동으로 구성하기 (특수한 경우, 고급과정)
 
 #### Gradle 프로젝트 생성하기
 
@@ -136,7 +136,7 @@ Spring Boot 초기 버전이 생성되었으니 이제 이것을 실행해 볼 �
 
 ![](/assets/images/posts/study/springboot/2020-11-23-create-project/screenshot 2020-11-30 PM 11.32.25.png)
 
-이 뒤부터는 진짜 Backend Server 처럼 동작하게 하기 위해서 어떤 처리들을 거치고 어떻게 활용할 수 있는지 확인해보도록 하겠습니다.
+이 뒤부터는 <mark style='background-color: #dcffe4'>진짜 Backend Server 처럼 동작하게 하기 위해서</mark> 어떤 처리들을 거치고 어떻게 활용할 수 있는지 확인해보도록 하겠습니다.
 
 ## 참고자료 및 출처
 
