@@ -13,10 +13,10 @@ sidebar:
     children:
       - title: "Create Project"
         url: /study/springboot/create-project/
-      - title: "Add Library"
-        url: /study/springboot/add-library/
       - title: "Create API"
         url: /study/springboot/create-api/
+      - title: "Add Library"
+        url: /study/springboot/add-library/
       - title: "Datasource"
         url: /study/springboot/datasource/
       - title: "Presentation"
