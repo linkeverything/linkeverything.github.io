@@ -265,6 +265,14 @@ defaults:
         overlay_image: /assets/images/blog/wallpaper.jpg
       classes: wide
 
+      
+  # _posts in study > spring boot
+  - scope:
+      path: "_posts/study/"
+      type: posts
+    values:
+      layout: single-study
+
   # _posts in study > spring boot
   - scope:
       path: "_posts/study/springboot"
