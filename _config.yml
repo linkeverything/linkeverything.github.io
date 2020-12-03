@@ -268,7 +268,7 @@ defaults:
       
   # _posts in study > spring boot
   - scope:
-      path: "_posts/study/"
+      path: "_posts/study"
       type: posts
     values:
       layout: single-study
