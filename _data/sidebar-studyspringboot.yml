@@ -1,6 +1,8 @@
 sidebar:
   - title: "Getting Started"
     children:
+      - title: "Environment"
+        url: /study/springboot/getting-started/
       - title: "Install Java"
         url: /study/springboot/install-java/
       - title: "Install Homebrew"
