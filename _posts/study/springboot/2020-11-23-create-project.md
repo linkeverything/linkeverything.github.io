@@ -22,6 +22,8 @@ Spring, Spring Boot 모두 다 특이한 것은 아닙니다. 심지어는 과�
 
 두 방법 중에서 편한 방법을 취사선택하여 사용하면 되겠습니다. 
 
+[Download Sample code from GitHub](https://github.com/linkeverything/studySpringBoot/tree/0003-create-project){:target="_blank" .btn .btn--primary}
+
 ## Spring Initializr를 활용하기
 
 Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간단히 Spring Boot Project를 구성할 수 있고 그 틀을 다운로드 할 수 있습니다. 
@@ -34,17 +36,15 @@ Spring Initializr는 Spring 측에서 제공하는 웹 페이지입니다. 간�
 
 이제 차례대로 선택하면서 프로젝트를 생성해 보겠습니다. 
 
-
-
-- Project : Gradle Project
+- Project : `Gradle Project`
 
   여기서는 Gradle Project를 생성합니다. Maven으로 해도 무방하나, 최근 Gradle을 많이 사용하시는 것 같아 저 역시 예시를 Gradle로 하겠습니다. 
 
-- Language : Java
+- Language : `Java`
 
   언어는 Java / Kotlin / Groovy 를 지원하는 것으로 보입니다. 가장 일반적인 형태인 Java를 선택하겠습니다. 
 
-- Spring Boot : 2.4.0
+- Spring Boot : `2.4.0`
 
   현재 이 글을 쓰는 시점 기준으로 하여 기본값이 2.4.0 입니다. 그대로 사용하겠습니다. (앞서 여러 글을 적을 당시만 하더라도 2.3.6을 자주 사용했던 것 같은데 그새 버전이 조금 올라갔습니다. 만약 향후에 호환성 문제가 없다면 프로젝트 생성 이후에도 변경할 수 있는 부분이니 크게 걱정하지 않아도 됩니다.)
 
