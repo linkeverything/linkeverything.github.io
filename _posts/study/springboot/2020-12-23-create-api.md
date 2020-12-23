@@ -26,7 +26,9 @@ API를 생성하는 것을 이야기할 때, API는 http request에 대해서만
 
 ![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 AM 11.26.34.png)
 
-현재 프로젝트에서 위 처럼 실행해 보면, 
+현재 프로젝트에서 위 처럼 실행해 보면, 아래와 같이 실행하고 바로 종료되는 것을 확인할 수 있습니다. 당연히 추가로 아무런 코딩을 하지 않았기 때문에 기본 클래스가 실행되었고, spring boot 라이브러리가 포함되었지만, 아무런 동작 없이 종료된 것을 볼 수 있습니다.
+
+![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 12.50.08.png)
 
 #### build.gradle 파일 수정
 
@@ -38,18 +40,26 @@ gradle 프로젝트를 생성하면 `build.gradle` 파일이, maven 프로젝트
 implementation 'org.springframework.boot:spring-boot-starter-web'
 ```
 
-사실 처음부터 이 라이브러리를 사용하겠다고 한다면 `start.spring.io` 에서 바로 추가하고 시작해도 무방합니다(동일한 결과). [^2]
+사실 처음부터 이 라이브러리를 사용하겠다고 한다면 `start.spring.io` 에서 바로 추가하고 시작해도 무방합니다(동일한 결과). [^1]
+
+#### 다시 실행해 보기
+
+이제 라이브러리를 추가했으면 앞서 실행한 것 처럼 `bootRun` 을 실행해 봅니다. 앞서 실행한 것 과는 다르게, 실행한 프로그램이 그대로 실행중인 상태로 머물로 있습니다. 소위 이야기하는 <mark style='background-color: #fff5b1'>서버</mark>가 실행되어 서비스 형태로 실행중인 채 남아있으며 우리가 원하는 상태가 되었습니다. 
+
+![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 12.56.23.png)
+
+실질적으로 <mark style='background-color: #fff5b1'>API 서버</mark>라고 하는 것들 역시 대기 상태로 있으면서, 주기적으로 어떠한 요청이 들어오는지 빠르게 loop를 돌면서 확인하고, 뭔가 요청이 있으면 그에 따른 동작을 하는 형태라고 생각하면 됩니다. 위 실행 로그를 보면 `8080` 포트에 대해서 서버가 실행중임을 알 수 있습니다. 
+
+이렇게 Spring boot에서는 라이브러리만 추가하고 아무런 작업을 해주지 않아도, 서버 형태로 동작하는 것을 알 수 있습니다. 포트번호는 앞서 살펴본 바와 같이 `8080`이 기본값으로 동작하고 있으며, 이는 내장 Tomcat이라는 형태의 서버임을 확인할 수 있습니다. 
 
 ## API 설계
 
 ## Open API에 대해
 
-## API 병합된 형태
+## API 설계에 대한 몇 가지
 
 ## 참고자료 및 출처
 
 - <https://start.spring.io/>
 
-[^1]: Eclipse 와 다르게, IntelliJ IDEA는 압축 파일의 Import를 제공하지 않습니다. (2020.12 기준)
-
-[^2]: start.spring.io 페이지에서 우측 dependencies 부분에 'web' 으로 검색하여 추가하면 됩니다.
+[^1]: start.spring.io 페이지에서 우측 dependencies 부분에 'web' 으로 검색하여 추가하면 됩니다.
