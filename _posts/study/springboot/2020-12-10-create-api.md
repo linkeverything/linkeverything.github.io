@@ -27,4 +27,4 @@ Spring Boot를 이용하여 프로그램을 개발하는 데 있어서 API를 �
 
 - <https://start.spring.io/>
 
-[^1]: Eclipse 와 다르게, IntelliJ IDEA는 압축 파일의 Import를 제공하지 않습니다. 
+[^1]: Eclipse 와 다르게, IntelliJ IDEA는 압축 파일의 Import를 제공하지 않습니다. (2020.12 기준)

@@ -127,13 +127,13 @@ IntelliJ IDEA 에서 New Project를 실행하고, Gradle 프로젝트, Java 형�
 
    ```
    id 'org.springframework.boot' version '2.4.0'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	 id 'io.spring.dependency-management' version '1.0.10.RELEASE'
    ```
 2. dependencies 부분에 다음을 추가합니다.
 
    ```
    implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	 testImplementation 'org.springframework.boot:spring-boot-starter-test'
    ```
 
    만약 순수 Java 프로젝트에 맞는 아래 내용이 있다면 삭제합니다.
