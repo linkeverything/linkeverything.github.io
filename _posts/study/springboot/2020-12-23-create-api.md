@@ -54,6 +54,31 @@ implementation 'org.springframework.boot:spring-boot-starter-web'
 
 ## API 설계
 
+이제 API를 실제로 만들어 보도록 하겠습니다. 여기서는 간단한 예제이기 때문에 그대로 따라하는 식으로 진행하면 됩니다. API를 생성하기 위해서는 Controller를 생성해야 합니다. 기본 패키지 경로에 TestController.java 라는 이름으로 파일을 생성하고 아래와 같은 내용을 입력합니다.
+
+```java
+package com.simplify.studySpringBoot;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+    
+    @GetMapping(value = "/test")
+    public String testApi(){
+        return "Hello API";
+    }
+}
+```
+
+각 내용에 대해서 조금 설명하면 다음과 같습니다. 
+
+- `@RestController` Rest API 를 설계하기 위해서 사용하는 내용입니다. Spring 에서 사용하는 `@Controller`를 사용해도 되지만, Return 하는 내용에 대한 처리가 조금 더 간단한 `@RestController`를 사용해 보았습니다.
+   당연하게도 이 annotation을 사용하기 위해서는 위와 같이 `org.springframework.web.bind.annotation.RestController` 를 import해야 합니다.
+  
+
+
 ## Open API에 대해
 
 ## API 설계에 대한 몇 가지
