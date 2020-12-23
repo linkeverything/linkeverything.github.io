@@ -146,15 +146,35 @@ http://localhost:8080/test
 POST요청에 대한 부분은 가볍게 적고 넘어가겠습니다. 더욱 복잡하게 하려면 VO를 만들어 넣어 진행하는 것이 맞으나, 여기서는 그냥 간단히 하고 넘어가겠습니다. 
 {: .notice--warning}
 
+HTTP request의 여러 가지 형태 중에서 POST호출에 대해서 구현해 보겠습니다. 보통의 경우 GET은 조회(Retrieve)하는 경우에 주로 사용하고 POST는 생성(Create) 등의 파라미터 요청 시에 많이 사용합니다.
+
+앞서 생성했던 TestController에 아래 내용을 추가합니다.
+
+```java
+    @PostMapping(value = "/testpost")
+    public String testApiPost(@RequestBody String body){
+        return "Hello API - requestParam: body=" + body;
+    }
+```
+
+- `@PostMapping(value = "/testpost")` 여기서는 Post 요청을 처리할 것이라고 선언합니다. 
+- `@RequestBody String body` : 요청에 들어오는 Parameter 중에서 body라는 이름의 내용을 여기에 담아오겠다는 의미입니다.
+
+POST 요청은 브라우저에서 호출하기에는 한계가 있어, 여기서 테스트는 [Httpie](https://httpie.io/)라는 툴을 이용하였습니다. 
+
+![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 2.03.32.png)
+
+위와 같이 출력되는 것을 확인할 수 있습니다. POST방식에 대해서는 더욱 깊은 내용이 필요하므로 여기서는 다루지 않고, 향후 내용을 추가해서 다루도록 하겠습니다. 다만 여기서 주의할 것이, 기본적으로 POST api를 생성하고 호출하면 <mark style='background-color: #dcffe4'>JSON형태로 호출</mark>된다는 점입니다.
 
 ## Open API에 대해
 
-
+흔히 이야기하는 Open API라는 것은 기본적으로 보안 요소(로그인 등)를 갖추지 않고 누구나 호출해서 그 값을 가져갈 수 있는 것들을 이야기 합니다. 물론 인가된 사용자에게 API호출 건수 등에 대한 제한을 두지 않는 경우도 Open API 로 통칭하는 경우도 있긴 합니다만, 일반적으로는 그러습니다.
 
 ## API 설계에 대한 몇 가지
 
 ## 참고자료 및 출처
 
 - <https://start.spring.io/>
+- <https://httpie.io/>
 
 [^1]: start.spring.io 페이지에서 우측 dependencies 부분에 'web' 으로 검색하여 추가하면 됩니다.
