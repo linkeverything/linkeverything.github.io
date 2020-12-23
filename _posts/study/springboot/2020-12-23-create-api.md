@@ -107,7 +107,49 @@ http://localhost:8080/test
 
 그러면 우리가 적어줫던 return 문자열인 **Hello API**가 나타남을 확인할 수 있습니다. 
 
+#### 파라미터를 넣어 요청 해 보기 - GET
+
+앞서 설명한 GET방식의 HTTP request에서 파라미터를 넣는 방식은 다음과 같이 두 가지 정도가 있을 수 있습니다. 
+
+- URL의 일부에 파라미터가 포함된 경우
+- URL의 마지막에 query string 이라고 말하는 ?aaa=bbb 와 같이 key=value 형태로 파라미터를 넣는 경우
+
+앞서 만든 TestController에 다음 내용을 추가합니다.
+
+```java
+    @GetMapping(value = "/{firstPath}/test/{secondPath}")
+    public String testApiWithPathVariable(@PathVariable() String firstPath,
+                                          @PathVariable() String secondPath){
+        return "Hello API - variables: 1)" + firstPath + " 2)" + secondPath;
+    }
+
+    @GetMapping(value = "/test2")
+    public String testApiWithRequestParam(@RequestParam String abc){
+        return "Hello API - requestParam: abc=" + abc;
+    }
+```
+
+- `@GetMapping(value = "/{firstPath}/test/{secondPath}")` : URL 자체에 대해 parameter로 인식하는 방식입니다. 중간에도 들어갈 수 있다는 점을 강조하기 위해서 위와 같이 예제로 만들었을 뿐, 중간과 끝은 같이 사용하는 경우는 많지는 않습니다. 각 `{}` 안에 들어가는 내용은 method 의 parameter로 들어오는 String 값 두 개의 이름과 일치해야 정상적으로 찾아갑니다. 물론 `@PathVariable` 부분에 인자로 설정해 줄 수 있으나 굳이 그렇게 하지 않고 직관적으로 변수명과 일치시켰습니다.
+
+  실행 결과는 아래와 같습니다.
+
+  ![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 1.39.11.png)
+
+- `@GetMapping(value = "/test2")` : 이 선언부는 위 `/test`와 동일한 형태입니다. 그렇지만 함수 parameter로 `@RequestParam` 을 넣어주었고, URL뒤에 Get 요청에 대한 파라미터를 분석하여 보여줍니다. 여기서도 마찬가지로 method 의 parameter로 들어오는 변수명과 동일한 이름의 파라미터를 처리하도록 해 두었습니다. 
+
+  실행 결과는 아래와 같습니다.
+
+  ![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 1.39.30.png)
+
+#### 파라미터를 넣어 요청 해 보기 - POST
+
+POST요청에 대한 부분은 가볍게 적고 넘어가겠습니다. 더욱 복잡하게 하려면 VO를 만들어 넣어 진행하는 것이 맞으나, 여기서는 그냥 간단히 하고 넘어가겠습니다. 
+{: .notice--warning}
+
+
 ## Open API에 대해
+
+
 
 ## API 설계에 대한 몇 가지
 
