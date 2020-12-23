@@ -54,7 +54,11 @@ implementation 'org.springframework.boot:spring-boot-starter-web'
 
 ## API 설계
 
-이제 API를 실제로 만들어 보도록 하겠습니다. 여기서는 간단한 예제이기 때문에 그대로 따라하는 식으로 진행하면 됩니다. API를 생성하기 위해서는 Controller를 생성해야 합니다. 기본 패키지 경로에 TestController.java 라는 이름으로 파일을 생성하고 아래와 같은 내용을 입력합니다.
+이제 API를 실제로 만들어 보도록 하겠습니다. 여기서는 간단한 예제이기 때문에 그대로 따라하는 식으로 진행하면 됩니다. 
+
+#### Controller 생성하기
+
+API를 생성하기 위해서는 Controller를 생성해야 합니다. 기본 패키지 경로에 TestController.java 라는 이름으로 파일을 생성하고 아래와 같은 내용을 입력합니다.
 
 ```java
 package com.simplify.studySpringBoot;
@@ -74,10 +78,34 @@ public class TestController {
 
 각 내용에 대해서 조금 설명하면 다음과 같습니다. 
 
-- `@RestController` Rest API 를 설계하기 위해서 사용하는 내용입니다. Spring 에서 사용하는 `@Controller`를 사용해도 되지만, Return 하는 내용에 대한 처리가 조금 더 간단한 `@RestController`를 사용해 보았습니다.
-   당연하게도 이 annotation을 사용하기 위해서는 위와 같이 `org.springframework.web.bind.annotation.RestController` 를 import해야 합니다.
-  
+- `@RestController` : Rest API 를 설계하기 위해서 사용하는 내용입니다. Spring 에서 사용하는 `@Controller`를 사용해도 되지만, Return 하는 내용에 대한 처리가 조금 더 간단한 `@RestController`를 사용해 보았습니다.
+   
+  당연하게도 이 annotation을 사용하기 위해서는 위와 같이 *org.springframework.web.bind.annotation.RestController* 를 import해야 합니다.
 
+- `@GetMapping(value = "/test")` : HTTP request 의 종류에는 GET / POST / DELETE / UPDATE 등이 있습니다만, 여기서는 간단히 GET을 사용하였습니다. 
+
+  또한 이 annotation의 value 로 */test* 를 지정하여 주어, 실제 호출 경로가 
+  ```
+  http://{hostname or ip address}/test
+  ```
+  와 같이 생성되도록 지정하였습니다. 
+
+즉 *http://{hostname or ip address}/test*를 호출하게 되면 Hello API 라는 문자열이 return message로 돌아오게 되는 형태입니다. 여기서 사용된 함수 명인 testApi라는 이름은 크게 중요하지 않습니다. Java에서 이야기하는 명명 규칙, 그리고 클래스 내에서 중첩되지만 않는다면 어떠한 형태의 이름을 사용해도 무방합니다만, 각 프로젝트에 맞게 네이밍 룰을 적용하여 API가 유추될 수 있는 이름으로 정하는 것이 유지보수에 유리합니다.
+
+#### 실행 및 확인
+
+이제 다시 기존에 실행중이던 프로세스를 종료시키고, bootRun을 실행해 줍니다. 실행 로그 상으로는 앞서 실행한 것과 차이가 없어 보입니다. 이제 브라우저를 열어 주소창에 아래와 같이 입력합니다.
+
+```
+http://localhost:8080/test
+```
+
+주소 중에서 `localhost`는 `127.0.0.1`로 바꿔서 적어도 무방합니다.
+{: .notice--info}
+
+![](/assets/images/posts/study/springboot/2020-12-23-create-api/capture 2020-12-23 PM 1.16.31.png)
+
+그러면 우리가 적어줫던 return 문자열인 **Hello API**가 나타남을 확인할 수 있습니다. 
 
 ## Open API에 대해
 
