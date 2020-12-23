@@ -12,7 +12,7 @@ Spring Boot를 이용하여 프로그램을 개발하는 데 있어서 API를 �
 
 여기서는 API를 개발하고 동작하게 하는 것에 초점을 두고 진행합니다. 실제로 API를 하나 만들게 되면 이정도 수준에서 멈추는 것이 아니라 더욱 많은 작업들이 있겠지만, 그런 부분은 향후에 다른 것들과 더불어서 작업하도록 하겠습니다.
 
-[Download Sample code from GitHub](https://github.com/linkeverything/studySpringBoot/tree/0010-create-api){:target="_blank" .btn .btn--primary}
+[https://github.com/linkeverything/studySpringBoot/tree/0010-create-api](https://github.com/linkeverything/studySpringBoot/tree/0010-create-api){:target="_blank" .btn .btn--primary}
 
 > 위 경로에서 다운로드 받아서 진행하는 경우, branch 를 반드시 확인하시고 다운로드(checkout) 받으시기 바랍니다. 각 게시글에 맞는 branch 로 생성되어 있으므로 해당 branch를 받는 것이 이해해 도움이 됩니다.
 
