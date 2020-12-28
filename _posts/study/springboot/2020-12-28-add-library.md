@@ -65,22 +65,93 @@ dependencies {
 ...
 ```
 
-#### 설치 위치
+## 로컬 다운로드 위치
 
+위와 같이 `build.gradle` 파일에 내용을 추가하고 나서 Load Gradle Changes(⇧⌘I) 를 해주면 Eclipse 나 IntelliJ IDEA 같은 IDE 내에서 자동으로 classpath 에 추가해 주고 해당 라이브러리를 사용하는 것으로 간주하게 됩니다. (즉, 라이브러리의 특정 컴포넌트를 사용하는 데 있어서 <mark style='background-color: #ffdce0'>빨간 밑줄</mark>이 생기지 않는 상태가 됩니다.) 
 
+그런데 내가 개발하고 있는 프로젝트에는 그 어디에도 라이브러리가 다운로드 받아있지 않은 것으로 보입니다. 예전 기억을 더듬어 보면 `*.jar` 파일을 프로젝트 하위의 어떤 폴더에 넣어주고, 그 폴더를 classpath에 잡아주어야 할 텐데, 흔히 알고 있는 `lib` 나 `libs` 폴더도 보이지 않고, 하위 폴더 어디에도 `*.jar` 파일이 있지 않습니다. 
+
+아래에서 설명하는 <mark style='background-color: #dcffe4'>사용자 폴더</mark>는 다음 위치를 의미합니다.
+- Windows : C:\Users\\{사용자 이름}\
+- Linux or MacOS : /Users/{사용자 이름}/
+
+#### gradle
+
+gradle 빌드를 사용하게 되면 <mark style='background-color: #dcffe4'>사용자 폴더</mark> 아래에 `.gradle` 폴더 하위에 원격 repository에서 다운로드 받은 라이브러리가 다운로드 되게 됩니다. 
+
+IDE에서 Project Structure에 들어가면 다음과 같이 라이브러리의 위치를 확인할 수 있습니다.
+
+![](/assets/images/posts/study/springboot/2020-12-28-add-library/capture 2020-12-28 PM 4.06.55.png)
+
+폴더 위치가 그냥 알아보기에는 조금 어렵지만 그래도 각 파일이 어디에 위치해 있는지를 확인할 수 있습니다.
+
+#### maven
+
+maven 빌드를 사용하는 경우에는 <mark style='background-color: #dcffe4'>사용자 폴더</mark> 아래에 `.m2` 폴더가 다운로드 위치가 됩니다.  
+
+`.m2/repository` 경로에 들어가 보면, 그 하위에 위에서 선언햇던 group 이름으로 나열되어 있고, 버전별로 다운로드 받은 `*.jar` 파일을 확인할 수 있습니다. 
+
+![](/assets/images/posts/study/springboot/2020-12-28-add-library/capture 2020-12-28 PM 4.10.30.png)
+
+#### 다운로드 폴더의 정리
+
+위에서 살펴본 `.gradle`, `.m2` 폴더는 모두 다운로드 저장소, 정확하게는 Local Repository 입니다. 원격지에 파일이 있는 것은 맞지만, 빌드 편의성과 IDE에서 빌드 에러를 방지하는 것을 위해 로컬 경로에 미리 다운로드 받아두는 곳입니다. 
+
+위에서 살펴본 `commons-io` 와 같은 라이브러리에 대해서 `2.6`, `2.8` ... 등으로 버전이 올라가게 되면 그 하위 버전은 삭제되지 않습니다. 즉, 저 두 폴더는 일반적으로 증가하기만 할 뿐, 줄어들지는 않습니다. 
+
+Maven이나 Gradle모두 빌드 시점에 해당 라이브러리가 없으면 새로 다운로드를 받기 때문에 개발자들간 공동 작업에도 편리하고 PC를 포멧해도 내가 작성한 코드만 잘 보관하고 있으면 되기 때문에 편리합니다. 역으로 이야기하자면, 위의 두 Local Repository `.gradle`, `.m2` 폴더는 삭제하더라도 다시 다운로드 받으므로, 종종 삭제해 주면 조금 더 가볍게 사용이 가능합니다. (물론 지우지 않아도 요즘 PC성능이 워낙 좋아서 크게 문제는 없습니다.)
 
 ## 사용법
 
-라이브러리를 사용하는 방법에 대해서 조금 더 깊이있게 살펴보도록 하겠습니다. 가장 많이 사용되는 build 방식이 gradle과 maven이므로 이 두 가지에 대해서 기술합니다.
+라이브러리를 사용하는 방법에 대해서 조금 더 깊이있게 살펴보도록 하겠습니다. 가장 많이 사용되는 build 방식이 gradle과 maven이므로 이 두 가지에 대해서 기술합니다. 우선 앞서 살펴본 mvnrepository 페이지에서 아래 두 가지 내용을 확인합니다.
+
+```xml
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.8.0</version>
+</dependency>
+
+```
+
+```gradle
+// https://mvnrepository.com/artifact/commons-io/commons-io
+compile group: 'commons-io', name: 'commons-io', version: '2.8.0'
+```
+
+위 사항을 정리하면 아래와 같습니다.
+- group (groupId) : `commons-io`
+- name (artifactId) : `commons-io`
+- version : `2.8.0`
 
 #### Gradle
 
+gradle은 위 정보들을 가지고 한 줄로 입력이 가능합니다. 위 처럼 mvnrepository에 있는 내용을 `dependencies{ }` 부분에 넣어주면 됩니다.
+
+```gradle
+compile group: 'commons-io', name: 'commons-io', version: '2.8.0'
+```
+
+이를 조금 더 간편하게 적으려면 다음과 같이 넣어주면 됩니다.
+```
+compile '{group}:{name}:{version}'
+```
+```gradle
+compile 'commons-io:commons-io:2.8.0'
+```
+
+이 예시에서 사용한 'compile' 은 gradle 3.X 부터 deprecate 되었습니다. 그 대신 'implementation'을 사용합니다.
+{: .notice--warning}
+
 #### Maven
 
+maven 역시 gradle과 유사하게 <dependencies> 부분에 내용을 추가하면 됩니다. 
+
 ## Maven 과 grdle 전환
+
+위에서 본 것 처럼, maven과 gradle은 그 문법척인 차이가 다소 존재할 뿐 사용방법은 동일합니다. 따라서 둘 간에 쉽게 전환할 수 있으며 이러한 것은 IDE 자체에서도 제공하고 있습니다. 
 
 ## 참고자료 및 출처
 
 - N/A
-
-[^1]: 
