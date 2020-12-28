@@ -150,8 +150,9 @@ maven 역시 gradle과 유사하게 <dependencies> 부분에 내용을 추가하
 
 ## Maven 과 grdle 전환
 
-위에서 본 것 처럼, maven과 gradle은 그 문법척인 차이가 다소 존재할 뿐 사용방법은 동일합니다. 따라서 둘 간에 쉽게 전환할 수 있으며 이러한 것은 IDE 자체에서도 제공하고 있습니다. 
+위에서 본 것 처럼, maven과 gradle은 그 문법척인 차이가 다소 존재할 뿐 사용방법은 동일합니다. 따라서 둘 간에 쉽게 전환할 수 있으며 참고자료 부분의 내용을 참고하시면 될 것 같습니다.
 
 ## 참고자료 및 출처
 
-- N/A
+- How to Convert Maven to Gradle and Vice Versa : <https://dzone.com/articles/how-to-convert-maven-to-gradle-and-vice-versa>
+- Converting Gradle Build File to Maven POM : <https://www.baeldung.com/gradle-build-to-maven-pom>
