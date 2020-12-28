@@ -146,7 +146,7 @@ compile 'commons-io:commons-io:2.8.0'
 
 #### Maven
 
-maven 역시 gradle과 유사하게 <dependencies> 부분에 내용을 추가하면 됩니다. 
+maven 역시 gradle과 유사하게 <dependencies> 부분에 위 내용을 추가하면 됩니다. 
 
 ## Maven 과 grdle 전환
 
