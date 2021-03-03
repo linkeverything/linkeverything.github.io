@@ -3,7 +3,7 @@ title: "Springboot에 datasource 사용하기"
 categories: [study, springboot]
 tag: [datasource]
 last_modified_at: 2021-03-03
-publish: false
+published: false
 ---
 
 서버 측 개발 목적에 Datasource가 빠질 수 없습니다. 일반적으로 _디비_ 라고 부르면서 어떤 데이터들을 데이터베이스에 저장하는 것을 말하는데, 최근에는 IT분야에 대한 충분한 지식이 없어도 이런 이야기들을 많이 하는 것 같습니다. 
