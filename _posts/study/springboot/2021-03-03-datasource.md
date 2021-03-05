@@ -3,7 +3,6 @@ title: "Springboot에 datasource 사용하기"
 categories: [study, springboot]
 tag: [datasource]
 last_modified_at: 2021-03-03
-published: false
 ---
 
 서버 측 개발 목적에 Datasource가 빠질 수 없습니다. 일반적으로 _디비_ 라고 부르면서 어떤 데이터들을 데이터베이스에 저장하는 것을 말하는데, 최근에는 IT분야에 대한 충분한 지식이 없어도 이런 이야기들을 많이 하는 것 같습니다. 
@@ -29,7 +28,9 @@ published: false
 
 Database는 다양한 형태로 설치가 가능하지만, 일반적인 인스톨러 형태로 설치하는 방법과 docker 로 설치하는 방법이 있습니다. 인스톨러 형태로 설치하는 것은 설명이 필요없을 수준으로 간단하기 때문에 이 글에서 추가로 설명하지는 않겠습니다. 저는 docker를 주로 사용하고 있고, 따라서 mariadb 역시 docker를 이용하여 구동합니다. 
 
-docker 에서 mariadb 를 실행하는 것은 매우 간단하지만, yaml 파일의 사용, 그것을 통한 향후 kubernetes에서의 이용에까지 활용하기 위해서 docker-compose를 활용합니다.[^1] 아래 그림과 같이 
+docker 에서 mariadb 를 실행하는 것은 매우 간단하지만, yaml 파일의 사용, 그것을 통한 향후 kubernetes에서의 이용에까지 활용하기 위해서 docker-compose를 활용합니다.[^1] 아래에 docker-compose.yml 파일을 공유합니다.
+
+
 
 
 
@@ -38,4 +39,4 @@ docker 에서 mariadb 를 실행하는 것은 매우 간단하지만, yaml 파�
 - <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
 - <https://blog.jiniworld.me/69>
 
-[^1]: docker-compose 에 대한 설명 및 사용법에 대해서는 docker-compose를 이용해 [docker 편라하게 사용하기]() 글을 참고하시면 좋습니다.
+[^1]: docker-compose 에 대한 설명 및 사용법에 대해서는 [docker-compose를 이용하여 docker를 편라히게 사용하기]() 글을 참고하시면 좋습니다.
