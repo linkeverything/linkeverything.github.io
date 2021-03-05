@@ -70,6 +70,11 @@ docker-compose up -d
 
 이제 예제를 확인해보기 위해서 database에 접속하고, 테이블을 하나 생성하겠습니다. 단순이 예제 목적이기 때문에 심플하게 생성하겠습니다. 
 
+우선 앞서 다운로드 받고 실행해 두었던 docker 형태의 mariadb 에 접속해 보겠습니다. 아래 그림처럼 해당 기기에 대한 정보들을 넣고 접속해 봅니다. 초기 id는  `root` 이고, 패스워드는 위 docker-compose.yml 파일에 설정한 것이 됩니다. 물론 여기서는 .env 파일을 두고 그 안에 환경변수로 설정하였습니다.
+
+![](/assets/images/posts/study/springboot/2021-03-03-datasource/screenshot 2021-03-05 오후 5.32.40.png)
+
+
 ## SpringBoot 에서 연결하고 사용하기
 
 
