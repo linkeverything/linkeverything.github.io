@@ -64,57 +64,57 @@ $ sudo docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:500
    $
    ```
 
-#### 사용
+#### 사용 방법
 
 1. docker-compose.yml 파일 생성
 
-내가 docker 를 실행하고자 하는 폴더에 docker-compose.yml 파일을 생성합니다. 여기서는 mariaDB 에 대한 docker-compose.yml 파일을 예로 들겠습니다. 
+   내가 docker 를 실행하고자 하는 폴더에 docker-compose.yml 파일을 생성합니다. 여기서는 mariaDB 에 대한 docker-compose.yml 파일을 예로 들겠습니다. 
 
-version: '3.1'
+   ```
+   version: '3.1'
 
-services:
-  maria:
-    image: mariadb:latest
-    container_name: "mariadb"
-    restart: always
-    ports:
-      - "63306:3306"
-    volumes:
-      - ~/docker/mariadb/etc/mysql/conf.d:/etc/mysql/conf.d:ro
-      - ~/docker/mariadb/var/lib/mysql:/var/lib/mysql
-      - ~/docker/mariadb/var/log/maria:/var/log/maria
-    environment:
-      - MYSQL_ROOT_PASSWORD=???
-      - TZ="Asia/Seoul"
- 
+   services:
+     maria:
+       image: mariadb:latest
+       container_name: "mariadb"
+       restart: always
+       ports:
+         - "63306:3306"
+       volumes:
+         - ~/docker/mariadb/etc/mysql/conf.d:/etc/mysql/conf.d:ro
+         - ~/docker/mariadb/var/lib/mysql:/var/lib/mysql
+         - ~/docker/mariadb/var/log/maria:/var/log/maria
+       environment:
+         - MYSQL_ROOT_PASSWORD=???
+         - TZ="Asia/Seoul"
+   ```
 
 2. 실행 및 재실행
 
-실행하고자 하는 yml 파일이 있는 위치에서 아래 명령어를 입력합니다. 백그라운드에서 실행을 원하는 경우 -d 옵션을 추가합니다.
+   실행하고자 하는 yml 파일이 있는 위치에서 아래 명령어를 입력합니다. 백그라운드에서 실행을 원하는 경우 -d 옵션을 추가합니다.
 
-$ docker-compose up
-$ docker-compose up -d
- 
+   ```
+   docker-compose up
+   docker-compose up -d
+   ```
 
 3. 확인
 
-확인은 docker-compose 보다는 docker 자체 명령어로 하는 것이 직관적이라 그렇게 하고 있습니다.
+   확인은 docker-compose 보다는 docker 자체 명령어로 하는 것이 직관적이라 그렇게 하고 있습니다.
 
-$ docker ps -a
+   ```
+   docker ps -a
+   ```
  
 
 4. 중지 및 삭제
 
-중지는 stop 파라미터를, 삭제는 rm 파라미터를 주가합니다. 여기서의 삭제는 당연히 image가 아니라 container 입니다. 역시 yml 파일이 있는 위치에서 아래 명령어를 입력합니다.
+   중지는 stop 파라미터를, 삭제는 rm 파라미터를 주가합니다. 여기서의 삭제는 당연히 image가 아니라 container 입니다. 역시 yml 파일이 있는 위치에서 아래 명령어를 입력합니다.
 
-$ docker-compose stop
-$ docker-compose rm 
-
-
-출처: https://4urdev.tistory.com/81 [Simplify]
-
-
-
+   ```
+   docker-compose stop
+   docker-compose rm 
+   ```
 
 ## 참고자료 및 출처
 
