@@ -5,8 +5,6 @@ tag: [docker, compose]
 last_modified_at: 2021-03-05
 ---
 
-## docker 사용에 대해..
-
 container 형태로 여러 프로그램, 서비스들을 실행하려고 할 때에는 그 명령어들이 복잡한 이미지(docker images)를 얼마나 customizing 하느냐, 또 얼마나 많은 환경변수등을 추가해서 사용하느냐에 따라 엄청나게 길어질 수 있습니다. 예를 들어 jenkins를 docker container 형태로 실행하려고 할 때에 기본적으로 아래 정도의 명령어를 이용해서 구동하게 될 것입니다. 
 
 ```sh
