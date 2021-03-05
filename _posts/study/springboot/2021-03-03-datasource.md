@@ -1,5 +1,5 @@
 ---
-title: "Springboot에 datasource 사용하기"
+title: "Springboot에 datasource 사용하기 (jpa내용도 함께)"
 categories: [study, springboot]
 tag: [datasource]
 last_modified_at: 2021-03-03
@@ -12,6 +12,8 @@ last_modified_at: 2021-03-03
 [https://github.com/linkeverything/studySpringBoot/tree/0030-datasource](https://github.com/linkeverything/studySpringBoot/tree/0030-datasource){:target="_blank" .btn .btn--primary}
 
 > 위 경로에서 다운로드 받아서 진행하는 경우, branch 를 반드시 확인하시고 다운로드(checkout) 받으시기 바랍니다. 각 게시글에 맞는 branch 로 생성되어 있으므로 해당 branch를 받는 것이 이해해 도움이 됩니다.
+
+database 와 프로그램인 springboot 를 연동하여 사용하는 것은, jdbc 드라이버라고 부르는 database에 접속하는 모듈과 함께, 그 모듈을 통해서 query 를 보내고 결과를 받아, java 객체에 담아주는 ORM(Object-Relational Mapping) 기능을 갖춘 jpa 에 대한 이야기를 함께 해야 합니다. 아래 그 내용까지 포함하여 기술합니다.
 
 ## Datasource
 
@@ -30,6 +32,45 @@ Database는 다양한 형태로 설치가 가능하지만, 일반적인 인스�
 
 docker 에서 mariadb 를 실행하는 것은 매우 간단하지만, yaml 파일의 사용, 그것을 통한 향후 kubernetes에서의 이용에까지 활용하기 위해서 docker-compose를 활용합니다.[^1] 아래에 docker-compose.yml 파일을 공유합니다.
 
+**.env 파일**
+
+```properties
+ONTAINER_NAME_1=maria_db_1
+MARIADB_ROOT_PASSWORD=?????
+```
+
+**docker-compose.yml 파일**
+
+```yml
+version: '3.1'
+services:
+  maria_db_1:
+    image: mariadb:10.5.3
+    container_name: ${CONTAINER_NAME_1}
+    restart: always
+    ports:
+      - "53306:3306"
+    volumes:
+      - ${PWD}/${CONTAINER_NAME_1}/volumes/etc/mysql/conf.d:/etc/mysql/conf.d:ro
+      - ${PWD}/${CONTAINER_NAME_1}/volumes/var/lib/mysql:/var/lib/mysql
+      - ${PWD}/${CONTAINER_NAME_1}/volumes/var/log/maria:/var/log/maria
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - TZ="Asia/Seoul"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
+위와 같이 파일을 저장한 뒤, 아래 명령어를 이용하여 실행해 줍니다.
+
+```sh
+docker-compose up -d
+```
+
+#### 접속, 테이블 생성하기
+
+이제 예제를 확인해보기 위해서 database에 접속하고, 테이블을 하나 생성하겠습니다. 단순이 예제 목적이기 때문에 심플하게 생성하겠습니다. 
+
+## SpringBoot 에서 연결하고 사용하기
 
 
 
