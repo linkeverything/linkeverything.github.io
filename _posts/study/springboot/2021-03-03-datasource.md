@@ -74,9 +74,111 @@ docker-compose up -d
 
 ![](/assets/images/posts/study/springboot/2021-03-03-datasource/screenshot 2021-03-05 오후 5.32.40.png)
 
+우선 위에 언급한 client 프로그램들을 이용하여 database에 접속합니다. mariadb 와 mysql 은 거의 유사하게 생각하도 되기 때문에, mysql workbench 라는 프로그램을 이용해도 됩니다. (mariadb 는 mysql을 개량하여 만든 형태라고 봐도 무방합니다.)
+
+접속을 하고 나면 아래 명령어를 통해 database를 생성하겠습니다. 이미 만들어져 있는 database에 접속하려면 이 과정은 하지 않아도 됩니다. 이 과정은 `root`계정으로 실행하여야 합니다.
+
+```sql
+create database sample_database;
+```
+
+다음으로는 아래 명령어를 입력하여 사용자를 하나 생성합니다.
+
+```sql
+CREATE USER '{user_name}'@'localhost' IDENTIFIED BY '{user_password}';
+```
+
+```sql
+CREATE USER 'sample'@'%' IDENTIFIED BY 'sample';
+```
+
+사용자 암호는 노출되지 않도록 주의합니다. sample 이라는 이름으로 사용자를 생성하는데, 위와 같이 `%` 를 주는 것은 <mark style='background-color: #ffdce0'>이 계정으로 접속하는 위치에 제한을 두지 않고, 모든 경로에서의 접근을 다 허용한다는 의미</mark>입니다. 다음과 같이 기본 데이터베이스 중 mysql 을 선택하고 user 테이블에서 user를 검색하면 다음과 같이 확인할 수 있습니다.
+
+```sql
+MariaDB [mysql]> use mysql;
+Database changed
+MariaDB [mysql]> select host, user from user;
++-----------+-------------+
+| Host      | User        |
++-----------+-------------+
+| %         | root        |
+| %         | sample      |
+| localhost | mariadb.sys |
+| localhost | root        |
++-----------+-------------+
+4 rows in set (0.002 sec)
+
+MariaDB [mysql]>
+```
+
+이제 데이터베이스(sample_database)와 사용자(sample)를 생성하였으므로, 그 사용자에게 데이터베이스에 대한 권한을 부여합니다.
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, DROP, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON {db_name}.* TO '{user_name}'@'{host}';
+```
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, DROP, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON sample_database.* TO 'sample'@'%';
+```
+
+```sql
+MariaDB [mysql]> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, DROP, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON sample_database.* TO 'sample'@'%';
+Query OK, 0 rows affected (0.004 sec)
+
+MariaDB [mysql]>
+```
+
+이렇게 되면 
+
+1. 데이터베이스 생성
+2. 사용자 생성
+3. 1, 2에서 각각 생성한 것 연결 및 권한 처리
+
+가 완료된 것입니다.
+
+위 과정은 제 블로그 내의, [MySQL에 데이터베이스 및 사용자 추가하기](https://linkeverything.github.io/linux/mysql-user-database-creation/) 글에서 확인 가능합니다.
+{: .notice--info}
+
+#### mysql의 데이터베이스 선택
+
+mysql 이나 mariadb를 사용할 때에 데이터베이스를 `사용할거다` 라고 명시해 줍니다. 아래 처럼 특정 database를 선택하지 않으면 선택되지 않았다 라고 에러를 내보냅니다.
+
+```sql
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample_database    |
++--------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [(none)]> show tables;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use sample_database;
+Database changed
+MariaDB [sample_database]>
+```
+
+앞서 이야기한 sequel pro와 같은 프로그램을 사용하면 명령어 대신에 database를 선택함으로써 저 과정을 대체할 수 있습니다.
+
+![](/assets/images/posts/study/springboot/2021-03-03-datasource/capture 2021-03-08 PM 1.53.18.png)
+
+가장 간단한 테이블을 하나 생성합니다.
+
+```sql
+CREATE OR REPLACE TABLE sample_table (name char(10));
+```
+
+sample_table이라는 이름으로 테이블을 생성하고 name 이라는 컬럼을 문자열 10글자로 생성하였습니다.
 
 ## SpringBoot 에서 연결하고 사용하기
 
+이제 드디어, SpringBoot 에서 접속하고 데이터를 가져오는 것을 연습해 보겠습니다.
+
+편의상 업무적인 흐름을 무시하고, api 2개를 생성하여 하나는 데이터 삽입을, 다른하나는 데이터 조회를 하도록 하겠습니다. 
 
 
 
@@ -84,5 +186,8 @@ docker-compose up -d
 
 - <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
 - <https://blog.jiniworld.me/69>
+- <https://goddaehee.tistory.com/209>
+
+
 
 [^1]: docker-compose 에 대한 설명 및 사용법에 대해서는 [docker-compose를 이용하여 docker를 편리하게 사용하기](https://linkeverything.github.io/container/docker-compose/) 글을 참고하시면 좋습니다.
