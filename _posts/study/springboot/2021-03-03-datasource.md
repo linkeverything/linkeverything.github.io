@@ -169,16 +169,66 @@ MariaDB [sample_database]>
 가장 간단한 테이블을 하나 생성합니다.
 
 ```sql
-CREATE OR REPLACE TABLE sample_table (name char(10));
+CREATE TABLE IF NOT EXISTS SAMPLE_TABLE ( 
+	SAMPLE_NO BIGINT NOT NULL AUTO_INCREMENT, 
+	NAME VARCHAR(200), 
+	PRIMARY KEY(SAMPLE_NO)
+);
 ```
 
-sample_table이라는 이름으로 테이블을 생성하고 name 이라는 컬럼을 문자열 10글자로 생성하였습니다.
+sample_table이라는 이름으로 테이블을 생성하고 id라는 숫자 형태의 primary key를, name 이라는 컬럼을 문자열 10글자로 생성하였습니다.
 
 ## SpringBoot 에서 연결하고 사용하기
 
 이제 드디어, SpringBoot 에서 접속하고 데이터를 가져오는 것을 연습해 보겠습니다.
 
 편의상 업무적인 흐름을 무시하고, api 2개를 생성하여 하나는 데이터 삽입을, 다른하나는 데이터 조회를 하도록 하겠습니다. 
+
+#### build.gradle에 dependency 추가
+
+SpringBoot에서 mysql(mariadb)에 `접속` 하기 위해서는 접속할 수 있는 도구로서 <mark style='background-color: #ffdce0'>드라이버</mark> 가 필요합니다. 또한 여기서 추가로 설명하게 될 <mark style='background-color: #ffdce0'>JPA</mark> 기술을 사용하기 위한 라이브러리가 필요하고, 이를 더욱 편리하게 사용하고자 <mark style='background-color: #ffdce0'>lombok</mark> 라이브러리를 포함하려고 합니다.
+
+build.gradle 파일을 열어, 아래 내용을 <mark style='background-color: #fff5b1'>dependencies {}</mark> 안에 추가해 줍니다.
+
+```gradle
+	compile 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.projectlombok:lombok'
+```
+
+`compile` 로 선언된 것에 대한 설명은 추후 gradle에 대한 학습이 조금 진행되면 그때 별도의 포스트로 정리하겠습니다.
+{: .notice--warning}
+
+- compile 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
+
+  java 프로그램에서 mariadb 에 접속하기 위한 client 라이브러리 입니다.
+
+- compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+  JPA 기능을 사용하기 위한 라이브러리 입니다.
+
+- compile 'org.projectlombok:lombok'
+
+  lombok 기능을 이용하기 위한 라이브러리입니다.
+
+
+
+
+#### entity 생성
+
+
+
+#### JpaRepository 생성
+
+
+
+#### Service 생성
+
+
+
+#### Controller 에 API 생성
+
+
 
 
 
@@ -187,7 +237,6 @@ sample_table이라는 이름으로 테이블을 생성하고 name 이라는 컬�
 - <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
 - <https://blog.jiniworld.me/69>
 - <https://goddaehee.tistory.com/209>
-
-
+- <https://goddaehee.tistory.com/205>
 
 [^1]: docker-compose 에 대한 설명 및 사용법에 대해서는 [docker-compose를 이용하여 docker를 편리하게 사용하기](https://linkeverything.github.io/container/docker-compose/) 글을 참고하시면 좋습니다.
