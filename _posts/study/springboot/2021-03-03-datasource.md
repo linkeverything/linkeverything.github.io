@@ -341,6 +341,15 @@ public class SampleController {
 
 여기서도 생성자 주입 방식을 이용해서 sampleService 객체를 멤버로 가지고 있게 하였고, `/samples` 를 호출했을 때, 값을 조회하도록 구성하였습니다. 
 
+#### 결과 확인
+
+이제 bootRun 을 실행하여 웹 브라우저에 `http://localhost:8080/samples` 를 호출하면, 아래와 같이 데이터가 JSON 형태로 넘어오는 것을 확인할 수 있습니다. 
+
+![](/assets/images/posts/study/springboot/2021-03-03-datasource/screenCapture 2021-03-31 PM 3.13.58.png)
+
+RestController와 GetMapping 을 이용한 API 형태에서, 기본적으로 데이터는 JSON 형태로 produce 됩니다.
+{: .notice--info}
+
 ## 참고자료 및 출처
 
 - <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
