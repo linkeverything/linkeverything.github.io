@@ -253,21 +253,93 @@ public class Sample {
 }
 ```
 
-
+- @Id, @GeneratedValue(..) : 일반적으로 Table 생성 시, Primary key, Autoincrement 로 설정한 값을 지정합니다. 데이터를 넣을 때, 자동 생성되는 값으로서, 실제 db 에는 Notnull & primary key 로 되어 있어도 이 annotaion 으로 인해 자동으로 생성하고 넣어줍니다. db와 쌍으로 맞지 않으면 제대로 실행되지 않습니다. 
+- strategy = GenerationType.IDENTITY : unique 값을 지정하기 위한 것으로 지정합니다. 
+- private Long sampleNo; : table에서 지정한 컬럼 명을 camel 표기법으로 변경하여 변수 명을 생성합니다. 일반적으로 숫자의 경우에는 Long 타입으로 생성하고, <mark style='background-color: #dcffe4'>long 이 아닌 Long 을 써야 함</mark>에 주의합니다. 
+- @Entity(name = "SAMPLE_TABLE") : entity 입을 명시하면서 대상이 되는 테이블의 이름을 적어줍니다. 변수명이 컬럼에 mapping 되는 것은 camel 표기법에 의해 강제로 되지만, table 명은 클래스 명을 따라가기 보다는 이처럼 entity의 name 값으로 지정해주는 것이 좋습니다. 
+- @Builder : 이 부분은 lombok 을 더 상세하게 설명할 때 적겠지만, 데이터를 삽입하고자 할 때에 `new` 키워드를 사용하지 않고 이처럼 builder 를 이용하여 구현하게 됩니다.
 
 #### JpaRepository 생성
 
+이제 위에서 생성한 entity 를 이용하여 database와 연결시켜주는 `repository` 인터페이스를 생성하겠습니다. 더욱 깊이있게 들어가면 복잡하지만 여기서는 단순히 조회와 삽입을 할 것이므로, <mark style='background-color: #ffdce0'>JpaRepository를 상속받는 repository 를 하나 생성</mark>하겟습니다.
 
+```java
+package com.simplify.studySpringBoot.repository;
+
+import com.simplify.studySpringBoot.entity.Sample;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface SampleRepository extends JpaRepository<Sample, Long> {
+
+}
+```
+
+Repository 를 생성하는 것이므로, `@Repository` annotation을 붙여주고, `org.springframework.data.jpa.repository.JpaRepository` 를 상속받는 인터페이스를 생성합니다. 여기서 주의해야 할 점은 <mark style='background-color: #fff5b1'>JpaRepository 뒤에 사용하고자 하는 entity 를 넣고, 그 다음에는 key가 되는 값의 형태, 즉 여기서는 @Id 로 선언했던 값의 타입</mark>을 넣어줍니다. 
+
+상속받은 JpaRepository의 합수들을 override 하지 않아도 기본적인 조회와 삽입은 동작하기 때문에 여기서는 아무것도 override하지 않았습니다.
 
 #### Service 생성
 
+이제 conroller에서 사용할, repository 에 동작을 요청할 서비스를 생성합니다. 기본적인 구조에 충실하여 설명하기 위해서 별도의 동작이 없음에도 controller - service - repository 의 구조를 유지하려고 합니다. 
 
+```java
+package com.simplify.studySpringBoot.service;
+
+import com.simplify.studySpringBoot.entity.Sample;
+import com.simplify.studySpringBoot.repository.SampleRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class SampleService {
+
+    private final SampleRepository sampleRepository;
+
+    public List<Sample> getSamples() {
+        return sampleRepository.findAll();
+    }
+}
+```
+
+- @Service : 서비스 임을 명시적으로 넣어줍니다. Component 처럼 기본적으로 bean을 생성해 줍니다. 
+- @RequiredArgsConstructor : 과거 `@Autowired` annotation을 사용했던 것과는 다르게 여기서는 `@RequiredArgsConstructor` 를 사용합니다. 이렇게 하면 실제 멤버 변수로 들어가는 repository 객체는 <mark style='background-color: #dcffe4'>private final</mark> 로 설정이 가능합니다. 여러 주입 방식에 대해서 최근에는 이렇게 생성자 주입 방식을 사용하는 추세입니다.
+
+repository 에 `findAll()` 을 호출하여 값을 조회합니다. SELECT * FROM TABLE 을 구현해둔 형태라고 보면 됩니다.
 
 #### Controller 에 API 생성
 
+이제, 외부에 API 를 노출하고, 위에서 생성한 service에 호출할 controller를 구현해 줍니다. 
 
+```java
+package com.simplify.studySpringBoot.controller;
 
+import com.simplify.studySpringBoot.entity.Sample;
+import com.simplify.studySpringBoot.service.SampleService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
+@RestController
+@RequiredArgsConstructor
+public class SampleController {
+
+    private final SampleService sampleService;
+
+    @GetMapping(value = "/samples")
+    public List<Sample> getSamples(){
+        return sampleService.getSamples();
+    }
+}
+```
+
+여기서도 생성자 주입 방식을 이용해서 sampleService 객체를 멤버로 가지고 있게 하였고, `/samples` 를 호출했을 때, 값을 조회하도록 구성하였습니다. 
 
 ## 참고자료 및 출처
 
