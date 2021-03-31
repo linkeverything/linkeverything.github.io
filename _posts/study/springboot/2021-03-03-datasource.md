@@ -178,6 +178,12 @@ CREATE TABLE IF NOT EXISTS SAMPLE_TABLE (
 
 sample_table이라는 이름으로 테이블을 생성하고 id라는 숫자 형태의 primary key를, name 이라는 컬럼을 문자열 10글자로 생성하였습니다.
 
+추가로, 데이터도 하나 넣어 두겠습니다. 뒤에서 Springboot 를 이용하여 데이터를 넣는 것을 구현하겠지만, 조회를 우선 구현할 것이기 때문에 우선 데이터를 하나만 넣겠습니다. 두 개의 컬럼을 생성하면서 하나는 숫자 타입으로, 다른 하나는 문자 타입으로 생성하였기 때문에 아래와 같은 Query 를 이용하여 데이터를 넣을 수 있습니다.
+
+```sql
+INSERT INTO SAMPLE_TABLE VALUES (1, "sample name");
+```
+
 ## SpringBoot 에서 연결하고 사용하기
 
 이제 드디어, SpringBoot 에서 접속하고 데이터를 가져오는 것을 연습해 보겠습니다.
@@ -214,6 +220,38 @@ build.gradle 파일을 열어, 아래 내용을 <mark style='background-color: #
 #### entity 생성
 
 Table 에서 JPA 기능을 이용하여 데이터를 가져오려면, Table의 하나하나의 행에 해당하는, 즉 데이터 하나하나에 해당하는 객체를 정의해야 합니다. 단순히 쿼리문을 이용해서 가져오는 것이 아니라, 저 객체를 이용하여 <mark style='background-color: #ffdce0'>자동으로 SELECT 문을 구성</mark>하고, 데이터를 가져오게 됩니다. 
+
+앞서 만든 Table의 Column은 숫자 타입하나와 문자 타입 하나로 이루어져 있습니다. 따라서 아래와 같은 형태로 Entity를 생성해 줍니다.
+
+```java
+package com.simplify.studySpringBoot.entity;
+
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity(name = "SAMPLE_TABLE")
+public class Sample {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long sampleNo;
+
+    private String name;
+
+    @Builder
+    public Sample(String name) {
+        this.name = name;
+    }
+
+}
+```
 
 
 
