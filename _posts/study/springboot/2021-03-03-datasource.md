@@ -234,7 +234,7 @@ build.gradle 파일을 열어, 아래 내용을 <mark style='background-color: #
 
 ## 참고자료 및 출처
 
-- <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
+- [https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R](https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R)
 - <https://blog.jiniworld.me/69>
 - <https://goddaehee.tistory.com/209>
 - <https://goddaehee.tistory.com/205>
