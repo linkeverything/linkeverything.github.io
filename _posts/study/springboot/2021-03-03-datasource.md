@@ -350,6 +350,37 @@ public class SampleController {
 RestController와 GetMapping 을 이용한 API 형태에서, 기본적으로 데이터는 JSON 형태로 produce 됩니다.
 {: .notice--info}
 
+## 데이터 삽입
+
+데이터를 넣는 것은 위에서 설명한 조회 부분과 유사합니다. 다음의 소스코드들만 추가로 넣어주면 됩니다. 
+
+**Controller**
+
+```java
+    @PostMapping(value = "/samples")
+    public Sample addSample(String name){
+        return sampleService.addSample(name);
+    }
+```
+
+**Service**
+
+```java
+    public Sample addSample(String name){
+        return sampleRepository.save(Sample.builder().name(name).build());
+    }
+```
+
+우선 Controller에 Post 방식의 API 를 하나 생성합니다. 여기에 추가로 필요한 정보는 `name` 뿐입니다. (id 는 자동 생성됩니다) 받은 정보를 그대로 Service로 넘기게 되면 Service에서는 Sample entity 의 builder 를 이용하여 클래스를 생성하고 값을 셋팅하여 repository 의 save 함수를 이용해 값을 저장하게 됩니다. 
+
+#### 데이터 삽입 테스트
+
+Postman 과 같이 post 방식을 테스트할 수 있는 툴을 이용하여 값이 들어가는 것을 확인할 수 있습니다.
+
+![](/assets/images/posts/study/springboot/2021-03-03-datasource/screenCapture 2021-03-31 PM 3.36.26.png)
+
+![](/assets/images/posts/study/springboot/2021-03-03-datasource/screenCapture 2021-03-31 PM 3.41.12.png)
+
 ## 참고자료 및 출처
 
 - <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
