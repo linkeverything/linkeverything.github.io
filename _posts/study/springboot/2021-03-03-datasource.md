@@ -43,11 +43,12 @@ MARIADB_ROOT_PASSWORD=?????
 
 ```yml
 version: '3.1'
+
 services:
-  maria_db_1:
+  mariadb:
     image: mariadb:latest
     container_name: ${CONTAINER_NAME_1}
-    restart: always
+    #restart: always
     ports:
       - "53306:3306"
     volumes:
