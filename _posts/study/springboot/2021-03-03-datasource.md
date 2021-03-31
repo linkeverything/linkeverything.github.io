@@ -35,7 +35,7 @@ docker 에서 mariadb 를 실행하는 것은 매우 간단하지만, yaml 파�
 **.env 파일**
 
 ```properties
-CONTAINER_NAME_1=maria_db_1
+CONTAINER_NAME_1=mariadb
 MARIADB_ROOT_PASSWORD=?????
 ```
 
@@ -45,7 +45,7 @@ MARIADB_ROOT_PASSWORD=?????
 version: '3.1'
 services:
   maria_db_1:
-    image: mariadb:10.5.3
+    image: mariadb:latest
     container_name: ${CONTAINER_NAME_1}
     restart: always
     ports:
