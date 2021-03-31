@@ -233,9 +233,9 @@ Table 에서 JPA 기능을 이용하여 데이터를 가져오려면, Table의 �
 
 ## 참고자료 및 출처
 
-- https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R
-- https://blog.jiniworld.me/69
-- https://goddaehee.tistory.com/209
-- https://goddaehee.tistory.com/205
+- <https://www.wrapuppro.com/programing/view/4yO1xLOCovPwa4R>
+- <https://blog.jiniworld.me/69>
+- <https://goddaehee.tistory.com/209>
+- <https://goddaehee.tistory.com/205>
 
 [^1]: docker-compose 에 대한 설명 및 사용법에 대해서는 [docker-compose를 이용하여 docker를 편리하게 사용하기](https://linkeverything.github.io/container/docker-compose/) 글을 참고하시면 좋습니다.
