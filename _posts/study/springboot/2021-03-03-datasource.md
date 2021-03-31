@@ -209,12 +209,11 @@ build.gradle 파일을 열어, 아래 내용을 <mark style='background-color: #
 
 - compile 'org.projectlombok:lombok'
 
-  lombok 기능을 이용하기 위한 라이브러리입니다.
-
-
-
+  lombok 기능을 이용하기 위한 라이브러리입니다. lombok에 대한 상세한 설명은 향후 advanced 부분에서 더욱 자세하게 다뤄 볼 예정입니다. 
 
 #### entity 생성
+
+Table 에서 JPA 기능을 이용하여 데이터를 가져오려면, Table의 하나하나의 행에 해당하는, 즉 데이터 하나하나에 해당하는 객체를 정의해야 합니다. 단순히 쿼리문을 이용해서 가져오는 것이 아니라, 저 객체를 이용하여 <mark style='background-color: #ffdce0'>자동으로 SELECT 문을 구성</mark>하고, 데이터를 가져오게 됩니다. 
 
 
 
